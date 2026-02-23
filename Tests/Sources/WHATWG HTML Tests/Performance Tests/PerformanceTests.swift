@@ -4,7 +4,7 @@
 // Top-level performance test suite
 // All performance test suites are nested under this via extensions
 
-import StandardsTestSupport
+import Test_Primitives
 import Testing
 
 @Suite(.serialized) struct `Performance Tests` {}

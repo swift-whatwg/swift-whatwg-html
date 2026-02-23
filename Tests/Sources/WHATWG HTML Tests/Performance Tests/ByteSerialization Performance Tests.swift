@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import StandardsTestSupport
+import Test_Primitives
 import Testing
 
 @testable import WHATWG_HTML_GlobalAttributes
