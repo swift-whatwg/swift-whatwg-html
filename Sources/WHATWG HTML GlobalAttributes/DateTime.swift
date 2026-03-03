@@ -82,7 +82,7 @@ public import WHATWG_HTML_Shared
 
 extension DateTime {
     /// Create a datetime for a specific date
-    public static func date(year: Int, month: Int, day: Int) throws -> DateTime {
+    public static func date(year: Int, month: Int, day: Int) throws(ISO_8601.Date.Error) -> DateTime {
         let dt = try ISO_8601.DateTime(year: year, month: month, day: day)
         return DateTime(dateTime: dt)
     }
@@ -95,7 +95,7 @@ extension DateTime {
         hour: Int,
         minute: Int,
         second: Int = 0
-    ) throws -> DateTime {
+    ) throws(ISO_8601.Date.Error) -> DateTime {
         let dt = try ISO_8601.DateTime(
             year: year,
             month: month,
@@ -116,7 +116,7 @@ extension DateTime {
         minute: Int,
         second: Int = 0,
         timezoneOffsetSeconds: Int
-    ) throws -> DateTime {
+    ) throws(ISO_8601.Date.Error) -> DateTime {
         let dt = try ISO_8601.DateTime(
             year: year,
             month: month,
@@ -137,7 +137,7 @@ extension DateTime {
         hour: Int,
         minute: Int,
         second: Int = 0
-    ) throws -> DateTime {
+    ) throws(ISO_8601.Date.Error) -> DateTime {
         let dt = try ISO_8601.DateTime(
             year: year,
             month: month,
