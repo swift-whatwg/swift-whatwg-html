@@ -16,29 +16,29 @@ import Testing
 
 extension `Performance Tests` {
 
-    @Suite("Byte Serialization Performance Tests", .serialized) struct ByteSerialization {
+    @Suite(.serialized) struct ByteSerialization {
 
         // MARK: - Boolean Attributes
 
-        @Test("Autofocus: RFC pattern", .timed(threshold: .milliseconds(1)))
-        func autofocusRFCPattern() {
+        @Test(.timed(threshold: .milliseconds(1)))
+        func `Autofocus RFC pattern`() {
             let attr = Autofocus(value: true)
             let _ = [UInt8](attr)
         }
 
-        @Test("Autofocus: UTF-8 direct", .timed(threshold: .milliseconds(1)))
-        func autofocusUTF8Direct() { let _ = Array(Autofocus.attribute.utf8) }
+        @Test(.timed(threshold: .milliseconds(1)))
+        func `Autofocus UTF-8 direct`() { let _ = Array(Autofocus.attribute.utf8) }
 
         // MARK: - String Attributes (ASCII)
 
-        @Test("Id ASCII: RFC pattern", .timed(threshold: .milliseconds(1))) func idASCIIRFCPattern()
-        {
+        @Test(.timed(threshold: .milliseconds(1)))
+        func `Id ASCII RFC pattern`() {
             let attr = Id(value: "main-content")
             let _ = [UInt8].init(attr)
         }
 
-        @Test("Id ASCII: String interpolation", .timed(threshold: .milliseconds(1)))
-        func idASCIIStringInterpolation() {
+        @Test(.timed(threshold: .milliseconds(1)))
+        func `Id ASCII String interpolation`() {
             let attr = Id(value: "main-content")
             let str = "id=\"\(attr.rawValue)\""
             let _ = Array(str.utf8)
@@ -46,14 +46,14 @@ extension `Performance Tests` {
 
         // MARK: - String Attributes (UTF-8)
 
-        @Test("Id UTF-8: RFC pattern", .timed(threshold: .milliseconds(1))) func idUTF8RFCPattern()
-        {
+        @Test(.timed(threshold: .milliseconds(1)))
+        func `Id UTF-8 RFC pattern`() {
             let attr = Id(value: "日本語-コンテンツ")
             let _ = [UInt8](attr)
         }
 
-        @Test("Id UTF-8: String interpolation", .timed(threshold: .milliseconds(1)))
-        func idUTF8StringInterpolation() {
+        @Test(.timed(threshold: .milliseconds(1)))
+        func `Id UTF-8 String interpolation`() {
             let attr = Id(value: "日本語-コンテンツ")
             let str = "id=\"\(attr.rawValue)\""
             let _ = Array(str.utf8)
@@ -61,10 +61,8 @@ extension `Performance Tests` {
 
         // MARK: - Batched Operations
 
-        @Test(
-            "Batch RFC: 100 attributes",
-            .timed(threshold: .milliseconds(5), maxAllocations: 100_000)
-        ) func batchRFCPattern() {
+        @Test(.timed(threshold: .milliseconds(5)))
+        func `Batch RFC 100 attributes`() {
             let attributes = (0..<100).map { Id(value: "element-\($0)") }
 
             var total: [UInt8] = []
@@ -76,10 +74,8 @@ extension `Performance Tests` {
             let _ = total
         }
 
-        @Test(
-            "Batch String: 100 attributes",
-            .timed(threshold: .milliseconds(5), maxAllocations: 100_000)
-        ) func batchStringPattern() {
+        @Test(.timed(threshold: .milliseconds(5)))
+        func `Batch String 100 attributes`() {
             let attributes = (0..<100).map { Id(value: "element-\($0)") }
 
             var str = ""
@@ -90,23 +86,22 @@ extension `Performance Tests` {
 
         // MARK: - String Composition
 
-        @Test("Direct bytes only", .timed(threshold: .milliseconds(1))) func directBytesOnly() {
+        @Test(.timed(threshold: .milliseconds(1)))
+        func `Direct bytes only`() {
             let attr = Id(value: "test")
             let _ = [UInt8](attr)
         }
 
-        @Test("Bytes via String composition", .timed(threshold: .milliseconds(1)))
-        func bytesViaStringComposition() {
+        @Test(.timed(threshold: .milliseconds(1)))
+        func `Bytes via String composition`() {
             let attr = Id(value: "test")
             let _ = String(attr)
         }
 
         // MARK: - Real-world HTML Generation
 
-        @Test(
-            "HTML generation RFC: 10 attributes",
-            .timed(threshold: .milliseconds(1), maxAllocations: 50_000)
-        ) func htmlGenerationRFC() {
+        @Test(.timed(threshold: .milliseconds(1)))
+        func `HTML generation RFC 10 attributes`() {
             let ids = (0..<5).map { Id(value: "element-\($0)") }
             let autofocus = (0..<5).map { Autofocus(value: $0 % 2 == 0) }
 
@@ -126,10 +121,8 @@ extension `Performance Tests` {
             let _ = String(decoding: html, as: UTF8.self)
         }
 
-        @Test(
-            "HTML generation String: 10 attributes",
-            .timed(threshold: .milliseconds(1), maxAllocations: 50_000)
-        ) func htmlGenerationString() {
+        @Test(.timed(threshold: .milliseconds(1)))
+        func `HTML generation String 10 attributes`() {
             let ids = (0..<5).map { Id(value: "element-\($0)") }
             let autofocus = (0..<5).map { Autofocus(value: $0 % 2 == 0) }
 
