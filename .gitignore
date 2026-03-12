@@ -1,6 +1,5 @@
 # ========== CANONICAL (auto-synced, do not edit) ==========
-# Source: swift-institute
-# Sync: Scripts/sync-gitignore.sh or manual
+# Source: swift-institute/Scripts/sync-gitignore.sh
 
 *~
 .DS_Store
@@ -26,9 +25,11 @@ Thumbs.db
 !/Tests/
 !/Experiments/
 !/Research/
+!/Skills/
 !/.github/
 !/Package.swift
 !/LICENSE.md
+!/README.md
 
 # Documentation (opt-in for whitelisted .md files and .docc catalogs only)
 # Blocks all .md files by default to prevent AI-generated content from being committed
@@ -39,8 +40,11 @@ Thumbs.db
 !CONTRIBUTING.md
 !CODE_OF_CONDUCT.md
 !SECURITY.md
+!CLAUDE.md
 !**/*.docc/**/*.md
 !**/Research/**/*.md
+!**/Experiments/**/*.md
+!**/Skills/**/*.md
 
 *.pdf
 
@@ -54,5 +58,5 @@ Thumbs.db
 # ========== END CANONICAL ==========
 
 # ========== LOCAL OVERRIDES ==========
-# Package-specific rules below (preserved during sync)
+# Package-specific rules below (managed by sync-gitignore.sh)
 
