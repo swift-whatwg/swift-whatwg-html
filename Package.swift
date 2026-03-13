@@ -235,8 +235,8 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(path: "../swift-rfc-2045"),
-        .package(path: "../swift-iso-8601"),
+        .package(path: "../../../swift-ietf/swift-rfc-2045"),
+        .package(path: "../../../swift-iso/swift-iso-8601"),
         .package(path: "../../swift-primitives/swift-standard-library-extensions"),
         .package(path: "../../swift-primitives/swift-geometry-primitives"),
         .package(path: "../../swift-primitives/swift-binary-primitives"),
