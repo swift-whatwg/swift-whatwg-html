@@ -32,7 +32,6 @@ for target in package.targets where ![.system, .binary, .plugin, .macro].contain
         .enableUpcomingFeature("NonisolatedNonsendingByDefault"),
         .enableExperimentalFeature("Lifetimes"),
         .enableExperimentalFeature("SuppressedAssociatedTypes"),
-        .enableExperimentalFeature("SuppressedAssociatedTypesWithDefaults"),
     ]
 
     target.swiftSettings = (target.swiftSettings ?? []) + ecosystem
