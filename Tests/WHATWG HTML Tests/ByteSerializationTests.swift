@@ -22,7 +22,7 @@ import Testing
         let attr: Autofocus = true
         let bytes = [UInt8](attr)
 
-        #expect(bytes == [UInt8].ascii.unchecked("autofocus"))
+        #expect(bytes == Array("autofocus".utf8))
         #expect(String(attr) == "autofocus")
     }
 
@@ -39,7 +39,7 @@ import Testing
     @Test("Id byte serialization - ASCII") func idASCII() {
         let attr = Id(value: "main")
         let bytes = [UInt8](attr)
-        let expected = [UInt8].ascii.unchecked("id=\"main\"")
+        let expected = Array("id=\"main\"".utf8)
 
         #expect(bytes == expected)
         #expect(String(attr) == "id=\"main\"")
@@ -61,7 +61,7 @@ import Testing
     @Test("Id byte serialization - complex value") func idComplex() {
         let attr = Id(value: "my-complex-id_123")
         let bytes = [UInt8](attr)
-        let expected = [UInt8].ascii.unchecked("id=\"my-complex-id_123\"")
+        let expected = Array("id=\"my-complex-id_123\"".utf8)
 
         #expect(bytes == expected)
         #expect(String(attr) == "id=\"my-complex-id_123\"")

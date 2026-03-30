@@ -18,7 +18,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import ASCII
+import ASCII_Primitives
 
 // MARK: - Boolean Attributes
 
@@ -56,7 +56,7 @@ extension [UInt8] {
     public init<T: WHATWG_HTML.BooleanAttribute>(_ attribute: T) {
         if attribute.rawValue {
             // Attribute name is ASCII-only, use unchecked for performance
-            self = [UInt8].ascii.unchecked(T.attribute)
+            self = Array(T.attribute.utf8)
         } else {
             // False = omit attribute entirely
             self = []

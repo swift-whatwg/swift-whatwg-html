@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import ASCII
+import ASCII_Primitives
 
 extension WHATWG_HTML {
     /// Protocol for HTML boolean attributes

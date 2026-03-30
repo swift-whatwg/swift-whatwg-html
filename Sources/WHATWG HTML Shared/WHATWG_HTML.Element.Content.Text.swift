@@ -5,7 +5,7 @@
 //  Created by Coen ten Thije Boonkkamp on 05/12/2025.
 //
 
-import ASCII
+import ASCII_Primitives
 
 extension WHATWG_HTML.Element.Content {
     /// Represents text content within an element.

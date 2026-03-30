@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-@_exported import ASCII
+@_exported import ASCII_Primitives
 // Re-export shared dependencies
 @_exported import Standard_Library_Extensions
 

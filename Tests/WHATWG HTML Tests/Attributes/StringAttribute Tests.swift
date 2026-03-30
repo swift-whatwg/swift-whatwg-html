@@ -114,7 +114,8 @@ import WHATWG_HTML
     }
 
     @Test func `Long string value`() {
-        let longValue = String(repeating: "test ", count: 100).trimming(.ascii.whitespaces)
+        var longValue = String(repeating: "test ", count: 100)
+        while longValue.last?.isWhitespace == true { longValue.removeLast() }
         let attr = TestStringAttribute(value: longValue)
         #expect(attr.rawValue == longValue)
     }
