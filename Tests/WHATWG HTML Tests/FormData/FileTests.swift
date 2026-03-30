@@ -41,7 +41,7 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `File isEmpty returns false for non-empty data`() {
-        let file = Form.Data.File(name: "data.txt", type: "text/plain", body: [UInt8](1))
+        let file = Form.Data.File(name: "data.txt", type: "text/plain", body: [1 as UInt8])
 
         #expect(file.isEmpty == false)
     }
