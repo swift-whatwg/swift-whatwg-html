@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import Formatting_Primitives
+import Format_Primitives
 import Binary_Primitives
 public import ISO_8601
 public import WHATWG_HTML_Shared
