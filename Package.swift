@@ -235,12 +235,12 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(path: "../../swift-ietf/swift-rfc-2045"),
-        .package(path: "../../swift-iso/swift-iso-8601"),
-        .package(path: "../../swift-primitives/swift-standard-library-extensions"),
-        .package(path: "../../swift-primitives/swift-geometry-primitives"),
-        .package(path: "../../swift-primitives/swift-binary-primitives"),
-        .package(path: "../../swift-primitives/swift-ascii-primitives")
+        .package(url: "https://github.com/swift-ietf/swift-rfc-2045.git", branch: "main"),
+        .package(url: "https://github.com/swift-iso/swift-iso-8601.git", branch: "main"),
+        .package(url: "https://github.com/swift-primitives/swift-standard-library-extensions.git", branch: "main"),
+        .package(url: "https://github.com/swift-primitives/swift-geometry-primitives.git", branch: "main"),
+        .package(url: "https://github.com/swift-primitives/swift-binary-primitives.git", branch: "main"),
+        .package(url: "https://github.com/swift-primitives/swift-ascii-primitives.git", branch: "main")
     ],
     targets: [
         // ============================================================
