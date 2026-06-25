@@ -12,6 +12,7 @@
 
 import Format_Primitives
 import Binary_Primitives
+import Binary_Format_Primitives
 public import ISO_8601
 public import WHATWG_HTML_Shared
 
@@ -152,21 +153,21 @@ extension DateTime {
     /// Create a year-month datetime
     public static func yearMonth(year: Int, month: Int) -> DateTime {
         DateTime(
-            "\(year.formatted(.number.zeroPadded(width: 4)))-\(month.formatted(.number.zeroPadded(width: 2)))"
+            "\(year.formatted(Binary.Format.decimal.zeroPadded(width: 4)))-\(month.formatted(Binary.Format.decimal.zeroPadded(width: 2)))"
         )
     }
 
     /// Create a year-only datetime
     public static func year(_ year: Int) -> DateTime {
-        DateTime(year.formatted(.number.zeroPadded(width: 4)))
+        DateTime(year.formatted(Binary.Format.decimal.zeroPadded(width: 4)))
     }
 
     /// Create a time-only datetime
     public static func time(hour: Int, minute: Int, second: Int = 0) -> DateTime {
-        let h = hour.formatted(.number.zeroPadded(width: 2))
-        let m = minute.formatted(.number.zeroPadded(width: 2))
+        let h = hour.formatted(Binary.Format.decimal.zeroPadded(width: 2))
+        let m = minute.formatted(Binary.Format.decimal.zeroPadded(width: 2))
         if second > 0 {
-            let s = second.formatted(.number.zeroPadded(width: 2))
+            let s = second.formatted(Binary.Format.decimal.zeroPadded(width: 2))
             return DateTime("\(h):\(m):\(s)")
         } else {
             return DateTime("\(h):\(m)")
