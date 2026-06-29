@@ -89,7 +89,7 @@ extension Target.Dependency {
 
     // Test dependencies
     static var standardsTestSupport: Self { .product(name: "Test Primitives", package: "swift-test-primitives") }
-    static var binary: Self { .product(name: "Binary Primitives", package: "swift-binary-primitives") }
+    static var radixFormatter: Self { .product(name: "Radix Format Primitives", package: "swift-radix-formatter-primitives") }
 }
 
 // MARK: - Package Definition
@@ -239,7 +239,7 @@ let package = Package(
         .package(url: "https://github.com/swift-iso/swift-iso-8601.git", branch: "main"),
         .package(url: "https://github.com/swift-primitives/swift-standard-library-extensions.git", branch: "main"),
         .package(url: "https://github.com/swift-primitives/swift-geometry-primitives.git", branch: "main"),
-        .package(url: "https://github.com/swift-primitives/swift-binary-primitives.git", branch: "main"),
+        .package(url: "https://github.com/swift-primitives/swift-radix-formatter-primitives.git", branch: "main"),
         .package(url: "https://github.com/swift-primitives/swift-ascii-primitives.git", branch: "main")
     ],
     targets: [
@@ -274,7 +274,7 @@ let package = Package(
             dependencies: [
                 .whatwgHTMLShared,
                 .iso8601,
-                .binary
+                .radixFormatter
             ]
         ),
         .target(
