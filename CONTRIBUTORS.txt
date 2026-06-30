@@ -1,4 +1,0 @@
-# Contributors to swift-html-standard
-
-* Coen ten Thije Boonkkamp <coen@coenttb.com>
-* Evan Anderson <imrandomhashtags@gmail.com>
