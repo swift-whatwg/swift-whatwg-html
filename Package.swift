@@ -89,7 +89,7 @@ extension Target.Dependency {
 
     // Test dependencies
     static var standardsTestSupport: Self { .product(name: "Test Primitives", package: "swift-test-primitives") }
-    static var radixFormatter: Self { .product(name: "Radix Format Primitives", package: "swift-radix-formatter-primitives") }
+    static var radixFormatter: Self { .product(name: "Radix Formatter Primitives", package: "swift-radix-formatter-primitives") }
 }
 
 // MARK: - Package Definition

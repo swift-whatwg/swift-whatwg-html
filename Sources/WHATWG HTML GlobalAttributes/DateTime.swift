@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 import Format_Primitives
-import Radix_Format_Primitives
+import Radix_Formatter_Primitives
 public import ISO_8601
 public import WHATWG_HTML_Shared
 
@@ -152,21 +152,21 @@ extension DateTime {
     /// Create a year-month datetime
     public static func yearMonth(year: Int, month: Int) -> DateTime {
         DateTime(
-            "\(year.formatted(Radix.Format.decimal.zeroPadded(width: 4)))-\(month.formatted(Radix.Format.decimal.zeroPadded(width: 2)))"
+            "\(year.formatted(.decimal.zeroPadded(width: 4)))-\(month.formatted(.decimal.zeroPadded(width: 2)))"
         )
     }
 
     /// Create a year-only datetime
     public static func year(_ year: Int) -> DateTime {
-        DateTime(year.formatted(Radix.Format.decimal.zeroPadded(width: 4)))
+        DateTime(year.formatted(.decimal.zeroPadded(width: 4)))
     }
 
     /// Create a time-only datetime
     public static func time(hour: Int, minute: Int, second: Int = 0) -> DateTime {
-        let h = hour.formatted(Radix.Format.decimal.zeroPadded(width: 2))
-        let m = minute.formatted(Radix.Format.decimal.zeroPadded(width: 2))
+        let h = hour.formatted(.decimal.zeroPadded(width: 2))
+        let m = minute.formatted(.decimal.zeroPadded(width: 2))
         if second > 0 {
-            let s = second.formatted(Radix.Format.decimal.zeroPadded(width: 2))
+            let s = second.formatted(.decimal.zeroPadded(width: 2))
             return DateTime("\(h):\(m):\(s)")
         } else {
             return DateTime("\(h):\(m)")
