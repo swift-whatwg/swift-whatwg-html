@@ -87,8 +87,6 @@ extension Target.Dependency {
     static var geometry: Self { .product(name: "Geometry Primitives", package: "swift-geometry-primitives") }
     static var incits41986: Self { .product(name: "ASCII Primitives", package: "swift-ascii-primitives") }
 
-    // Test dependencies
-    static var standardsTestSupport: Self { .product(name: "Test Primitives", package: "swift-test-primitives") }
     static var radixFormatter: Self { .product(name: "Radix Formatter Primitives", package: "swift-radix-formatter-primitives") }
 }
 
