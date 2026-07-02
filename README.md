@@ -1,6 +1,6 @@
 # swift-whatwg-html
 
-[![CI](https://github.com/swift-standards/swift-whatwg-html/workflows/CI/badge.svg)](https://github.com/swift-standards/swift-whatwg-html/actions/workflows/ci.yml)
+[![CI](https://github.com/swift-whatwg/swift-whatwg-html/workflows/CI/badge.svg)](https://github.com/swift-whatwg/swift-whatwg-html/actions/workflows/ci.yml)
 ![Development Status](https://img.shields.io/badge/status-active--development-blue.svg)
 
 Type-safe Swift implementation of the WHATWG HTML Living Standard with modular architecture and RFC compliance.
@@ -30,7 +30,7 @@ Add to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/swift-standards/swift-whatwg-html", from: "0.1.0")
+    .package(url: "https://github.com/swift-whatwg/swift-whatwg-html", from: "0.2.2")
 ]
 ```
 
@@ -241,11 +241,11 @@ swift-whatwg-html/
 - [swift-html-standard](https://github.com/swift-standards/swift-html-standard): Compatibility wrapper providing the old swift-html-standard API structure
 
 ### Used By
-- [swift-html-css-pointfree](https://github.com/coenttb/swift-html-css-pointfree): Integration with pointfree-html for HTML generation
+- [swift-html-css-pointfree](https://github.com/swift-foundations/swift-html-css-pointfree): Integration with pointfree-html for HTML generation
 
 ### Dependencies
-- [swift-rfc-2045](https://github.com/swift-standards/swift-rfc-2045): RFC 2045 MIME types
-- [swift-iso-8601](https://github.com/swift-standards/swift-iso-8601): ISO 8601 date/time
+- [swift-rfc-2045](https://github.com/swift-ietf/swift-rfc-2045): RFC 2045 MIME types
+- [swift-iso-8601](https://github.com/swift-iso/swift-iso-8601): ISO 8601 date/time
 - [swift-standards](https://github.com/swift-standards/swift-standards): Shared standard utilities
 
 ## Contributing
