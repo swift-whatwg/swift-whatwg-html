@@ -5,8 +5,6 @@
 //  Created by Coen ten Thije Boonkkamp on 05/12/2025.
 //
 
-import Foundation
-
 extension WHATWG_HTML.Element {
     public protocol `Protocol`: Sendable, Hashable {
         /// The HTML tag name for this element.
