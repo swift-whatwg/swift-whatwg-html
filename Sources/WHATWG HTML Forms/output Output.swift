@@ -37,7 +37,9 @@ public struct Output: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "output" }
 
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .phrasing, .palpable]
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .palpable,
+    ]
     public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 
     /// A space-separated list of other elements' IDs, indicating that those elements contributed

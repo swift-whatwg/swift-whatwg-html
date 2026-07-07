@@ -38,7 +38,9 @@ public import WHATWG_HTML_Shared
 public struct Input: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "input" }
 
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .phrasing, .palpable]
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .palpable,
+    ]
     public static let content: WHATWG_HTML.Element.Content = .init(model: .nothing)
 
     /// Name of the form control. Submitted with the form as part of a name/value pair.

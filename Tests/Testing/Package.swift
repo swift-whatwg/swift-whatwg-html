@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "testing",
     platforms: [
-        .macOS(.v26),
+        .macOS(.v26)
     ],
     dependencies: [
         .package(path: "../.."),
@@ -18,7 +18,7 @@ let package = Package(
                 .product(name: "WHATWG HTML", package: "swift-whatwg-html"),
                 .product(name: "Testing", package: "swift-testing"),
             ]
-        ),
+        )
     ],
     swiftLanguageModes: [.v6]
 )

@@ -52,7 +52,9 @@ public import WHATWG_HTML_Shared
 public struct ExternalObject: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "object" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .phrasing, .embedded, .palpable]
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .embedded, .palpable,
+    ]
     public static let content: WHATWG_HTML.Element.Content = .init(model: .transparent)
 
     /// The URL of the resource to embed

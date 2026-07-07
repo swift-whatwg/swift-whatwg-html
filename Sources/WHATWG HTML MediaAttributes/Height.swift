@@ -37,7 +37,8 @@ public import WHATWG_HTML_Shared
 /// img.height(300)
 /// ```
 
-@dynamicMemberLookup public struct Height: WHATWG_HTML.StringAttribute, ExpressibleByIntegerLiteral {
+@dynamicMemberLookup public struct Height: WHATWG_HTML.StringAttribute, ExpressibleByIntegerLiteral
+{
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "height" }
 

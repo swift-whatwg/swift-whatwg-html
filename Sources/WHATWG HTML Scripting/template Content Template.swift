@@ -44,7 +44,9 @@ public struct ContentTemplate: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "template" }
 
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.metadata, .flow, .phrasing, .`script-supporting`]
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .metadata, .flow, .phrasing, .`script-supporting`,
+    ]
     public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 
     /// Creates a shadow root for the parent element in "open" or "closed" mode

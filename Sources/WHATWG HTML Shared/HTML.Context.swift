@@ -5,12 +5,12 @@
 ////  Context wrappers that convert geometry types to HTML attribute strings.
 ////
 //
-//import Geometry_Primitives
+// import Geometry_Primitives
 //
 //// MARK: - HTML Geometry Conversion
 //
 ///// Provides conversion utilities for HTML geometry types.
-//extension WHATWG_HTML.Geometry {
+// extension WHATWG_HTML.Geometry {
 //    public enum Context {
 //        /// Convert a width value to an HTML attribute string.
 //        ///
@@ -28,9 +28,9 @@
 //            String(height.rawValue)
 //        }
 //    }
-//}
+// }
 //
-//extension WHATWG_HTML.Rectangle {
+// extension WHATWG_HTML.Rectangle {
 //    public struct Context {
 //        let rectangle: WHATWG_HTML.Rectangle
 //
@@ -49,8 +49,8 @@
 //            String(Int(rectangle.height.rawValue))
 //        }
 //    }
-//}
-//extension Geometry.Orthotope where N == 2, Space == WHATWG_HTML.Space, Scalar == Double {
+// }
+// extension Geometry.Orthotope where N == 2, Space == WHATWG_HTML.Space, Scalar == Double {
 //    /// Access HTML-specific functionality for this rectangle.
 //    public var html: HTMLRectangleContext { HTMLRectangleContext(self) }
-//}
+// }

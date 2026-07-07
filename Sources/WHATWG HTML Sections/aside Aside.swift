@@ -45,7 +45,9 @@ public import WHATWG_HTML_Shared
 ///   attributes based on the configuration.
 public struct Aside: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "aside" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .sectioning, .palpable]
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .sectioning, .palpable,
+    ]
     public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 
     /// Creates a new Aside element with the specified content.

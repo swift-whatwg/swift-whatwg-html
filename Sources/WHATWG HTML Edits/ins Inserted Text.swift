@@ -40,7 +40,9 @@ public import WHATWG_HTML_Shared
 public struct InsertedText: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "ins" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .phrasing, .palpable]
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .palpable,
+    ]
     public static let content: WHATWG_HTML.Element.Content = .init(model: .transparent)
 
     /// The URI of a resource that explains the change, such as a link to meeting minutes or a ticket.

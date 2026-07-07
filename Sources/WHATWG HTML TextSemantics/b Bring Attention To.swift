@@ -47,7 +47,9 @@ public import WHATWG_HTML_Shared
 ///   additional semantic weight beyond bringing attention to the text.
 public struct B: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "b" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .phrasing, .palpable]
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .palpable,
+    ]
     public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 
     /// Creates a new B element with the specified content.

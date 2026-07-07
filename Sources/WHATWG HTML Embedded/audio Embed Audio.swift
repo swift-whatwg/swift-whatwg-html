@@ -62,7 +62,9 @@ public import WHATWG_HTML_Shared
 ///   attributes and content based on the configuration.
 public struct Audio: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "audio" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .phrasing, .embedded]
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .embedded,
+    ]
     public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 
     /// The URL of the audio file to embed.

@@ -65,7 +65,9 @@ public struct Details: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "details" }
 
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .interactive, .palpable]
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .interactive, .palpable,
+    ]
     public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 
     /// Boolean attribute that indicates whether the details are currently visible.

@@ -53,7 +53,9 @@ public import WHATWG_HTML_Shared
 public struct Label: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "label" }
 
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .phrasing, .interactive, .palpable]
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .interactive, .palpable,
+    ]
     public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 
     /// Associates the label with a form control using its ID.

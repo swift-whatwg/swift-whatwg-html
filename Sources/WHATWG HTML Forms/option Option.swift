@@ -48,7 +48,9 @@ public struct Option: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "option" }
 
     public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.`option element inner content`]))
+    public static let content: WHATWG_HTML.Element.Content = .init(
+        model: .categories([.`option element inner content`])
+    )
 
     /// If set, this option is not checkable. Often browsers grey out such control
     /// and it won't receive browsing events like mouse clicks or focus-related ones.

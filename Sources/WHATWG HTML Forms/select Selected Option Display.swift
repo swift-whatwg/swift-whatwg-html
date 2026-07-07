@@ -44,8 +44,12 @@ public struct Select: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "select" }
 
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .phrasing, .interactive, .palpable]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.`select element inner content`]))
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .interactive, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(
+        model: .categories([.`select element inner content`])
+    )
 
     /// Specifies that multiple options can be selected
     public var multiple: Multiple?

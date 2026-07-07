@@ -11,8 +11,8 @@
 // ===----------------------------------------------------------------------===//
 
 import Format_Primitives
-import Radix_Formatter_Primitives
 public import ISO_8601
+import Radix_Formatter_Primitives
 public import WHATWG_HTML_Shared
 
 /// Represents the HTML `datetime` attribute used with the `<time>`, `<ins>`, and `<del>` elements.
@@ -82,7 +82,8 @@ public import WHATWG_HTML_Shared
 
 extension DateTime {
     /// Create a datetime for a specific date
-    public static func date(year: Int, month: Int, day: Int) throws(ISO_8601.Date.Error) -> DateTime {
+    public static func date(year: Int, month: Int, day: Int) throws(ISO_8601.Date.Error) -> DateTime
+    {
         let dt = try ISO_8601.DateTime(year: year, month: month, day: day)
         return DateTime(dateTime: dt)
     }

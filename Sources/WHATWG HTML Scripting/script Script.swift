@@ -68,7 +68,9 @@ public struct Script: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "script" }
 
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.metadata, .flow, .phrasing, .`script-supporting`]
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .metadata, .flow, .phrasing, .`script-supporting`,
+    ]
     public static let content: WHATWG_HTML.Element.Content = .init(model: .text)
 
     /// The URL of an external script file

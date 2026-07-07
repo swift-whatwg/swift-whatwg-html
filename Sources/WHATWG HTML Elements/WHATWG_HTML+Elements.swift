@@ -5,19 +5,19 @@
 // - WHATWG_HTML_Sections.Article (original module-namespaced)
 // - WHATWG_HTML.Article (via typealias, enabling HTML.Article)
 
-public import WHATWG_HTML_Shared
 import WHATWG_HTML_Document
-import WHATWG_HTML_Metadata
-import WHATWG_HTML_Sections
-import WHATWG_HTML_Grouping
-import WHATWG_HTML_TextSemantics
 import WHATWG_HTML_Edits
 import WHATWG_HTML_Embedded
-import WHATWG_HTML_Tables
 import WHATWG_HTML_Forms
+import WHATWG_HTML_Grouping
 import WHATWG_HTML_Interactive
-import WHATWG_HTML_Scripting
+import WHATWG_HTML_Metadata
 import WHATWG_HTML_Obsolete
+import WHATWG_HTML_Scripting
+import WHATWG_HTML_Sections
+public import WHATWG_HTML_Shared
+import WHATWG_HTML_Tables
+import WHATWG_HTML_TextSemantics
 
 extension WHATWG_HTML {
     // MARK: - Document (4.1)

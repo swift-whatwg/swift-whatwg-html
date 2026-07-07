@@ -38,7 +38,9 @@ public struct Noscript: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "noscript" }
 
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.metadata, .flow, .phrasing]
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .metadata, .flow, .phrasing,
+    ]
     public static let content: WHATWG_HTML.Element.Content = .init(model: .transparent)
 
     /// Creates a new Noscript element with the specified content.

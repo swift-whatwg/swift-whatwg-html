@@ -39,7 +39,9 @@ public import WHATWG_HTML_Shared
 public struct Section: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "section" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .sectioning, .palpable]
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .sectioning, .palpable,
+    ]
     public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 
     /// Creates a new Section element with the specified attributes.

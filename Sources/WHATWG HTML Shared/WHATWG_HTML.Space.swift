@@ -22,10 +22,9 @@ public typealias GeometryTypeAlias = Geometry
 extension WHATWG_HTML {
     /// HTML coordinate space marker.
     public enum Space {}
-    
+
     public typealias Geometry<Scalar> = GeometryTypeAlias<Scalar, WHATWG_HTML.Space>
 }
-
 
 extension WHATWG_HTML {
     /// Width in HTML space (CSS pixels).
