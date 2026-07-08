@@ -46,12 +46,15 @@ public import WHATWG_HTML_Shared
 /// - Note: When rendered, this generates an HTML `<b>` element with bold styling but no
 ///   additional semantic weight beyond bringing attention to the text.
 public struct B: WHATWG_HTML.Element.`Protocol` {
+
+    /// Creates a new B element with the specified content.
+    public init() {}
+}
+
+extension B {
     @inlinable public static var tag: String { "b" }
     public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
         .flow, .phrasing, .palpable,
     ]
     public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
-
-    /// Creates a new B element with the specified content.
-    public init() {}
 }

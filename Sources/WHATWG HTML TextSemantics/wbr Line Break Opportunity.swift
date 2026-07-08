@@ -59,10 +59,6 @@ public import WHATWG_HTML_Shared
 /// The browser will only break at the `<wbr>` position if it would otherwise overflow its container.
 ///
 public struct LineBreakOpportunity: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "wbr" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .phrasing]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .nothing)
 
     /// Creates a new LineBreakOpportunity element.
     public init(
@@ -71,4 +67,11 @@ public struct LineBreakOpportunity: WHATWG_HTML.Element.`Protocol` {
     {
 
     }
+}
+
+extension LineBreakOpportunity {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "wbr" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .phrasing]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .nothing)
 }

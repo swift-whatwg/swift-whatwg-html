@@ -35,12 +35,6 @@ public import WHATWG_HTML_Shared
 /// - This element can be used to associate additional data with content that is displayed to users.
 ///
 public struct Data: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "data" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .phrasing, .palpable,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 
     /// The machine-readable translation of the content
     public var value: Value<String>
@@ -53,4 +47,13 @@ public struct Data: WHATWG_HTML.Element.`Protocol` {
         self.value = value
 
     }
+}
+
+extension Data {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "data" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 }

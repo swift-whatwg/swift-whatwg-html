@@ -56,13 +56,16 @@ public import WHATWG_HTML_Shared
 /// - Note: When rendered, this generates an HTML `<bdi>` element that isolates its content from
 ///   the bidirectional algorithm's influence.
 public struct BidirectionalIsolate: WHATWG_HTML.Element.`Protocol` {
+
+    /// Creates a new BidirectionalIsolate element with the specified content.
+    public init() {}
+}
+
+extension BidirectionalIsolate {
     /// The HTML tag name
     @inlinable public static var tag: String { "bdi" }
     public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
         .flow, .phrasing, .palpable,
     ]
     public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
-
-    /// Creates a new BidirectionalIsolate element with the specified content.
-    public init() {}
 }

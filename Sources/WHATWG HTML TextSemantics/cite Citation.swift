@@ -52,12 +52,6 @@ public import WHATWG_HTML_Shared
 /// - The `<cite>` element should only include the title of the work, not the author's name.
 ///
 public struct Cite: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "cite" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .phrasing, .palpable,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 
     /// Creates a new Cite element.
     public init(
@@ -66,4 +60,13 @@ public struct Cite: WHATWG_HTML.Element.`Protocol` {
     {
 
     }
+}
+
+extension Cite {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "cite" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 }

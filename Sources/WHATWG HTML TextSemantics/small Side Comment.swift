@@ -41,12 +41,6 @@ public import WHATWG_HTML_Shared
 /// just visual styling.
 ///
 public struct Small: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "small" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .phrasing, .palpable,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 
     /// Creates a new Small element with the specified content.
     public init(
@@ -55,4 +49,13 @@ public struct Small: WHATWG_HTML.Element.`Protocol` {
     {
 
     }
+}
+
+extension Small {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "small" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 }

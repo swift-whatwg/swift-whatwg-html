@@ -41,12 +41,6 @@ public import WHATWG_HTML_Shared
 /// - For non-semantic underlining, use CSS `text-decoration: underline` with a `<span>` element instead
 ///
 public struct UnarticulatedAnnotation: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "u" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .phrasing, .palpable,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 
     /// Creates a new UnarticulatedAnnotation element.
     public init(
@@ -55,4 +49,13 @@ public struct UnarticulatedAnnotation: WHATWG_HTML.Element.`Protocol` {
     {
 
     }
+}
+
+extension UnarticulatedAnnotation {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "u" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 }

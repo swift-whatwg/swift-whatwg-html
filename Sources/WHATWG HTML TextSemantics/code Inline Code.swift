@@ -37,12 +37,6 @@ public import WHATWG_HTML_Shared
 /// - The element can be styled with CSS to enhance readability (background color, padding, etc.).
 ///
 public struct Code: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "code" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .phrasing, .palpable,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 
     /// Creates a new Code element.
     public init(
@@ -51,4 +45,13 @@ public struct Code: WHATWG_HTML.Element.`Protocol` {
     {
 
     }
+}
+
+extension Code {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "code" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 }

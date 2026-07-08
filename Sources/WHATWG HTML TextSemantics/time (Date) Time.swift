@@ -44,12 +44,6 @@ public import WHATWG_HTML_Shared
 /// - If the element doesn't have a `datetime` attribute, the content must be in a valid datetime format
 ///
 public struct Time: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "time" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .phrasing, .palpable,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 
     /// The datetime attribute that provides a machine-readable format of the date and/or time
     public var datetime: DateTime?
@@ -62,4 +56,13 @@ public struct Time: WHATWG_HTML.Element.`Protocol` {
         self.datetime = datetime
 
     }
+}
+
+extension Time {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "time" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 }

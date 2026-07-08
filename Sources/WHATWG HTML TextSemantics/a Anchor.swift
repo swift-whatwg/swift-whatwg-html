@@ -70,11 +70,6 @@ public import WHATWG_HTML_Shared
 /// - Note: When rendered, this generates an HTML `<a>` element with the appropriate
 ///   attributes based on the link configuration.
 public struct Anchor: WHATWG_HTML.Element.`Protocol` {
-    @inlinable public static var tag: String { "a" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .phrasing, .palpable,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .transparent)
 
     /// Indicates that Attribution-Reporting-Eligible header should be sent.
     ///
@@ -191,4 +186,12 @@ public struct Anchor: WHATWG_HTML.Element.`Protocol` {
         self.rel = rel
         self.target = target
     }
+}
+
+extension Anchor {
+    @inlinable public static var tag: String { "a" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .transparent)
 }

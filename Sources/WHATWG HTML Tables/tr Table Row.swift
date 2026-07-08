@@ -48,10 +48,6 @@ public import WHATWG_HTML_Shared
 /// - Avoid deprecated attributes like `align`, `bgcolor`, `char`, `charoff`, and `valign`; use CSS instead
 ///
 public struct TableRow: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "tr" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 
     /// Creates a new TableRow element.
     public init(
@@ -60,4 +56,11 @@ public struct TableRow: WHATWG_HTML.Element.`Protocol` {
     {
 
     }
+}
+
+extension TableRow {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "tr" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 }

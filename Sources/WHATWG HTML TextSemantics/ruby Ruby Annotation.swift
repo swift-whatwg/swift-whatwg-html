@@ -40,12 +40,6 @@ public import WHATWG_HTML_Shared
 /// - For complex ruby annotations, consider using `<rb>` (Ruby Base) and `<rtc>` (Ruby Text Container) elements
 ///
 public struct Ruby: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "ruby" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .phrasing, .palpable,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 
     /// Creates a new Ruby element with the specified attributes.
     public init(
@@ -54,4 +48,13 @@ public struct Ruby: WHATWG_HTML.Element.`Protocol` {
     {
 
     }
+}
+
+extension Ruby {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "ruby" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 }

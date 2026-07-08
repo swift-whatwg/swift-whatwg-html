@@ -69,12 +69,6 @@ public import WHATWG_HTML_Shared
 /// across browsers and can be overridden with CSS.
 ///
 public struct Variable: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "var" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .phrasing, .palpable,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 
     /// Creates a new Variable element.
     public init(
@@ -83,4 +77,13 @@ public struct Variable: WHATWG_HTML.Element.`Protocol` {
     {
 
     }
+}
+
+extension Variable {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "var" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 }

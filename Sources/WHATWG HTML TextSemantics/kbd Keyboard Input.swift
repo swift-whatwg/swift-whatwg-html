@@ -45,12 +45,6 @@ public import WHATWG_HTML_Shared
 /// - By default, browsers typically render `<kbd>` content in a monospace font.
 ///
 public struct KeyboardInput: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "kbd" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .phrasing, .palpable,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 
     /// Creates a new keyboard input element.
     public init(
@@ -59,4 +53,13 @@ public struct KeyboardInput: WHATWG_HTML.Element.`Protocol` {
     {
 
     }
+}
+
+extension KeyboardInput {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "kbd" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 }

@@ -35,12 +35,6 @@ public import WHATWG_HTML_Shared
 /// - Consider using the `<cite>` element in conjunction with `<q>` to attribute the source
 ///
 public struct InlineQuotation: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "q" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .phrasing, .palpable,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 
     /// The URL that designates a source document or message for the information quoted
     /// This attribute is intended to point to information explaining the context or the reference for the quote
@@ -54,4 +48,13 @@ public struct InlineQuotation: WHATWG_HTML.Element.`Protocol` {
         self.cite = cite
 
     }
+}
+
+extension InlineQuotation {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "q" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 }

@@ -48,12 +48,6 @@ public import WHATWG_HTML_Shared
 /// - Note: When rendered, this generates an HTML `<bdo>` element that overrides the default
 ///   text direction for its content.
 public struct BidirectionalTextOverride: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "bdo" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .phrasing, .palpable,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 
     /// The required direction attribute for the bidirectional text override element
     public let dir: WHATWG_HTML_GlobalAttributes.Dir
@@ -63,4 +57,13 @@ public struct BidirectionalTextOverride: WHATWG_HTML.Element.`Protocol` {
     /// - Parameters:
     ///   - dir: The text direction to apply to the content (required)
     public init(dir: WHATWG_HTML_GlobalAttributes.Dir) { self.dir = dir }
+}
+
+extension BidirectionalTextOverride {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "bdo" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 }

@@ -38,12 +38,6 @@ public import WHATWG_HTML_Shared
 /// to make it announced by screen readers when necessary.
 ///
 public struct Strikethrough: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "s" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .phrasing, .palpable,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 
     /// Creates a new Strikethrough element.
     public init(
@@ -52,4 +46,13 @@ public struct Strikethrough: WHATWG_HTML.Element.`Protocol` {
     {
 
     }
+}
+
+extension Strikethrough {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "s" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 }

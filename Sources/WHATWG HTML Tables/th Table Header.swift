@@ -50,10 +50,6 @@ public import WHATWG_HTML_TableAttributes
 /// - Avoid deprecated presentational attributes; use CSS for styling instead
 ///
 public struct TableHeader: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "th" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 
     /// A short, abbreviated description of the header cell's content
     public var abbr: Abbr?
@@ -92,4 +88,11 @@ public struct TableHeader: WHATWG_HTML.Element.`Protocol` {
         self.scope = scope
 
     }
+}
+
+extension TableHeader {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "th" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 }
