@@ -33,8 +33,6 @@ public import WHATWG_HTML_Shared
 /// ```
 @dynamicMemberLookup
 public struct MarginHeight: WHATWG_HTML.StringAttribute, ExpressibleByIntegerLiteral {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "marginheight" }
 
     /// The attribute value
     public let rawValue: String
@@ -44,4 +42,9 @@ public struct MarginHeight: WHATWG_HTML.StringAttribute, ExpressibleByIntegerLit
 
     /// Initialize with an integer literal
     public init(integerLiteral value: Int) { self.rawValue = String(value) }
+}
+
+extension MarginHeight {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "marginheight" }
 }

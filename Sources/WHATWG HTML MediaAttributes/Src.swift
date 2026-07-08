@@ -36,12 +36,14 @@ public import WHATWG_HTML_Shared
 public struct Src: WHATWG_HTML.StringAttribute, ExpressibleByStringInterpolation,
     CustomStringConvertible
 {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "src" }
-
     /// The source URL
     public var rawValue: String
 
     /// Initialize with a string value
     public init(value: String) { self.rawValue = value }
+}
+
+extension Src {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "src" }
 }

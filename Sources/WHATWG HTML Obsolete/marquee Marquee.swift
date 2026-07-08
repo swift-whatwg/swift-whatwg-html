@@ -12,9 +12,6 @@ public import WHATWG_HTML_Shared
 /// **Deprecated**: Use CSS animations instead.
 @available(*, deprecated, message: "Use CSS animations instead.")
 public struct Marquee: WHATWG_HTML.Element.`Protocol` {
-    @inlinable public static var tag: String { "marquee" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 
     public var behavior: Behavior?
     public var bgcolor: String?
@@ -53,4 +50,11 @@ public struct Marquee: WHATWG_HTML.Element.`Protocol` {
         self.vspace = vspace
         self.width = width
     }
+}
+
+@available(*, deprecated, message: "Use CSS animations instead.")
+extension Marquee {
+    @inlinable public static var tag: String { "marquee" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 }

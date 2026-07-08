@@ -16,9 +16,11 @@ public struct CharSet: Sendable, Hashable, ExpressibleByStringLiteral, CustomStr
 
     public var value: String
 
-    public var description: String { value }
-
     public init(stringLiteral value: String) { self.value = value }
+}
+
+extension CharSet {
+    public var description: String { value }
 
     @inlinable public static var utf8: Self { "utf-8" }
 

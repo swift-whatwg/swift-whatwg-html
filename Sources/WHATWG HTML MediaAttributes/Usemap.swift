@@ -46,8 +46,6 @@ public import WHATWG_HTML_Shared
 /// </map>
 /// ```
 @dynamicMemberLookup public struct Usemap: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "usemap" }
 
     /// The map name value (with or without '#')
     public var rawValue: String
@@ -61,6 +59,11 @@ public import WHATWG_HTML_Shared
     /// Initialize with a map name
     /// - Parameter value: The map name (with or without '#')
     public init(_ value: String) { self.init(value: value) }
+}
+
+extension Usemap {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "usemap" }
 }
 
 extension Usemap: ExpressibleByStringLiteral {

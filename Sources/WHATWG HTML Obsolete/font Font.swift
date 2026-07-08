@@ -11,9 +11,6 @@ public import WHATWG_HTML_Shared
 /// **Deprecated**: Use CSS instead.
 @available(*, deprecated, message: "Use CSS for font styling instead.")
 public struct Font: WHATWG_HTML.Element.`Protocol` {
-    @inlinable public static var tag: String { "font" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 
     /// The color of the text
     public var color: Color?
@@ -29,4 +26,11 @@ public struct Font: WHATWG_HTML.Element.`Protocol` {
         self.face = face
         self.size = size
     }
+}
+
+@available(*, deprecated, message: "Use CSS for font styling instead.")
+extension Font {
+    @inlinable public static var tag: String { "font" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 }

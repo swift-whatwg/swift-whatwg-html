@@ -9,11 +9,14 @@ public import WHATWG_HTML_Shared
 ///
 /// Used primarily with `<meta>` elements to provide metadata values.
 @dynamicMemberLookup public struct Content: WHATWG_HTML.StringAttribute {
-    @inlinable public static var attribute: String { "content" }
 
     public let rawValue: String
 
     public init(value: String) { self.rawValue = value }
+}
+
+extension Content {
+    @inlinable public static var attribute: String { "content" }
 }
 
 extension Content: CustomStringConvertible { public var description: String { rawValue } }

@@ -32,14 +32,17 @@ public import WHATWG_HTML_Shared
 /// <th scope="row">Widget X</th>
 /// ```
 @dynamicMemberLookup public struct Scope: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "scope" }
 
     /// The scope value
     public var rawValue: String
 
     /// Initialize with a scope value string
     public init(value: String) { self.rawValue = value }
+}
+
+extension Scope {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "scope" }
 }
 
 extension Scope {

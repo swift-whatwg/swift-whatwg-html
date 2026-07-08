@@ -56,9 +56,6 @@ public import WHATWG_HTML_Shared
 /// - Note: When rendered, this generates an HTML `<meta>` element with the appropriate
 ///   attributes based on the metadata type.
 public struct Meta: WHATWG_HTML.Element.`Protocol` {
-    @inlinable public static var tag: String { "meta" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.metadata]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .nothing)
 
     /// Declares the document's character encoding.
     ///
@@ -151,6 +148,12 @@ public struct Meta: WHATWG_HTML.Element.`Protocol` {
         self.httpEquiv = httpEquiv
         self.content = content
     }
+}
+
+extension Meta {
+    @inlinable public static var tag: String { "meta" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.metadata]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .nothing)
 }
 
 // MARK: - Convenient Factory Methods

@@ -54,12 +54,6 @@ public struct Span: WHATWG_HTML.StringAttribute, ExpressibleByIntegerLiteral {
     /// The underlying width value representing column count
     public var width: Int
 
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "span" }
-
-    /// The raw string value
-    @inlinable public var rawValue: String { width.description }
-
     /// Initialize with a string value
     @inlinable public init(value: String) {
         let intValue = Int(value) ?? 1
@@ -78,4 +72,12 @@ public struct Span: WHATWG_HTML.StringAttribute, ExpressibleByIntegerLiteral {
         precondition(value > 0, "Span value must be a positive integer")
         self.width = value
     }
+}
+
+extension Span {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "span" }
+
+    /// The raw string value
+    @inlinable public var rawValue: String { width.description }
 }

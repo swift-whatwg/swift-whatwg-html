@@ -57,8 +57,6 @@ public import WHATWG_HTML_Shared
 /// </script>
 /// ```
 @dynamicMemberLookup public struct ScriptType: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "type" }
 
     /// The script type value
     public var rawValue: String
@@ -68,6 +66,11 @@ public import WHATWG_HTML_Shared
 
     /// Initialize with a MIME content type
     public init(contentType: RFC_2045.ContentType) { self.rawValue = contentType.headerValue }
+}
+
+extension ScriptType {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "type" }
 }
 
 // MARK: - Special Keywords

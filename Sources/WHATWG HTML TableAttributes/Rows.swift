@@ -27,14 +27,17 @@ public import WHATWG_HTML_Shared
 /// <textarea rows="5" cols="30">Default text</textarea>
 /// ```
 @dynamicMemberLookup public struct Rows: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "rows" }
 
     /// The attribute value
     public var rawValue: String
 
     /// Initialize with a string value
     public init(value: String) { self.rawValue = value }
+}
+
+extension Rows {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "rows" }
 }
 
 extension Rows: ExpressibleByIntegerLiteral {

@@ -36,12 +36,14 @@ public import WHATWG_HTML_Shared
 public struct SrcLang: WHATWG_HTML.StringAttribute, ExpressibleByStringInterpolation,
     CustomStringConvertible
 {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "srclang" }
-
     /// The language code
     public var rawValue: String
 
     /// Initialize with a string value
     public init(value: String) { self.rawValue = value }
+}
+
+extension SrcLang {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "srclang" }
 }

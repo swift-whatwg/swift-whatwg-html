@@ -56,10 +56,6 @@ public import WHATWG_HTML_Shared
 /// - Remember that even if you don't explicitly use `<tbody>`, browsers will implicitly create one
 ///
 public struct TableBody: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "tbody" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 
     /// Creates a new TableBody element.
     public init(
@@ -68,4 +64,11 @@ public struct TableBody: WHATWG_HTML.Element.`Protocol` {
     {
 
     }
+}
+
+extension TableBody {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "tbody" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 }

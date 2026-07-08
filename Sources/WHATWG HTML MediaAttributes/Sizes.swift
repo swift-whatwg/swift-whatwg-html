@@ -30,12 +30,15 @@ public import WHATWG_HTML_Shared
 /// <link rel="icon" href="favicon.png" sizes="16x16 32x32" type="image/png">
 /// ```
 @dynamicMemberLookup public struct Sizes: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "sizes" }
 
     /// The attribute value
     public var rawValue: String
 
     /// Initialize with a string value
     public init(value: String) { self.rawValue = value }
+}
+
+extension Sizes {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "sizes" }
 }

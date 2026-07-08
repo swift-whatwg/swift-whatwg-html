@@ -64,10 +64,6 @@ public import WHATWG_HTML_Shared
 /// - Consider accessibility by using `<th>` elements with appropriate `scope` attributes for footer headers
 ///
 public struct TableFoot: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "tfoot" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 
     /// Creates a new TableFoot element.
     public init(
@@ -76,4 +72,11 @@ public struct TableFoot: WHATWG_HTML.Element.`Protocol` {
     {
 
     }
+}
+
+extension TableFoot {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "tfoot" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 }

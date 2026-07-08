@@ -50,11 +50,14 @@ public import WHATWG_HTML_Shared
 ///   `background-color` to the `<caption>` element as well if you want the same color to be behind both
 
 public struct Caption: WHATWG_HTML.Element.`Protocol` {
+
+    /// Creates a new Caption element with the specified content.
+    public init() {}
+}
+
+extension Caption {
     /// The HTML tag name
     @inlinable public static var tag: String { "caption" }
     public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
     public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
-
-    /// Creates a new Caption element with the specified content.
-    public init() {}
 }

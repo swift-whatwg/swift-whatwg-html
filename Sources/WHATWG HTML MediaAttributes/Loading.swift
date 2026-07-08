@@ -52,13 +52,16 @@ public import WHATWG_HTML_Shared
 ///
 /// - SeeAlso: [MDN Web Docs: loading attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading)
 @dynamicMemberLookup public struct Loading: WHATWG_HTML.StringAttribute {
-    @inlinable public static var attribute: String { "loading" }
 
     /// The attribute value
     public let rawValue: String
 
     /// Initialize with a value for the marginheight attribute
     public init(value: String) { self.rawValue = value }
+}
+
+extension Loading {
+    @inlinable public static var attribute: String { "loading" }
 }
 
 extension Loading {

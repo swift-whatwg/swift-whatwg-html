@@ -65,13 +65,6 @@ public import WHATWG_HTML_Shared
 /// - Specify `type="module"` for ES modules
 ///
 public struct Script: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "script" }
-
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .metadata, .flow, .phrasing, .`script-supporting`,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .text)
 
     /// The URL of an external script file
     public var src: Src?
@@ -152,4 +145,14 @@ public struct Script: WHATWG_HTML.Element.`Protocol` {
         self.attributionsrc = attributionsrc
 
     }
+}
+
+extension Script {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "script" }
+
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .metadata, .flow, .phrasing, .`script-supporting`,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .text)
 }

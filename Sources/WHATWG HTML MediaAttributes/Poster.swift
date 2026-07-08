@@ -41,8 +41,6 @@ public import WHATWG_HTML_Shared
 /// - For accessibility, ensure the poster image conveys appropriate context about the video content
 ///
 @dynamicMemberLookup public struct Poster: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "poster" }
 
     /// The URL of the poster image
     public var rawValue: String
@@ -51,4 +49,9 @@ public import WHATWG_HTML_Shared
     ///
     /// - Parameter value: The URL pointing to the poster image
     public init(value: String) { self.rawValue = value }
+}
+
+extension Poster {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "poster" }
 }

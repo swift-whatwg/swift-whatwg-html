@@ -13,13 +13,16 @@
 public import WHATWG_HTML_Shared
 
 @dynamicMemberLookup public struct Cols: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "cols" }
 
     /// The attribute value
     public let rawValue: String
 
     public init(value: String) { self.rawValue = value }
+}
+
+extension Cols {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "cols" }
 }
 
 extension Cols: ExpressibleByIntegerLiteral {

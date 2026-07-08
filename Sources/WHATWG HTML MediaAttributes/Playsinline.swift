@@ -14,10 +14,13 @@ public import WHATWG_HTML_Shared
 
 /// Represents the playsinline attribute for the video element.
 @dynamicMemberLookup public struct Playsinline: WHATWG_HTML.BooleanAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "playsinline" }
 
     public var rawValue: Bool
 
     public init(value: Bool = true) { self.rawValue = value }
+}
+
+extension Playsinline {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "playsinline" }
 }

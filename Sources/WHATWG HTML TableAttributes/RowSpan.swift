@@ -41,12 +41,6 @@ public struct RowSpan: WHATWG_HTML.StringAttribute {
     /// The underlying height value representing row span count
     public var height: Int
 
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "rowspan" }
-
-    /// The raw string value
-    @inlinable public var rawValue: String { String(height) }
-
     /// Initialize with a string value
     @inlinable public init(value: String) {
         self.height = .init(value) ?? 1
@@ -56,6 +50,14 @@ public struct RowSpan: WHATWG_HTML.StringAttribute {
     @inlinable public init(_ value: Int) {
         self.height = value
     }
+}
+
+extension RowSpan {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "rowspan" }
+
+    /// The raw string value
+    @inlinable public var rawValue: String { String(height) }
 }
 
 extension RowSpan: ExpressibleByIntegerLiteral {

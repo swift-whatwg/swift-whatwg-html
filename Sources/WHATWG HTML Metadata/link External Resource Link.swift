@@ -49,9 +49,6 @@ public import WHATWG_HTML_Shared
 /// - Note: When rendered, this generates an HTML `<link>` element with the specified attributes.
 ///   It is a void element and does not have a closing tag.
 public struct Link: WHATWG_HTML.Element.`Protocol` {
-    @inlinable public static var tag: String { "link" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.metadata]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .nothing)
 
     /// The type of resource being loaded (for preload/modulepreload).
     public var `as`: As?
@@ -174,4 +171,10 @@ public struct Link: WHATWG_HTML.Element.`Protocol` {
         self.title = title
         self.type = type
     }
+}
+
+extension Link {
+    @inlinable public static var tag: String { "link" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.metadata]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .nothing)
 }

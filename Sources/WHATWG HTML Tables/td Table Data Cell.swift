@@ -44,10 +44,6 @@ public import WHATWG_HTML_TableAttributes
 /// - Ensure tables have a clear structure with `<thead>`, `<tbody>`, and `<tfoot>` when appropriate
 ///
 public struct TableDataCell: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "td" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 
     /// Number of columns this cell spans
     public var colspan: ColSpan?
@@ -69,4 +65,11 @@ public struct TableDataCell: WHATWG_HTML.Element.`Protocol` {
         self.headers = headers
         self.rowspan = rowspan
     }
+}
+
+extension TableDataCell {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "td" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 }

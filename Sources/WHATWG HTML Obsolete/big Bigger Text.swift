@@ -32,11 +32,15 @@ public import WHATWG_HTML_Shared
 ///
 @available(*, deprecated, message: "Use CSS for styling instead")
 public struct Big: WHATWG_HTML.Element.`Protocol` {
+
+    /// Creates a new Big element.
+    public init() {}
+}
+
+@available(*, deprecated, message: "Use CSS for styling instead")
+extension Big {
     /// The HTML tag name
     @inlinable public static var tag: String { "big" }
     public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
     public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
-
-    /// Creates a new Big element.
-    public init() {}
 }

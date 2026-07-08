@@ -34,11 +34,6 @@ public import WHATWG_HTML_Shared
 /// - Remember that unnamed slots (without a name attribute) will capture all unassigned content
 ///
 public struct WebComponentSlot: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "slot" }
-
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .phrasing]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .transparent)
 
     /// The slot's name.
     /// When the slot's containing component gets rendered, the slot is rendered with the
@@ -53,4 +48,12 @@ public struct WebComponentSlot: WHATWG_HTML.Element.`Protocol` {
         self.name = name
 
     }
+}
+
+extension WebComponentSlot {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "slot" }
+
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .phrasing]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .transparent)
 }

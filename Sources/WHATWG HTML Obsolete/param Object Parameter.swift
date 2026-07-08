@@ -15,9 +15,6 @@ public import WHATWG_HTML_Shared
     deprecated,
     message: "Plugin-based content is deprecated. Use modern web standards instead."
 ) public struct Param: WHATWG_HTML.Element.`Protocol` {
-    @inlinable public static var tag: String { "param" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 
     /// Name of the parameter
     public var name: Name?
@@ -29,4 +26,15 @@ public import WHATWG_HTML_Shared
         self.name = name
         self.value = value
     }
+}
+
+@available(
+    *,
+    deprecated,
+    message: "Plugin-based content is deprecated. Use modern web standards instead."
+)
+extension Param {
+    @inlinable public static var tag: String { "param" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 }

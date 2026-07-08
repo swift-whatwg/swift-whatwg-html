@@ -48,8 +48,6 @@ public import WHATWG_HTML_Shared
 /// HTML.source.type("video/mp4")
 /// ```
 @dynamicMemberLookup public struct SourceType: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "type" }
 
     /// The MIME type value as a string
     public var rawValue: String
@@ -59,6 +57,11 @@ public import WHATWG_HTML_Shared
 
     /// Initialize with an RFC 2045 Content-Type
     public init(contentType: RFC_2045.ContentType) { self.rawValue = contentType.headerValue }
+}
+
+extension SourceType {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "type" }
 }
 
 // MARK: - Common Media MIME Types

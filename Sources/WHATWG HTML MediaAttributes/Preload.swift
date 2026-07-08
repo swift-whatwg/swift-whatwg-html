@@ -14,14 +14,17 @@ public import WHATWG_HTML_Shared
 
 /// Represents the preload attribute values for the video element.
 @dynamicMemberLookup public struct Preload: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "preload" }
 
     /// The attribute value
     public var rawValue: String
 
     /// Initialize with a value
     public init(value: String) { self.rawValue = value }
+}
+
+extension Preload {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "preload" }
 }
 
 extension Preload {

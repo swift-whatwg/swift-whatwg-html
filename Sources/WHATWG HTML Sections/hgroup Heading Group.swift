@@ -39,10 +39,6 @@ public import WHATWG_HTML_Shared
 /// - The `<hgroup>` has an implicit ARIA role of "group"
 ///
 public struct HeadingGroup: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "hgroup" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .palpable]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 
     /// Creates a new HeadingGroup element.
     public init(
@@ -51,4 +47,11 @@ public struct HeadingGroup: WHATWG_HTML.Element.`Protocol` {
     {
 
     }
+}
+
+extension HeadingGroup {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "hgroup" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .palpable]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 }

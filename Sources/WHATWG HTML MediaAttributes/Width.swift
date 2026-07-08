@@ -37,8 +37,6 @@ public import WHATWG_HTML_Shared
 /// img.width(400)
 /// ```
 @dynamicMemberLookup public struct Width: WHATWG_HTML.StringAttribute, ExpressibleByIntegerLiteral {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "width" }
 
     /// The attribute value
     public let rawValue: String
@@ -48,4 +46,9 @@ public import WHATWG_HTML_Shared
 
     /// Initialize with an integer literal
     public init(integerLiteral value: Int) { self.rawValue = String(value) }
+}
+
+extension Width {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "width" }
 }

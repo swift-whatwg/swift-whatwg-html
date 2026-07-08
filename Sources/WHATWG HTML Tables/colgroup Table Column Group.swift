@@ -63,10 +63,6 @@ public import WHATWG_HTML_TableAttributes
 ///
 /// - Note: When rendered, this generates an HTML `<colgroup>` element containing column definitions.
 public struct TableColumnGroup: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "colgroup" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 
     /// The number of consecutive columns this column group spans
     /// Note: Cannot be used if the column group contains col elements
@@ -84,4 +80,11 @@ public struct TableColumnGroup: WHATWG_HTML.Element.`Protocol` {
         self.span = span
 
     }
+}
+
+extension TableColumnGroup {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "colgroup" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 }
