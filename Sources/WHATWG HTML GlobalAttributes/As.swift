@@ -20,11 +20,13 @@ public import WHATWG_HTML_Shared
 /// It specifies the type of content being loaded, which is necessary for request matching,
 /// application of correct content security policy, and setting of correct Accept request header.
 @dynamicMemberLookup public struct As: WHATWG_HTML.StringAttribute {
-    @inlinable public static var attribute: String { "as" }
-
     public let rawValue: String
 
     public init(value: String) { self.rawValue = value }
+}
+
+extension As {
+    @inlinable public static var attribute: String { "as" }
 }
 
 extension As {

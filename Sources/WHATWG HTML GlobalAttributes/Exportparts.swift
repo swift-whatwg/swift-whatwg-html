@@ -64,9 +64,6 @@ public import WHATWG_HTML_Shared
 /// }
 /// ```
 public struct Exportparts: WHATWG_HTML.Attribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "exportparts" }
-
     /// The part mappings to export
     private let partMappings: [PartMapping]
 
@@ -82,6 +79,11 @@ public struct Exportparts: WHATWG_HTML.Attribute {
 
     /// Initialize with explicit part name mappings
     public init(_ mappings: [PartMapping]) { self.partMappings = mappings }
+}
+
+extension Exportparts {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "exportparts" }
 
     /// A mapping from original part name to exposed part name
     public struct PartMapping: Sendable, Hashable {
@@ -96,14 +98,16 @@ public struct Exportparts: WHATWG_HTML.Attribute {
             self.originalName = originalName
             self.exposedName = exposedName
         }
+    }
+}
 
-        /// The string representation of this mapping
-        public var description: String {
-            if originalName == exposedName {
-                return originalName
-            } else {
-                return "\(originalName):\(exposedName)"
-            }
+extension Exportparts.PartMapping {
+    /// The string representation of this mapping
+    public var description: String {
+        if originalName == exposedName {
+            return originalName
+        } else {
+            return "\(originalName):\(exposedName)"
         }
     }
 }

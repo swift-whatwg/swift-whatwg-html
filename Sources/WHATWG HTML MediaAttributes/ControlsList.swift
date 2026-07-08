@@ -14,13 +14,15 @@ public import WHATWG_HTML_Shared
 
 /// Represents the controlslist attribute for the video element.
 @dynamicMemberLookup public struct ControlsList: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "controlslist" }
-
     /// The attribute value
     public let rawValue: String
 
     public init(value: String) { self.rawValue = value }
+}
+
+extension ControlsList {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "controlslist" }
 }
 
 extension ControlsList {

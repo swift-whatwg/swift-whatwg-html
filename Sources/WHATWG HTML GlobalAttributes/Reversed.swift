@@ -27,12 +27,14 @@ public import WHATWG_HTML_Shared
 /// </ol>
 /// ```
 @dynamicMemberLookup public struct Reversed: WHATWG_HTML.BooleanAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "reversed" }
-
     /// The attribute value
     public var rawValue: Bool
 
     /// Initialize with a boolean value
     public init(value: Bool = true) { self.rawValue = value }
+}
+
+extension Reversed {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "reversed" }
 }

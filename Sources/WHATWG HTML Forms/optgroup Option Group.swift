@@ -42,14 +42,6 @@ public import WHATWG_HTML_Shared
 /// - Use optgroups to organize related options in a select element
 ///
 public struct OptionGroup: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "optgroup" }
-
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
-    public static let content: WHATWG_HTML.Element.Content = .init(
-        model: .categories([.`optgroup element inner content`])
-    )
-
     /// If set, none of the items in this option group is selectable.
     /// Often browsers grey out such control and it won't receive any browsing events,
     /// like mouse clicks or focus-related ones.
@@ -69,4 +61,14 @@ public struct OptionGroup: WHATWG_HTML.Element.`Protocol` {
         self.label = label
 
     }
+}
+
+extension OptionGroup {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "optgroup" }
+
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(
+        model: .categories([.`optgroup element inner content`])
+    )
 }

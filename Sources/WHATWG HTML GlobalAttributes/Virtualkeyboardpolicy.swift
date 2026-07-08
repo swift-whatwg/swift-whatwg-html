@@ -76,12 +76,14 @@ public import WHATWG_HTML_Shared
 /// </button>
 /// ```
 @dynamicMemberLookup public struct Virtualkeyboardpolicy: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "virtualkeyboardpolicy" }
-
     public let rawValue: String
 
     public init(value: String) { self.rawValue = value }
+}
+
+extension Virtualkeyboardpolicy {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "virtualkeyboardpolicy" }
 }
 
 extension Virtualkeyboardpolicy {

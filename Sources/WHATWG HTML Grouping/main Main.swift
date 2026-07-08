@@ -49,10 +49,12 @@ public import WHATWG_HTML_Shared
 ///   content into a specialized reader view.
 ///
 public struct Main: WHATWG_HTML.Element.`Protocol` {
+    public init() {}
+}
+
+extension Main {
     /// The HTML tag name
     @inlinable public static var tag: String { "main" }
     public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .palpable]
     public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
-
-    public init() {}
 }

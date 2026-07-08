@@ -37,9 +37,6 @@ public import WHATWG_HTML_Shared
 /// </ol>
 /// ```
 @dynamicMemberLookup public struct Start: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "start" }
-
     /// The attribute value
     public var rawValue: String
 
@@ -48,6 +45,11 @@ public import WHATWG_HTML_Shared
 
     /// Initialize with an integer value
     public init(_ value: Int) { self.init(value: String(value)) }
+}
+
+extension Start {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "start" }
 }
 
 extension Start: ExpressibleByIntegerLiteral {

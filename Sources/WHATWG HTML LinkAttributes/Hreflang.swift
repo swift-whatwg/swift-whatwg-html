@@ -13,10 +13,11 @@
 public import WHATWG_HTML_Shared
 
 @dynamicMemberLookup public struct Hreflang: WHATWG_HTML.StringAttribute {
-
-    @inlinable public static var attribute: String { "hreflang" }
-
     public let rawValue: String
 
     public init(value: String) { self.rawValue = value }
+}
+
+extension Hreflang {
+    @inlinable public static var attribute: String { "hreflang" }
 }

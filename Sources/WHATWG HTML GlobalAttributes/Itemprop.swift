@@ -77,13 +77,15 @@ public import WHATWG_HTML_Shared
 /// </div>
 /// ```
 @dynamicMemberLookup public struct Itemprop: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "itemprop" }
-
     /// The property name or space-separated list of property names
     public let rawValue: String
 
     public init(value: String) { self.rawValue = value }
+}
+
+extension Itemprop {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "itemprop" }
 }
 
 extension Itemprop: ExpressibleByArrayLiteral {

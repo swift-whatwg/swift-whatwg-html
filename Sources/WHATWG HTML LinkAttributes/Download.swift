@@ -66,18 +66,6 @@ public import WHATWG_HTML_Shared
 /// - Note: For security reasons, this attribute only works with same-origin URLs
 ///   or URLs using the blob: or data: schemes.
 public struct Download: WHATWG_HTML.Attribute, CustomStringConvertible {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "download" }
-
-    /// The type of attribute value
-    public enum Value: Sendable, Hashable {
-        /// Boolean form (presence/absence of the attribute)
-        case boolean(Bool)
-
-        /// Value form (with a suggested filename)
-        case withFilename(String)
-    }
-
     /// The internal value representation
     public var value: Value
 
@@ -94,6 +82,20 @@ public struct Download: WHATWG_HTML.Attribute, CustomStringConvertible {
     /// - Parameter filename: The suggested filename for the downloaded file.
     ///   Characters like `/` and `\` will be converted to underscores by browsers.
     public init(_ filename: String) { self.value = .withFilename(filename) }
+}
+
+extension Download {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "download" }
+
+    /// The type of attribute value
+    public enum Value: Sendable, Hashable {
+        /// Boolean form (presence/absence of the attribute)
+        case boolean(Bool)
+
+        /// Value form (with a suggested filename)
+        case withFilename(String)
+    }
 
     /// String representation of the download attribute
     public var description: String {

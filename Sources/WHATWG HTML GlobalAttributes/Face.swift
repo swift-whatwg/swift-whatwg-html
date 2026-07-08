@@ -29,12 +29,14 @@ public import WHATWG_HTML_Shared
 /// <font face="Arial, Helvetica, sans-serif">Text with specified fonts</font>
 /// ```
 @dynamicMemberLookup public struct Face: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "face" }
-
     /// The attribute value
     public let rawValue: String
 
     /// Initialize with a value for the face attribute
     public init(value: String) { self.rawValue = value }
+}
+
+extension Face {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "face" }
 }

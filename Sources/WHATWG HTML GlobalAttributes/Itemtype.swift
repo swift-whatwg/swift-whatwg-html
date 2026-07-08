@@ -74,13 +74,15 @@ public import WHATWG_HTML_Shared
 /// </div>
 /// ```
 @dynamicMemberLookup public struct Itemtype: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "itemtype" }
-
     /// The URL or space-separated list of URLs defining the vocabulary
     public let rawValue: String
 
     public init(value: String) { self.rawValue = value }
+}
+
+extension Itemtype {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "itemtype" }
 }
 
 extension Itemtype {

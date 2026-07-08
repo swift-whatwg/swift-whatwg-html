@@ -14,10 +14,12 @@ public import WHATWG_HTML_Shared
 
 /// Represents the disablepictureinpicture attribute for the video element.
 @dynamicMemberLookup public struct DisablePictureInPicture: WHATWG_HTML.BooleanAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "disablepictureinpicture" }
-
     public var rawValue: Bool
 
     public init(value: Bool = true) { self.rawValue = value }
+}
+
+extension DisablePictureInPicture {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "disablepictureinpicture" }
 }

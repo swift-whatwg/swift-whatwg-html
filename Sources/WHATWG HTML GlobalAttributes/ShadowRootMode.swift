@@ -40,14 +40,16 @@ public import WHATWG_HTML_Shared
 /// </template>
 /// ```
 @dynamicMemberLookup public struct ShadowRootMode: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "shadowrootmode" }
-
     /// The shadow root mode value
     public var rawValue: String
 
     /// Initialize with a string value
     public init(value: String) { self.rawValue = value }
+}
+
+extension ShadowRootMode {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "shadowrootmode" }
 }
 
 extension ShadowRootMode {

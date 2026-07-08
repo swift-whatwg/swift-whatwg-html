@@ -42,14 +42,16 @@ public import WHATWG_HTML_Shared
 /// - `<script>`: For prioritizing script loading
 /// - `<iframe>`: For prioritizing iframe content loading
 @dynamicMemberLookup public struct FetchPriority: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "fetchpriority" }
-
     /// The attribute value
     public let rawValue: String
 
     /// Initialize with a value for the size attribute
     public init(value: String) { self.rawValue = value }
+}
+
+extension FetchPriority {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "fetchpriority" }
 }
 
 extension FetchPriority {

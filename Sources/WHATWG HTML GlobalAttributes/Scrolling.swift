@@ -29,13 +29,15 @@ public import WHATWG_HTML_Shared
 /// <iframe src="page.html" scrolling="no"></iframe>
 /// ```
 @dynamicMemberLookup public struct Scrolling: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "scrolling" }
-
     public var rawValue: String
 
     /// Initialize with a string value
     public init(value: String) { self.rawValue = value }
+}
+
+extension Scrolling {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "scrolling" }
 }
 
 extension Scrolling {

@@ -67,14 +67,16 @@ public import WHATWG_HTML_Shared
 /// <div tabindex="0">This is focused fourth</div>
 /// ```
 public struct Tabindex: WHATWG_HTML.Attribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "tabindex" }
-
     /// The tabindex value
     public var value: Int
 
     /// Initialize with a tabindex value
     public init(_ value: Int) { self.value = value }
+}
+
+extension Tabindex {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "tabindex" }
 }
 
 extension Tabindex {

@@ -14,13 +14,15 @@ public import WHATWG_HTML_Shared
 
 /// Represents the kind attribute values for the track element.
 @dynamicMemberLookup public struct Kind: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "kind" }
-
     /// The attribute value
     public let rawValue: String
 
     public init(value: String = Kind.subtitles.rawValue) { self.rawValue = value }
+}
+
+extension Kind {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "kind" }
 }
 
 extension Kind {

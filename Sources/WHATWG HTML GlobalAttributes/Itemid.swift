@@ -56,11 +56,13 @@ public import WHATWG_HTML_Shared
 /// </div>
 /// ```
 @dynamicMemberLookup public struct Itemid: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "itemid" }
-
     /// The global identifier value (URL or URN)
     public let rawValue: String
 
     public init(value: String) { self.rawValue = value }
+}
+
+extension Itemid {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "itemid" }
 }

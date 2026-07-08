@@ -54,14 +54,16 @@ public import WHATWG_HTML_Shared
 /// - Provides defense against compromised third-party resources
 ///
 @dynamicMemberLookup public struct Integrity: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "integrity" }
-
     /// The attribute value
     public let rawValue: String
 
     /// Initialize with a value for the integrity attribute
     public init(value: String) { self.rawValue = value }
+}
+
+extension Integrity {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "integrity" }
 }
 
 extension Integrity {

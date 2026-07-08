@@ -48,12 +48,14 @@ public import WHATWG_HTML_Shared
 /// <div contenteditable="false">This content cannot be edited directly.</div>
 /// ```
 @dynamicMemberLookup public struct Contenteditable: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "contenteditable" }
-
     public let rawValue: String
 
     public init(value: String) { self.rawValue = value }
+}
+
+extension Contenteditable {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "contenteditable" }
 }
 
 extension Contenteditable {

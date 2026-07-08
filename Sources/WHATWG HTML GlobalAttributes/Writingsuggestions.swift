@@ -64,14 +64,15 @@ public import WHATWG_HTML_Shared
 /// </div>
 /// ```
 @dynamicMemberLookup public struct Writingsuggestions: WHATWG_HTML.StringAttribute {
-
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "writingsuggestions" }
-
     /// The URL for form submission
     public let rawValue: String
 
     public init(value: String) { self.rawValue = value }
+}
+
+extension Writingsuggestions {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "writingsuggestions" }
 }
 
 extension Writingsuggestions {

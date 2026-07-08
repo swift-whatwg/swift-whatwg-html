@@ -67,14 +67,16 @@ public import WHATWG_HTML_Shared
 /// <link rel="apple-touch-icon" href="apple-touch-icon.png">
 /// ```
 @dynamicMemberLookup public struct Rel: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "rel" }
-
     /// The link relation values as a space-separated string
     public var rawValue: String
 
     /// Initialize with a single link relation value
     public init(value: String) { self.rawValue = value }
+}
+
+extension Rel {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "rel" }
 }
 
 extension Rel: ExpressibleByArrayLiteral {

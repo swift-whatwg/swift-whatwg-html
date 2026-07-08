@@ -63,9 +63,6 @@ public import WHATWG_HTML_Shared
 /// HTML.time.datetime("PT2H30M").text("2 hours 30 minutes")
 /// ```
 @dynamicMemberLookup public struct DateTime: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "datetime" }
-
     /// The attribute value (ISO 8601 string)
     public let rawValue: String
 
@@ -76,6 +73,11 @@ public import WHATWG_HTML_Shared
     public init(dateTime: ISO_8601.DateTime) {
         self.rawValue = ISO_8601.DateTime.Formatter.format(dateTime)
     }
+}
+
+extension DateTime {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "datetime" }
 }
 
 // MARK: - Convenience Constructors

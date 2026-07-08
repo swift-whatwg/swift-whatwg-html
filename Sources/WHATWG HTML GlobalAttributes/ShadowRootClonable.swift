@@ -27,10 +27,12 @@ public import WHATWG_HTML_Shared
 /// <template shadowrootclonable="true"></template>
 /// ```
 public struct ShadowRootClonable: WHATWG_HTML.BooleanAttribute, CustomStringConvertible {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "shadowrootclonable" }
-
     public var rawValue: Bool
 
     public init(value: Bool = true) { self.rawValue = value }
+}
+
+extension ShadowRootClonable {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "shadowrootclonable" }
 }

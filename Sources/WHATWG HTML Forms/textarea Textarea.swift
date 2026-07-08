@@ -41,14 +41,6 @@ public import WHATWG_HTML_TableAttributes
 /// - Consider disabling textarea resizing with CSS `resize: none` if needed
 ///
 public struct Textarea: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "textarea" }
-
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .phrasing, .interactive, .palpable,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .text)
-
     /// Controls whether inputted text is automatically capitalized
     public var autocapitalize: Autocapitalize?
 
@@ -158,4 +150,14 @@ public struct Textarea: WHATWG_HTML.Element.`Protocol` {
         self.wrap = wrap
 
     }
+}
+
+extension Textarea {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "textarea" }
+
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .interactive, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .text)
 }

@@ -37,11 +37,6 @@ public import WHATWG_HTML_Shared
 /// - The content is typically rendered visually by indentation
 ///
 public struct BlockQuote: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "blockquote" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .palpable]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
-
     /// A URL that designates a source document or message for the quoted information
     public var cite: Cite?
 
@@ -50,4 +45,11 @@ public struct BlockQuote: WHATWG_HTML.Element.`Protocol` {
     /// - Parameters:
     ///   - cite: A URL that designates the source document for the quotation
     public init(cite: Cite? = nil) { self.cite = cite }
+}
+
+extension BlockQuote {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "blockquote" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .palpable]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 }

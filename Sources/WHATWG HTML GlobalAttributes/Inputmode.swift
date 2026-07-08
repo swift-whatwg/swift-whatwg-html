@@ -54,12 +54,14 @@ public import WHATWG_HTML_Shared
 /// <input type="tel" inputmode="tel" placeholder="Phone number">
 /// ```
 @dynamicMemberLookup public struct Inputmode: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "inputmode" }
-
     public let rawValue: String
 
     public init(value: String) { self.rawValue = value }
+}
+
+extension Inputmode {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "inputmode" }
 }
 
 extension Inputmode {

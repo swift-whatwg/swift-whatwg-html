@@ -71,10 +71,12 @@ public import WHATWG_HTML_Shared
 /// </div>
 /// ```
 @dynamicMemberLookup public struct Itemscope: WHATWG_HTML.BooleanAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "itemscope" }
-
     public var rawValue: Bool
 
     public init(value: Bool = true) { self.rawValue = value }
+}
+
+extension Itemscope {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "itemscope" }
 }

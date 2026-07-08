@@ -78,10 +78,12 @@ public import WHATWG_HTML_Shared
 /// </dialog>
 /// ```
 @dynamicMemberLookup public struct Inert: WHATWG_HTML.BooleanAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "inert" }
-
     public var rawValue: Bool
 
     public init(value: Bool = true) { self.rawValue = value }
+}
+
+extension Inert {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "inert" }
 }

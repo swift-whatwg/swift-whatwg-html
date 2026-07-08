@@ -84,11 +84,13 @@ public import WHATWG_HTML_Shared
 /// </complex-component>
 /// ```
 @dynamicMemberLookup public struct Slot: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "slot" }
-
     /// The name of the slot to assign the element to
     public let rawValue: String
 
     public init(value: String) { self.rawValue = value }
+}
+
+extension Slot {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "slot" }
 }

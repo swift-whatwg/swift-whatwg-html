@@ -31,9 +31,6 @@ public import WHATWG_HTML_Shared
 /// <html xmlns="http://www.w3.org/1999/xhtml">
 /// ```
 @dynamicMemberLookup public struct Xmlns: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "xmlns" }
-
     /// The namespace URI
     public var rawValue: String
 
@@ -42,6 +39,11 @@ public import WHATWG_HTML_Shared
 
     /// Initialize with a value
     public init(_ value: String) { self.init(value: value) }
+}
+
+extension Xmlns {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "xmlns" }
 
     /// Standard HTML namespace
     @inlinable public static var html: Self { "http://www.w3.org/1999/xhtml" }

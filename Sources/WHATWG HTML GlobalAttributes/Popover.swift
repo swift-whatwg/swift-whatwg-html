@@ -77,13 +77,14 @@ public import WHATWG_HTML_Shared
 /// <div popover="hint" id="help-popover">Click this button for help</div>
 /// ```
 @dynamicMemberLookup public struct Popover: WHATWG_HTML.StringAttribute {
-
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "popover" }
-
     public let rawValue: String
 
     public init(value: String) { self.rawValue = value }
+}
+
+extension Popover {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "popover" }
 }
 
 extension Popover {

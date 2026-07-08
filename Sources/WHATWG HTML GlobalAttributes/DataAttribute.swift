@@ -59,10 +59,6 @@ public import WHATWG_HTML_Shared
 ///      data-y="85160" />
 /// ```
 public struct DataAttribute: WHATWG_HTML.Attribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "data" }
-    @inlinable public static var prefix: String { "data-" }
-
     /// The data attribute name (without the "data-" prefix)
     public var name: String
 
@@ -80,6 +76,12 @@ public struct DataAttribute: WHATWG_HTML.Attribute {
         self.name = name.description
         self.value = value.description
     }
+}
+
+extension DataAttribute {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "data" }
+    @inlinable public static var prefix: String { "data-" }
 
     /// The full attribute name including the "data-" prefix
     public var attributeName: String { return "\(Self.prefix)\(name)" }

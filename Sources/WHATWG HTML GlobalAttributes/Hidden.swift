@@ -67,12 +67,14 @@ public import WHATWG_HTML_Shared
 /// <a href="#details">Show details</a>
 /// ```
 @dynamicMemberLookup public struct Hidden: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "hidden" }
-
     public let rawValue: String
 
     public init(value: String) { self.rawValue = value }
+}
+
+extension Hidden {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "hidden" }
 }
 
 extension Hidden { public init() { self = .hidden } }

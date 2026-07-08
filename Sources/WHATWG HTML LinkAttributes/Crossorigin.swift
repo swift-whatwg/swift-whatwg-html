@@ -51,13 +51,14 @@ public import WHATWG_HTML_Shared
 /// <link rel="manifest" href="/app.webmanifest" crossorigin="use-credentials">
 /// ```
 @dynamicMemberLookup public struct Crossorigin: WHATWG_HTML.StringAttribute {
-
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "crossorigin" }
-
     public let rawValue: String
 
     public init(value: String) { self.rawValue = value }
+}
+
+extension Crossorigin {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "crossorigin" }
 }
 
 extension Crossorigin {

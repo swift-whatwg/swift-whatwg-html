@@ -46,11 +46,6 @@ public import WHATWG_HTML_Shared
 /// - Remember that < characters may need to be escaped as &lt; in the content
 ///
 public struct PreformattedText: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "pre" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .palpable]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
-
     /// Creates a new PreformattedText element.
     public init(
 
@@ -58,4 +53,11 @@ public struct PreformattedText: WHATWG_HTML.Element.`Protocol` {
     {
 
     }
+}
+
+extension PreformattedText {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "pre" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .palpable]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 }

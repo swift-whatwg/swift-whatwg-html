@@ -47,12 +47,14 @@ public import WHATWG_HTML_Shared
 /// </div>
 /// ```
 @dynamicMemberLookup public struct Class: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "class" }
-
     public let rawValue: String
 
     public init(value: String) { self.rawValue = value }
+}
+
+extension Class {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "class" }
 }
 
 extension Class: ExpressibleByArrayLiteral {

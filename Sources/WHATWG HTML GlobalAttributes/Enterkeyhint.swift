@@ -44,12 +44,14 @@ public import WHATWG_HTML_Shared
 /// <p contenteditable enterkeyhint="go">https://example.org</p>
 /// ```
 @dynamicMemberLookup public struct Enterkeyhint: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "enterkeyhint" }
-
     public let rawValue: String
 
     public init(value: String) { self.rawValue = value }
+}
+
+extension Enterkeyhint {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "enterkeyhint" }
 }
 
 extension Enterkeyhint {

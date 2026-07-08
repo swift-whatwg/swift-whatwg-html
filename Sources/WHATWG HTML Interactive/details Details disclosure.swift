@@ -62,14 +62,6 @@ public import WHATWG_HTML_Shared
 /// - Use CSS to style the disclosure widget for better visual appearance
 ///
 public struct Details: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "details" }
-
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .interactive, .palpable,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
-
     /// Boolean attribute that indicates whether the details are currently visible.
     /// When present, the details are shown; when absent, the details are hidden.
     public var open: Open?
@@ -88,4 +80,14 @@ public struct Details: WHATWG_HTML.Element.`Protocol` {
         self.name = name
 
     }
+}
+
+extension Details {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "details" }
+
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .interactive, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 }

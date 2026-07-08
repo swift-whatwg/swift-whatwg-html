@@ -17,14 +17,16 @@ public import WHATWG_HTML_Shared
 /// These values correspond to particular HTTP headers and are used with
 /// the http-equiv attribute to provide document-level directives.
 @dynamicMemberLookup public struct HttpEquiv: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "http-equiv" }
-
     /// The attribute value
     public let rawValue: String
 
     /// Initialize with a value for the http-equiv attribute
     public init(value: String) { self.rawValue = value }
+}
+
+extension HttpEquiv {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "http-equiv" }
 }
 
 extension HttpEquiv {

@@ -32,11 +32,13 @@ public import WHATWG_HTML_Shared
 /// - For purely decorative horizontal lines, consider using CSS on other elements instead
 ///
 public struct ThematicBreak: WHATWG_HTML.Element.`Protocol` {
+    /// Creates a new ThematicBreak element.
+    public init() {}
+}
+
+extension ThematicBreak {
     /// The HTML tag name
     @inlinable public static var tag: String { "hr" }
     public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow]
     public static let content: WHATWG_HTML.Element.Content = .init(model: .nothing)
-
-    /// Creates a new ThematicBreak element.
-    public init() {}
 }

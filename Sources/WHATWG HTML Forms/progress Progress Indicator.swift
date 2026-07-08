@@ -38,14 +38,6 @@ public import WHATWG_HTML_Shared
 /// - To change a progress bar to indeterminate after giving it a value, the value attribute must be removed
 ///
 public struct ProgressIndicator: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "progress" }
-
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .phrasing, .palpable,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
-
     /// This attribute describes how much work the task indicated by the progress element requires.
     /// The max attribute, if present, must have a value greater than 0 and be a valid floating point number.
     /// The default value is `1`.
@@ -67,4 +59,14 @@ public struct ProgressIndicator: WHATWG_HTML.Element.`Protocol` {
         self.value = value
 
     }
+}
+
+extension ProgressIndicator {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "progress" }
+
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 }

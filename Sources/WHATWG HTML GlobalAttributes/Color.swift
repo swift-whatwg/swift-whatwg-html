@@ -26,11 +26,13 @@ public import WHATWG_HTML_Shared
 /// <font color="blue">Blue text</font>
 /// ```
 @dynamicMemberLookup public struct Color: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "color" }
-
     /// The attribute value
     public let rawValue: String
 
     public init(value: String) { self.rawValue = value }
+}
+
+extension Color {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "color" }
 }

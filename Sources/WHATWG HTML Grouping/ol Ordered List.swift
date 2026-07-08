@@ -37,11 +37,6 @@ public import WHATWG_HTML_Shared
 /// - For styling, prefer CSS over the `type` attribute when possible
 ///
 public struct OrderedList: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "ol" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
-
     /// Boolean attribute specifying that the list's items are in reverse order (high to low)
     public var reversed: Reversed?
 
@@ -63,4 +58,11 @@ public struct OrderedList: WHATWG_HTML.Element.`Protocol` {
         self.type = type
 
     }
+}
+
+extension OrderedList {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "ol" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 }

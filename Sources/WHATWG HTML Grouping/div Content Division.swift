@@ -39,11 +39,6 @@ public import WHATWG_HTML_Shared
 /// ARIA combination declarations that expect a direct descendant element with a certain role to function properly.
 ///
 public struct ContentDivision: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "div" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .palpable]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
-
     /// Creates a new ContentDivision element.
     public init(
 
@@ -51,4 +46,11 @@ public struct ContentDivision: WHATWG_HTML.Element.`Protocol` {
     {
 
     }
+}
+
+extension ContentDivision {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "div" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .palpable]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 }

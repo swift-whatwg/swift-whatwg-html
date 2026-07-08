@@ -48,12 +48,14 @@ public import WHATWG_HTML_Shared
 /// <p contenteditable autocorrect="on">Editable content with autocorrection</p>
 /// ```
 @dynamicMemberLookup public struct Autocorrect: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "autocorrect" }
-
     public let rawValue: String
 
     public init(value: String) { self.rawValue = value }
+}
+
+extension Autocorrect {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "autocorrect" }
 }
 
 extension Autocorrect {

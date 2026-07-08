@@ -64,14 +64,16 @@ public import WHATWG_HTML_Shared
 /// HTML.a.href("/about").text("About Us")
 /// ```
 @dynamicMemberLookup public struct Href: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "href" }
-
     /// The attribute value
     public let rawValue: String
 
     /// Initialize with a value for the href attribute
     public init(value: String) { self.rawValue = value }
+}
+
+extension Href {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "href" }
 }
 
 extension Href {

@@ -42,11 +42,6 @@ public import WHATWG_HTML_Shared
 /// - Use CSS properties like `margin` to create spacing between paragraphs
 ///
 public struct Paragraph: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "p" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .palpable]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
-
     /// Creates a new paragraph element with the specified content.
     public init(
 
@@ -54,4 +49,11 @@ public struct Paragraph: WHATWG_HTML.Element.`Protocol` {
     {
 
     }
+}
+
+extension Paragraph {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "p" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .palpable]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 }

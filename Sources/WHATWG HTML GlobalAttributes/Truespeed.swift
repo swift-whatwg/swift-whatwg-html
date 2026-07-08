@@ -32,12 +32,14 @@ public import WHATWG_HTML_Shared
 /// <marquee scrollamount="10" truespeed>This text scrolls very fast</marquee>
 /// ```
 @dynamicMemberLookup public struct Truespeed: WHATWG_HTML.BooleanAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "truespeed" }
-
     /// The attribute value
     public var rawValue: Bool
 
     /// Initialize with a boolean value (defaults to true)
     public init(value: Bool = true) { self.rawValue = value }
+}
+
+extension Truespeed {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "truespeed" }
 }

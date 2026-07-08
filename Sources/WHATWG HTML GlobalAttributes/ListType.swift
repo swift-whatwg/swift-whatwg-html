@@ -26,14 +26,16 @@ public import WHATWG_HTML_Shared
 /// </ol>
 /// ```
 @dynamicMemberLookup public struct ListType: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "type" }
-
     /// The attribute value
     public let rawValue: String
 
     /// Initialize with a value for the type attribute
     public init(value: String) { self.rawValue = value }
+}
+
+extension ListType {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "type" }
 }
 
 extension ListType {

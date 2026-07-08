@@ -37,11 +37,6 @@ public import WHATWG_HTML_Shared
 ///   `<dd>` element, a `<dt>` element, or if there is no more content in the parent element
 ///
 public struct DescriptionDetails: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "dd" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
-
     /// Creates a new DescriptionDetails element.
     public init(
 
@@ -49,4 +44,11 @@ public struct DescriptionDetails: WHATWG_HTML.Element.`Protocol` {
     {
 
     }
+}
+
+extension DescriptionDetails {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "dd" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 }

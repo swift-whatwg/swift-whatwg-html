@@ -29,13 +29,15 @@ public import WHATWG_HTML_Shared
 /// </style>
 /// ```
 @dynamicMemberLookup public struct Blocking: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "blocking" }
-
     /// The attribute value
     public let rawValue: String
 
     public init(value: String) { self.rawValue = value }
+}
+
+extension Blocking {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "blocking" }
 }
 
 extension Blocking { @inlinable public static var render: Self { "render" } }

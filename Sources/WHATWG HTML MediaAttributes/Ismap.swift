@@ -13,10 +13,12 @@
 public import WHATWG_HTML_Shared
 
 @dynamicMemberLookup public struct Ismap: WHATWG_HTML.BooleanAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "ismap" }
-
     public var rawValue: Bool
 
     public init(value: Bool = true) { self.rawValue = value }
+}
+
+extension Ismap {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "ismap" }
 }

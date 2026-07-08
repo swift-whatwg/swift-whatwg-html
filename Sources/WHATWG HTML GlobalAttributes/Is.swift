@@ -68,11 +68,13 @@ public import WHATWG_HTML_Shared
 /// </ul>
 /// ```
 @dynamicMemberLookup public struct Is: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "is" }
-
     /// The name of the custom element
     public let rawValue: String
 
     public init(value: String) { self.rawValue = value }
+}
+
+extension Is {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "is" }
 }

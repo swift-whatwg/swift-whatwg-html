@@ -33,12 +33,14 @@ public import WHATWG_HTML_Shared
 /// </template>
 /// ```
 @dynamicMemberLookup public struct ShadowRootDelegatesFocus: WHATWG_HTML.BooleanAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "shadowrootdelegatesfocus" }
-
     /// The attribute value
     public var rawValue: Bool
 
     /// Initialize with a boolean value (defaults to true)
     public init(value: Bool = true) { self.rawValue = value }
+}
+
+extension ShadowRootDelegatesFocus {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "shadowrootdelegatesfocus" }
 }

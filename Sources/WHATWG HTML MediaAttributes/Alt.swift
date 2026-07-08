@@ -58,11 +58,13 @@ public import WHATWG_HTML_Shared
 /// <input type="image" src="search-icon.png" alt="Search">
 /// ```
 @dynamicMemberLookup public struct Alt: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "alt" }
-
     /// The alternative text value
     public let rawValue: String
 
     public init(value: String) { self.rawValue = value }
+}
+
+extension Alt {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "alt" }
 }

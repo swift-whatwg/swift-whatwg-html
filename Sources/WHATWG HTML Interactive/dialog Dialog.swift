@@ -50,12 +50,6 @@ public import WHATWG_HTML_Shared
 /// - When the dialog is opened with `showModal()`, it automatically gets `aria-modal="true"`
 ///
 public struct Dialog: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "dialog" }
-
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
-
     /// Indicates that the dialog box is active and available for interaction
     ///
     /// When the `open` attribute is not set, the dialog box will not be visible.
@@ -71,4 +65,12 @@ public struct Dialog: WHATWG_HTML.Element.`Protocol` {
         self.open = open
 
     }
+}
+
+extension Dialog {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "dialog" }
+
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 }

@@ -34,14 +34,6 @@ public import WHATWG_HTML_Shared
 /// - Many browsers implement this element as an `aria-live` region, making it useful for accessibility
 ///
 public struct Output: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "output" }
-
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .phrasing, .palpable,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
-
     /// A space-separated list of other elements' IDs, indicating that those elements contributed
     /// input values to (or otherwise affected) the calculation.
     public var `for`: For?
@@ -69,4 +61,14 @@ public struct Output: WHATWG_HTML.Element.`Protocol` {
         self.name = name
 
     }
+}
+
+extension Output {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "output" }
+
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 }

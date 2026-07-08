@@ -63,9 +63,6 @@ public import WHATWG_HTML_Shared
 /// <div class="banner" style="background-image:url(banner.jpg)" elementtiming="main-banner"></div>
 /// ```
 @dynamicMemberLookup public struct Elementtiming: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "elementtiming" }
-
     /// The attribute value
     public let rawValue: String
 
@@ -74,6 +71,9 @@ public import WHATWG_HTML_Shared
 }
 
 extension Elementtiming {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "elementtiming" }
+
     /// Create an elementtiming value with a prefixed category for organization
     public init(category: String, name: String, separator: String = "-") {
         self.rawValue = "\(category)\(separator)\(name)"
@@ -87,37 +87,6 @@ extension Elementtiming {
         public init(_ value: String) { self.value = value }
 
         public init(stringLiteral value: StringLiteralType) { self.value = value }
-        /// Main page hero or feature element
-        @inlinable public static var hero: Self { "hero" }
-
-        /// Primary content elements
-        @inlinable public static var main: Self { "main" }
-
-        /// Header elements
-        @inlinable public static var header: Self { "header" }
-
-        /// Navigation elements
-        @inlinable public static var nav: Self { "nav" }
-
-        /// Footer elements
-        @inlinable public static var footer: Self { "footer" }
-
-        /// Image elements
-        @inlinable public static var image: Self { "image" }
-
-        /// Text content elements
-        @inlinable public static var text: Self { "text" }
-
-        /// Interactive elements
-        @inlinable public static var interactive: Self { "interactive" }
-
-        /// Layout or structural elements
-        @inlinable public static var layout: Self { "layout" }
-
-        /// Custom category
-        @inlinable public static var custom: Self { "custom" }
-
-        public var description: String { self.value }
     }
 
     /// Create an elementtiming value with a predefined category
@@ -128,4 +97,38 @@ extension Elementtiming {
             self.rawValue = "\(category.description)\(separator)\(name)"
         }
     }
+}
+
+extension Elementtiming.Category {
+    /// Main page hero or feature element
+    @inlinable public static var hero: Self { "hero" }
+
+    /// Primary content elements
+    @inlinable public static var main: Self { "main" }
+
+    /// Header elements
+    @inlinable public static var header: Self { "header" }
+
+    /// Navigation elements
+    @inlinable public static var nav: Self { "nav" }
+
+    /// Footer elements
+    @inlinable public static var footer: Self { "footer" }
+
+    /// Image elements
+    @inlinable public static var image: Self { "image" }
+
+    /// Text content elements
+    @inlinable public static var text: Self { "text" }
+
+    /// Interactive elements
+    @inlinable public static var interactive: Self { "interactive" }
+
+    /// Layout or structural elements
+    @inlinable public static var layout: Self { "layout" }
+
+    /// Custom category
+    @inlinable public static var custom: Self { "custom" }
+
+    public var description: String { self.value }
 }

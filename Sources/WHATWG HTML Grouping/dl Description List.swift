@@ -49,11 +49,6 @@ public import WHATWG_HTML_Shared
 /// - Consider using for metadata display where a clear key-value relationship exists
 /// - In HTML5, each term-description group can also be wrapped in a `<div>` for styling or microdata purposes
 public struct DescriptionList: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "dl" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
-
     /// Creates a new Description List element.
     public init(
 
@@ -61,4 +56,11 @@ public struct DescriptionList: WHATWG_HTML.Element.`Protocol` {
     {
 
     }
+}
+
+extension DescriptionList {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "dl" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 }
