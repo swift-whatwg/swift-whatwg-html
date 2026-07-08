@@ -61,12 +61,6 @@ public import WHATWG_HTML_Shared
 /// - Note: When rendered, this generates an HTML `<audio>` element with the appropriate
 ///   attributes and content based on the configuration.
 public struct Audio: WHATWG_HTML.Element.`Protocol` {
-    @inlinable public static var tag: String { "audio" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .phrasing, .embedded,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
-
     /// The URL of the audio file to embed.
     /// w
     /// This attribute is subject to HTTP access controls. You can either use this
@@ -158,6 +152,14 @@ public struct Audio: WHATWG_HTML.Element.`Protocol` {
     }
 }
 
+extension Audio {
+    @inlinable public static var tag: String { "audio" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .embedded,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
+}
+
 // MARK: - Audio-specific Types
 
 extension Audio {
@@ -206,16 +208,18 @@ extension Audio {
             self.nofullscreen = nofullscreen
             self.noremoteplayback = noremoteplayback
         }
+    }
+}
 
-        /// Returns the string representation of the controlslist.
-        public var description: String {
-            var values: [String] = []
+extension Audio.ControlsList {
+    /// Returns the string representation of the controlslist.
+    public var description: String {
+        var values: [String] = []
 
-            if nodownload { values.append("nodownload") }
-            if nofullscreen { values.append("nofullscreen") }
-            if noremoteplayback { values.append("noremoteplayback") }
+        if nodownload { values.append("nodownload") }
+        if nofullscreen { values.append("nofullscreen") }
+        if noremoteplayback { values.append("noremoteplayback") }
 
-            return values.joined(separator: " ")
-        }
+        return values.joined(separator: " ")
     }
 }

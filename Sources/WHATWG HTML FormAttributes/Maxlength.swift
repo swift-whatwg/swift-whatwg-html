@@ -53,9 +53,6 @@ public import WHATWG_HTML_Shared
 /// <input type="password" maxlength="12">
 /// ```
 public struct Maxlength: WHATWG_HTML.Attribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "maxlength" }
-
     /// The maximum length value
     public var value: Int
 
@@ -64,6 +61,11 @@ public struct Maxlength: WHATWG_HTML.Attribute {
         // Ensure value is non-negative
         self.value = max(0, value)
     }
+}
+
+extension Maxlength {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "maxlength" }
 }
 
 extension Maxlength {

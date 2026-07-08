@@ -55,14 +55,16 @@ public import WHATWG_HTML_Shared
 /// message=سلام&message-direction=rtl
 /// ```
 @dynamicMemberLookup public struct Dirname: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "dirname" }
-
     /// The attribute value
     public let rawValue: String
 
     /// Initialize with a value for the directionality information
     public init(value: String) { self.rawValue = value }
+}
+
+extension Dirname {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "dirname" }
 }
 
 extension Dirname {

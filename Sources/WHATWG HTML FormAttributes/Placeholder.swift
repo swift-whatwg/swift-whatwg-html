@@ -48,14 +48,16 @@ public import WHATWG_HTML_Shared
 /// <textarea id="bio" placeholder="Tell us about yourself..."></textarea>
 /// ```
 @dynamicMemberLookup public struct Placeholder: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "placeholder" }
-
     /// The attribute value
     public let rawValue: String
 
     /// Initialize with a value for the placeholder attribute
     public init(value: String) { self.rawValue = value }
+}
+
+extension Placeholder {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "placeholder" }
 }
 
 extension Placeholder {

@@ -59,14 +59,16 @@ public import WHATWG_HTML_Shared
 /// </select>
 /// ```
 @dynamicMemberLookup public struct Size: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "size" }
-
     /// The size value as a string
     public var rawValue: String
 
     /// Initialize with a string value
     public init(value: String) { self.rawValue = value }
+}
+
+extension Size {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "size" }
 }
 
 extension Size {

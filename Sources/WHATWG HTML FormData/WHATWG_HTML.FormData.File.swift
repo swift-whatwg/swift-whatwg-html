@@ -74,13 +74,15 @@ extension Form.Data {
             self.type = type
             self.body = body
         }
-
-        /// The size of the file in bytes.
-        @inlinable public var size: Int { body.count }
-
-        /// Returns whether this file appears to be empty.
-        @inlinable public var isEmpty: Bool { body.isEmpty }
     }
+}
+
+extension Form.Data.File {
+    /// The size of the file in bytes.
+    @inlinable public var size: Int { body.count }
+
+    /// Returns whether this file appears to be empty.
+    @inlinable public var isEmpty: Bool { body.isEmpty }
 }
 
 // MARK: - CustomStringConvertible
@@ -94,55 +96,58 @@ extension Form.Data.File: CustomStringConvertible {
 extension Form.Data.File {
     /// Common MIME types for file uploads.
     public enum MIMEType {
-        /// Plain text files
-        public static let plainText = "text/plain"
-
-        /// HTML files
-        public static let html = "text/html"
-
-        /// CSS files
-        public static let css = "text/css"
-
-        /// JavaScript files
-        public static let javascript = "text/javascript"
-
-        /// JSON files
-        public static let json = "application/json"
-
-        /// XML files
-        public static let xml = "application/xml"
-
-        /// PDF documents
-        public static let pdf = "application/pdf"
-
-        /// ZIP archives
-        public static let zip = "application/zip"
-
-        /// JPEG images
-        public static let jpeg = "image/jpeg"
-
-        /// PNG images
-        public static let png = "image/png"
-
-        /// GIF images
-        public static let gif = "image/gif"
-
-        /// WebP images
-        public static let webp = "image/webp"
-
-        /// SVG images
-        public static let svg = "image/svg+xml"
-
-        /// MP3 audio
-        public static let mp3 = "audio/mpeg"
-
-        /// MP4 video
-        public static let mp4 = "video/mp4"
-
-        /// WebM video
-        public static let webm = "video/webm"
-
-        /// Unknown or binary files
-        public static let octetStream = "application/octet-stream"
     }
+}
+
+extension Form.Data.File.MIMEType {
+    /// Plain text files
+    public static let plainText = "text/plain"
+
+    /// HTML files
+    public static let html = "text/html"
+
+    /// CSS files
+    public static let css = "text/css"
+
+    /// JavaScript files
+    public static let javascript = "text/javascript"
+
+    /// JSON files
+    public static let json = "application/json"
+
+    /// XML files
+    public static let xml = "application/xml"
+
+    /// PDF documents
+    public static let pdf = "application/pdf"
+
+    /// ZIP archives
+    public static let zip = "application/zip"
+
+    /// JPEG images
+    public static let jpeg = "image/jpeg"
+
+    /// PNG images
+    public static let png = "image/png"
+
+    /// GIF images
+    public static let gif = "image/gif"
+
+    /// WebP images
+    public static let webp = "image/webp"
+
+    /// SVG images
+    public static let svg = "image/svg+xml"
+
+    /// MP3 audio
+    public static let mp3 = "audio/mpeg"
+
+    /// MP4 video
+    public static let mp4 = "video/mp4"
+
+    /// WebM video
+    public static let webm = "video/webm"
+
+    /// Unknown or binary files
+    public static let octetStream = "application/octet-stream"
 }

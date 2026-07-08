@@ -35,10 +35,12 @@ public import WHATWG_HTML_Shared
 /// </select>
 /// ```
 @dynamicMemberLookup public struct Selected: WHATWG_HTML.BooleanAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "selected" }
-
     public var rawValue: Bool
 
     public init(value: Bool = true) { self.rawValue = value }
+}
+
+extension Selected {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "selected" }
 }

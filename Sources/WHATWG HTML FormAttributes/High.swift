@@ -28,14 +28,16 @@ public import WHATWG_HTML_Shared
 /// <meter value="90" min="0" max="100" low="33" high="67">90 out of 100</meter>
 /// ```
 public struct High: WHATWG_HTML.Attribute, CustomStringConvertible {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "high" }
-
     /// The attribute value
     public let value: Double
 
     /// Initialize with a value
     public init(_ value: Double) { self.value = value }
+}
+
+extension High {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "high" }
 }
 
 extension High: ExpressibleByFloatLiteral {

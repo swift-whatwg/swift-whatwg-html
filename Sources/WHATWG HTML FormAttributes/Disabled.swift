@@ -61,10 +61,12 @@ public import WHATWG_HTML_Shared
 /// </fieldset>
 /// ```
 @dynamicMemberLookup public struct Disabled: WHATWG_HTML.BooleanAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "disabled" }
-
     public var rawValue: Bool
 
     public init(value: Bool = true) { self.rawValue = value }
+}
+
+extension Disabled {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "disabled" }
 }

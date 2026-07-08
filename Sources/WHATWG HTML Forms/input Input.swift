@@ -36,13 +36,6 @@ public import WHATWG_HTML_Shared
 /// - Note: When rendered, this generates an HTML `<input>` element with the appropriate
 ///   attributes based on the input type.
 public struct Input: WHATWG_HTML.Element.`Protocol` {
-    @inlinable public static var tag: String { "input" }
-
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .phrasing, .palpable,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .nothing)
-
     /// Name of the form control. Submitted with the form as part of a name/value pair.
     public var name: Name?
 
@@ -77,4 +70,13 @@ public struct Input: WHATWG_HTML.Element.`Protocol` {
         self.form = form
         self.type = type
     }
+}
+
+extension Input {
+    @inlinable public static var tag: String { "input" }
+
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .nothing)
 }

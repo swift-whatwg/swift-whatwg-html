@@ -76,9 +76,6 @@ public import WHATWG_HTML_Shared
 /// HTML.form.enctype("multipart/form-data")
 /// ```
 @dynamicMemberLookup public struct EncType: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "enctype" }
-
     /// The attribute value
     public let rawValue: String
 
@@ -87,6 +84,11 @@ public import WHATWG_HTML_Shared
 
     /// Initialize with an RFC 2045 Content-Type
     public init(contentType: RFC_2045.ContentType) { self.rawValue = contentType.headerValue }
+}
+
+extension EncType {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "enctype" }
 }
 
 // MARK: - Form Encoding Types

@@ -45,12 +45,6 @@ public import WHATWG_HTML_Shared
 /// - Form controls inside the `<legend>` element won't be disabled when the fieldset is disabled
 ///
 public struct FieldSet: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "fieldset" }
-
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .palpable]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
-
     /// Disables all form controls that are descendants of the fieldset
     public var disabled: Disabled?
 
@@ -75,4 +69,12 @@ public struct FieldSet: WHATWG_HTML.Element.`Protocol` {
         self.form = form
         self.name = name
     }
+}
+
+extension FieldSet {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "fieldset" }
+
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .palpable]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 }

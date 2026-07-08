@@ -54,9 +54,6 @@ public import WHATWG_HTML_Shared
 /// HTML.input.type("file").accept(Accept.FileType(contentType: .applicationPDF))
 /// ```
 public struct Accept: WHATWG_HTML.Attribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "accept" }
-
     /// The accepted file types
     private let fileTypes: [FileType]
 
@@ -71,6 +68,11 @@ public struct Accept: WHATWG_HTML.Attribute {
 
     /// Initialize with a raw string value
     public init(rawValue: String) { self.fileTypes = [FileType(rawValue)] }
+}
+
+extension Accept {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "accept" }
 }
 
 extension Accept: ExpressibleByStringLiteral {
@@ -113,11 +115,13 @@ extension Accept {
         /// Initialize with an RFC 2045 MIME type
         public init(contentType: RFC_2045.ContentType) { self.value = contentType.headerValue }
 
-        /// String representation of the file type
-        public var description: String { return value }
-
         public init(stringLiteral value: StringLiteralType) { self = .init(value) }
     }
+}
+
+extension Accept.FileType {
+    /// String representation of the file type
+    public var description: String { return value }
 }
 
 // MARK: - Wildcard Categories

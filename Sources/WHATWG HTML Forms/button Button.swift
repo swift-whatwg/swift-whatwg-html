@@ -53,14 +53,6 @@ public import WHATWG_HTML_Shared
 ///
 /// - Note: When rendered, this generates an HTML `<button>` element that is interactive and clickable.
 public struct Button: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "button" }
-
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .phrasing, .interactive, .palpable,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
-
     /// The button type (submit, reset, or button)
     public var type: ButtonType?
 
@@ -145,4 +137,14 @@ public struct Button: WHATWG_HTML.Element.`Protocol` {
         self.popovertarget = popovertarget
         self.popovertargetaction = popovertargetaction
     }
+}
+
+extension Button {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "button" }
+
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .interactive, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 }

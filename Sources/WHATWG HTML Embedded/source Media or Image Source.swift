@@ -47,11 +47,6 @@ public import WHATWG_HTML_Shared
 /// - For `<picture>`, use the `srcset` attribute; for `<audio>` and `<video>`, use the `src` attribute
 ///
 public struct Source: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "source" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .nothing)
-
     /// The MIME media type of the resource
     public var type: SourceType?
 
@@ -100,4 +95,11 @@ public struct Source: WHATWG_HTML.Element.`Protocol` {
         self.height = height
         self.width = width
     }
+}
+
+extension Source {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "source" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .nothing)
 }

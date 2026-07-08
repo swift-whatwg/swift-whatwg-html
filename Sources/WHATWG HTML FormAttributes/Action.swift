@@ -58,13 +58,15 @@ public import WHATWG_HTML_Shared
 /// HTML.form.method("post")
 /// ```
 @dynamicMemberLookup public struct Action: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "action" }
-
     /// The URL for form submission
     public let rawValue: String
 
     public init(value: String) { self.rawValue = value }
+}
+
+extension Action {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "action" }
 }
 
 extension Action {

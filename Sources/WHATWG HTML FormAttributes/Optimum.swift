@@ -31,14 +31,16 @@ public import WHATWG_HTML_Shared
 /// <meter min="0" max="100" value="75" low="33" high="66" optimum="50">75%</meter>
 /// ```
 public struct Optimum: WHATWG_HTML.Attribute, CustomStringConvertible {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "optimum" }
-
     /// The attribute value
     public var value: Double
 
     /// Initialize with a value
     public init(_ value: Double) { self.value = value }
+}
+
+extension Optimum {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "optimum" }
 }
 
 extension Optimum: ExpressibleByFloatLiteral {

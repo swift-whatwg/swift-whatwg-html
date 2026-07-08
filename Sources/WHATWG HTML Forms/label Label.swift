@@ -51,13 +51,6 @@ public import WHATWG_HTML_Shared
 ///
 /// - Note: When rendered, this generates an HTML `<label>` element that improves form accessibility.
 public struct Label: WHATWG_HTML.Element.`Protocol` {
-    @inlinable public static var tag: String { "label" }
-
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .phrasing, .interactive, .palpable,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
-
     /// Associates the label with a form control using its ID.
     ///
     /// When specified, this attribute creates an explicit relationship between
@@ -74,4 +67,13 @@ public struct Label: WHATWG_HTML.Element.`Protocol` {
         self.for = `for`
 
     }
+}
+
+extension Label {
+    @inlinable public static var tag: String { "label" }
+
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .interactive, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 }

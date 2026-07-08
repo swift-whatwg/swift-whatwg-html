@@ -50,13 +50,6 @@ public import WHATWG_HTML_Shared
 /// - For modern web applications, avoid using object for Flash content
 ///
 public struct ExternalObject: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "object" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .phrasing, .embedded, .palpable,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .transparent)
-
     /// The URL of the resource to embed
     public var data: ObjectData?
 
@@ -106,4 +99,13 @@ public struct ExternalObject: WHATWG_HTML.Element.`Protocol` {
         self.usemap = usemap
 
     }
+}
+
+extension ExternalObject {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "object" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .embedded, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .transparent)
 }

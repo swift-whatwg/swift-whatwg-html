@@ -47,9 +47,6 @@ public import WHATWG_HTML_Shared
 ///     .value("Debug Submit")
 /// ```
 @dynamicMemberLookup public struct FormEncType: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "formenctype" }
-
     /// The attribute value
     public let rawValue: String
 
@@ -58,6 +55,11 @@ public import WHATWG_HTML_Shared
 
     /// Initialize with an RFC 2045 Content-Type
     public init(contentType: RFC_2045.ContentType) { self.rawValue = contentType.headerValue }
+}
+
+extension FormEncType {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "formenctype" }
 }
 
 // MARK: - Form Encoding Types

@@ -77,9 +77,6 @@ public import WHATWG_HTML_Shared
 /// <input type="range" min="0" step="5" max="100">
 /// ```
 @dynamicMemberLookup public struct Min: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "min" }
-
     /// The attribute value
     public let rawValue: String
 
@@ -90,6 +87,11 @@ public import WHATWG_HTML_Shared
     public init(dateTime: ISO_8601.DateTime) {
         self.rawValue = ISO_8601.DateTime.Formatter.format(dateTime)
     }
+}
+
+extension Min {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "min" }
 }
 
 extension Min {

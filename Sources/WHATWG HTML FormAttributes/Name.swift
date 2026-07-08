@@ -63,12 +63,14 @@ public import WHATWG_HTML_Shared
 /// <input type="checkbox" name="interests[]" value="reading"> Reading
 /// ```
 @dynamicMemberLookup public struct Name: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "name" }
-
     /// The attribute value
     public let rawValue: String
 
     /// Initialize with a value for the name attribute
     public init(value: String) { self.rawValue = value }
+}
+
+extension Name {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "name" }
 }

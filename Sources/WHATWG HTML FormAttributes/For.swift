@@ -51,9 +51,6 @@ public import WHATWG_HTML_Shared
 /// <output for="a b">30</output>
 /// ```
 @dynamicMemberLookup public struct For: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "for" }
-
     /// The value of the for attribute (ID or space-separated list of IDs)
     public let rawValue: String
 
@@ -62,6 +59,11 @@ public import WHATWG_HTML_Shared
 
     /// Initialize with an ID or space-separated list of IDs
     public init(_ value: String) { self.rawValue = value }
+}
+
+extension For {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "for" }
 }
 
 extension For: ExpressibleByArrayLiteral {

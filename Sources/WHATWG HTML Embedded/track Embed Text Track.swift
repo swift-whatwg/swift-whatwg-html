@@ -41,11 +41,6 @@ public import WHATWG_HTML_Shared
 /// - A media element cannot have more than one track with the same `kind`, `srclang`, and `label`
 ///
 public struct Track: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "track" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .nothing)
-
     /// Indicates that the track should be enabled by default unless the user's preferences indicate otherwise
     public var `default`: Default?
 
@@ -82,4 +77,11 @@ public struct Track: WHATWG_HTML.Element.`Protocol` {
         self.srclang = srclang
         self.label = label
     }
+}
+
+extension Track {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "track" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .nothing)
 }

@@ -37,12 +37,39 @@ public import WHATWG_HTML_Shared
 /// - Note: When rendered, this generates an HTML `<base>` element with the specified attributes.
 ///   It is a void element and does not have a closing tag.
 public struct Base: WHATWG_HTML.Element.`Protocol` {
+    /// The configuration for the base element, which must include an href, a target, or both.
+    public var configuration: Configuration
+
+    /// Creates a new Base element with the specified configuration.
+    ///
+    /// - Parameter configuration: The configuration for the base element, which must include
+    ///   an href, a target, or both.
+    public init(configuration: Configuration) { self.configuration = configuration }
+
+    /// Creates a new Base element with an href attribute.
+    ///
+    /// - Parameter href: The base URL to be used for all relative URLs in the document.
+    public init(href: Href) { self.configuration = .href(href) }
+
+    /// Creates a new Base element with a target attribute.
+    ///
+    /// - Parameter target: The default browsing context for navigation.
+    public init(target: Target) { self.configuration = .target(target) }
+
+    /// Creates a new Base element with both href and target attributes.
+    ///
+    /// - Parameters:
+    ///   - href: The base URL to be used for all relative URLs in the document.
+    ///   - target: The default browsing context for navigation.
+    public init(href: Href, target: Target) {
+        self.configuration = .both(href: href, target: target)
+    }
+}
+
+extension Base {
     @inlinable public static var tag: String { "base" }
     public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.metadata]
     public static let content: WHATWG_HTML.Element.Content = .init(model: .nothing)
-
-    /// The configuration for the base element, which must include an href, a target, or both.
-    public var configuration: Configuration
 
     /// The possible configurations for a base element.
     ///
@@ -93,30 +120,5 @@ public struct Base: WHATWG_HTML.Element.`Protocol` {
         case .both(_, let target): return target
         case .href: return nil
         }
-    }
-
-    /// Creates a new Base element with the specified configuration.
-    ///
-    /// - Parameter configuration: The configuration for the base element, which must include
-    ///   an href, a target, or both.
-    public init(configuration: Configuration) { self.configuration = configuration }
-
-    /// Creates a new Base element with an href attribute.
-    ///
-    /// - Parameter href: The base URL to be used for all relative URLs in the document.
-    public init(href: Href) { self.configuration = .href(href) }
-
-    /// Creates a new Base element with a target attribute.
-    ///
-    /// - Parameter target: The default browsing context for navigation.
-    public init(target: Target) { self.configuration = .target(target) }
-
-    /// Creates a new Base element with both href and target attributes.
-    ///
-    /// - Parameters:
-    ///   - href: The base URL to be used for all relative URLs in the document.
-    ///   - target: The default browsing context for navigation.
-    public init(href: Href, target: Target) {
-        self.configuration = .both(href: href, target: target)
     }
 }

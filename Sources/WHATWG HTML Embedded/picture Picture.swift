@@ -42,13 +42,6 @@ public import WHATWG_HTML_Shared
 /// - Apply `object-position` and `object-fit` CSS properties on the child `<img>` element, not on the `<picture>` element.
 ///
 public struct Picture: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "picture" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .phrasing, .embedded, .palpable,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
-
     /// Creates a new Picture element.
     public init(
 
@@ -56,4 +49,13 @@ public struct Picture: WHATWG_HTML.Element.`Protocol` {
     {
 
     }
+}
+
+extension Picture {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "picture" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .embedded, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 }

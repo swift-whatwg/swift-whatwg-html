@@ -59,32 +59,11 @@ public import WHATWG_HTML_Shared
 /// - Note: When rendered, this generates an HTML `<area>` element with the
 ///   appropriate attributes based on the configuration.
 public struct Area: WHATWG_HTML.Element.`Protocol` {
-    @inlinable public static var tag: String { "area" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .nothing)
-
     /// The shape of the associated hot spot.
     ///
     /// This defines the geometry of the clickable area. The coordinate format
     /// in the `coords` attribute depends on which shape is selected.
     public var shape: Shape?
-
-    /// The coordinates that define the shape.
-    ///
-    /// The format depends on the shape:
-    /// - rect: x1,y1,x2,y2 (top-left and bottom-right corners)
-    /// - circle: x,y,radius (center point and radius)
-    /// - poly: x1,y1,x2,y2,...xn,yn (series of points forming a polygon)
-    /// - default: no coords needed (entire region beyond defined shapes)
-    ///
-    /// Values are in CSS pixels.
-    public var coords: String? {
-        switch self.shape {
-        case .circle(coords: let value), .poly(coords: let value), .rect(coords: let value):
-            return value
-        default: return nil
-        }
-    }
 
     /// Alternative text for the area.
     ///
@@ -174,6 +153,29 @@ public struct Area: WHATWG_HTML.Element.`Protocol` {
     }
 }
 
+extension Area {
+    @inlinable public static var tag: String { "area" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .nothing)
+
+    /// The coordinates that define the shape.
+    ///
+    /// The format depends on the shape:
+    /// - rect: x1,y1,x2,y2 (top-left and bottom-right corners)
+    /// - circle: x,y,radius (center point and radius)
+    /// - poly: x1,y1,x2,y2,...xn,yn (series of points forming a polygon)
+    /// - default: no coords needed (entire region beyond defined shapes)
+    ///
+    /// Values are in CSS pixels.
+    public var coords: String? {
+        switch self.shape {
+        case .circle(coords: let value), .poly(coords: let value), .rect(coords: let value):
+            return value
+        default: return nil
+        }
+    }
+}
+
 /// Shape of the area element's active region.
 ///
 /// Defines the geometry to use for the clickable area.
@@ -189,7 +191,9 @@ public enum Shape: Sendable, Hashable {
 
     /// The entire region beyond any defined shapes.
     case `default`
+}
 
+extension Shape {
     public var label: String {
         switch self {
         case .rect: return "rect"

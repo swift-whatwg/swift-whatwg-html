@@ -69,10 +69,12 @@ public import WHATWG_HTML_Shared
 /// }
 /// ```
 @dynamicMemberLookup public struct Novalidate: WHATWG_HTML.BooleanAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "novalidate" }
-
     public var rawValue: Bool
 
     public init(value: Bool = true) { self.rawValue = value }
+}
+
+extension Novalidate {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "novalidate" }
 }

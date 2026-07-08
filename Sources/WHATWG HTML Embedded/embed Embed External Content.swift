@@ -38,13 +38,6 @@ public import WHATWG_HTML_Shared
 /// - Consider using more modern elements like `<video>`, `<audio>`, or `<iframe>` when possible.
 ///
 public struct Embed: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "embed" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .phrasing, .embedded, .interactive, .palpable,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .nothing)
-
     /// The URL of the resource being embedded
     public var src: Src?
 
@@ -75,4 +68,13 @@ public struct Embed: WHATWG_HTML.Element.`Protocol` {
         self.width = width
         self.height = height
     }
+}
+
+extension Embed {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "embed" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .embedded, .interactive, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .nothing)
 }

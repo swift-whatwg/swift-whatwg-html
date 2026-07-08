@@ -43,9 +43,6 @@ public import WHATWG_HTML_Shared
 /// </textarea>
 /// ```
 @dynamicMemberLookup public struct TextareaWrap: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "wrap" }
-
     /// The wrap value
     public var rawValue: String
 
@@ -54,6 +51,11 @@ public import WHATWG_HTML_Shared
 
     /// Initialize with a wrap value
     public init(_ value: String) { self.init(value: value) }
+}
+
+extension TextareaWrap {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "wrap" }
 
     /// Line breaks are automatically inserted
     public static let hard = TextareaWrap("hard")

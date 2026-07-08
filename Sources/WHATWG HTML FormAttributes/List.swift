@@ -67,12 +67,14 @@ public import WHATWG_HTML_Shared
 /// </datalist>
 /// ```
 @dynamicMemberLookup public struct List: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "list" }
-
     /// The attribute value
     public let rawValue: String
 
     /// Initialize with a value for the list attribute
     public init(value: String) { self.rawValue = value }
+}
+
+extension List {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "list" }
 }

@@ -42,14 +42,6 @@ public import WHATWG_HTML_Shared
 /// - Use `optimum` to indicate the ideal value within the range
 ///
 public struct Meter: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "meter" }
-
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .phrasing, .palpable,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
-
     /// The current numeric value, which must be between the minimum and maximum values
     public var value: Value<Double>
 
@@ -99,4 +91,14 @@ public struct Meter: WHATWG_HTML.Element.`Protocol` {
         self.form = form
 
     }
+}
+
+extension Meter {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "meter" }
+
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 }

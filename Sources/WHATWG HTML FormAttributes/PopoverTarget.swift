@@ -30,12 +30,14 @@ public import WHATWG_HTML_Shared
 /// <div id="my-popover" popover>Popover content</div>
 /// ```
 @dynamicMemberLookup public struct PopoverTarget: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "popovertarget" }
-
     /// The ID of the popover element to control
     public var rawValue: String
 
     /// Initialize with a popover element ID
     public init(value: String) { self.rawValue = value }
+}
+
+extension PopoverTarget {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "popovertarget" }
 }

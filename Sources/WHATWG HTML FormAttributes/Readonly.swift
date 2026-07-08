@@ -62,10 +62,12 @@ public import WHATWG_HTML_Shared
 /// <input type="date" value="2025-01-01" readonly>
 /// ```
 @dynamicMemberLookup public struct Readonly: WHATWG_HTML.BooleanAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "readonly" }
-
     public var rawValue: Bool
 
     public init(value: Bool = true) { self.rawValue = value }
+}
+
+extension Readonly {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "readonly" }
 }

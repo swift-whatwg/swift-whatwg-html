@@ -69,15 +69,11 @@ public import WHATWG_HTML_Shared
 public enum Step: WHATWG_HTML.StringAttribute, ExpressibleByFloatLiteral,
     ExpressibleByIntegerLiteral
 {
-    @inlinable public static var attribute: String { "step" }
-
     /// A specific numeric step value.
     case value(Double)
 
     /// No stepping is implied, and any value is allowed in the specified range.
     case any
-
-    public var rawValue: String { description }
 
     public init(value: String) {
         if value == "any" {
@@ -93,6 +89,12 @@ public enum Step: WHATWG_HTML.StringAttribute, ExpressibleByFloatLiteral,
     public init(floatLiteral value: Double) { self = .value(value) }
 
     public init(integerLiteral value: IntegerLiteralType) { self = .value(Double(value)) }
+}
+
+extension Step {
+    @inlinable public static var attribute: String { "step" }
+
+    public var rawValue: String { description }
 
     public var description: String {
         switch self {

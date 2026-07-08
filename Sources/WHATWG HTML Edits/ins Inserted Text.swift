@@ -38,13 +38,6 @@ public import WHATWG_HTML_Shared
 /// - Only use this when it's important for users to know that content was inserted.
 ///
 public struct InsertedText: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "ins" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .phrasing, .palpable,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .transparent)
-
     /// The URI of a resource that explains the change, such as a link to meeting minutes or a ticket.
     public var cite: Cite?
 
@@ -61,4 +54,13 @@ public struct InsertedText: WHATWG_HTML.Element.`Protocol` {
         self.datetime = datetime
 
     }
+}
+
+extension InsertedText {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "ins" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .transparent)
 }

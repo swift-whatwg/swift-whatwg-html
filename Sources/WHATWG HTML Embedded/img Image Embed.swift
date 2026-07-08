@@ -14,12 +14,6 @@ public import WHATWG_HTML_MediaAttributes
 public import WHATWG_HTML_Shared
 
 public struct Image: WHATWG_HTML.Element.`Protocol` {
-    @inlinable public static var tag: String { "img" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
-        .flow, .phrasing, .embedded, .palpable,
-    ]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .nothing)
-
     public var src: Src?
     public var alt: Alt?
     public var loading: Loading?
@@ -29,4 +23,12 @@ public struct Image: WHATWG_HTML.Element.`Protocol` {
         self.alt = alt
         self.loading = loading
     }
+}
+
+extension Image {
+    @inlinable public static var tag: String { "img" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [
+        .flow, .phrasing, .embedded, .palpable,
+    ]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .nothing)
 }

@@ -32,11 +32,6 @@ public import WHATWG_HTML_Shared
 /// Without this label, users of screen readers would need to navigate into the fencedframe to understand its content.
 ///
 public struct FencedFrame: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "fencedframe" }
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
-
     /// Specifies a Permissions Policy for the fencedframe
     public var allow: Allow?
 
@@ -58,4 +53,11 @@ public struct FencedFrame: WHATWG_HTML.Element.`Protocol` {
         self.width = width
 
     }
+}
+
+extension FencedFrame {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "fencedframe" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 }

@@ -63,15 +63,17 @@ public import WHATWG_HTML_Shared
 ///
 /// - Note: When rendered, this generates an HTML `<datalist>` element containing option elements.
 public struct DataList: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "datalist" }
-
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .phrasing]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
-
     /// Creates a new DataList element with the specified attributes and content.
     ///
     /// - Parameters:
     ///   - id: The ID attribute, used to associate the datalist with an input element
     public init() {}
+}
+
+extension DataList {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "datalist" }
+
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .phrasing]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 }

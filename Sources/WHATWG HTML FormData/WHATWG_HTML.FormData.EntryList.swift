@@ -67,99 +67,101 @@ extension Form.Data.Entry {
         ///
         /// - Parameter entries: The initial entries
         @inlinable public init(entries: [Form.Data.Entry]) { self.entries = entries }
+    }
+}
 
-        /// Appends an entry to the list.
-        ///
-        /// - Parameter entry: The entry to append
-        @inlinable public mutating func append(_ entry: Form.Data.Entry) { entries.append(entry) }
+extension Form.Data.Entry.List {
+    /// Appends an entry to the list.
+    ///
+    /// - Parameter entry: The entry to append
+    @inlinable public mutating func append(_ entry: Form.Data.Entry) { entries.append(entry) }
 
-        /// Appends an entry with the specified name and value.
-        ///
-        /// - Parameters:
-        ///   - name: The entry name
-        ///   - value: The entry value
-        @inlinable public mutating func append(name: String, value: Form.Data.Value) {
-            append(Form.Data.Entry(name: name, value: value))
+    /// Appends an entry with the specified name and value.
+    ///
+    /// - Parameters:
+    ///   - name: The entry name
+    ///   - value: The entry value
+    @inlinable public mutating func append(name: String, value: Form.Data.Value) {
+        append(Form.Data.Entry(name: name, value: value))
+    }
+
+    /// Appends a string entry with the specified name and value.
+    ///
+    /// - Parameters:
+    ///   - name: The entry name
+    ///   - value: The string value
+    @inlinable public mutating func append(name: String, value: String) {
+        append(Form.Data.Entry(name: name, value: .string(value)))
+    }
+
+    /// Appends a file entry with the specified name and file.
+    ///
+    /// - Parameters:
+    ///   - name: The entry name
+    ///   - file: The file value
+    @inlinable public mutating func append(name: String, file: Form.Data.File) {
+        append(Form.Data.Entry(name: name, value: .file(file)))
+    }
+
+    /// Returns all values for the specified name.
+    ///
+    /// - Parameter name: The entry name to look up
+    /// - Returns: An array of values, or `nil` if no entries exist with that name
+    @inlinable public subscript(name: String) -> [Form.Data.Value]? {
+        let values = entries.filter { $0.name == name }.map(\.value)
+        return values.isEmpty ? nil : values
+    }
+
+    /// Returns the first value for the specified name.
+    ///
+    /// This is useful when you expect only a single value for a given name.
+    ///
+    /// - Parameter name: The entry name to look up
+    /// - Returns: The first value, or `nil` if no entries exist with that name
+    @inlinable public func first(named name: String) -> Form.Data.Value? {
+        entries.first { $0.name == name }?.value
+    }
+
+    /// Returns all values for the specified name.
+    ///
+    /// - Parameter name: The entry name to look up
+    /// - Returns: An array of all values for that name (empty if none exist)
+    @inlinable public func all(named name: String) -> [Form.Data.Value] {
+        entries.filter { $0.name == name }.map(\.value)
+    }
+
+    /// Returns whether the entry list contains any entries with the specified name.
+    ///
+    /// - Parameter name: The entry name to check
+    /// - Returns: `true` if at least one entry exists with that name
+    @inlinable public func contains(name: String) -> Bool {
+        entries.contains { $0.name == name }
+    }
+
+    /// Removes all entries with the specified name.
+    ///
+    /// - Parameter name: The entry name to remove
+    /// - Returns: The number of entries removed
+    @inlinable @discardableResult public mutating func remove(name: String) -> Int {
+        let initialCount = entries.count
+        entries.removeAll { $0.name == name }
+        return initialCount - entries.count
+    }
+
+    /// Returns the number of entries in the list.
+    @inlinable public var count: Int { entries.count }
+
+    /// Returns whether the entry list is empty.
+    @inlinable public var isEmpty: Bool { entries.isEmpty }
+
+    /// Returns all unique entry names in the list, preserving order of first appearance.
+    @inlinable public var names: [String] {
+        var seen = Set<String>()
+        var result: [String] = []
+        for entry in entries where seen.insert(entry.name).inserted {
+            result.append(entry.name)
         }
-
-        /// Appends a string entry with the specified name and value.
-        ///
-        /// - Parameters:
-        ///   - name: The entry name
-        ///   - value: The string value
-        @inlinable public mutating func append(name: String, value: String) {
-            append(Form.Data.Entry(name: name, value: .string(value)))
-        }
-
-        /// Appends a file entry with the specified name and file.
-        ///
-        /// - Parameters:
-        ///   - name: The entry name
-        ///   - file: The file value
-        @inlinable public mutating func append(name: String, file: Form.Data.File) {
-            append(Form.Data.Entry(name: name, value: .file(file)))
-        }
-
-        /// Returns all values for the specified name.
-        ///
-        /// - Parameter name: The entry name to look up
-        /// - Returns: An array of values, or `nil` if no entries exist with that name
-        @inlinable public subscript(name: String) -> [Form.Data.Value]? {
-            let values = entries.filter { $0.name == name }.map(\.value)
-            return values.isEmpty ? nil : values
-        }
-
-        /// Returns the first value for the specified name.
-        ///
-        /// This is useful when you expect only a single value for a given name.
-        ///
-        /// - Parameter name: The entry name to look up
-        /// - Returns: The first value, or `nil` if no entries exist with that name
-        @inlinable public func first(named name: String) -> Form.Data.Value? {
-            entries.first { $0.name == name }?.value
-        }
-
-        /// Returns all values for the specified name.
-        ///
-        /// - Parameter name: The entry name to look up
-        /// - Returns: An array of all values for that name (empty if none exist)
-        @inlinable public func all(named name: String) -> [Form.Data.Value] {
-            entries.filter { $0.name == name }.map(\.value)
-        }
-
-        /// Returns whether the entry list contains any entries with the specified name.
-        ///
-        /// - Parameter name: The entry name to check
-        /// - Returns: `true` if at least one entry exists with that name
-        @inlinable public func contains(name: String) -> Bool {
-            entries.contains { $0.name == name }
-        }
-
-        /// Removes all entries with the specified name.
-        ///
-        /// - Parameter name: The entry name to remove
-        /// - Returns: The number of entries removed
-        @inlinable @discardableResult public mutating func remove(name: String) -> Int {
-            let initialCount = entries.count
-            entries.removeAll { $0.name == name }
-            return initialCount - entries.count
-        }
-
-        /// Returns the number of entries in the list.
-        @inlinable public var count: Int { entries.count }
-
-        /// Returns whether the entry list is empty.
-        @inlinable public var isEmpty: Bool { entries.isEmpty }
-
-        /// Returns all unique entry names in the list, preserving order of first appearance.
-        @inlinable public var names: [String] {
-            var seen = Set<String>()
-            var result: [String] = []
-            for entry in entries where seen.insert(entry.name).inserted {
-                result.append(entry.name)
-            }
-            return result
-        }
+        return result
     }
 }
 

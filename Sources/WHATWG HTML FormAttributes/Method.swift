@@ -69,14 +69,16 @@ public import WHATWG_HTML_Shared
 /// HTML.form.method("post")
 /// ```
 @dynamicMemberLookup public struct Method: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "method" }
-
     /// The attribute value
     public let rawValue: String
 
     /// Initialize with a value for the method attribute
     public init(value: String) { self.rawValue = value.lowercased() }
+}
+
+extension Method {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "method" }
 }
 
 extension Method {

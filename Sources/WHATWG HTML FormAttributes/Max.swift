@@ -70,9 +70,6 @@ public import WHATWG_HTML_Shared
 /// <progress max="100" value="75">75%</progress>
 /// ```
 @dynamicMemberLookup public struct Max: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "max" }
-
     /// The attribute value
     public let rawValue: String
 
@@ -83,6 +80,11 @@ public import WHATWG_HTML_Shared
     public init(dateTime: ISO_8601.DateTime) {
         self.rawValue = ISO_8601.DateTime.Formatter.format(dateTime)
     }
+}
+
+extension Max {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "max" }
 }
 
 extension Max {

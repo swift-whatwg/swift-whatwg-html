@@ -58,11 +58,6 @@ public import WHATWG_HTML_Shared
 /// - Note: When rendered, this generates an HTML `<form>` element with the appropriate
 ///   attributes based on the form configuration.
 public struct Form: WHATWG_HTML.Element.`Protocol` {
-    @inlinable public static var tag: String { "form" }
-
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .palpable]
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
-
     /// DEPRECATED: A comma-separated list of content types the server accepts.
     ///
     /// - Note: This attribute has been deprecated in HTML. Instead, use the `accept` attribute
@@ -186,4 +181,11 @@ public struct Form: WHATWG_HTML.Element.`Protocol` {
         self.novalidate = novalidate
         self.target = target
     }
+}
+
+extension Form {
+    @inlinable public static var tag: String { "form" }
+
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .palpable]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 }

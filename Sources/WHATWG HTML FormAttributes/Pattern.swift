@@ -53,14 +53,16 @@ public import WHATWG_HTML_Shared
 /// <input type="text" pattern="[0-9]{5}(-[0-9]{4})?" title="Five digit zip code, optional four digit extension">
 /// ```
 @dynamicMemberLookup public struct Pattern: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "pattern" }
-
     /// The attribute value
     public let rawValue: String
 
     /// Initialize with a value for the pattern attribute
     public init(value: String) { self.rawValue = value }
+}
+
+extension Pattern {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "pattern" }
 }
 
 extension Pattern {

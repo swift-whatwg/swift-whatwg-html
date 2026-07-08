@@ -52,30 +52,32 @@ extension Form.Data {
         /// Used for file input controls (`<input type="file">`). Contains the file's name,
         /// MIME type, and binary body.
         case file(File)
+    }
+}
 
-        /// Returns the value as a string if it is a string value.
-        @inlinable public var stringValue: String? {
-            guard case .string(let value) = self else { return nil }
-            return value
-        }
+extension Form.Data.Value {
+    /// Returns the value as a string if it is a string value.
+    @inlinable public var stringValue: String? {
+        guard case .string(let value) = self else { return nil }
+        return value
+    }
 
-        /// Returns the value as a file if it is a file value.
-        @inlinable public var fileValue: File? {
-            guard case .file(let file) = self else { return nil }
-            return file
-        }
+    /// Returns the value as a file if it is a file value.
+    @inlinable public var fileValue: Form.Data.File? {
+        guard case .file(let file) = self else { return nil }
+        return file
+    }
 
-        /// Returns whether this is a string value.
-        @inlinable public var isString: Bool {
-            if case .string = self { return true }
-            return false
-        }
+    /// Returns whether this is a string value.
+    @inlinable public var isString: Bool {
+        if case .string = self { return true }
+        return false
+    }
 
-        /// Returns whether this is a file value.
-        @inlinable public var isFile: Bool {
-            if case .file = self { return true }
-            return false
-        }
+    /// Returns whether this is a file value.
+    @inlinable public var isFile: Bool {
+        if case .file = self { return true }
+        return false
     }
 }
 

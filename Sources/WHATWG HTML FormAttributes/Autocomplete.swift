@@ -31,13 +31,15 @@ public import WHATWG_HTML_Shared
 /// - `"on"`: The browser may automatically complete the input with no specific guidance
 /// - **Token lists**: Space-separated tokens that describe expected data types (e.g., "email", "name", "street-address")
 @dynamicMemberLookup public struct Autocomplete: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "autocomplete" }
-
     /// The autocomplete value
     public let rawValue: String
 
     public init(value: String) { self.rawValue = value }
+}
+
+extension Autocomplete {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "autocomplete" }
 }
 
 extension Autocomplete: ExpressibleByBooleanLiteral {
@@ -124,20 +126,22 @@ extension Autocomplete {
 
         /// Web Authentication token (must be last token)
         case webauthn
+    }
+}
 
-        /// The string value of the token
-        public var value: String {
-            switch self {
-            case .section(let name): return "section-\(name)"
-            case .grouping(let identifier): return identifier.rawValue
-            case .recipientType(let type): return type.rawValue
-            case .name(let token): return token.rawValue
-            case .address(let token): return token.rawValue
-            case .payment(let token): return token.rawValue
-            case .contact(let token): return token.rawValue
-            case .other(let token): return token.rawValue
-            case .webauthn: return "webauthn"
-            }
+extension Autocomplete.Token {
+    /// The string value of the token
+    public var value: String {
+        switch self {
+        case .section(let name): return "section-\(name)"
+        case .grouping(let identifier): return identifier.rawValue
+        case .recipientType(let type): return type.rawValue
+        case .name(let token): return token.rawValue
+        case .address(let token): return token.rawValue
+        case .payment(let token): return token.rawValue
+        case .contact(let token): return token.rawValue
+        case .other(let token): return token.rawValue
+        case .webauthn: return "webauthn"
         }
     }
 }

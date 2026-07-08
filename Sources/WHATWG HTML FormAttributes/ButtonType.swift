@@ -15,11 +15,13 @@ public import WHATWG_HTML_Shared
 /// Button types that define how a button behaves
 @dynamicMemberLookup public struct ButtonType: WHATWG_HTML.StringAttribute {
 
-    @inlinable public static var attribute: String { "type" }
-
     public let rawValue: String
 
     public init(value: String) { self.rawValue = value }
+}
+
+extension ButtonType {
+    @inlinable public static var attribute: String { "type" }
 }
 
 extension ButtonType {

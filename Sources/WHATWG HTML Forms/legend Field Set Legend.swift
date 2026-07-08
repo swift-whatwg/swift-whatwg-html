@@ -35,12 +35,6 @@ public import WHATWG_HTML_Shared
 /// - Consider accessibility by using clear, descriptive text
 ///
 public struct Legend: WHATWG_HTML.Element.`Protocol` {
-    /// The HTML tag name
-    @inlinable public static var tag: String { "legend" }
-
-    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
-    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
-
     /// Creates a new Legend element.
     public init(
 
@@ -48,4 +42,12 @@ public struct Legend: WHATWG_HTML.Element.`Protocol` {
     {
 
     }
+}
+
+extension Legend {
+    /// The HTML tag name
+    @inlinable public static var tag: String { "legend" }
+
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 }
