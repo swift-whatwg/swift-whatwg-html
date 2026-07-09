@@ -48,18 +48,17 @@ import WHATWG_HTML
         #expect(Autocapitalize.allCases.contains(.characters))
     }
 
-    @Test("Autocapitalize rawValue should match description", arguments: Autocapitalize.allCases)
-    func rawValueMatchesDescription(autocapitalize: Autocapitalize) {
+    @Test(arguments: Autocapitalize.allCases)
+    func `Autocapitalize rawValue should match description`(autocapitalize: Autocapitalize) {
         #expect(autocapitalize.rawValue == autocapitalize.description)
     }
 
     @Test(
-        "Autocapitalize should be initializable from rawValue",
         arguments: [
             ("none", Autocapitalize.none), ("off", .off), ("sentences", .sentences), ("on", .on),
             ("words", .words), ("characters", .characters),
         ]
-    ) func initializableFromRawValue(input: String, expected: Autocapitalize?) {
+    ) func `Autocapitalize should be initializable from rawValue`(input: String, expected: Autocapitalize?) {
         #expect(Autocapitalize(rawValue: input) == expected)
     }
 }

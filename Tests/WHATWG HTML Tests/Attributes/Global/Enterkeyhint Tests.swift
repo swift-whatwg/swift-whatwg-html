@@ -48,19 +48,18 @@ import WHATWG_HTML
         #expect(Enterkeyhint.allCases.contains(.send))
     }
 
-    @Test("Enterkeyhint rawValue should match description", arguments: Enterkeyhint.allCases)
-    func rawValueMatchesDescription(enterkeyhint: Enterkeyhint) {
+    @Test(arguments: Enterkeyhint.allCases)
+    func `Enterkeyhint rawValue should match description`(enterkeyhint: Enterkeyhint) {
         #expect(enterkeyhint.rawValue == enterkeyhint.description)
     }
 
     @Test(
-        "Enterkeyhint should be initializable from rawValue",
         arguments: [
             ("enter", Enterkeyhint.enter), ("done", Enterkeyhint.done), ("go", Enterkeyhint.go),
             ("next", Enterkeyhint.next), ("previous", Enterkeyhint.previous),
             ("search", Enterkeyhint.search), ("send", Enterkeyhint.send),
         ]
-    ) func initializableFromRawValue(input: String, expected: Enterkeyhint?) {
+    ) func `Enterkeyhint should be initializable from rawValue`(input: String, expected: Enterkeyhint?) {
         #expect(Enterkeyhint(rawValue: input) == expected)
     }
 }

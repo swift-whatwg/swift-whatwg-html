@@ -19,19 +19,23 @@ import WHATWG_HTML
 #endif
 
 private struct TestAttribute: WHATWG_HTML.Attribute {
-    static var attribute: String { "test-attribute" }
-
     let value: String
 
     init(_ value: String) { self.value = value }
 }
 
-private struct NumericTestAttribute: WHATWG_HTML.Attribute {
-    static var attribute: String { "numeric-test" }
+extension TestAttribute {
+    static var attribute: String { "test-attribute" }
+}
 
+private struct NumericTestAttribute: WHATWG_HTML.Attribute {
     let value: Int
 
     init(_ value: Int) { self.value = value }
+}
+
+extension NumericTestAttribute {
+    static var attribute: String { "numeric-test" }
 }
 
 @Suite struct `Attribute Protocol Tests` {

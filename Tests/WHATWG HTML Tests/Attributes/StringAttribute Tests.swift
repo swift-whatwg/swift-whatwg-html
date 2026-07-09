@@ -19,11 +19,13 @@ import WHATWG_HTML
 #endif
 
 @dynamicMemberLookup private struct TestStringAttribute: WHATWG_HTML.StringAttribute {
-    static var attribute: String { "test-attr" }
-
     let rawValue: String
 
     init(value: String) { self.rawValue = value }
+}
+
+extension TestStringAttribute {
+    static var attribute: String { "test-attr" }
 }
 
 @Suite struct `WHATWG_HTML.StringAttribute Test` {

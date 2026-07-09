@@ -38,18 +38,17 @@ import WHATWG_HTML
         #expect(Hidden.allCases.contains(.untilFound))
     }
 
-    @Test("Hidden rawValue should match description", arguments: Hidden.allCases)
-    func rawValueMatchesDescription(hidden: Hidden) {
+    @Test(arguments: Hidden.allCases)
+    func `Hidden rawValue should match description`(hidden: Hidden) {
         #expect(hidden.rawValue == hidden.description)
     }
 
     @Test(
-        "Hidden should be initializable from rawValue",
         arguments: [
             ("hidden", Hidden.hidden), ("until-found", Hidden.untilFound),
 
         ]
-    ) func initializableFromRawValue(input: String, expected: Hidden?) {
+    ) func `Hidden should be initializable from rawValue`(input: String, expected: Hidden?) {
         #expect(Hidden(rawValue: input) == expected)
     }
 

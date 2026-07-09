@@ -50,19 +50,18 @@ import WHATWG_HTML
         #expect(Inputmode.allCases.contains(.url))
     }
 
-    @Test("Inputmode rawValue should match description", arguments: Inputmode.allCases)
-    func rawValueMatchesDescription(inputmode: Inputmode) {
+    @Test(arguments: Inputmode.allCases)
+    func `Inputmode rawValue should match description`(inputmode: Inputmode) {
         #expect(inputmode.rawValue == inputmode.description)
     }
 
     @Test(
-        "Inputmode should be initializable from rawValue",
         arguments: [
             ("none", Inputmode.none), ("text", Inputmode.text), ("decimal", Inputmode.decimal),
             ("numeric", Inputmode.numeric), ("tel", Inputmode.tel), ("search", Inputmode.search),
             ("email", Inputmode.email), ("url", Inputmode.url),
         ]
-    ) func initializableFromRawValue(input: String, expected: Inputmode?) {
+    ) func `Inputmode should be initializable from rawValue`(input: String, expected: Inputmode?) {
         #expect(Inputmode(rawValue: input) == expected)
     }
 }

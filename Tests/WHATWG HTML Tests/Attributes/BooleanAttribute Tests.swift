@@ -19,11 +19,13 @@ import WHATWG_HTML
 #endif
 
 @dynamicMemberLookup private struct TestBooleanAttribute: WHATWG_HTML.BooleanAttribute {
-    static var attribute: String { "test-bool-attr" }
-
     var rawValue: Bool
 
     init(value: Bool) { self.rawValue = value }
+}
+
+extension TestBooleanAttribute {
+    static var attribute: String { "test-bool-attr" }
 }
 
 @Suite struct `WHATWG_HTML.BooleanAttribute Test` {

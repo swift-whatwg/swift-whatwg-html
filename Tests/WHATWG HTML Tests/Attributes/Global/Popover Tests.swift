@@ -38,15 +38,14 @@ import WHATWG_HTML
         #expect(Popover.allCases.contains(.hint))
     }
 
-    @Test("Popover rawValue should match description", arguments: Popover.allCases)
-    func rawValueMatchesDescription(popover: Popover) {
+    @Test(arguments: Popover.allCases)
+    func `Popover rawValue should match description`(popover: Popover) {
         #expect(popover.rawValue == popover.description)
     }
 
     @Test(
-        "Popover should be initializable from rawValue",
         arguments: [("auto", Popover.auto), ("manual", Popover.manual)]
-    ) func initializableFromRawValue(input: String, expected: Popover?) {
+    ) func `Popover should be initializable from rawValue`(input: String, expected: Popover?) {
         #expect(Popover(rawValue: input) == expected)
     }
 }

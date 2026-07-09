@@ -40,15 +40,14 @@ import WHATWG_HTML
         #expect(Draggable.allCases.contains(.auto))
     }
 
-    @Test("Draggable rawValue should match description", arguments: Draggable.allCases)
-    func rawValueMatchesDescription(draggable: Draggable) {
+    @Test(arguments: Draggable.allCases)
+    func `Draggable rawValue should match description`(draggable: Draggable) {
         #expect(draggable.rawValue == draggable.description)
     }
 
     @Test(
-        "Draggable should be initializable from rawValue",
         arguments: [("true", Draggable.true), ("false", Draggable.false), ("auto", Draggable.auto)]
-    ) func initializableFromRawValue(input: String, expected: Draggable?) {
+    ) func `Draggable should be initializable from rawValue`(input: String, expected: Draggable?) {
         #expect(Draggable(rawValue: input) == expected)
     }
 }

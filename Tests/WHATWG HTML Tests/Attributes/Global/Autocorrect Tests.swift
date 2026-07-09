@@ -40,15 +40,14 @@ import WHATWG_HTML
         #expect(Autocorrect.allCases.contains(.off))
     }
 
-    @Test("Autocorrect rawValue should match description", arguments: Autocorrect.allCases)
-    func rawValueMatchesDescription(autocorrect: Autocorrect) {
+    @Test(arguments: Autocorrect.allCases)
+    func `Autocorrect rawValue should match description`(autocorrect: Autocorrect) {
         #expect(autocorrect.rawValue == autocorrect.description)
     }
 
     @Test(
-        "Autocorrect should be initializable from rawValue",
         arguments: [("on", Autocorrect.on), ("\"\"", Autocorrect.empty), ("off", Autocorrect.off)]
-    ) func initializableFromRawValue(input: String, expected: Autocorrect?) {
+    ) func `Autocorrect should be initializable from rawValue`(input: String, expected: Autocorrect?) {
         #expect(Autocorrect(rawValue: input) == expected)
     }
 

@@ -44,18 +44,17 @@ import WHATWG_HTML
         #expect(Contenteditable.allCases.contains(.empty))
     }
 
-    @Test("Contenteditable rawValue should match description", arguments: Contenteditable.allCases)
-    func rawValueMatchesDescription(contenteditable: Contenteditable) {
+    @Test(arguments: Contenteditable.allCases)
+    func `Contenteditable rawValue should match description`(contenteditable: Contenteditable) {
         #expect(contenteditable.rawValue == contenteditable.description)
     }
 
     @Test(
-        "Contenteditable should be initializable from rawValue",
         arguments: [
             ("true", Contenteditable.true), ("false", Contenteditable.false),
             ("plaintext-only", Contenteditable.plaintextOnly),
         ]
-    ) func initializableFromRawValue(input: String, expected: Contenteditable?) {
+    ) func `Contenteditable should be initializable from rawValue`(input: String, expected: Contenteditable?) {
         #expect(Contenteditable(rawValue: input) == expected)
     }
 }

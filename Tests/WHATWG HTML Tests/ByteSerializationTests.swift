@@ -18,7 +18,7 @@ import Testing
 
     // MARK: - Boolean Attributes
 
-    @Test("Autofocus byte serialization - true") func autofocusTrue() {
+    @Test func `Autofocus byte serialization - true`() {
         let attr: Autofocus = true
         let bytes = [UInt8](attr)
 
@@ -26,7 +26,7 @@ import Testing
         #expect(String(attr) == "autofocus")
     }
 
-    @Test("Autofocus byte serialization - false") func autofocusFalse() {
+    @Test func `Autofocus byte serialization - false`() {
         let attr: Autofocus = false
         let bytes = [UInt8](attr)
 
@@ -36,7 +36,7 @@ import Testing
 
     // MARK: - String Attributes
 
-    @Test("Id byte serialization - ASCII") func idASCII() {
+    @Test func `Id byte serialization - ASCII`() {
         let attr = Id(value: "main")
         let bytes = [UInt8](attr)
         let expected = Array("id=\"main\"".utf8)
@@ -45,7 +45,7 @@ import Testing
         #expect(String(attr) == "id=\"main\"")
     }
 
-    @Test("Id byte serialization - UTF-8") func idUTF8() {
+    @Test func `Id byte serialization - UTF-8`() {
         let attr = Id(value: "日本")
         let bytes = [UInt8](attr)
 
@@ -58,7 +58,7 @@ import Testing
         #expect(decoded == "id=\"日本\"")
     }
 
-    @Test("Id byte serialization - complex value") func idComplex() {
+    @Test func `Id byte serialization - complex value`() {
         let attr = Id(value: "my-complex-id_123")
         let bytes = [UInt8](attr)
         let expected = Array("id=\"my-complex-id_123\"".utf8)
@@ -69,7 +69,7 @@ import Testing
 
     // MARK: - RFC Pattern Verification
 
-    @Test("String initializer composes through bytes") func stringCompositionThroughBytes() {
+    @Test func `String initializer composes through bytes`() {
         let attr: Autofocus = true
 
         // Verify category theory: Autofocus → [UInt8] → String
@@ -80,7 +80,7 @@ import Testing
         #expect(stringFromBytes == stringDirect)
     }
 
-    @Test("Byte serialization is authoritative") func byteSerializationAuthoritative() {
+    @Test func `Byte serialization is authoritative`() {
         let id = Id(value: "test")
 
         // The authoritative serialization

@@ -39,13 +39,12 @@ import WHATWG_HTML
         #expect(Dir.allCases.contains(.auto))
     }
 
-    @Test("Dir rawValue should match description", arguments: Dir.allCases)
-    func rawValueMatchesDescription(dir: Dir) { #expect(dir.rawValue == dir.description) }
+    @Test(arguments: Dir.allCases)
+    func `Dir rawValue should match description`(dir: Dir) { #expect(dir.rawValue == dir.description) }
 
     @Test(
-        "Dir should be initializable from rawValue",
         arguments: [("ltr", Dir.ltr), ("rtl", Dir.rtl), ("auto", Dir.auto)]
-    ) func initializableFromRawValue(input: String, expected: Dir?) {
+    ) func `Dir should be initializable from rawValue`(input: String, expected: Dir?) {
         #expect(Dir(rawValue: input) == expected)
     }
 }
