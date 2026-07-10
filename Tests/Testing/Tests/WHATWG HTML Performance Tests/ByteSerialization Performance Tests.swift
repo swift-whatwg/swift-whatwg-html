@@ -16,7 +16,7 @@ import Testing
 
 extension `Performance Tests` {
 
-    @Suite(.serialized) struct ByteSerialization {
+    @Suite(.serialized) struct `Byte Serialization` {
 
         // MARK: - Boolean Attributes
 
