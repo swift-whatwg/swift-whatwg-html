@@ -59,7 +59,10 @@ import WHATWG_HTML
             ("next", Enterkeyhint.next), ("previous", Enterkeyhint.previous),
             ("search", Enterkeyhint.search), ("send", Enterkeyhint.send),
         ]
-    ) func `Enterkeyhint should be initializable from rawValue`(input: String, expected: Enterkeyhint?) {
+    ) func `Enterkeyhint should be initializable from rawValue`(
+        input: String,
+        expected: Enterkeyhint?
+    ) {
         #expect(Enterkeyhint(rawValue: input) == expected)
     }
 }

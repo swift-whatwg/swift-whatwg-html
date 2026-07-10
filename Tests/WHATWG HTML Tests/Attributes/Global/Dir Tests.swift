@@ -40,7 +40,9 @@ import WHATWG_HTML
     }
 
     @Test(arguments: Dir.allCases)
-    func `Dir rawValue should match description`(dir: Dir) { #expect(dir.rawValue == dir.description) }
+    func `Dir rawValue should match description`(dir: Dir) {
+        #expect(dir.rawValue == dir.description)
+    }
 
     @Test(
         arguments: [("ltr", Dir.ltr), ("rtl", Dir.rtl), ("auto", Dir.auto)]

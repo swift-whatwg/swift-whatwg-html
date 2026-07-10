@@ -47,7 +47,10 @@ import WHATWG_HTML
 
     @Test(
         arguments: [("on", Autocorrect.on), ("\"\"", Autocorrect.empty), ("off", Autocorrect.off)]
-    ) func `Autocorrect should be initializable from rawValue`(input: String, expected: Autocorrect?) {
+    ) func `Autocorrect should be initializable from rawValue`(
+        input: String,
+        expected: Autocorrect?
+    ) {
         #expect(Autocorrect(rawValue: input) == expected)
     }
 

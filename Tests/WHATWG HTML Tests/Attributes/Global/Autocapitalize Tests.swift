@@ -58,7 +58,10 @@ import WHATWG_HTML
             ("none", Autocapitalize.none), ("off", .off), ("sentences", .sentences), ("on", .on),
             ("words", .words), ("characters", .characters),
         ]
-    ) func `Autocapitalize should be initializable from rawValue`(input: String, expected: Autocapitalize?) {
+    ) func `Autocapitalize should be initializable from rawValue`(
+        input: String,
+        expected: Autocapitalize?
+    ) {
         #expect(Autocapitalize(rawValue: input) == expected)
     }
 }

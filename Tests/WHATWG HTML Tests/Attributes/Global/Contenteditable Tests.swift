@@ -54,7 +54,10 @@ import WHATWG_HTML
             ("true", Contenteditable.true), ("false", Contenteditable.false),
             ("plaintext-only", Contenteditable.plaintextOnly),
         ]
-    ) func `Contenteditable should be initializable from rawValue`(input: String, expected: Contenteditable?) {
+    ) func `Contenteditable should be initializable from rawValue`(
+        input: String,
+        expected: Contenteditable?
+    ) {
         #expect(Contenteditable(rawValue: input) == expected)
     }
 }
