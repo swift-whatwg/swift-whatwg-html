@@ -1,113 +1,272 @@
-# swift-html-types
+# swift-whatwg-html
 
-[![CI](https://github.com/coenttb/swift-html-types/workflows/CI/badge.svg)](https://github.com/coenttb/swift-html-types/actions/workflows/ci.yml)
 ![Development Status](https://img.shields.io/badge/status-active--development-blue.svg)
+[![CI](https://github.com/swift-whatwg/swift-whatwg-html/workflows/CI/badge.svg)](https://github.com/swift-whatwg/swift-whatwg-html/actions/workflows/ci.yml)
 
-Type-safe domain model of HTML elements and attributes in Swift.
+Type-safe Swift implementation of the WHATWG HTML Living Standard with modular architecture and RFC compliance.
 
 ## Overview
 
-swift-html-types provides Swift representation of HTML elements and their attributes with compile-time safety. The package is designed as a foundational building block for Swift-based HTML generation and manipulation tools.
+swift-whatwg-html provides a complete, spec-aligned implementation of HTML elements and attributes following the WHATWG HTML Living Standard. The package is structured as composable modules organized by specification sections, enabling precise dependency management and compile-time HTML validation.
+
+All HTML types are backed by relevant RFCs and international standards (RFC 2045 for MIME types, ISO 8601 for datetime values) ensuring technical correctness and interoperability.
 
 ## Features
 
-- **HTML element coverage**: Standard HTML elements represented as Swift types
-- **Type-safe attributes**: Each element exposes only its valid attributes with appropriate types
-- **IDE discoverability**: Autocomplete reveals available attributes per element
-- **Input type specialization**: Different input types (search, color, email, etc.) have distinct signatures
-- **Foundation integration**: Optional `HTMLTypesFoundation` module for URL safety
-- **Modular design**: Focused package that composes with other HTML ecosystem packages
+- **WHATWG HTML Living Standard compliance**: Elements and attributes match the official specification
+- **Modular architecture**: 26 focused modules organized by spec sections (Document, Forms, Tables, etc.)
+- **RFC integration**: RFC 2045 ContentType for MIME handling, ISO 8601 DateTime for temporal values
+- **Type-safe attributes**: Each element exposes only valid attributes with appropriate types
+- **Swift 6 concurrency**: Full Sendable conformance with strict concurrency mode
+- **Input type specialization**: 21 distinct input types (text, search, email, color, etc.) with type-specific attributes
+- **Obsolete element support**: Deprecated HTML elements (marquee, frame, font) available in WHATWG HTML Obsolete module
+- **Zero Foundation dependency**: Core modules independent of Foundation framework
 
 ## Installation
 
 ### Swift Package Manager
 
-Add the dependency in your `Package.swift`:
+Add to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/coenttb/swift-html-types", from: "0.1.0")
+    .package(url: "https://github.com/swift-whatwg/swift-whatwg-html", from: "0.2.2")
 ]
 ```
 
-### Xcode
+Add the product to a target that needs it:
 
-1. Select File > Add Packages...
-2. Enter package URL: `https://github.com/coenttb/swift-html-types`
-3. Select version 0.1.0 or "Up to Next Major Version"
+```swift
+.target(
+    name: "YourTarget",
+    dependencies: [
+        .product(name: "WHATWG HTML", package: "swift-whatwg-html")
+    ]
+)
+```
+
+### Available Products
+
+#### Umbrella Modules
+- **WHATWG HTML**: Complete implementation (all elements and attributes)
+- **WHATWG HTML Elements**: All element modules
+- **WHATWG HTML Attributes**: All attribute modules
+
+#### Element Modules (Spec-Organized)
+- **WHATWG HTML Document**: `<html>`, `<head>`, `<body>`, `<title>`
+- **WHATWG HTML Metadata**: `<meta>`, `<link>`, `<style>`, `<base>`
+- **WHATWG HTML Sections**: `<h1>`-`<h6>`, `<header>`, `<footer>`, `<nav>`, `<section>`, `<article>`, `<aside>`
+- **WHATWG HTML Grouping**: `<p>`, `<div>`, `<ul>`, `<ol>`, `<li>`, `<dl>`, `<dt>`, `<dd>`, `<figure>`, `<blockquote>`
+- **WHATWG HTML TextSemantics**: `<a>`, `<em>`, `<strong>`, `<code>`, `<span>`, `<time>`, `<data>`, etc.
+- **WHATWG HTML Embedded**: `<img>`, `<video>`, `<audio>`, `<canvas>`, `<iframe>`, `<embed>`, `<picture>`
+- **WHATWG HTML Tables**: `<table>`, `<tr>`, `<td>`, `<th>`, `<thead>`, `<tbody>`, `<tfoot>`, `<col>`, `<colgroup>`
+- **WHATWG HTML Forms**: `<form>`, `<input>`, `<button>`, `<select>`, `<textarea>`, `<label>`, `<fieldset>`
+- **WHATWG HTML Interactive**: `<details>`, `<summary>`, `<dialog>`
+- **WHATWG HTML Scripting**: `<script>`, `<noscript>`, `<template>`, `<slot>`
+- **WHATWG HTML Edits**: `<ins>`, `<del>`
+- **WHATWG HTML Links**: Link relationship types
+- **WHATWG HTML CustomElements**: Custom element support
+- **WHATWG HTML Obsolete**: Deprecated elements (`<marquee>`, `<frame>`, `<font>`, etc.)
+
+#### Attribute Modules
+- **WHATWG HTML GlobalAttributes**: Attributes available on all elements (id, class, style, etc.)
+- **WHATWG HTML FormAttributes**: Form-specific attributes (action, method, enctype, etc.)
+- **WHATWG HTML LinkAttributes**: Link attributes (href, rel, target, etc.)
+- **WHATWG HTML MediaAttributes**: Media attributes (src, controls, autoplay, etc.)
+- **WHATWG HTML TableAttributes**: Table attributes (colspan, rowspan, scope, etc.)
+- **WHATWG HTML ScriptAttributes**: Script attributes (async, defer, type, etc.)
+
+#### Core Modules
+- **WHATWG HTML Shared**: Base protocols and types
+- **WHATWG HTML FormData**: FormData API implementation
 
 ## Quick Start
 
-```swift
-import HTMLTypes
+### Using the Complete Implementation
 
-// Create elements with appropriate attributes
-let anchor = Anchor(href: "https://example.com")
-let input = Input.search(name: "query", placeholder: "Search...")
+```swift
+import WHATWG_HTML
+
+// Create form with typed input element
+let searchInput = Input(
+    name: Name("query"),
+    disabled: nil,
+    form: nil,
+    type: .search(
+        Input.Search(
+            value: Value(""),
+            placeholder: Placeholder("Search...")
+        )
+    )
+)
 ```
 
-### Foundation integration for URL safety
+### Using Modular Imports
 
 ```swift
-import HTMLTypesFoundation
+import WHATWG_HTML_Forms
+import WHATWG_HTML_FormAttributes
 
-let url: Foundation.URL = .init(string: "https://example.com")!
-let anchor = Anchor(href: Href(url))
+// Only import what you need
+let form = Form(
+    action: Action("/search"),
+    method: Method.get,
+    enctype: EncType.urlencoded
+)
 ```
 
 ## Usage
 
-### Type-safe element creation
+### Type-Safe Input Elements
 
-The package improves discoverability of available attributes for each HTML element. For example, invoking the `search` static func on `Input` reveals the available attributes:
+Each input type exposes only its valid attributes. The `search` input type:
 
 ```swift
-let input = Input.search(
-  name: Name?,
-  value: Value<String>?,
-  list: List?,
-  maxlength: Maxlength?,
-  minlength: Minlength?,
-  pattern: Pattern?,
-  placeholder: Placeholder?,
-  readonly: Readonly?,
-  size: Size?,
-  spellcheck: Spellcheck?,
-  required: Required?,
-  disabled: Disabled?,
-  form: Form.ID?
+let search = Input.search(
+    name: Name?("query"),
+    value: Value<String>?(nil),
+    list: List?(nil),
+    maxlength: Maxlength?(nil),
+    minlength: Minlength?(nil),
+    pattern: Pattern?(nil),
+    placeholder: Placeholder?("Search..."),
+    readonly: Readonly?(nil),
+    size: Size?(nil),
+    spellcheck: Spellcheck?(nil),
+    required: Required?(nil),
+    disabled: Disabled?(nil),
+    form: Form.ID?(nil)
 )
 ```
 
-Contrast this with other input types, like `color`, that permit a different set of attributes:
+Contrast with the `color` input type:
 
 ```swift
-let input = Input.color(
-  name: Name?,
-  value: Value<String>?,
-  disabled: Disabled?,
-  form: Form.ID?
+let color = Input.color(
+    name: Name?("theme"),
+    value: Value<String>?(nil),
+    disabled: Disabled?(nil),
+    form: Form.ID?(nil)
 )
 ```
 
-Each input type exposes only the attributes that are semantically valid for that type, providing compile-time safety and better developer experience.
+### RFC-Compliant Media Types
+
+Media attributes use RFC 2045 ContentType for MIME validation:
+
+```swift
+import WHATWG_HTML_Embedded
+import RFC_2045
+
+let video = Video(
+    src: Src("/video.mp4"),
+    type: SourceType(contentType: .videoMP4),  // RFC 2045 MIME type
+    controls: Controls(),
+    preload: Video.Preload.metadata
+)
+```
+
+### ISO 8601 DateTime Values
+
+Time-related attributes use ISO 8601 DateTime:
+
+```swift
+import WHATWG_HTML_TextSemantics
+import ISO_8601
+
+let time = Time(
+    datetime: WHATWG_HTML_GlobalAttributes.DateTime(
+        date: Date(year: 2025, month: 11, day: 21)
+    )
+)
+```
+
+### Modular Architecture Benefits
+
+Import only the modules you need for smaller binaries:
+
+```swift
+// Minimal imports for a simple page
+import WHATWG_HTML_Document
+import WHATWG_HTML_Sections
+import WHATWG_HTML_Grouping
+
+// vs. importing everything
+import WHATWG_HTML
+```
 
 ## Requirements
 
-- Swift 5.9+
-- macOS 14.0+ / iOS 17.0+ / Linux
+- Swift 6.2+
+- macOS 15.0+ / iOS 18.0+ / tvOS 18.0+ / watchOS 11.0+
+- Swift 6 language mode with strict concurrency
+
+## Architecture
+
+### Module Organization
+
+The package follows the WHATWG HTML Living Standard structure:
+
+```
+swift-whatwg-html/
+├── WHATWG HTML/              # Umbrella (all modules)
+├── WHATWG HTML Shared/       # Base protocols
+├── WHATWG HTML FormData/     # FormData API
+├── WHATWG HTML Elements/     # Element umbrella
+├── WHATWG HTML Attributes/   # Attribute umbrella
+│
+├── Element Modules (14):
+│   ├── WHATWG HTML Document/
+│   ├── WHATWG HTML Metadata/
+│   ├── WHATWG HTML Sections/
+│   ├── WHATWG HTML Grouping/
+│   ├── WHATWG HTML TextSemantics/
+│   ├── WHATWG HTML Embedded/
+│   ├── WHATWG HTML Tables/
+│   ├── WHATWG HTML Forms/
+│   ├── WHATWG HTML Interactive/
+│   ├── WHATWG HTML Scripting/
+│   ├── WHATWG HTML Edits/
+│   ├── WHATWG HTML Links/
+│   ├── WHATWG HTML CustomElements/
+│   └── WHATWG HTML Obsolete/
+│
+└── Attribute Modules (6):
+    ├── WHATWG HTML GlobalAttributes/
+    ├── WHATWG HTML FormAttributes/
+    ├── WHATWG HTML LinkAttributes/
+    ├── WHATWG HTML MediaAttributes/
+    ├── WHATWG HTML TableAttributes/
+    └── WHATWG HTML ScriptAttributes/
+```
+
+### Integration with Standards
+
+- **RFC 2045**: MIME ContentType for media type validation
+- **ISO 8601**: DateTime for temporal values
+- **WHATWG HTML Living Standard**: Element and attribute specifications
 
 ## Related Packages
 
-### Used By
+### Umbrella Package
+- [swift-html-standard](https://github.com/swift-standards/swift-html-standard): Compatibility wrapper providing the old swift-html-standard API structure
 
-- [swift-html](https://github.com/coenttb/swift-html): The Swift library for domain-accurate and type-safe HTML & CSS.
-- [swift-html-css-pointfree](https://github.com/coenttb/swift-html-css-pointfree): A Swift package integrating swift-html-types and swift-css-types with pointfree-html.
+### Used By
+- [swift-html-css-pointfree](https://github.com/swift-foundations/swift-html-css-pointfree): Integration with pointfree-html for HTML generation
+
+### Dependencies
+- [swift-rfc-2045](https://github.com/swift-ietf/swift-rfc-2045): RFC 2045 MIME types
+- [swift-iso-8601](https://github.com/swift-iso/swift-iso-8601): ISO 8601 date/time
+- [swift-standards](https://github.com/swift-standards/swift-standards): Shared standard utilities
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please ensure:
+- All changes maintain WHATWG HTML Living Standard compliance
+- Tests pass with Swift 6.2
+- Code follows the existing style (swift-format with 4-space indentation)
+- New features include test coverage
 
 ## License
 
-This project is licensed under the Apache 2.0 License. See [LICENSE](LICENSE) for details.
+This project is licensed under the Apache License 2.0. See [LICENSE](LICENSE) for details.

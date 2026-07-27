@@ -1,71 +1,7 @@
-disabled_rules:
-  - line_length
-  - identifier_name
-  - nesting  # Allow deeply nested enums for namespacing
-  - redundant_discardable_let  # Preserve 'let _ =' in result builder contexts (required for Swift 6.0+)
-  - opening_brace  # Handled by swift-format
-  - trailing_comma  # Handled by swift-format
-  - trailing_whitespace  # Preserve whitespace in snapshot tests
-  - orphaned_doc_comment  # Allow module-level documentation
+# SwiftLint configuration for swift-whatwg-html
+# Inherits from the shared parent configuration in swift-standards
 
-opt_in_rules:
-  - empty_count
-  - explicit_init
-  - sorted_imports
-  - force_cast
-  - force_try
-  - closure_spacing
-  - operator_usage_whitespace
-  - private_outlet
-  - redundant_nil_coalescing
-  - literal_expression_end_indentation
-  - single_test_class
-  - sorted_first_last
-  - vertical_whitespace
-  - strict_fileprivate
-  - legacy_random
-  - no_extension_access_modifier
-  - colon
-  
-included:
-  - Package.swift
-  - Sources
-  - Tests
+parent_config: https://raw.githubusercontent.com/swift-standards/swift-standards/main/.swiftlint.yml
 
-excluded:
-  - Carthage
-  - Pods
-  - fastlane
-  - build
-
-analyzer_rules:
-  - unused_import
-
-colon:
-  apply_to_dictionaries: true
-
-vertical_whitespace:
-  max_empty_lines: 1
-
-# Increased length limits for test files
-type_body_length:
-  warning: 400
-  error: 500
-
-file_length:
-  warning: 500
-  error: 600
-
-# Allow short type names for HTML elements (H1, BR, B, As, Id, Is, etc.)
-type_name:
-  min_length:
-    warning: 1
-    error: 0
-  max_length:
-    warning: 40
-    error: 50
-
-# Allow more function parameters for HTML elements with many attributes
-function_parameter_count:
-  warning: 8
-  error: 10
+# Package-specific overrides (if needed)
+# Add any swift-whatwg-html specific rules here

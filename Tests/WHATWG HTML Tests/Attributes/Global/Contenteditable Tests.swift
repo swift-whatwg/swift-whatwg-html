@@ -1,0 +1,63 @@
+// ===----------------------------------------------------------------------===//
+//
+// Copyright (c) 2025 Coen ten Thije Boonkkamp
+// Licensed under Apache License v2.0
+//
+// See LICENSE.txt for license information
+// See CONTRIBUTORS.txt for the list of project contributors
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+// ===----------------------------------------------------------------------===//
+
+import Testing
+import WHATWG_HTML
+
+#if canImport(FoundationEssentials)
+    import FoundationEssentials
+#elseif canImport(Foundation)
+#endif
+
+@Suite struct `Contenteditable Test` {
+    @Test func `Contenteditable attribute should be contenteditable`() {
+        #expect(Contenteditable.attribute == "contenteditable")
+    }
+
+    @Test(
+        "Contenteditable cases description should match the spec",
+        arguments: Contenteditable.allCases
+    ) func cases(contenteditable: Contenteditable) {
+        switch contenteditable {
+        case .true: #expect(contenteditable.description == "true")
+        case .false: #expect(contenteditable.description == "false")
+        case .plaintextOnly: #expect(contenteditable.description == "plaintext-only")
+        case .empty: #expect(contenteditable.description.isEmpty)
+        default: ()
+        }
+    }
+
+    @Test func `Contenteditable should conform to CaseIterable`() {
+        #expect(Contenteditable.allCases.count == 4)
+        #expect(Contenteditable.allCases.contains(.true))
+        #expect(Contenteditable.allCases.contains(.false))
+        #expect(Contenteditable.allCases.contains(.plaintextOnly))
+        #expect(Contenteditable.allCases.contains(.empty))
+    }
+
+    @Test(arguments: Contenteditable.allCases)
+    func `Contenteditable rawValue should match description`(contenteditable: Contenteditable) {
+        #expect(contenteditable.rawValue == contenteditable.description)
+    }
+
+    @Test(
+        arguments: [
+            ("true", Contenteditable.true), ("false", Contenteditable.false),
+            ("plaintext-only", Contenteditable.plaintextOnly),
+        ]
+    ) func `Contenteditable should be initializable from rawValue`(
+        input: String,
+        expected: Contenteditable?
+    ) {
+        #expect(Contenteditable(rawValue: input) == expected)
+    }
+}

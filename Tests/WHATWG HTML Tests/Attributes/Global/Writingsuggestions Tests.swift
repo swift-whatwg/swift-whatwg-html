@@ -1,0 +1,30 @@
+// ===----------------------------------------------------------------------===//
+//
+// Copyright (c) 2025 Coen ten Thije Boonkkamp
+// Licensed under Apache License v2.0
+//
+// See LICENSE.txt for license information
+// See CONTRIBUTORS.txt for the list of project contributors
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+// ===----------------------------------------------------------------------===//
+
+import Testing
+import WHATWG_HTML
+
+#if canImport(FoundationEssentials)
+    import FoundationEssentials
+#elseif canImport(Foundation)
+#endif
+
+@Suite struct `Writingsuggestions Test` {
+    @Test func `Writingsuggestions attribute should be writingsuggestions`() {
+        #expect(Writingsuggestions.attribute == "writingsuggestions")
+    }
+
+    @Test func `Writingsuggestions description should match the spec`() {
+        #expect(Writingsuggestions.true.description == "true")
+        #expect(Writingsuggestions.false.description == "false")
+    }
+}

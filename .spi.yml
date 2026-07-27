@@ -2,4 +2,28 @@ version: 1
 builder:
   configs:
   - documentation_targets:
-    - HTMLTypes
+    - WHATWG HTML Shared
+    - WHATWG HTML FormData
+    - WHATWG HTML Document
+    - WHATWG HTML Metadata
+    - WHATWG HTML Sections
+    - WHATWG HTML Grouping
+    - WHATWG HTML TextSemantics
+    - WHATWG HTML Links
+    - WHATWG HTML Edits
+    - WHATWG HTML Embedded
+    - WHATWG HTML Tables
+    - WHATWG HTML Forms
+    - WHATWG HTML Interactive
+    - WHATWG HTML Scripting
+    - WHATWG HTML CustomElements
+    - WHATWG HTML Obsolete
+    - WHATWG HTML GlobalAttributes
+    - WHATWG HTML FormAttributes
+    - WHATWG HTML LinkAttributes
+    - WHATWG HTML MediaAttributes
+    - WHATWG HTML TableAttributes
+    - WHATWG HTML ScriptAttributes
+    - WHATWG HTML Elements
+    - WHATWG HTML Attributes
+    - WHATWG HTML

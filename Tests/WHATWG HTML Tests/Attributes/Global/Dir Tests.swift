@@ -1,0 +1,52 @@
+// ===----------------------------------------------------------------------===//
+//
+// Copyright (c) 2025 Coen ten Thije Boonkkamp
+// Licensed under Apache License v2.0
+//
+// See LICENSE.txt for license information
+// See CONTRIBUTORS.txt for the list of project contributors
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+// ===----------------------------------------------------------------------===//
+
+import Testing
+import WHATWG_HTML
+
+#if canImport(FoundationEssentials)
+    import FoundationEssentials
+#elseif canImport(Foundation)
+#endif
+
+@Suite struct `Dir Test` {
+    @Test func `Dir attribute should be dir`() { #expect(Dir.attribute == "dir") }
+
+    @Test("Dir cases description should match the spec", arguments: Dir.allCases) func cases(
+        dir: Dir
+    ) {
+        switch dir {
+        case .ltr: #expect(dir.description == "ltr")
+        case .rtl: #expect(dir.description == "rtl")
+        case .auto: #expect(dir.description == "auto")
+        default: ()
+        }
+    }
+
+    @Test func `Dir should conform to CaseIterable`() {
+        #expect(Dir.allCases.count == 3)
+        #expect(Dir.allCases.contains(.ltr))
+        #expect(Dir.allCases.contains(.rtl))
+        #expect(Dir.allCases.contains(.auto))
+    }
+
+    @Test(arguments: Dir.allCases)
+    func `Dir rawValue should match description`(dir: Dir) {
+        #expect(dir.rawValue == dir.description)
+    }
+
+    @Test(
+        arguments: [("ltr", Dir.ltr), ("rtl", Dir.rtl), ("auto", Dir.auto)]
+    ) func `Dir should be initializable from rawValue`(input: String, expected: Dir?) {
+        #expect(Dir(rawValue: input) == expected)
+    }
+}

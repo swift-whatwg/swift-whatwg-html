@@ -4,21 +4,21 @@
   "indentation": {
     "spaces": 4
   },
-  "tabWidth": 8,
   "maximumBlankLines": 1,
   "respectsExistingLineBreaks": true,
   "lineBreakBeforeControlFlowKeywords": false,
   "lineBreakBeforeEachArgument": true,
-  "lineBreakBeforeEachGenericRequirement": false,
+  "lineBreakBeforeEachGenericRequirement": true,
   "prioritizeKeepingFunctionOutputTogether": true,
   "indentConditionalCompilationBlocks": true,
-  "lineBreakAroundMultilineExpressionChainComponents": false,
+  "indentSwitchCaseLabels": false,
+  "spacesAroundRangeFormationOperators": false,
   "fileScopedDeclarationPrivacy": {
     "accessLevel": "private"
   },
   "rules": {
     "AllPublicDeclarationsHaveDocumentation": false,
-    "AlwaysUseLowerCamelCase": true,
+    "AlwaysUseLowerCamelCase": false,
     "AmbiguousTrailingClosureOverload": true,
     "BeginDocumentationCommentWithOneLineSummary": false,
     "DoNotUseSemicolons": true,
@@ -31,7 +31,7 @@
     "NeverUseForceTry": false,
     "NeverUseImplicitlyUnwrappedOptionals": false,
     "NoAccessLevelOnExtensionDeclaration": true,
-    "NoBlockComments": true,
+    "NoBlockComments": false,
     "NoCasesWithOnlyFallthrough": true,
     "NoEmptyTrailingClosureParentheses": true,
     "NoLabelsInCasePatterns": true,
@@ -43,10 +43,11 @@
     "OnlyOneTrailingClosureArgument": true,
     "OrderedImports": true,
     "ReturnVoidInsteadOfEmptyTuple": true,
+    "UseEarlyExits": false,
     "UseLetInEveryBoundCaseVariable": true,
     "UseShorthandTypeNames": true,
     "UseSingleLinePropertyGetter": true,
-    "UseSynthesizedInitializer": true,
+    "UseSynthesizedInitializer": false,
     "UseTripleSlashForDocumentationComments": true,
     "UseWhereClausesInForLoops": false,
     "ValidateDocumentationComments": false
