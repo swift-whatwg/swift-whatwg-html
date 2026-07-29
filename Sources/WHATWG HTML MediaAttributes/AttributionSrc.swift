@@ -126,5 +126,5 @@ extension AttributionSrc: ExpressibleByStringLiteral {
     ///
     /// - Parameter value: URL or space-separated list of URLs where the
     ///   Attribution-Reporting-Eligible header should be sent
-    public init(stringLiteral value: StringLiteralType) { self.init(value) }
+    public init(stringLiteral value: String) { self.init(value) }
 }

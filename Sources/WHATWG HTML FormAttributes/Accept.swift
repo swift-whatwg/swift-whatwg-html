@@ -76,7 +76,7 @@ extension Accept {
 }
 
 extension Accept: ExpressibleByStringLiteral {
-    public init(stringLiteral value: StringLiteralType) { self = .init(rawValue: value) }
+    public init(stringLiteral value: String) { self = .init(rawValue: value) }
 }
 
 extension Accept: CustomStringConvertible {
@@ -115,7 +115,7 @@ extension Accept {
         /// Initialize with an RFC 2045 MIME type
         public init(contentType: RFC_2045.ContentType) { self.value = contentType.headerValue }
 
-        public init(stringLiteral value: StringLiteralType) { self = .init(value) }
+        public init(stringLiteral value: String) { self = .init(value) }
     }
 }
 

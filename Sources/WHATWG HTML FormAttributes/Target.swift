@@ -104,7 +104,7 @@ extension Target {
 }
 
 extension Target: ExpressibleByStringLiteral {
-    public init(stringLiteral value: StringLiteralType) { self.init(value) }
+    public init(stringLiteral value: String) { self.init(value) }
 }
 
 extension Target {

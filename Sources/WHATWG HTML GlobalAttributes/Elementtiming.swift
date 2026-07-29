@@ -86,7 +86,7 @@ extension Elementtiming {
 
         public init(_ value: String) { self.value = value }
 
-        public init(stringLiteral value: StringLiteralType) { self.value = value }
+        public init(stringLiteral value: String) { self.value = value }
     }
 
     /// Create an elementtiming value with a predefined category

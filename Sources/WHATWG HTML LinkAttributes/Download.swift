@@ -128,5 +128,5 @@ extension Download: ExpressibleByStringLiteral {
     /// Initialize with a string literal
     ///
     /// - Parameter value: The suggested filename for the downloaded file
-    public init(stringLiteral value: StringLiteralType) { self.init(value) }
+    public init(stringLiteral value: String) { self.init(value) }
 }
