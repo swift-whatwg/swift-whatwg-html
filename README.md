@@ -197,8 +197,8 @@ import WHATWG_HTML
 
 ## Requirements
 
-- Swift 6.2+
-- macOS 15.0+ / iOS 18.0+ / tvOS 18.0+ / watchOS 11.0+
+- Swift 6.3.3+
+- macOS 26.0+ / iOS 26.0+ / tvOS 26.0+ / watchOS 26.0+ / visionOS 26.0+
 - Swift 6 language mode with strict concurrency
 
 ## Architecture
@@ -263,7 +263,7 @@ swift-whatwg-html/
 
 Contributions are welcome! Please ensure:
 - All changes maintain WHATWG HTML Living Standard compliance
-- Tests pass with Swift 6.2
+- Tests pass with Swift 6.3.3
 - Code follows the existing style (swift-format with 4-space indentation)
 - New features include test coverage
 
