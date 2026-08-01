@@ -167,7 +167,7 @@ extension Form.Data.Entry.List {
 
 // MARK: - Collection Conformance
 
-extension Form.Data.Entry.List: Collection {
+extension Form.Data.Entry.List: Swift.Collection {
     public typealias Index = Array<Form.Data.Entry>.Index
     public typealias Element = Form.Data.Entry
 
