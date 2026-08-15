@@ -129,36 +129,34 @@ extension Href {
 }
 
 // MARK: - Usage Examples
-/*
-// Foundation.URL
-let websiteURL = URL(string: "https://example.com")!
-let link1 = Link(href: Href.url(websiteURL), rel: "external")
-
-// Telephone
-let phoneLink = Link(href: Href.tel("+1-555-123-4567"), rel: "nofollow")
-
-// Email
-let emailLink = Link(href: Href.mailto("contact@example.com"), rel: "nofollow")
-let emailWithSubject = Link(href: Href.mailto("support@example.com", subject: "Help Request"), rel: "nofollow")
-
-// SMS
-let smsLink = Link(href: Href.sms("+1-555-123-4567"), rel: "nofollow")
-let smsWithBody = Link(href: Href.sms("+1-555-123-4567", body: "Hello there!"), rel: "nofollow")
-
-// Fragment/Anchor
-let anchorLink = Link(href: Href.fragment("section-1"), rel: "bookmark")
-
-// WhatsApp
-let whatsappLink = Link(href: Href.whatsapp("+1234567890"), rel: "nofollow")
-let whatsappWithMessage = Link(href: Href.whatsapp("+1234567890", message: "Hello!"), rel: "nofollow")
-
-// File
-let fileLink = Link(href: Href.file("/path/to/document.pdf"), rel: "nofollow")
-
-// FaceTime
-let facetimeLink = Link(href: Href.facetime("user@example.com"), rel: "nofollow")
-let facetimeVideoLink = Link(href: Href.facetimeVideo("+1-555-123-4567"), rel: "nofollow")
-*/
+// // Foundation.URL
+// let websiteURL = URL(string: "https://example.com")!
+// let link1 = Link(href: Href.url(websiteURL), rel: "external")
+//
+// // Telephone
+// let phoneLink = Link(href: Href.tel("+1-555-123-4567"), rel: "nofollow")
+//
+// // Email
+// let emailLink = Link(href: Href.mailto("contact@example.com"), rel: "nofollow")
+// let emailWithSubject = Link(href: Href.mailto("support@example.com", subject: "Help Request"), rel: "nofollow")
+//
+// // SMS
+// let smsLink = Link(href: Href.sms("+1-555-123-4567"), rel: "nofollow")
+// let smsWithBody = Link(href: Href.sms("+1-555-123-4567", body: "Hello there!"), rel: "nofollow")
+//
+// // Fragment/Anchor
+// let anchorLink = Link(href: Href.fragment("section-1"), rel: "bookmark")
+//
+// // WhatsApp
+// let whatsappLink = Link(href: Href.whatsapp("+1234567890"), rel: "nofollow")
+// let whatsappWithMessage = Link(href: Href.whatsapp("+1234567890", message: "Hello!"), rel: "nofollow")
+//
+// // File
+// let fileLink = Link(href: Href.file("/path/to/document.pdf"), rel: "nofollow")
+//
+// // FaceTime
+// let facetimeLink = Link(href: Href.facetime("user@example.com"), rel: "nofollow")
+// let facetimeVideoLink = Link(href: Href.facetimeVideo("+1-555-123-4567"), rel: "nofollow")
 
 extension Href {
     /// Creates a link with a fragment identifier (#section)
@@ -196,12 +194,12 @@ extension Href {
             url += "?"
             var queryParts: [String] = []
 
-            if let subject = subject {
+            if let subject {
                 let encoded = percentEncode(subject)
                 queryParts.append("subject=\(encoded)")
             }
 
-            if let body = body {
+            if let body {
                 let encoded = percentEncode(body)
                 queryParts.append("body=\(encoded)")
             }

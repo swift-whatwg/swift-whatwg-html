@@ -114,7 +114,7 @@ extension Rel {
     @inlinable public static var preload: Self { "preload" }
     @inlinable public static var prefetch: Self { "prefetch" }
     @inlinable public static var preconnect: Self { "preconnect" }
-    @inlinable public static var dns_prefetch: Self { "dns-prefetch" }
+    @inlinable public static var dnsPrefetch: Self { "dns-prefetch" }
 
     // Anchor-specific types
     @inlinable public static var bookmark: Self { "bookmark" }
@@ -126,6 +126,6 @@ extension Rel {
     @inlinable public static var me: Self { "me" }
 
     // Security/privacy related types
-    @inlinable public static var privacy_policy: Self { "privacy-policy" }
-    @inlinable public static var terms_of_service: Self { "terms-of-service" }
+    @inlinable public static var privacyPolicy: Self { "privacy-policy" }
+    @inlinable public static var termsOfService: Self { "terms-of-service" }
 }

@@ -22,17 +22,17 @@ import WHATWG_HTML
     @Test func `Is attribute should be is`() { #expect(Is.attribute == "is") }
 
     @Test func `Is should store and return its value`() {
-        let is_ = Is("custom-button")
-        #expect(is_.rawValue == "custom-button")
+        let `is` = Is("custom-button")
+        #expect(`is`.rawValue == "custom-button")
     }
 
     @Test func `Is description should return its value`() {
-        let is_ = Is("file-viewer")
-        #expect(is_.description == "file-viewer")
+        let `is` = Is("file-viewer")
+        #expect(`is`.description == "file-viewer")
     }
 
     @Test func `Is should be initializable with string literal`() {
-        let is_: Is = "special-element"
-        #expect(is_.rawValue == "special-element")
+        let `is`: Is = "special-element"
+        #expect(`is`.rawValue == "special-element")
     }
 }

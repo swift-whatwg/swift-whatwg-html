@@ -171,6 +171,7 @@ extension Area {
         switch self.shape {
         case .circle(coords: let value), .poly(coords: let value), .rect(coords: let value):
             return value
+
         default: return nil
         }
     }

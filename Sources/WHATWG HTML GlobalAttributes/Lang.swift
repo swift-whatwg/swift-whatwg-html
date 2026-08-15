@@ -97,9 +97,9 @@ extension Lang {
     public init(language: String, script: String? = nil, region: String? = nil) {
         var value = language
 
-        if let script = script { value += "-\(script)" }
+        if let script { value += "-\(script)" }
 
-        if let region = region { value += "-\(region)" }
+        if let region { value += "-\(region)" }
 
         self = .init(value: value)
     }
