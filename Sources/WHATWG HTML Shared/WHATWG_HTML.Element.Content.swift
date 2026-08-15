@@ -63,6 +63,7 @@ extension WHATWG_HTML.Element.Content.Model {
         case .nothing: return false
         case .text: return false
         case .categories(let allowed): return allowed.contains(category)
+
         case .transparent:
             // When no parent, transparent accepts any flow content
             return true
@@ -74,8 +75,10 @@ extension WHATWG_HTML.Element.Content.Model {
         switch self {
         case .nothing: return false
         case .text: return true
+
         case .categories(let categories):
             return categories.contains(.phrasing) || categories.contains(.flow)
+
         case .transparent: return true
         }
     }
