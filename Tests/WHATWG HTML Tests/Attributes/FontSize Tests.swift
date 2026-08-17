@@ -15,24 +15,24 @@ import WHATWG_HTML
 
 @Suite struct `FontSize Test` {
     @Test func `FontSize attribute should be size`() {
-        #expect(WHATWG.HTML.Attribute.FontSize.attribute == "size")
+        #expect(WHATWG.HTML.Font.Size.Attribute.attribute == "size")
     }
 
     @Test func `FontSize should support numeric initialization`() {
-        let fontSize = WHATWG.HTML.Attribute.FontSize(numericValue: 5)
+        let fontSize = WHATWG.HTML.Font.Size.Attribute(numericValue: 5)
         #expect(fontSize.rawValue == "5")
     }
 
     @Test func `FontSize should support relative initialization`() {
-        let positiveRelative = WHATWG.HTML.Attribute.FontSize(relativeValue: 2)
+        let positiveRelative = WHATWG.HTML.Font.Size.Attribute(relativeValue: 2)
         #expect(positiveRelative.rawValue == "+2")
 
-        let negativeRelative = WHATWG.HTML.Attribute.FontSize(relativeValue: -1)
+        let negativeRelative = WHATWG.HTML.Font.Size.Attribute(relativeValue: -1)
         #expect(negativeRelative.rawValue == "-1")
     }
 
     @Test func `FontSize should support integer literal`() {
-        let fontSize: WHATWG.HTML.Attribute.FontSize = 3
+        let fontSize: WHATWG.HTML.Font.Size.Attribute = 3
         #expect(fontSize.rawValue == "3")
     }
 }

@@ -15,10 +15,10 @@ import WHATWG_HTML
 
 @Suite struct `Blocking Test` {
     @Test func `Blocking attribute should be blocking`() {
-        #expect(WHATWG.HTML.Attribute.Blocking.attribute == "blocking")
+        #expect(WHATWG.HTML.Blocking.Attribute.attribute == "blocking")
     }
 
     @Test func `Blocking should have render preset`() {
-        #expect(WHATWG.HTML.Attribute.Blocking.render.rawValue == "render")
+        #expect(WHATWG.HTML.Blocking.Attribute.render.rawValue == "render")
     }
 }

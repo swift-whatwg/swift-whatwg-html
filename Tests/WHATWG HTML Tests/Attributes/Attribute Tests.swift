@@ -18,7 +18,7 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-private struct TestAttribute: WHATWG.HTML.Attribute.`Protocol` {
+private struct TestAttribute: WHATWG.HTML.Attribute {
     let value: String
 
     init(_ value: String) { self.value = value }
@@ -28,7 +28,7 @@ extension TestAttribute {
     static var attribute: String { "test-attribute" }
 }
 
-private struct NumericTestAttribute: WHATWG.HTML.Attribute.`Protocol` {
+private struct NumericTestAttribute: WHATWG.HTML.Attribute {
     let value: Int
 
     init(_ value: Int) { self.value = value }

@@ -15,14 +15,14 @@ import WHATWG_HTML
 
 @Suite struct `ListType Test` {
     @Test func `ListType attribute should be type`() {
-        #expect(WHATWG.HTML.Attribute.ListType.attribute == "type")
+        #expect(WHATWG.HTML.OrderedList.`Type`.Attribute.attribute == "type")
     }
 
     @Test func `ListType should have predefined values`() {
-        #expect(WHATWG.HTML.Attribute.ListType.lowerAlpha.rawValue == "a")
-        #expect(WHATWG.HTML.Attribute.ListType.upperAlpha.rawValue == "A")
-        #expect(WHATWG.HTML.Attribute.ListType.lowerRoman.rawValue == "i")
-        #expect(WHATWG.HTML.Attribute.ListType.upperRoman.rawValue == "I")
-        #expect(WHATWG.HTML.Attribute.ListType.decimal.rawValue == "1")
+        #expect(WHATWG.HTML.OrderedList.`Type`.Attribute.lowerAlpha.rawValue == "a")
+        #expect(WHATWG.HTML.OrderedList.`Type`.Attribute.upperAlpha.rawValue == "A")
+        #expect(WHATWG.HTML.OrderedList.`Type`.Attribute.lowerRoman.rawValue == "i")
+        #expect(WHATWG.HTML.OrderedList.`Type`.Attribute.upperRoman.rawValue == "I")
+        #expect(WHATWG.HTML.OrderedList.`Type`.Attribute.decimal.rawValue == "1")
     }
 }

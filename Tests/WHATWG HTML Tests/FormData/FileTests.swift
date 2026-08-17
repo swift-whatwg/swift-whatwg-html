@@ -20,7 +20,7 @@ import WHATWG_HTML_Forms
 
     @Test func `File initialization stores properties correctly`() {
         let data = [UInt8]([1, 2, 3, 4, 5])
-        let file = WHATWG.HTML.Attribute.Form.Data.File(
+        let file = WHATWG.HTML.Form.Attribute.Data.File(
             name: "test.txt",
             type: "text/plain",
             body: data
@@ -33,7 +33,7 @@ import WHATWG_HTML_Forms
 
     @Test func `File size property returns correct byte count`() {
         let data = [UInt8]([1, 2, 3, 4, 5])
-        let file = WHATWG.HTML.Attribute.Form.Data.File(
+        let file = WHATWG.HTML.Form.Attribute.Data.File(
             name: "test.bin",
             type: "application/octet-stream",
             body: data
@@ -43,7 +43,7 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `File isEmpty returns true for empty data`() {
-        let file = WHATWG.HTML.Attribute.Form.Data.File(
+        let file = WHATWG.HTML.Form.Attribute.Data.File(
             name: "empty.txt",
             type: "text/plain",
             body: []
@@ -53,7 +53,7 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `File isEmpty returns false for non-empty data`() {
-        let file = WHATWG.HTML.Attribute.Form.Data.File(
+        let file = WHATWG.HTML.Form.Attribute.Data.File(
             name: "data.txt",
             type: "text/plain",
             body: [1 as UInt8]
@@ -64,7 +64,7 @@ import WHATWG_HTML_Forms
 
     @Test func `File description includes name, type, and size`() {
         let data = [UInt8]([1, 2, 3])
-        let file = WHATWG.HTML.Attribute.Form.Data.File(
+        let file = WHATWG.HTML.Form.Attribute.Data.File(
             name: "image.png",
             type: "image/png",
             body: data
@@ -78,12 +78,12 @@ import WHATWG_HTML_Forms
 
     @Test func `File conforms to Hashable`() {
         let data = [UInt8]([1, 2, 3])
-        let file1 = WHATWG.HTML.Attribute.Form.Data.File(
+        let file1 = WHATWG.HTML.Form.Attribute.Data.File(
             name: "test.txt",
             type: "text/plain",
             body: data
         )
-        let file2 = WHATWG.HTML.Attribute.Form.Data.File(
+        let file2 = WHATWG.HTML.Form.Attribute.Data.File(
             name: "test.txt",
             type: "text/plain",
             body: data
@@ -94,12 +94,12 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `File with different data are not equal`() {
-        let file1 = WHATWG.HTML.Attribute.Form.Data.File(
+        let file1 = WHATWG.HTML.Form.Attribute.Data.File(
             name: "test.txt",
             type: "text/plain",
             body: [UInt8]([1, 2, 3])
         )
-        let file2 = WHATWG.HTML.Attribute.Form.Data.File(
+        let file2 = WHATWG.HTML.Form.Attribute.Data.File(
             name: "test.txt",
             type: "text/plain",
             body: [UInt8]([4, 5, 6])
@@ -109,21 +109,21 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `MIME type constants are correct`() {
-        #expect(WHATWG.HTML.Attribute.Form.Data.File.MIMEType.plainText == "text/plain")
-        #expect(WHATWG.HTML.Attribute.Form.Data.File.MIMEType.html == "text/html")
-        #expect(WHATWG.HTML.Attribute.Form.Data.File.MIMEType.json == "application/json")
-        #expect(WHATWG.HTML.Attribute.Form.Data.File.MIMEType.pdf == "application/pdf")
-        #expect(WHATWG.HTML.Attribute.Form.Data.File.MIMEType.jpeg == "image/jpeg")
-        #expect(WHATWG.HTML.Attribute.Form.Data.File.MIMEType.png == "image/png")
+        #expect(WHATWG.HTML.Form.Attribute.Data.File.MIMEType.plainText == "text/plain")
+        #expect(WHATWG.HTML.Form.Attribute.Data.File.MIMEType.html == "text/html")
+        #expect(WHATWG.HTML.Form.Attribute.Data.File.MIMEType.json == "application/json")
+        #expect(WHATWG.HTML.Form.Attribute.Data.File.MIMEType.pdf == "application/pdf")
+        #expect(WHATWG.HTML.Form.Attribute.Data.File.MIMEType.jpeg == "image/jpeg")
+        #expect(WHATWG.HTML.Form.Attribute.Data.File.MIMEType.png == "image/png")
         #expect(
-            WHATWG.HTML.Attribute.Form.Data.File.MIMEType.octetStream == "application/octet-stream"
+            WHATWG.HTML.Form.Attribute.Data.File.MIMEType.octetStream == "application/octet-stream"
         )
     }
 
     @Test func `File conforms to Sendable`() {
         // Compile-time check that File is Sendable
         func acceptSendable<T: Sendable>(_: T) {}
-        let file = WHATWG.HTML.Attribute.Form.Data.File(
+        let file = WHATWG.HTML.Form.Attribute.Data.File(
             name: "test.txt",
             type: "text/plain",
             body: []

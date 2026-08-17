@@ -15,10 +15,10 @@ import WHATWG_HTML
 
 @Suite struct `Form Test` {
     @Test func `Form should support initialization with form override properties`() {
-        let form = WHATWG.HTML.Attribute.Form(
-            action: WHATWG.HTML.Attribute.FormAction(value: "/submit"),
-            method: WHATWG.HTML.Attribute.FormMethod.post,
-            novalidate: WHATWG.HTML.Attribute.FormNovalidate()
+        let form = WHATWG.HTML.Form.Attribute(
+            action: WHATWG.HTML.FormAction.Attribute(value: "/submit"),
+            method: WHATWG.HTML.FormMethod.Attribute.post,
+            novalidate: WHATWG.HTML.FormNovalidate.Attribute()
         )
 
         #expect(form.action?.rawValue == "/submit")
@@ -29,9 +29,9 @@ import WHATWG_HTML
     }
 
     @Test func `Form should support mutating methods`() {
-        var form = WHATWG.HTML.Attribute.Form()
+        var form = WHATWG.HTML.Form.Attribute()
 
-        form.action(WHATWG.HTML.Attribute.FormAction(value: "/update"))
+        form.action(WHATWG.HTML.FormAction.Attribute(value: "/update"))
         form.method(.get)
 
         #expect(form.action?.rawValue == "/update")

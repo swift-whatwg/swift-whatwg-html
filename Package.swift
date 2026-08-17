@@ -262,8 +262,7 @@ let package = Package(
         .target(
             name: "WHATWG HTML FormData",
             dependencies: [
-                .whatwgHTMLShared,
-                .whatwgHTMLForms
+                .whatwgHTMLShared
             ]
         ),
 

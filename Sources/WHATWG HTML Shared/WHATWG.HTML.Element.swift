@@ -1,60 +1,34 @@
-// ===----------------------------------------------------------------------===//
 //
-// Copyright (c) 2025 Coen ten Thije Boonkkamp
-// Licensed under Apache License v2.0
+//  File.swift
+//  swift-whatwg-html
 //
-// See LICENSE.txt for license information
-// See CONTRIBUTORS.txt for the list of project contributors
+//  Created by Coen ten Thije Boonkkamp on 05/12/2025.
 //
-// SPDX-License-Identifier: Apache-2.0
-//
-// ===----------------------------------------------------------------------===//
 
 extension WHATWG.HTML {
-    /// Protocol for HTML elements
-    ///
-    /// Conforming types represent HTML elements as defined in the WHATWG HTML Living Standard.
-    /// Each element has a unique tag name, belongs to zero or more content categories, and has
-    /// a content model that describes its expected contents.
-    ///
-    /// ## Content Categories
-    ///
-    /// Each element falls into zero or more categories that group elements with similar
-    /// characteristics together. The broad categories are:
-    /// - Metadata content
-    /// - Flow content
-    /// - Sectioning content
-    /// - Heading content
-    /// - Phrasing content
-    /// - Embedded content
-    /// - Interactive content
-    ///
-    /// ## Content Models
-    ///
-    /// Each element has a content model describing what children are allowed.
-    /// Common content models include:
-    /// - `nothing`: No content allowed (e.g., void elements)
-    /// - `text`: Text content only
-    /// - `flow`: Any flow content elements
-    /// - `phrasing`: Inline/phrasing content only
-    /// - `transparent`: Inherits from parent's content model
-    ///
-    /// ## Example
-    ///
-    /// ```swift
-    /// extension WHATWG.HTML.Element {
-    ///     public struct Form: WHATWG.HTML.Element.`Protocol` {
-    ///         public static var tag: String { "form" }
-    ///         public static var categories: Set<Content.Category> { [.flow, .palpable] }
-    ///         public static var contentModel: ContentModel { .flow }
-    ///         // ...
-    ///     }
-    /// }
-    /// ```
-    ///
-    /// ## Specification
-    /// [WHATWG HTML Living Standard - Content Models](https://html.spec.whatwg.org/multipage/dom.html#content-models)
-    public struct Element {
+    public protocol Element: Sendable, Hashable {
+        /// The HTML tag name for this element.
+        ///
+        /// For example, `"div"`, `"form"`, `"input"`, etc.
+        static var tag: String { get }
 
+        /// Unconditional content categories this element belongs to.
+        ///
+        /// These are the categories the element always belongs to, regardless of
+        /// attributes or context. Some elements have additional conditional
+        /// category memberships based on attributes (e.g., `<a>` is interactive
+        /// only if `href` is present).
+        static var categories: Set<WHATWG.HTML.Content.Category> { get }
+
+        //        /// Resolved content categories for this instance.
+        //        ///
+        //        /// Returns the unconditional categories plus any conditional categories
+        //        /// that apply based on this instance's attributes and context.
+        //        var categories: Set<WHATWG.HTML.Content.Category> { get }
+
+        /// The content for this element.
+        ///
+        /// Describes what types of children are allowed within this element.
+        static var content: WHATWG.HTML.Content { get }
     }
 }

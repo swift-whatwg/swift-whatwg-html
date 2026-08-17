@@ -20,6 +20,6 @@ import WHATWG_HTML
 
 @Suite struct `Autofocus Test` {
     @Test func `Autofocus attribute should be autofocus`() {
-        #expect(WHATWG.HTML.Attribute.Autofocus.attribute == "autofocus")
+        #expect(WHATWG.HTML.Autofocus.Attribute.attribute == "autofocus")
     }
 }

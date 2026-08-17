@@ -15,12 +15,12 @@ import WHATWG_HTML
 
 @Suite struct `ButtonType Test` {
     @Test func `ButtonType attribute should be type`() {
-        #expect(WHATWG.HTML.Attribute.ButtonType.attribute == "type")
+        #expect(WHATWG.HTML.Button.`Type`.Attribute.attribute == "type")
     }
 
     @Test func `ButtonType convenience properties`() {
-        #expect(WHATWG.HTML.Attribute.ButtonType.submit.rawValue == "submit")
-        #expect(WHATWG.HTML.Attribute.ButtonType.reset.rawValue == "reset")
-        #expect(WHATWG.HTML.Attribute.ButtonType.button.rawValue == "button")
+        #expect(WHATWG.HTML.Button.`Type`.Attribute.submit.rawValue == "submit")
+        #expect(WHATWG.HTML.Button.`Type`.Attribute.reset.rawValue == "reset")
+        #expect(WHATWG.HTML.Button.`Type`.Attribute.button.rawValue == "button")
     }
 }

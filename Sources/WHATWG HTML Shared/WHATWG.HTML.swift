@@ -28,7 +28,7 @@ extension WHATWG {
     /// ```swift
     /// import WHATWG_HTML
     ///
-    /// let form = WHATWG.HTML.Element.Form(
+    /// let form = WHATWG.HTML.Form.Element(
     ///     action: .relative("/submit"),
     ///     method: .post
     /// )

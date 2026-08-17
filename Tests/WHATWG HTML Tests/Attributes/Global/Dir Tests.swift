@@ -20,14 +20,14 @@ import WHATWG_HTML
 
 @Suite struct `Dir Test` {
     @Test func `Dir attribute should be dir`() {
-        #expect(WHATWG.HTML.Attribute.Dir.attribute == "dir")
+        #expect(WHATWG.HTML.Dir.Attribute.attribute == "dir")
     }
 
     @Test(
         "Dir cases description should match the spec",
-        arguments: WHATWG.HTML.Attribute.Dir.allCases
+        arguments: WHATWG.HTML.Dir.Attribute.allCases
     ) func cases(
-        dir: WHATWG.HTML.Attribute.Dir
+        dir: WHATWG.HTML.Dir.Attribute
     ) {
         switch dir {
         case .ltr: #expect(dir.description == "ltr")
@@ -38,26 +38,26 @@ import WHATWG_HTML
     }
 
     @Test func `Dir should conform to CaseIterable`() {
-        #expect(WHATWG.HTML.Attribute.Dir.allCases.count == 3)
-        #expect(WHATWG.HTML.Attribute.Dir.allCases.contains(.ltr))
-        #expect(WHATWG.HTML.Attribute.Dir.allCases.contains(.rtl))
-        #expect(WHATWG.HTML.Attribute.Dir.allCases.contains(.auto))
+        #expect(WHATWG.HTML.Dir.Attribute.allCases.count == 3)
+        #expect(WHATWG.HTML.Dir.Attribute.allCases.contains(.ltr))
+        #expect(WHATWG.HTML.Dir.Attribute.allCases.contains(.rtl))
+        #expect(WHATWG.HTML.Dir.Attribute.allCases.contains(.auto))
     }
 
-    @Test(arguments: WHATWG.HTML.Attribute.Dir.allCases)
-    func `Dir rawValue should match description`(dir: WHATWG.HTML.Attribute.Dir) {
+    @Test(arguments: WHATWG.HTML.Dir.Attribute.allCases)
+    func `Dir rawValue should match description`(dir: WHATWG.HTML.Dir.Attribute) {
         #expect(dir.rawValue == dir.description)
     }
 
     @Test(
         arguments: [
-            ("ltr", WHATWG.HTML.Attribute.Dir.ltr), ("rtl", WHATWG.HTML.Attribute.Dir.rtl),
-            ("auto", WHATWG.HTML.Attribute.Dir.auto),
+            ("ltr", WHATWG.HTML.Dir.Attribute.ltr), ("rtl", WHATWG.HTML.Dir.Attribute.rtl),
+            ("auto", WHATWG.HTML.Dir.Attribute.auto),
         ]
     ) func `Dir should be initializable from rawValue`(
         input: String,
-        expected: WHATWG.HTML.Attribute.Dir?
+        expected: WHATWG.HTML.Dir.Attribute?
     ) {
-        #expect(WHATWG.HTML.Attribute.Dir(rawValue: input) == expected)
+        #expect(WHATWG.HTML.Dir.Attribute(rawValue: input) == expected)
     }
 }

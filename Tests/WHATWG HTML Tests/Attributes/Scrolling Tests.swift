@@ -15,12 +15,12 @@ import WHATWG_HTML
 
 @Suite struct `Scrolling Test` {
     @Test func `Scrolling attribute should be scrolling`() {
-        #expect(WHATWG.HTML.Attribute.Scrolling.attribute == "scrolling")
+        #expect(WHATWG.HTML.Scrolling.Attribute.attribute == "scrolling")
     }
 
     @Test func `Scrolling should have predefined values`() {
-        #expect(WHATWG.HTML.Attribute.Scrolling.yes.rawValue == "yes")
-        #expect(WHATWG.HTML.Attribute.Scrolling.no.rawValue == "no")
-        #expect(WHATWG.HTML.Attribute.Scrolling.auto.rawValue == "auto")
+        #expect(WHATWG.HTML.Scrolling.Attribute.yes.rawValue == "yes")
+        #expect(WHATWG.HTML.Scrolling.Attribute.no.rawValue == "no")
+        #expect(WHATWG.HTML.Scrolling.Attribute.auto.rawValue == "auto")
     }
 }

@@ -15,15 +15,15 @@ import WHATWG_HTML
 
 @Suite struct `ObjectType Test` {
     @Test func `ObjectType attribute should be type`() {
-        #expect(WHATWG.HTML.Attribute.ObjectType.attribute == "type")
+        #expect(WHATWG.HTML.ExternalObject.`Type`.Attribute.attribute == "type")
     }
 
     @Test func `ObjectType should have predefined MIME types`() {
-        #expect(WHATWG.HTML.Attribute.ObjectType.pdf.rawValue == "application/pdf")
-        #expect(WHATWG.HTML.Attribute.ObjectType.mp4.rawValue == "video/mp4")
-        #expect(WHATWG.HTML.Attribute.ObjectType.mp3.rawValue == "audio/mpeg")
-        #expect(WHATWG.HTML.Attribute.ObjectType.jpeg.rawValue == "image/jpeg")
-        #expect(WHATWG.HTML.Attribute.ObjectType.png.rawValue == "image/png")
-        #expect(WHATWG.HTML.Attribute.ObjectType.html.rawValue == "text/html")
+        #expect(WHATWG.HTML.ExternalObject.`Type`.Attribute.pdf.rawValue == "application/pdf")
+        #expect(WHATWG.HTML.ExternalObject.`Type`.Attribute.mp4.rawValue == "video/mp4")
+        #expect(WHATWG.HTML.ExternalObject.`Type`.Attribute.mp3.rawValue == "audio/mpeg")
+        #expect(WHATWG.HTML.ExternalObject.`Type`.Attribute.jpeg.rawValue == "image/jpeg")
+        #expect(WHATWG.HTML.ExternalObject.`Type`.Attribute.png.rawValue == "image/png")
+        #expect(WHATWG.HTML.ExternalObject.`Type`.Attribute.html.rawValue == "text/html")
     }
 }

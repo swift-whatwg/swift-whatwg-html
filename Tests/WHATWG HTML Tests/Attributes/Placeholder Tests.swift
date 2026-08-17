@@ -15,14 +15,14 @@ import WHATWG_HTML
 
 @Suite struct `Placeholder Test` {
     @Test func `Placeholder attribute should be placeholder`() {
-        #expect(WHATWG.HTML.Attribute.Placeholder.attribute == "placeholder")
+        #expect(WHATWG.HTML.Placeholder.Attribute.attribute == "placeholder")
     }
 
     @Test func `Placeholder convenience properties`() {
-        #expect(WHATWG.HTML.Attribute.Placeholder.email.rawValue == "email")
-        #expect(WHATWG.HTML.Attribute.Placeholder.phone.rawValue == "phone")
-        #expect(WHATWG.HTML.Attribute.Placeholder.name.rawValue == "name")
-        #expect(WHATWG.HTML.Attribute.Placeholder.search.rawValue == "search")
-        #expect(WHATWG.HTML.Attribute.Placeholder.url.rawValue == "url")
+        #expect(WHATWG.HTML.Placeholder.Attribute.email.rawValue == "email")
+        #expect(WHATWG.HTML.Placeholder.Attribute.phone.rawValue == "phone")
+        #expect(WHATWG.HTML.Placeholder.Attribute.name.rawValue == "name")
+        #expect(WHATWG.HTML.Placeholder.Attribute.search.rawValue == "search")
+        #expect(WHATWG.HTML.Placeholder.Attribute.url.rawValue == "url")
     }
 }

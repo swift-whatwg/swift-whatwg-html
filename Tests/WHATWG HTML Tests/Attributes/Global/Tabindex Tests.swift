@@ -20,21 +20,21 @@ import WHATWG_HTML
 
 @Suite struct `Tabindex Test` {
     @Test func `Tabindex attribute should be tabindex`() {
-        #expect(WHATWG.HTML.Attribute.Tabindex.attribute == "tabindex")
+        #expect(WHATWG.HTML.Tabindex.Attribute.attribute == "tabindex")
     }
 
     @Test func `Tabindex should store and return its value`() {
-        let tabindex = WHATWG.HTML.Attribute.Tabindex(2)
+        let tabindex = WHATWG.HTML.Tabindex.Attribute(2)
         #expect(tabindex.value == 2)
     }
 
     @Test func `Tabindex description should return its value as string`() {
-        let tabindex = WHATWG.HTML.Attribute.Tabindex(-1)
+        let tabindex = WHATWG.HTML.Tabindex.Attribute(-1)
         #expect(tabindex.description == "-1")
     }
 
     @Test func `Tabindex should have predefined constants`() {
-        #expect(WHATWG.HTML.Attribute.Tabindex.notTabbable.value == -1)
-        #expect(WHATWG.HTML.Attribute.Tabindex.inDocumentOrder.value == 0)
+        #expect(WHATWG.HTML.Tabindex.Attribute.notTabbable.value == -1)
+        #expect(WHATWG.HTML.Tabindex.Attribute.inDocumentOrder.value == 0)
     }
 }

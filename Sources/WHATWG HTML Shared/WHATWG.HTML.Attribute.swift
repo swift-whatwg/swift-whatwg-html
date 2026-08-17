@@ -11,18 +11,25 @@
 // ===----------------------------------------------------------------------===//
 
 extension WHATWG.HTML {
-    /// Namespace for HTML attributes
+    /// Protocol for HTML attributes
     ///
-    /// Every attribute type defined by the WHATWG HTML Living Standard is nested here as
-    /// `WHATWG.HTML.Attribute.<Name>`; the conformance protocol is
-    /// ``WHATWG/HTML/Attribute/Protocol``.
+    /// Conforming types represent HTML attributes as defined in the WHATWG HTML Living Standard.
+    /// Each attribute has a unique name.
     ///
     /// ## Example
     ///
     /// ```swift
-    /// let id: WHATWG.HTML.Attribute.Id = "main"
+    /// extension WHATWG.HTML.Attribute {
+    ///     public struct Id: WHATWG.HTML.Attribute {
+    ///         public static var attribute: String { "id" }
+    ///         public var value: String
+    ///     }
+    /// }
     /// ```
-    public struct Attribute {
-
+    public protocol Attribute: Sendable, Hashable {
+        /// The HTML attribute name
+        ///
+        /// For example, `"id"`, `"class"`, `"href"`, etc.
+        static var attribute: String { get }
     }
 }
