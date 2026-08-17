@@ -19,20 +19,22 @@ import WHATWG_HTML
 #endif
 
 @Suite struct `Slot Test` {
-    @Test func `Slot attribute should be slot`() { #expect(Slot.attribute == "slot") }
+    @Test func `Slot attribute should be slot`() {
+        #expect(WHATWG.HTML.Slot.Attribute.attribute == "slot")
+    }
 
     @Test func `Slot should store and return its value`() {
-        let slot = Slot("header")
+        let slot = WHATWG.HTML.Slot.Attribute("header")
         #expect(slot.rawValue == "header")
     }
 
     @Test func `Slot description should return its value`() {
-        let slot = Slot("footer")
+        let slot = WHATWG.HTML.Slot.Attribute("footer")
         #expect(slot.description == "footer")
     }
 
     @Test func `Slot should be initializable with string literal`() {
-        let slot: Slot = "sidebar"
+        let slot: WHATWG.HTML.Slot.Attribute = "sidebar"
         #expect(slot.rawValue == "sidebar")
     }
 }

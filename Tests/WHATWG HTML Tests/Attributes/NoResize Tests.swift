@@ -15,6 +15,6 @@ import WHATWG_HTML
 
 @Suite struct `NoResize Test` {
     @Test func `NoResize attribute should be noresize`() {
-        #expect(NoResize.attribute == "noresize")
+        #expect(WHATWG.HTML.NoResize.Attribute.attribute == "noresize")
     }
 }

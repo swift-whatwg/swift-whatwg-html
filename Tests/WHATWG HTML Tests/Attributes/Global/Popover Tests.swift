@@ -19,10 +19,15 @@ import WHATWG_HTML
 #endif
 
 @Suite struct `Popover Test` {
-    @Test func `Popover attribute should be popover`() { #expect(Popover.attribute == "popover") }
+    @Test func `Popover attribute should be popover`() {
+        #expect(WHATWG.HTML.Popover.Attribute.attribute == "popover")
+    }
 
-    @Test("Popover cases description should match the spec", arguments: Popover.allCases)
-    func cases(popover: Popover) {
+    @Test(
+        "Popover cases description should match the spec",
+        arguments: WHATWG.HTML.Popover.Attribute.allCases
+    )
+    func cases(popover: WHATWG.HTML.Popover.Attribute) {
         switch popover {
         case .auto: #expect(popover.description == "auto")
         case .manual: #expect(popover.description == "manual")
@@ -32,20 +37,26 @@ import WHATWG_HTML
     }
 
     @Test func `Popover should conform to CaseIterable`() {
-        #expect(Popover.allCases.count == 3)
-        #expect(Popover.allCases.contains(.auto))
-        #expect(Popover.allCases.contains(.manual))
-        #expect(Popover.allCases.contains(.hint))
+        #expect(WHATWG.HTML.Popover.Attribute.allCases.count == 3)
+        #expect(WHATWG.HTML.Popover.Attribute.allCases.contains(.auto))
+        #expect(WHATWG.HTML.Popover.Attribute.allCases.contains(.manual))
+        #expect(WHATWG.HTML.Popover.Attribute.allCases.contains(.hint))
     }
 
-    @Test(arguments: Popover.allCases)
-    func `Popover rawValue should match description`(popover: Popover) {
+    @Test(arguments: WHATWG.HTML.Popover.Attribute.allCases)
+    func `Popover rawValue should match description`(popover: WHATWG.HTML.Popover.Attribute) {
         #expect(popover.rawValue == popover.description)
     }
 
     @Test(
-        arguments: [("auto", Popover.auto), ("manual", Popover.manual)]
-    ) func `Popover should be initializable from rawValue`(input: String, expected: Popover?) {
-        #expect(Popover(rawValue: input) == expected)
+        arguments: [
+            ("auto", WHATWG.HTML.Popover.Attribute.auto),
+            ("manual", WHATWG.HTML.Popover.Attribute.manual),
+        ]
+    ) func `Popover should be initializable from rawValue`(
+        input: String,
+        expected: WHATWG.HTML.Popover.Attribute?
+    ) {
+        #expect(WHATWG.HTML.Popover.Attribute(rawValue: input) == expected)
     }
 }

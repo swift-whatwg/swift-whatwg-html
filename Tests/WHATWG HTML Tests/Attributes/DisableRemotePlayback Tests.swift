@@ -15,6 +15,6 @@ import WHATWG_HTML
 
 @Suite struct `DisableRemotePlayback Test` {
     @Test func `DisableRemotePlayback attribute should be disableremoteplayback`() {
-        #expect(DisableRemotePlayback.attribute == "disableremoteplayback")
+        #expect(WHATWG.HTML.DisableRemotePlayback.Attribute.attribute == "disableremoteplayback")
     }
 }

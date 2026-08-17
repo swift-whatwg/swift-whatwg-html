@@ -15,11 +15,11 @@ import WHATWG_HTML
 
 @Suite struct `MarginHeight Test` {
     @Test func `MarginHeight attribute should be marginheight`() {
-        #expect(MarginHeight.attribute == "marginheight")
+        #expect(WHATWG.HTML.MarginHeight.Attribute.attribute == "marginheight")
     }
 
     @Test func `MarginHeight should support integer literal`() {
-        let marginHeight: MarginHeight = 10
+        let marginHeight: WHATWG.HTML.MarginHeight.Attribute = 10
         #expect(marginHeight.rawValue == "10")
     }
 }

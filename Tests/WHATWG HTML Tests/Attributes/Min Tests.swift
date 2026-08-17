@@ -14,17 +14,21 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Min Test` {
-    @Test func `Min attribute should be min`() { #expect(Min.attribute == "min") }
+    @Test func `Min attribute should be min`() {
+        #expect(WHATWG.HTML.Min.Attribute.attribute == "min")
+    }
 
     @Test func `Min should support integer literal`() {
-        let min: Min = 0
+        let min: WHATWG.HTML.Min.Attribute = 0
         #expect(min.rawValue == "0")
     }
 
     @Test func `Min should support float literal`() {
-        let min: Min = 1.5
+        let min: WHATWG.HTML.Min.Attribute = 1.5
         #expect(min.rawValue == "1.5")
     }
 
-    @Test func `Min zero convenience property`() { #expect(Min.zero.rawValue == "0") }
+    @Test func `Min zero convenience property`() {
+        #expect(WHATWG.HTML.Min.Attribute.zero.rawValue == "0")
+    }
 }

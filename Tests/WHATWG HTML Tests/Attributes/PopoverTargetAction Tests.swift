@@ -15,12 +15,12 @@ import WHATWG_HTML
 
 @Suite struct `PopoverTargetAction Test` {
     @Test func `PopoverTargetAction attribute should be popovertargetaction`() {
-        #expect(PopoverTargetAction.attribute == "popovertargetaction")
+        #expect(WHATWG.HTML.PopoverTargetAction.Attribute.attribute == "popovertargetaction")
     }
 
     @Test func `PopoverTargetAction should have predefined values`() {
-        #expect(PopoverTargetAction.show.rawValue == "show")
-        #expect(PopoverTargetAction.hide.rawValue == "hide")
-        #expect(PopoverTargetAction.toggle.rawValue == "toggle")
+        #expect(WHATWG.HTML.PopoverTargetAction.Attribute.show.rawValue == "show")
+        #expect(WHATWG.HTML.PopoverTargetAction.Attribute.hide.rawValue == "hide")
+        #expect(WHATWG.HTML.PopoverTargetAction.Attribute.toggle.rawValue == "toggle")
     }
 }

@@ -19,26 +19,30 @@ import WHATWG_HTML
 #endif
 
 @Suite struct `Class Test` {
-    @Test func `Class attribute should be class`() { #expect(Class.attribute == "class") }
+    @Test func `Class attribute should be class`() {
+        #expect(WHATWG.HTML.Class.Attribute.attribute == "class")
+    }
 
     @Test func `Class description should reflect the initialized values`() {
-        let singleClass: Class = Class("header")
+        let singleClass: WHATWG.HTML.Class.Attribute = WHATWG.HTML.Class.Attribute("header")
         #expect(singleClass.description == "header")
 
-        let multipleClasses: Class = ["header", "large", "primary"]
+        let multipleClasses: WHATWG.HTML.Class.Attribute = ["header", "large", "primary"]
         #expect(multipleClasses.description == "header large primary")
 
-        let emptyClass = Class("")
+        let emptyClass = WHATWG.HTML.Class.Attribute("")
         #expect(emptyClass.description.isEmpty)
     }
 
     @Test func `Class can be initialized with single string or array of strings`() {
-        let singleClass: Class = ("header")
-        let arrayClass: Class = ["header"]
+        let singleClass: WHATWG.HTML.Class.Attribute = ("header")
+        let arrayClass: WHATWG.HTML.Class.Attribute = ["header"]
         #expect(singleClass.description == arrayClass.description)
 
-        let multipleClasses: Class = Class("header large primary")
-        let arrayMultipleClasses: Class = ["header", "large", "primary"]
+        let multipleClasses: WHATWG.HTML.Class.Attribute = WHATWG.HTML.Class.Attribute(
+            "header large primary"
+        )
+        let arrayMultipleClasses: WHATWG.HTML.Class.Attribute = ["header", "large", "primary"]
         #expect(multipleClasses.description == arrayMultipleClasses.description)
     }
 }

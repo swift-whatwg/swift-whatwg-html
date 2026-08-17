@@ -59,9 +59,9 @@ extension String {
     ///
     /// ## See Also
     ///
-    /// - ``WHATWG_HTML/BooleanAttribute``
+    /// - ``WHATWG/HTML/BooleanAttribute``
     /// - ``[UInt8]/init(_:)-BooleanAttribute``
-    public init<T: WHATWG_HTML.BooleanAttribute, Encoding>(
+    public init<T: WHATWG.HTML.BooleanAttribute, Encoding>(
         _ attribute: T,
         as encoding: Encoding.Type = UTF8.self
     ) where Encoding: _UnicodeEncoding, Encoding.CodeUnit == UInt8 {
@@ -112,9 +112,9 @@ extension String {
     ///
     /// ## See Also
     ///
-    /// - ``WHATWG_HTML/StringAttribute``
+    /// - ``WHATWG/HTML/StringAttribute``
     /// - ``[UInt8]/init(_:)-StringAttribute``
-    public init<T: WHATWG_HTML.StringAttribute, Encoding>(
+    public init<T: WHATWG.HTML.StringAttribute, Encoding>(
         _ attribute: T,
         as encoding: Encoding.Type = UTF8.self
     ) where Encoding: _UnicodeEncoding, Encoding.CodeUnit == UInt8 {

@@ -15,11 +15,11 @@ import WHATWG_HTML
 
 @Suite struct `Crossorigin Test` {
     @Test func `Crossorigin attribute should be crossorigin`() {
-        #expect(Crossorigin.attribute == "crossorigin")
+        #expect(WHATWG.HTML.Crossorigin.Attribute.attribute == "crossorigin")
     }
 
     @Test func `Crossorigin convenience properties`() {
-        #expect(Crossorigin.anonymous.rawValue == "anonymous")
-        #expect(Crossorigin.useCredentials.rawValue == "use-credentials")
+        #expect(WHATWG.HTML.Crossorigin.Attribute.anonymous.rawValue == "anonymous")
+        #expect(WHATWG.HTML.Crossorigin.Attribute.useCredentials.rawValue == "use-credentials")
     }
 }

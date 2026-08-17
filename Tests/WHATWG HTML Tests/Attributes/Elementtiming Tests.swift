@@ -15,29 +15,33 @@ import WHATWG_HTML
 
 @Suite struct `Elementtiming Test` {
     @Test func `Elementtiming attribute should be elementtiming`() {
-        #expect(Elementtiming.attribute == "elementtiming")
+        #expect(WHATWG.HTML.Elementtiming.Attribute.attribute == "elementtiming")
     }
 
     @Test func `Elementtiming should support category-based initialization`() {
-        let timing = Elementtiming(category: "hero", name: "image")
+        let timing = WHATWG.HTML.Elementtiming.Attribute(category: "hero", name: "image")
         #expect(timing.rawValue == "hero-image")
 
-        let customSeparator = Elementtiming(category: "main", name: "content", separator: "_")
+        let customSeparator = WHATWG.HTML.Elementtiming.Attribute(
+            category: "main",
+            name: "content",
+            separator: "_"
+        )
         #expect(customSeparator.rawValue == "main_content")
     }
 
     @Test func `Elementtiming should have predefined categories`() {
-        #expect(Elementtiming.Category.hero.value == "hero")
-        #expect(Elementtiming.Category.main.value == "main")
-        #expect(Elementtiming.Category.header.value == "header")
-        #expect(Elementtiming.Category.image.value == "image")
+        #expect(WHATWG.HTML.Elementtiming.Attribute.Category.hero.value == "hero")
+        #expect(WHATWG.HTML.Elementtiming.Attribute.Category.main.value == "main")
+        #expect(WHATWG.HTML.Elementtiming.Attribute.Category.header.value == "header")
+        #expect(WHATWG.HTML.Elementtiming.Attribute.Category.image.value == "image")
     }
 
     @Test func `Elementtiming should support Category-based initialization`() {
-        let timing = Elementtiming(category: .hero, name: "banner")
+        let timing = WHATWG.HTML.Elementtiming.Attribute(category: .hero, name: "banner")
         #expect(timing.rawValue == "hero-banner")
 
-        let customTiming = Elementtiming(category: .custom, name: "special")
+        let customTiming = WHATWG.HTML.Elementtiming.Attribute(category: .custom, name: "special")
         #expect(customTiming.rawValue == "special")
     }
 }

@@ -1,0 +1,141 @@
+// ===----------------------------------------------------------------------===//
+//
+// Copyright (c) 2025 Coen ten Thije Boonkkamp
+// Licensed under Apache License v2.0
+//
+// See LICENSE.txt for license information
+// See CONTRIBUTORS.txt for the list of project contributors
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+// ===----------------------------------------------------------------------===//
+
+public import RFC_2045
+public import WHATWG_HTML_Shared
+
+extension WHATWG.HTML.EncType {
+    /// An attribute that specifies how form data should be encoded when submitted.
+    ///
+    /// The `enctype` attribute defines the MIME type of the form submission. It is only
+    /// relevant when the form's method is POST, as it determines how the form data is
+    /// encoded before sending it to the server.
+    ///
+    /// ## Academic Correctness
+    ///
+    /// Per WHATWG HTML specification, the enctype attribute must be a valid MIME type.
+    /// This implementation uses `RFC_2045.ContentType` to ensure academic correctness
+    /// per RFC 2045 MIME type specifications.
+    ///
+    /// ## Available Encoding Types
+    ///
+    /// - `application/x-www-form-urlencoded` (default): Standard form encoding
+    /// - `multipart/form-data`: Required for file uploads (RFC 7578)
+    /// - `text/plain`: Minimal encoding, useful for debugging
+    ///
+    /// ## Encoding Type Characteristics
+    ///
+    /// ### application/x-www-form-urlencoded
+    /// - Default encoding if enctype is not specified
+    /// - All characters are encoded (spaces converted to "+" and special characters to hex values)
+    /// - Form data is sent as a single block in the request body
+    /// - Format is similar to URL query parameters: `name1=value1&name2=value2`
+    /// - Not suitable for file uploads
+    ///
+    /// ### multipart/form-data
+    /// - Required for forms that include file uploads
+    /// - Form data is sent in multiple parts, each with its own MIME type
+    /// - Preserves filenames, content types, and binary data
+    /// - More overhead than other encodings
+    /// - Used with `<input type="file">` elements
+    ///
+    /// ### text/plain
+    /// - Minimal encoding (spaces remain spaces, no special character encoding)
+    /// - Each form field is sent on a new line
+    /// - Primarily useful for debugging, not recommended for production
+    /// - Format is: `name1=value1\r\nname2=value2`
+    ///
+    /// ## Usage Notes
+    ///
+    /// - Only applies to forms using the POST method
+    /// - Can be overridden by `formenctype` attributes on submit buttons
+    /// - Always use `multipart/form-data` when the form includes file uploads
+    /// - For most forms without file uploads, the default encoding is sufficient
+    ///
+    /// ## Examples
+    ///
+    /// ```swift
+    /// // Form with default encoding
+    /// HTML.form.action("/submit").method(.post)
+    ///
+    /// // Form with file uploads (RFC 7578)
+    /// HTML.form.action("/upload").method(.post).enctype(.multipartFormData)
+    ///
+    /// // Form for debugging
+    /// HTML.form.action("/debug").method(.post).enctype(.textPlain)
+    ///
+    /// // Using string value
+    /// HTML.form.enctype("multipart/form-data")
+    /// ```
+    @dynamicMemberLookup public struct Attribute: WHATWG.HTML.StringAttribute {
+        /// The attribute value
+        public let rawValue: String
+
+        /// Initialize with a value for the encoding type
+        public init(value: String) { self.rawValue = value }
+
+        /// Initialize with an RFC 2045 Content-Type
+        public init(contentType: RFC_2045.ContentType) { self.rawValue = contentType.headerValue }
+    }
+}
+
+extension WHATWG.HTML.EncType.Attribute {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "enctype" }
+}
+
+// MARK: - Form Encoding Types
+
+extension WHATWG.HTML.EncType.Attribute {
+    /// Standard form encoding (default) - application/x-www-form-urlencoded
+    public static let urlEncoded = WHATWG.HTML.EncType.Attribute(
+        contentType: .applicationXWWWFormURLEncoded
+    )
+
+    /// Required for file uploads - multipart/form-data (RFC 7578)
+    public static let multipartFormData = WHATWG.HTML.EncType.Attribute(
+        contentType: .multipartFormData()
+    )
+
+    /// Minimal encoding, useful for debugging - text/plain
+    public static let textPlain = WHATWG.HTML.EncType.Attribute(contentType: .textPlain)
+}
+
+// MARK: - RFC 2045 ContentType Extensions
+
+extension RFC_2045.ContentType {
+    /// application/x-www-form-urlencoded - Standard HTML form encoding
+    public static let applicationXWWWFormURLEncoded = RFC_2045.ContentType(
+        __unchecked: (),
+        type: "application",
+        subtype: "x-www-form-urlencoded"
+    )
+
+    /// multipart/form-data - Form encoding for file uploads (RFC 7578)
+    ///
+    /// Note: The boundary parameter is typically auto-generated by the browser
+    /// when the form is submitted. For programmatic use, provide a boundary.
+    public static func multipartFormData(boundary: String? = nil) -> RFC_2045.ContentType {
+        if let boundary {
+            return RFC_2045.ContentType(
+                __unchecked: (),
+                type: "multipart",
+                subtype: "form-data",
+                // swiftlint:disable:next force_try
+                parameters: [try! .init("boundary"): boundary]
+            )
+        } else {
+            // No boundary specified - browser will add it
+            return RFC_2045.ContentType(__unchecked: (), type: "multipart", subtype: "form-data")
+        }
+    }
+}

@@ -15,22 +15,22 @@ import WHATWG_HTML
 
 @Suite struct `Maxlength Test` {
     @Test func `Maxlength attribute should be maxlength`() {
-        #expect(Maxlength.attribute == "maxlength")
+        #expect(WHATWG.HTML.Maxlength.Attribute.attribute == "maxlength")
     }
 
     @Test func `Maxlength should support integer literal`() {
-        let maxlength: Maxlength = 100
+        let maxlength: WHATWG.HTML.Maxlength.Attribute = 100
         #expect(maxlength.value == 100)
         #expect(maxlength.description == "100")
     }
 
     @Test func `Maxlength should enforce non-negative values`() {
-        let maxlength = Maxlength(-10)
+        let maxlength = WHATWG.HTML.Maxlength.Attribute(-10)
         #expect(maxlength.value == 0)
     }
 
     @Test func `Maxlength characters factory method`() {
-        let maxlength = Maxlength.characters(50)
+        let maxlength = WHATWG.HTML.Maxlength.Attribute.characters(50)
         #expect(maxlength.value == 50)
         #expect(maxlength.description == "50")
     }

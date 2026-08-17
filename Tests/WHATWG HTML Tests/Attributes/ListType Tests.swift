@@ -12,15 +12,18 @@
 
 import Testing
 import WHATWG_HTML
+private typealias OrderedListTypeAttribute = WHATWG.HTML.OrderedList.`Type`.Attribute
 
 @Suite struct `ListType Test` {
-    @Test func `ListType attribute should be type`() { #expect(ListType.attribute == "type") }
+    @Test func `ListType attribute should be type`() {
+        #expect(OrderedListTypeAttribute.attribute == "type")
+    }
 
     @Test func `ListType should have predefined values`() {
-        #expect(ListType.lowerAlpha.rawValue == "a")
-        #expect(ListType.upperAlpha.rawValue == "A")
-        #expect(ListType.lowerRoman.rawValue == "i")
-        #expect(ListType.upperRoman.rawValue == "I")
-        #expect(ListType.decimal.rawValue == "1")
+        #expect(OrderedListTypeAttribute.lowerAlpha.rawValue == "a")
+        #expect(OrderedListTypeAttribute.upperAlpha.rawValue == "A")
+        #expect(OrderedListTypeAttribute.lowerRoman.rawValue == "i")
+        #expect(OrderedListTypeAttribute.upperRoman.rawValue == "I")
+        #expect(OrderedListTypeAttribute.decimal.rawValue == "1")
     }
 }

@@ -12,13 +12,16 @@
 
 import Testing
 import WHATWG_HTML
+private typealias ButtonTypeAttribute = WHATWG.HTML.Button.`Type`.Attribute
 
 @Suite struct `ButtonType Test` {
-    @Test func `ButtonType attribute should be type`() { #expect(ButtonType.attribute == "type") }
+    @Test func `ButtonType attribute should be type`() {
+        #expect(ButtonTypeAttribute.attribute == "type")
+    }
 
     @Test func `ButtonType convenience properties`() {
-        #expect(ButtonType.submit.rawValue == "submit")
-        #expect(ButtonType.reset.rawValue == "reset")
-        #expect(ButtonType.button.rawValue == "button")
+        #expect(ButtonTypeAttribute.submit.rawValue == "submit")
+        #expect(ButtonTypeAttribute.reset.rawValue == "reset")
+        #expect(ButtonTypeAttribute.button.rawValue == "button")
     }
 }

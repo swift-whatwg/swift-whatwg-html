@@ -18,7 +18,7 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@dynamicMemberLookup private struct TestStringAttribute: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup private struct TestStringAttribute: WHATWG.HTML.StringAttribute {
     let rawValue: String
 
     init(value: String) { self.rawValue = value }
@@ -28,7 +28,7 @@ extension TestStringAttribute {
     static var attribute: String { "test-attr" }
 }
 
-@Suite struct `WHATWG_HTML.StringAttribute Test` {
+@Suite struct `WHATWG.HTML.StringAttribute Test` {
 
     @Test func `Attribute name is correct`() {
         #expect(TestStringAttribute.attribute == "test-attr")
@@ -122,16 +122,16 @@ extension TestStringAttribute {
         #expect(attr.rawValue == longValue)
     }
 
-    @Test func `Any WHATWG_HTML.StringAttribute type erasure`() {
-        let attr: any WHATWG_HTML.StringAttribute = TestStringAttribute(value: "type-erased")
+    @Test func `Any WHATWG.HTML.StringAttribute type erasure`() {
+        let attr: any WHATWG.HTML.StringAttribute = TestStringAttribute(value: "type-erased")
         #expect(attr.rawValue == "type-erased")
         #expect(attr.description == "type-erased")
     }
 
-    @Test func `Any WHATWG_HTML.StringAttribute equality through protocol`() {
-        let attr1: any WHATWG_HTML.StringAttribute = TestStringAttribute(value: "same")
-        let attr2: any WHATWG_HTML.StringAttribute = TestStringAttribute(value: "same")
-        let attr3: any WHATWG_HTML.StringAttribute = TestStringAttribute(value: "different")
+    @Test func `Any WHATWG.HTML.StringAttribute equality through protocol`() {
+        let attr1: any WHATWG.HTML.StringAttribute = TestStringAttribute(value: "same")
+        let attr2: any WHATWG.HTML.StringAttribute = TestStringAttribute(value: "same")
+        let attr3: any WHATWG.HTML.StringAttribute = TestStringAttribute(value: "different")
 
         #expect(attr1.rawValue == attr2.rawValue)
         #expect(attr1.rawValue != attr3.rawValue)

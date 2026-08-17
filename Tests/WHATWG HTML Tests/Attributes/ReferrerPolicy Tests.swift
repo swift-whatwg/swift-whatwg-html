@@ -15,19 +15,26 @@ import WHATWG_HTML
 
 @Suite struct `ReferrerPolicy Test` {
     @Test func `ReferrerPolicy attribute should be referrerpolicy`() {
-        #expect(ReferrerPolicy.attribute == "referrerpolicy")
+        #expect(WHATWG.HTML.ReferrerPolicy.Attribute.attribute == "referrerpolicy")
     }
 
     @Test func `ReferrerPolicy convenience properties`() {
-        #expect(ReferrerPolicy.noReferrer.rawValue == "no-referrer")
-        #expect(ReferrerPolicy.noReferrerWhenDowngrade.rawValue == "no-referrer-when-downgrade")
-        #expect(ReferrerPolicy.origin.rawValue == "origin")
-        #expect(ReferrerPolicy.originWhenCrossOrigin.rawValue == "origin-when-cross-origin")
-        #expect(ReferrerPolicy.sameOrigin.rawValue == "same-origin")
-        #expect(ReferrerPolicy.strictOrigin.rawValue == "strict-origin")
+        #expect(WHATWG.HTML.ReferrerPolicy.Attribute.noReferrer.rawValue == "no-referrer")
         #expect(
-            ReferrerPolicy.strictOriginWhenCrossOrigin.rawValue == "strict-origin-when-cross-origin"
+            WHATWG.HTML.ReferrerPolicy.Attribute.noReferrerWhenDowngrade.rawValue
+                == "no-referrer-when-downgrade"
         )
-        #expect(ReferrerPolicy.unsafeUrl.rawValue == "unsafe-url")
+        #expect(WHATWG.HTML.ReferrerPolicy.Attribute.origin.rawValue == "origin")
+        #expect(
+            WHATWG.HTML.ReferrerPolicy.Attribute.originWhenCrossOrigin.rawValue
+                == "origin-when-cross-origin"
+        )
+        #expect(WHATWG.HTML.ReferrerPolicy.Attribute.sameOrigin.rawValue == "same-origin")
+        #expect(WHATWG.HTML.ReferrerPolicy.Attribute.strictOrigin.rawValue == "strict-origin")
+        #expect(
+            WHATWG.HTML.ReferrerPolicy.Attribute.strictOriginWhenCrossOrigin.rawValue
+                == "strict-origin-when-cross-origin"
+        )
+        #expect(WHATWG.HTML.ReferrerPolicy.Attribute.unsafeUrl.rawValue == "unsafe-url")
     }
 }

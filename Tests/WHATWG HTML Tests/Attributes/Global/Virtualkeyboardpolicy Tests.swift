@@ -20,11 +20,11 @@ import WHATWG_HTML
 
 @Suite struct `Virtualkeyboardpolicy Test` {
     @Test func `Virtualkeyboardpolicy attribute should be virtualkeyboardpolicy`() {
-        #expect(Virtualkeyboardpolicy.attribute == "virtualkeyboardpolicy")
+        #expect(WHATWG.HTML.Virtualkeyboardpolicy.Attribute.attribute == "virtualkeyboardpolicy")
     }
 
     @Test func `Virtualkeyboardpolicy description should match the spec`() {
-        #expect(Virtualkeyboardpolicy.auto.description == "auto")
-        #expect(Virtualkeyboardpolicy.manual.description == "manual")
+        #expect(WHATWG.HTML.Virtualkeyboardpolicy.Attribute.auto.description == "auto")
+        #expect(WHATWG.HTML.Virtualkeyboardpolicy.Attribute.manual.description == "manual")
     }
 }

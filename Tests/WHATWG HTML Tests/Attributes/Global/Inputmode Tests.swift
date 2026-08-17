@@ -20,11 +20,14 @@ import WHATWG_HTML
 
 @Suite struct `Inputmode Test` {
     @Test func `Inputmode attribute should be inputmode`() {
-        #expect(Inputmode.attribute == "inputmode")
+        #expect(WHATWG.HTML.Inputmode.Attribute.attribute == "inputmode")
     }
 
-    @Test("Inputmode cases description should match the spec", arguments: Inputmode.allCases)
-    func cases(inputmode: Inputmode) {
+    @Test(
+        "Inputmode cases description should match the spec",
+        arguments: WHATWG.HTML.Inputmode.Attribute.allCases
+    )
+    func cases(inputmode: WHATWG.HTML.Inputmode.Attribute) {
         switch inputmode {
         case .none: #expect(inputmode.description == "none")
         case .text: #expect(inputmode.description == "text")
@@ -39,29 +42,37 @@ import WHATWG_HTML
     }
 
     @Test func `Inputmode should conform to CaseIterable`() {
-        #expect(Inputmode.allCases.count == 8)
-        #expect(Inputmode.allCases.contains(.none))
-        #expect(Inputmode.allCases.contains(.text))
-        #expect(Inputmode.allCases.contains(.decimal))
-        #expect(Inputmode.allCases.contains(.numeric))
-        #expect(Inputmode.allCases.contains(.tel))
-        #expect(Inputmode.allCases.contains(.search))
-        #expect(Inputmode.allCases.contains(.email))
-        #expect(Inputmode.allCases.contains(.url))
+        #expect(WHATWG.HTML.Inputmode.Attribute.allCases.count == 8)
+        #expect(WHATWG.HTML.Inputmode.Attribute.allCases.contains(.none))
+        #expect(WHATWG.HTML.Inputmode.Attribute.allCases.contains(.text))
+        #expect(WHATWG.HTML.Inputmode.Attribute.allCases.contains(.decimal))
+        #expect(WHATWG.HTML.Inputmode.Attribute.allCases.contains(.numeric))
+        #expect(WHATWG.HTML.Inputmode.Attribute.allCases.contains(.tel))
+        #expect(WHATWG.HTML.Inputmode.Attribute.allCases.contains(.search))
+        #expect(WHATWG.HTML.Inputmode.Attribute.allCases.contains(.email))
+        #expect(WHATWG.HTML.Inputmode.Attribute.allCases.contains(.url))
     }
 
-    @Test(arguments: Inputmode.allCases)
-    func `Inputmode rawValue should match description`(inputmode: Inputmode) {
+    @Test(arguments: WHATWG.HTML.Inputmode.Attribute.allCases)
+    func `Inputmode rawValue should match description`(inputmode: WHATWG.HTML.Inputmode.Attribute) {
         #expect(inputmode.rawValue == inputmode.description)
     }
 
     @Test(
         arguments: [
-            ("none", Inputmode.none), ("text", Inputmode.text), ("decimal", Inputmode.decimal),
-            ("numeric", Inputmode.numeric), ("tel", Inputmode.tel), ("search", Inputmode.search),
-            ("email", Inputmode.email), ("url", Inputmode.url),
+            ("none", WHATWG.HTML.Inputmode.Attribute.none),
+            ("text", WHATWG.HTML.Inputmode.Attribute.text),
+            ("decimal", WHATWG.HTML.Inputmode.Attribute.decimal),
+            ("numeric", WHATWG.HTML.Inputmode.Attribute.numeric),
+            ("tel", WHATWG.HTML.Inputmode.Attribute.tel),
+            ("search", WHATWG.HTML.Inputmode.Attribute.search),
+            ("email", WHATWG.HTML.Inputmode.Attribute.email),
+            ("url", WHATWG.HTML.Inputmode.Attribute.url),
         ]
-    ) func `Inputmode should be initializable from rawValue`(input: String, expected: Inputmode?) {
-        #expect(Inputmode(rawValue: input) == expected)
+    ) func `Inputmode should be initializable from rawValue`(
+        input: String,
+        expected: WHATWG.HTML.Inputmode.Attribute?
+    ) {
+        #expect(WHATWG.HTML.Inputmode.Attribute(rawValue: input) == expected)
     }
 }

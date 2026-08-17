@@ -21,8 +21,8 @@ import WHATWG_HTML_Forms
 
 @Suite("Form")
 struct FormTests {
-    @Test("WHATWG_HTML.Form nest alias resolves to the Forms module's Form")
+    @Test("WHATWG.HTML.Form nest alias resolves to the Forms module's Form")
     func nestAliasResolves() {
-        #expect(WHATWG_HTML.Form.self == WHATWG_HTML_Forms.Form.self)
+        #expect(WHATWG.HTML.Form.self == WHATWG_HTML_Forms.Form.self)
     }
 }

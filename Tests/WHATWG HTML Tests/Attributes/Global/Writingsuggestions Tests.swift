@@ -20,11 +20,11 @@ import WHATWG_HTML
 
 @Suite struct `Writingsuggestions Test` {
     @Test func `Writingsuggestions attribute should be writingsuggestions`() {
-        #expect(Writingsuggestions.attribute == "writingsuggestions")
+        #expect(WHATWG.HTML.Writingsuggestions.Attribute.attribute == "writingsuggestions")
     }
 
     @Test func `Writingsuggestions description should match the spec`() {
-        #expect(Writingsuggestions.true.description == "true")
-        #expect(Writingsuggestions.false.description == "false")
+        #expect(WHATWG.HTML.Writingsuggestions.Attribute.true.description == "true")
+        #expect(WHATWG.HTML.Writingsuggestions.Attribute.false.description == "false")
     }
 }
