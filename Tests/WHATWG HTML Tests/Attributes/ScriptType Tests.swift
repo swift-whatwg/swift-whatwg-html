@@ -12,17 +12,18 @@
 
 import Testing
 import WHATWG_HTML
+private typealias ScriptTypeAttribute = WHATWG.HTML.Script.`Type`.Attribute
 
 @Suite struct `ScriptType Test` {
     @Test func `ScriptType attribute should be type`() {
-        #expect(WHATWG.HTML.Script.`Type`.Attribute.attribute == "type")
+        #expect(ScriptTypeAttribute.attribute == "type")
     }
 
     @Test func `ScriptType should have predefined values`() {
-        #expect(WHATWG.HTML.Script.`Type`.Attribute.module.rawValue == "module")
-        #expect(WHATWG.HTML.Script.`Type`.Attribute.importmap.rawValue == "importmap")
-        #expect(WHATWG.HTML.Script.`Type`.Attribute.speculationrules.rawValue == "speculationrules")
-        #expect(WHATWG.HTML.Script.`Type`.Attribute.json.rawValue == "application/json")
-        #expect(WHATWG.HTML.Script.`Type`.Attribute.textPlain.rawValue == "text/plain")
+        #expect(ScriptTypeAttribute.module.rawValue == "module")
+        #expect(ScriptTypeAttribute.importmap.rawValue == "importmap")
+        #expect(ScriptTypeAttribute.speculationrules.rawValue == "speculationrules")
+        #expect(ScriptTypeAttribute.json.rawValue == "application/json")
+        #expect(ScriptTypeAttribute.textPlain.rawValue == "text/plain")
     }
 }

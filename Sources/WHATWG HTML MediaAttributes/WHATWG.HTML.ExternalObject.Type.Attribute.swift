@@ -67,20 +67,20 @@ extension WHATWG.HTML.ExternalObject.`Type`.Attribute {
 
 extension WHATWG.HTML.ExternalObject.`Type`.Attribute {
     /// application/pdf
-    public static let pdf = WHATWG.HTML.ExternalObject.`Type`.Attribute(contentType: .applicationPDF)
+    public static let pdf = Self(contentType: .applicationPDF)
 
     /// video/mp4
-    public static let mp4 = WHATWG.HTML.ExternalObject.`Type`.Attribute(contentType: .videoMP4)
+    public static let mp4 = Self(contentType: .videoMP4)
 
     /// audio/mpeg (MP3)
-    public static let mp3 = WHATWG.HTML.ExternalObject.`Type`.Attribute(contentType: .audioMPEG)
+    public static let mp3 = Self(contentType: .audioMPEG)
 
     /// image/jpeg
-    public static let jpeg = WHATWG.HTML.ExternalObject.`Type`.Attribute(contentType: .imageJPEG)
+    public static let jpeg = Self(contentType: .imageJPEG)
 
     /// image/png
-    public static let png = WHATWG.HTML.ExternalObject.`Type`.Attribute(contentType: .imagePNG)
+    public static let png = Self(contentType: .imagePNG)
 
     /// text/html
-    public static let html = WHATWG.HTML.ExternalObject.`Type`.Attribute(contentType: .textHTML)
+    public static let html = Self(contentType: .textHTML)
 }

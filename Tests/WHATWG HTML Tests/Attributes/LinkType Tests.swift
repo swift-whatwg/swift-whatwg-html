@@ -12,21 +12,22 @@
 
 import Testing
 import WHATWG_HTML
+private typealias LinkTypeAttribute = WHATWG.HTML.Link.`Type`.Attribute
 
 @Suite struct `LinkType Test` {
     @Test func `LinkType attribute should be type`() {
-        #expect(WHATWG.HTML.Link.`Type`.Attribute.attribute == "type")
+        #expect(LinkTypeAttribute.attribute == "type")
     }
 
     @Test func `LinkType convenience properties`() {
-        #expect(WHATWG.HTML.Link.`Type`.Attribute.css.rawValue == "text/css")
-        #expect(WHATWG.HTML.Link.`Type`.Attribute.javascript.rawValue == "text/javascript")
-        #expect(WHATWG.HTML.Link.`Type`.Attribute.icon.rawValue == "image/x-icon")
-        #expect(WHATWG.HTML.Link.`Type`.Attribute.svg.rawValue == "image/svg+xml")
-        #expect(WHATWG.HTML.Link.`Type`.Attribute.png.rawValue == "image/png")
-        #expect(WHATWG.HTML.Link.`Type`.Attribute.manifest.rawValue == "application/manifest+json")
-        #expect(WHATWG.HTML.Link.`Type`.Attribute.rss.rawValue == "application/rss+xml")
-        #expect(WHATWG.HTML.Link.`Type`.Attribute.atom.rawValue == "application/atom+xml")
-        #expect(WHATWG.HTML.Link.`Type`.Attribute.json.rawValue == "application/json")
+        #expect(LinkTypeAttribute.css.rawValue == "text/css")
+        #expect(LinkTypeAttribute.javascript.rawValue == "text/javascript")
+        #expect(LinkTypeAttribute.icon.rawValue == "image/x-icon")
+        #expect(LinkTypeAttribute.svg.rawValue == "image/svg+xml")
+        #expect(LinkTypeAttribute.png.rawValue == "image/png")
+        #expect(LinkTypeAttribute.manifest.rawValue == "application/manifest+json")
+        #expect(LinkTypeAttribute.rss.rawValue == "application/rss+xml")
+        #expect(LinkTypeAttribute.atom.rawValue == "application/atom+xml")
+        #expect(LinkTypeAttribute.json.rawValue == "application/json")
     }
 }

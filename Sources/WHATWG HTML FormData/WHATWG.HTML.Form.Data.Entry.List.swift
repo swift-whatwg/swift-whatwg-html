@@ -84,8 +84,7 @@ extension WHATWG.HTML.Form.Data.Entry.List {
     /// - Parameters:
     ///   - name: The entry name
     ///   - value: The entry value
-    @inlinable public mutating func append(name: String, value: WHATWG.HTML.Form.Data.Value)
-    {
+    @inlinable public mutating func append(name: String, value: WHATWG.HTML.Form.Data.Value) {
         append(WHATWG.HTML.Form.Data.Entry(name: name, value: value))
     }
 

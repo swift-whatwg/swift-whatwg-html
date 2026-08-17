@@ -51,8 +51,7 @@ extension WHATWG.HTML.Content {
 
 extension WHATWG.HTML.Content.Model {
     /// Creates a content model allowing a single category.
-    @inlinable public static func category(_ category: WHATWG.HTML.Content.Category) -> Self
-    {
+    @inlinable public static func category(_ category: WHATWG.HTML.Content.Category) -> Self {
         .categories([category])
     }
 

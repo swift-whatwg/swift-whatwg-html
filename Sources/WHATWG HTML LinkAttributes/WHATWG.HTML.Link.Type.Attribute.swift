@@ -69,31 +69,31 @@ extension WHATWG.HTML.Link.`Type`.Attribute {
 
 extension WHATWG.HTML.Link.`Type`.Attribute {
     /// text/css - CSS stylesheet
-    public static let css = WHATWG.HTML.Link.`Type`.Attribute(contentType: .textCSS)
+    public static let css = Self(contentType: .textCSS)
 
     /// text/javascript - JavaScript
-    public static let javascript = WHATWG.HTML.Link.`Type`.Attribute(contentType: .textJavaScript)
+    public static let javascript = Self(contentType: .textJavaScript)
 
     /// image/x-icon - Favicon
-    public static let icon = WHATWG.HTML.Link.`Type`.Attribute(contentType: .imageXIcon)
+    public static let icon = Self(contentType: .imageXIcon)
 
     /// image/svg+xml - SVG image
-    public static let svg = WHATWG.HTML.Link.`Type`.Attribute(contentType: .imageSVG)
+    public static let svg = Self(contentType: .imageSVG)
 
     /// image/png - PNG image
-    public static let png = WHATWG.HTML.Link.`Type`.Attribute(contentType: .imagePNG)
+    public static let png = Self(contentType: .imagePNG)
 
     /// application/manifest+json - Web app manifest
-    public static let manifest = WHATWG.HTML.Link.`Type`.Attribute(
+    public static let manifest = Self(
         contentType: .applicationManifestJSON
     )
 
     /// application/rss+xml - RSS feed
-    public static let rss = WHATWG.HTML.Link.`Type`.Attribute(contentType: .applicationRSSXML)
+    public static let rss = Self(contentType: .applicationRSSXML)
 
     /// application/atom+xml - Atom feed
-    public static let atom = WHATWG.HTML.Link.`Type`.Attribute(contentType: .applicationAtomXML)
+    public static let atom = Self(contentType: .applicationAtomXML)
 
     /// application/json - JSON data
-    public static let json = WHATWG.HTML.Link.`Type`.Attribute(contentType: .applicationJSON)
+    public static let json = Self(contentType: .applicationJSON)
 }

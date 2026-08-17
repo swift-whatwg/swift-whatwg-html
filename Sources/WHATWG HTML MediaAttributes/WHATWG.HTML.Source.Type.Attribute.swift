@@ -70,59 +70,59 @@ extension WHATWG.HTML.Source.`Type`.Attribute {
 
 extension WHATWG.HTML.Source.`Type`.Attribute {
     /// video/mp4
-    public static let videoMP4 = WHATWG.HTML.Source.`Type`.Attribute(contentType: .videoMP4)
+    public static let videoMP4 = Self(contentType: .videoMP4)
 
     /// video/webm
-    public static let videoWebM = WHATWG.HTML.Source.`Type`.Attribute(contentType: .videoWebM)
+    public static let videoWebM = Self(contentType: .videoWebM)
 
     /// video/ogg
-    public static let videoOgg = WHATWG.HTML.Source.`Type`.Attribute(contentType: .videoOgg)
+    public static let videoOgg = Self(contentType: .videoOgg)
 
     /// audio/mpeg (MP3)
-    public static let audioMPEG = WHATWG.HTML.Source.`Type`.Attribute(contentType: .audioMPEG)
+    public static let audioMPEG = Self(contentType: .audioMPEG)
 
     /// audio/ogg
-    public static let audioOgg = WHATWG.HTML.Source.`Type`.Attribute(contentType: .audioOgg)
+    public static let audioOgg = Self(contentType: .audioOgg)
 
     /// audio/wav
-    public static let audioWav = WHATWG.HTML.Source.`Type`.Attribute(contentType: .audioWav)
+    public static let audioWav = Self(contentType: .audioWav)
 
     /// audio/webm
-    public static let audioWebM = WHATWG.HTML.Source.`Type`.Attribute(contentType: .audioWebM)
+    public static let audioWebM = Self(contentType: .audioWebM)
 
     /// image/webp
-    public static let imageWEBP = WHATWG.HTML.Source.`Type`.Attribute(contentType: .imageWEBP)
+    public static let imageWEBP = Self(contentType: .imageWEBP)
 
     /// image/avif
-    public static let imageAVIF = WHATWG.HTML.Source.`Type`.Attribute(contentType: .imageAVIF)
+    public static let imageAVIF = Self(contentType: .imageAVIF)
 }
 
 // MARK: - Link/Non-Media MIME Types
 
 extension WHATWG.HTML.Source.`Type`.Attribute {
     /// text/css
-    public static let css = WHATWG.HTML.Source.`Type`.Attribute(contentType: .textCSS)
+    public static let css = Self(contentType: .textCSS)
 
     /// text/javascript
-    public static let javascript = WHATWG.HTML.Source.`Type`.Attribute(contentType: .textJavaScript)
+    public static let javascript = Self(contentType: .textJavaScript)
 
     /// image/svg+xml
-    public static let svg = WHATWG.HTML.Source.`Type`.Attribute(contentType: .imageSVG)
+    public static let svg = Self(contentType: .imageSVG)
 
     /// image/png
-    public static let png = WHATWG.HTML.Source.`Type`.Attribute(contentType: .imagePNG)
+    public static let png = Self(contentType: .imagePNG)
 
     /// application/manifest+json
-    public static let manifest = WHATWG.HTML.Source.`Type`.Attribute(
+    public static let manifest = Self(
         contentType: .applicationManifestJSON
     )
 
     /// application/rss+xml
-    public static let rss = WHATWG.HTML.Source.`Type`.Attribute(contentType: .applicationRSSXML)
+    public static let rss = Self(contentType: .applicationRSSXML)
 
     /// application/atom+xml
-    public static let atom = WHATWG.HTML.Source.`Type`.Attribute(contentType: .applicationAtomXML)
+    public static let atom = Self(contentType: .applicationAtomXML)
 
     /// application/json
-    public static let json = WHATWG.HTML.Source.`Type`.Attribute(contentType: .applicationJSON)
+    public static let json = Self(contentType: .applicationJSON)
 }

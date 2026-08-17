@@ -12,18 +12,19 @@
 
 import Testing
 import WHATWG_HTML
+private typealias ExternalObjectTypeAttribute = WHATWG.HTML.ExternalObject.`Type`.Attribute
 
 @Suite struct `ObjectType Test` {
     @Test func `ObjectType attribute should be type`() {
-        #expect(WHATWG.HTML.ExternalObject.`Type`.Attribute.attribute == "type")
+        #expect(ExternalObjectTypeAttribute.attribute == "type")
     }
 
     @Test func `ObjectType should have predefined MIME types`() {
-        #expect(WHATWG.HTML.ExternalObject.`Type`.Attribute.pdf.rawValue == "application/pdf")
-        #expect(WHATWG.HTML.ExternalObject.`Type`.Attribute.mp4.rawValue == "video/mp4")
-        #expect(WHATWG.HTML.ExternalObject.`Type`.Attribute.mp3.rawValue == "audio/mpeg")
-        #expect(WHATWG.HTML.ExternalObject.`Type`.Attribute.jpeg.rawValue == "image/jpeg")
-        #expect(WHATWG.HTML.ExternalObject.`Type`.Attribute.png.rawValue == "image/png")
-        #expect(WHATWG.HTML.ExternalObject.`Type`.Attribute.html.rawValue == "text/html")
+        #expect(ExternalObjectTypeAttribute.pdf.rawValue == "application/pdf")
+        #expect(ExternalObjectTypeAttribute.mp4.rawValue == "video/mp4")
+        #expect(ExternalObjectTypeAttribute.mp3.rawValue == "audio/mpeg")
+        #expect(ExternalObjectTypeAttribute.jpeg.rawValue == "image/jpeg")
+        #expect(ExternalObjectTypeAttribute.png.rawValue == "image/png")
+        #expect(ExternalObjectTypeAttribute.html.rawValue == "text/html")
     }
 }
