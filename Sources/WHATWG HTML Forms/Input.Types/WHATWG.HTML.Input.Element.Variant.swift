@@ -137,4 +137,3 @@ extension WHATWG.HTML.Input.Element.Variant {
         }
     }
 }
-
