@@ -1,14 +1,14 @@
-// noembed Embed Fallback.swift
-// WHATWG HTML Obsolete
+// ===----------------------------------------------------------------------===//
 //
-// Defines the embed fallback element (<noembed>)
-
-public import WHATWG_HTML_Shared
-
-/// Represents the obsolete `<noembed>` element that provided fallback content for browsers without embed support.
-///
-/// **Deprecated**: Modern browsers support `<embed>`, making this element unnecessary.
-extension WHATWG.HTML.EmbedFallback {
+// Copyright (c) 2025 Coen ten Thije Boonkkamp
+// Licensed under Apache License v2.0
+//
+// See LICENSE.txt for license information
+// See CONTRIBUTORS.txt for the list of project contributors
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+// ===----------------------------------------------------------------------===//
 
 extension WHATWG.HTML {
     /// Namespace for the `PlainText` concept of the WHATWG HTML Living Standard.
