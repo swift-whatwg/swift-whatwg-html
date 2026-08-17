@@ -10,10 +10,6 @@
 //
 // ===----------------------------------------------------------------------===//
 
-@_exported import ASCII_Primitives
-// Re-export shared dependencies
-@_exported import Standard_Library_Extensions
-
 /// WHATWG HTML Living Standard namespace
 ///
 /// This namespace contains types representing HTML elements and attributes
@@ -26,9 +22,9 @@
 /// ## Example
 ///
 /// ```swift
-/// import WHATWG_HTML_Forms
+/// import WHATWG_HTML
 ///
-/// let form = Form(
+/// let form = WHATWG_HTML.Element.Form(
 ///     action: .relative("/submit"),
 ///     method: .post
 /// )

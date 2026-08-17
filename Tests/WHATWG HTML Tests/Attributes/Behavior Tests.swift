@@ -15,12 +15,12 @@ import WHATWG_HTML
 
 @Suite struct `Behavior Test` {
     @Test func `Behavior attribute should be behavior`() {
-        #expect(Behavior.attribute == "behavior")
+        #expect(WHATWG_HTML.Attribute.Behavior.attribute == "behavior")
     }
 
     @Test func `Behavior should have predefined values`() {
-        #expect(Behavior.scroll.rawValue == "scroll")
-        #expect(Behavior.slide.rawValue == "slide")
-        #expect(Behavior.alternate.rawValue == "alternate")
+        #expect(WHATWG_HTML.Attribute.Behavior.scroll.rawValue == "scroll")
+        #expect(WHATWG_HTML.Attribute.Behavior.slide.rawValue == "slide")
+        #expect(WHATWG_HTML.Attribute.Behavior.alternate.rawValue == "alternate")
     }
 }

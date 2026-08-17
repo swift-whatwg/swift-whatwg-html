@@ -13,7 +13,7 @@
 public import WHATWG_HTML_Forms
 import WHATWG_HTML_Shared
 
-extension Form.Data {
+extension WHATWG_HTML.Element.Form.Data {
     /// Represents a single entry in a form data set.
     ///
     /// Each entry consists of a name and an associated value. An entry list can contain multiple

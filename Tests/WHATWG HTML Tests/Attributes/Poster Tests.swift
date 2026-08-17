@@ -14,5 +14,5 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Poster Test` {
-    @Test func `Poster attribute should be poster`() { #expect(Poster.attribute == "poster") }
+    @Test func `Poster attribute should be poster`() { #expect(WHATWG_HTML.Attribute.Poster.attribute == "poster") }
 }

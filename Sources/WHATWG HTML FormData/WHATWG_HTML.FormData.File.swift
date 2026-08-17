@@ -13,7 +13,7 @@
 public import WHATWG_HTML_Forms
 import WHATWG_HTML_Shared
 
-extension Form.Data {
+extension WHATWG_HTML.Element.Form.Data {
     /// Represents a file value in form data.
     ///
     /// File values are used when submitting forms with file input controls (`<input type="file">`).
@@ -77,7 +77,7 @@ extension Form.Data {
     }
 }
 
-extension Form.Data.File {
+extension WHATWG_HTML.Element.Form.Data.File {
     /// The size of the file in bytes.
     @inlinable public var size: Int { body.count }
 
@@ -87,19 +87,19 @@ extension Form.Data.File {
 
 // MARK: - CustomStringConvertible
 
-extension Form.Data.File: CustomStringConvertible {
+extension WHATWG_HTML.Element.Form.Data.File: CustomStringConvertible {
     public var description: String { "<File: \(name), type: \(type), size: \(size) bytes>" }
 }
 
 // MARK: - Common MIME Types
 
-extension Form.Data.File {
+extension WHATWG_HTML.Element.Form.Data.File {
     /// Common MIME types for file uploads.
     public enum MIMEType {
     }
 }
 
-extension Form.Data.File.MIMEType {
+extension WHATWG_HTML.Element.Form.Data.File.MIMEType {
     /// Plain text files
     public static let plainText = "text/plain"
 

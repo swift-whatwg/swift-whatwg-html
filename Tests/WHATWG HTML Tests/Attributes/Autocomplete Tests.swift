@@ -15,36 +15,36 @@ import WHATWG_HTML
 
 @Suite struct `Autocomplete Test` {
     @Test func `Autocomplete attribute should be autocomplete`() {
-        #expect(Autocomplete.attribute == "autocomplete")
+        #expect(WHATWG_HTML.Attribute.Autocomplete.attribute == "autocomplete")
     }
 
     @Test func `Autocomplete convenience properties`() {
-        #expect(Autocomplete.on.rawValue == "on")
-        #expect(Autocomplete.off.rawValue == "off")
+        #expect(WHATWG_HTML.Attribute.Autocomplete.on.rawValue == "on")
+        #expect(WHATWG_HTML.Attribute.Autocomplete.off.rawValue == "off")
     }
 
     @Test func `Autocomplete boolean literal`() {
-        let onValue: Autocomplete = true
-        let offValue: Autocomplete = false
+        let onValue: WHATWG_HTML.Attribute.Autocomplete = true
+        let offValue: WHATWG_HTML.Attribute.Autocomplete = false
         #expect(onValue.rawValue == "on")
         #expect(offValue.rawValue == "off")
     }
 
     @Test func `Autocomplete array literal`() {
-        let autocomplete: Autocomplete = ["email", "username"]
+        let autocomplete: WHATWG_HTML.Attribute.Autocomplete = ["email", "username"]
         #expect(autocomplete.rawValue == "email username")
     }
 
     @Test func `Autocomplete token support`() {
-        let nameToken = Autocomplete.Token.name(.givenName)
-        let addressToken = Autocomplete.Token.address(.streetAddress)
-        let autocomplete = Autocomplete(nameToken, addressToken)
+        let nameToken = WHATWG_HTML.Attribute.Autocomplete.Token.name(.givenName)
+        let addressToken = WHATWG_HTML.Attribute.Autocomplete.Token.address(.streetAddress)
+        let autocomplete = WHATWG_HTML.Attribute.Autocomplete(nameToken, addressToken)
         #expect(autocomplete.rawValue == "given-name street-address")
     }
 
     @Test func `Autocomplete shipping and billing helpers`() {
-        let shipping = Autocomplete.shipping(.streetAddress)
-        let billing = Autocomplete.billing(.postalCode)
+        let shipping = WHATWG_HTML.Attribute.Autocomplete.shipping(.streetAddress)
+        let billing = WHATWG_HTML.Attribute.Autocomplete.billing(.postalCode)
         #expect(shipping.rawValue == "shipping street-address")
         #expect(billing.rawValue == "billing postal-code")
     }

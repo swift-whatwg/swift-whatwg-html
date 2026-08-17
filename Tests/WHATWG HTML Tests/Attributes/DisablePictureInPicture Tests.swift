@@ -15,6 +15,6 @@ import WHATWG_HTML
 
 @Suite struct `DisablePictureInPicture Test` {
     @Test func `DisablePictureInPicture attribute should be disablepictureinpicture`() {
-        #expect(DisablePictureInPicture.attribute == "disablepictureinpicture")
+        #expect(WHATWG_HTML.Attribute.DisablePictureInPicture.attribute == "disablepictureinpicture")
     }
 }

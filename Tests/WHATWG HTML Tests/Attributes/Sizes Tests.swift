@@ -14,5 +14,5 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Sizes Test` {
-    @Test func `Sizes attribute should be sizes`() { #expect(Sizes.attribute == "sizes") }
+    @Test func `Sizes attribute should be sizes`() { #expect(WHATWG_HTML.Attribute.Sizes.attribute == "sizes") }
 }

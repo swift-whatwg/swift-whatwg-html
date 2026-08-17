@@ -15,17 +15,17 @@ import WHATWG_HTML
 
 @Suite struct `ControlsList Test` {
     @Test func `ControlsList attribute should be controlslist`() {
-        #expect(ControlsList.attribute == "controlslist")
+        #expect(WHATWG_HTML.Attribute.ControlsList.attribute == "controlslist")
     }
 
     @Test func `ControlsList should have predefined values`() {
-        #expect(ControlsList.nodownload.rawValue == "nodownload")
-        #expect(ControlsList.nofullscreen.rawValue == "nofullscreen")
-        #expect(ControlsList.noremoteplayback.rawValue == "noremoteplayback")
+        #expect(WHATWG_HTML.Attribute.ControlsList.nodownload.rawValue == "nodownload")
+        #expect(WHATWG_HTML.Attribute.ControlsList.nofullscreen.rawValue == "nofullscreen")
+        #expect(WHATWG_HTML.Attribute.ControlsList.noremoteplayback.rawValue == "noremoteplayback")
     }
 
     @Test func `ControlsList should support combining values`() {
-        let combined = ControlsList.combine([.nodownload, .nofullscreen])
+        let combined = WHATWG_HTML.Attribute.ControlsList.combine([.nodownload, .nofullscreen])
         #expect(combined.rawValue == "nodownload nofullscreen")
     }
 }

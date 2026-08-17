@@ -14,15 +14,15 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Start Test` {
-    @Test func `Start attribute should be start`() { #expect(Start.attribute == "start") }
+    @Test func `Start attribute should be start`() { #expect(WHATWG_HTML.Attribute.Start.attribute == "start") }
 
     @Test func `Start should support integer initialization`() {
-        let start = Start(4)
+        let start = WHATWG_HTML.Attribute.Start(4)
         #expect(start.rawValue == "4")
     }
 
     @Test func `Start should support integer literal`() {
-        let start: Start = 10
+        let start: WHATWG_HTML.Attribute.Start = 10
         #expect(start.rawValue == "10")
     }
 }

@@ -14,22 +14,22 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Size Test` {
-    @Test func `Size attribute should be size`() { #expect(Size.attribute == "size") }
+    @Test func `Size attribute should be size`() { #expect(WHATWG_HTML.Attribute.Size.attribute == "size") }
 
     @Test func `Size convenience properties`() {
-        #expect(Size.standardTextField.rawValue == "30")
-        #expect(Size.smallTextField.rawValue == "10")
-        #expect(Size.largeTextField.rawValue == "50")
-        #expect(Size.standardListbox.rawValue == "5")
+        #expect(WHATWG_HTML.Attribute.Size.standardTextField.rawValue == "30")
+        #expect(WHATWG_HTML.Attribute.Size.smallTextField.rawValue == "10")
+        #expect(WHATWG_HTML.Attribute.Size.largeTextField.rawValue == "50")
+        #expect(WHATWG_HTML.Attribute.Size.standardListbox.rawValue == "5")
     }
 
     @Test func `Size should support integer literal`() {
-        let size: Size = 25
+        let size: WHATWG_HTML.Attribute.Size = 25
         #expect(size.rawValue == "25")
     }
 
     @Test func `Size should enforce minimum value of 1`() {
-        let size: Size = 0
+        let size: WHATWG_HTML.Attribute.Size = 0
         #expect(size.rawValue == "1")
     }
 }

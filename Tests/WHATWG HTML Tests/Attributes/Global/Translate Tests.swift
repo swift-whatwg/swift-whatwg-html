@@ -20,17 +20,17 @@ import WHATWG_HTML
 
 @Suite struct `Translate Test` {
     @Test func `Translate attribute should be translate`() {
-        #expect(Translate.attribute == "translate")
+        #expect(WHATWG_HTML.Attribute.Translate.attribute == "translate")
     }
 
     @Test func `Translate description should match the spec`() {
-        #expect(Translate.yes.description == "yes")
-        #expect(Translate.no.description == "no")
+        #expect(WHATWG_HTML.Attribute.Translate.yes.description == "yes")
+        #expect(WHATWG_HTML.Attribute.Translate.no.description == "no")
     }
 
     @Test func `Translate should be initializable with boolean literals`() {
-        let yesTranslate: Translate = true
-        let noTranslate: Translate = false
+        let yesTranslate: WHATWG_HTML.Attribute.Translate = true
+        let noTranslate: WHATWG_HTML.Attribute.Translate = false
 
         #expect(yesTranslate == .yes)
         #expect(noTranslate == .no)

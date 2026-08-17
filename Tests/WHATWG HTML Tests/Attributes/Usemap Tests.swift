@@ -14,18 +14,18 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Usemap Test` {
-    @Test func `Usemap attribute should be usemap`() { #expect(Usemap.attribute == "usemap") }
+    @Test func `Usemap attribute should be usemap`() { #expect(WHATWG_HTML.Attribute.Usemap.attribute == "usemap") }
 
     @Test func `Usemap should automatically add # prefix`() {
-        let withoutHash = Usemap("planetmap")
+        let withoutHash = WHATWG_HTML.Attribute.Usemap("planetmap")
         #expect(withoutHash.rawValue == "#planetmap")
 
-        let withHash = Usemap("#planetmap")
+        let withHash = WHATWG_HTML.Attribute.Usemap("#planetmap")
         #expect(withHash.rawValue == "#planetmap")
     }
 
     @Test func `Usemap should support string literal`() {
-        let usemap: Usemap = "mymap"
+        let usemap: WHATWG_HTML.Attribute.Usemap = "mymap"
         #expect(usemap.rawValue == "#mymap")
     }
 }

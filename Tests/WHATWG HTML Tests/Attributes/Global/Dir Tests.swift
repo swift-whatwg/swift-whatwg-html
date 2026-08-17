@@ -19,10 +19,10 @@ import WHATWG_HTML
 #endif
 
 @Suite struct `Dir Test` {
-    @Test func `Dir attribute should be dir`() { #expect(Dir.attribute == "dir") }
+    @Test func `Dir attribute should be dir`() { #expect(WHATWG_HTML.Attribute.Dir.attribute == "dir") }
 
-    @Test("Dir cases description should match the spec", arguments: Dir.allCases) func cases(
-        dir: Dir
+    @Test("Dir cases description should match the spec", arguments: WHATWG_HTML.Attribute.Dir.allCases) func cases(
+        dir: WHATWG_HTML.Attribute.Dir
     ) {
         switch dir {
         case .ltr: #expect(dir.description == "ltr")
@@ -33,20 +33,20 @@ import WHATWG_HTML
     }
 
     @Test func `Dir should conform to CaseIterable`() {
-        #expect(Dir.allCases.count == 3)
-        #expect(Dir.allCases.contains(.ltr))
-        #expect(Dir.allCases.contains(.rtl))
-        #expect(Dir.allCases.contains(.auto))
+        #expect(WHATWG_HTML.Attribute.Dir.allCases.count == 3)
+        #expect(WHATWG_HTML.Attribute.Dir.allCases.contains(.ltr))
+        #expect(WHATWG_HTML.Attribute.Dir.allCases.contains(.rtl))
+        #expect(WHATWG_HTML.Attribute.Dir.allCases.contains(.auto))
     }
 
-    @Test(arguments: Dir.allCases)
-    func `Dir rawValue should match description`(dir: Dir) {
+    @Test(arguments: WHATWG_HTML.Attribute.Dir.allCases)
+    func `Dir rawValue should match description`(dir: WHATWG_HTML.Attribute.Dir) {
         #expect(dir.rawValue == dir.description)
     }
 
     @Test(
-        arguments: [("ltr", Dir.ltr), ("rtl", Dir.rtl), ("auto", Dir.auto)]
-    ) func `Dir should be initializable from rawValue`(input: String, expected: Dir?) {
-        #expect(Dir(rawValue: input) == expected)
+        arguments: [("ltr", WHATWG_HTML.Attribute.Dir.ltr), ("rtl", WHATWG_HTML.Attribute.Dir.rtl), ("auto", WHATWG_HTML.Attribute.Dir.auto)]
+    ) func `Dir should be initializable from rawValue`(input: String, expected: WHATWG_HTML.Attribute.Dir?) {
+        #expect(WHATWG_HTML.Attribute.Dir(rawValue: input) == expected)
     }
 }

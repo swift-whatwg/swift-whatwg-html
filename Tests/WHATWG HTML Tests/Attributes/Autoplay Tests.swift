@@ -15,6 +15,6 @@ import WHATWG_HTML
 
 @Suite struct `Autoplay Test` {
     @Test func `Autoplay attribute should be autoplay`() {
-        #expect(Autoplay.attribute == "autoplay")
+        #expect(WHATWG_HTML.Attribute.Autoplay.attribute == "autoplay")
     }
 }

@@ -14,15 +14,15 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Value Test` {
-    @Test func `Value attribute should be value`() { #expect(Value<String>.attribute == "value") }
+    @Test func `Value attribute should be value`() { #expect(WHATWG_HTML.Attribute.Value<String>.attribute == "value") }
 
     @Test func `Value should support string literals`() {
-        let stringValue: Value<String> = "test"
+        let stringValue: WHATWG_HTML.Attribute.Value<String> = "test"
         #expect(stringValue.value == "test")
     }
 
     @Test func `Value should support integer literals`() {
-        let intValue: Value<Int> = 42
+        let intValue: WHATWG_HTML.Attribute.Value<Int> = 42
         #expect(intValue.value == 42)
     }
 }

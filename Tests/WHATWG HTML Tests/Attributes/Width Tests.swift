@@ -14,15 +14,15 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Width Test` {
-    @Test func `Width attribute should be width`() { #expect(Width.attribute == "width") }
+    @Test func `Width attribute should be width`() { #expect(WHATWG_HTML.Attribute.Width.attribute == "width") }
 
     @Test func `Width should support integer literal`() {
-        let width: Width = 400
+        let width: WHATWG_HTML.Attribute.Width = 400
         #expect(width.rawValue == "400")
     }
 
     @Test func `Width should support integer init`() {
-        let width = Width(300)
+        let width = WHATWG_HTML.Attribute.Width(300)
         #expect(width.rawValue == "300")
     }
 }

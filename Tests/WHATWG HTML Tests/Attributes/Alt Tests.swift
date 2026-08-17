@@ -14,5 +14,5 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Alt Test` {
-    @Test func `Alt attribute should be alt`() { #expect(Alt.attribute == "alt") }
+    @Test func `Alt attribute should be alt`() { #expect(WHATWG_HTML.Attribute.Alt.attribute == "alt") }
 }

@@ -14,13 +14,13 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Dirname Test` {
-    @Test func `Dirname attribute should be dirname`() { #expect(Dirname.attribute == "dirname") }
+    @Test func `Dirname attribute should be dirname`() { #expect(WHATWG_HTML.Attribute.Dirname.attribute == "dirname") }
 
     @Test func `Dirname should support initialization based on element name`() {
-        let dirname = Dirname(basedOn: "comment")
+        let dirname = WHATWG_HTML.Attribute.Dirname(basedOn: "comment")
         #expect(dirname.rawValue == "comment-direction")
 
-        let dirnameCustomSuffix = Dirname(basedOn: "message", suffix: "-dir")
+        let dirnameCustomSuffix = WHATWG_HTML.Attribute.Dirname(basedOn: "message", suffix: "-dir")
         #expect(dirnameCustomSuffix.rawValue == "message-dir")
     }
 }

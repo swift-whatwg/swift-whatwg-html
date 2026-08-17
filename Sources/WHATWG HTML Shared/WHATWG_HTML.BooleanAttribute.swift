@@ -29,7 +29,7 @@ extension WHATWG_HTML {
     ///     }
     /// }
     /// ```
-    public protocol BooleanAttribute: Attribute, CustomStringConvertible,
+    public protocol BooleanAttribute: WHATWG_HTML.Attribute.`Protocol`, CustomStringConvertible,
         ExpressibleByBooleanLiteral, CaseIterable, RawRepresentable
     {
         var rawValue: Bool { get }

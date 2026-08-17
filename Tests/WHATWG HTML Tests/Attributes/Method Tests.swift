@@ -14,16 +14,16 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Method Test` {
-    @Test func `Method attribute should be method`() { #expect(Method.attribute == "method") }
+    @Test func `Method attribute should be method`() { #expect(WHATWG_HTML.Attribute.Method.attribute == "method") }
 
     @Test func `Method convenience properties`() {
-        #expect(Method.get.rawValue == "get")
-        #expect(Method.post.rawValue == "post")
-        #expect(Method.dialog.rawValue == "dialog")
+        #expect(WHATWG_HTML.Attribute.Method.get.rawValue == "get")
+        #expect(WHATWG_HTML.Attribute.Method.post.rawValue == "post")
+        #expect(WHATWG_HTML.Attribute.Method.dialog.rawValue == "dialog")
     }
 
     @Test func `Method should lowercase input`() {
-        let method = Method(value: "POST")
+        let method = WHATWG_HTML.Attribute.Method(value: "POST")
         #expect(method.rawValue == "post")
     }
 }

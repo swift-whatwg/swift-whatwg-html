@@ -18,7 +18,7 @@ extension WHATWG_HTML {
     /// ## Example
     ///
     /// ```swift
-    /// extension WHATWG_HTML.GlobalAttributes {
+    /// extension WHATWG_HTML.Attribute {
     ///     public struct Class: WHATWG_HTML.StringAttribute {
     ///         public static var attribute: String { "class" }
     ///         public var rawValue: String
@@ -26,7 +26,7 @@ extension WHATWG_HTML {
     ///     }
     /// }
     /// ```
-    public protocol StringAttribute: Attribute, CustomStringConvertible, ExpressibleByStringLiteral,
+    public protocol StringAttribute: WHATWG_HTML.Attribute.`Protocol`, CustomStringConvertible, ExpressibleByStringLiteral,
         ExpressibleByStringInterpolation, RawRepresentable
     {
         var rawValue: String { get }

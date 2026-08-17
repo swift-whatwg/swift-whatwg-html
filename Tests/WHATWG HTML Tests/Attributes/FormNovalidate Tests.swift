@@ -15,6 +15,6 @@ import WHATWG_HTML
 
 @Suite struct `FormNovalidate Test` {
     @Test func `FormNovalidate attribute should be formnovalidate`() {
-        #expect(FormNovalidate.attribute == "formnovalidate")
+        #expect(WHATWG_HTML.Attribute.FormNovalidate.attribute == "formnovalidate")
     }
 }

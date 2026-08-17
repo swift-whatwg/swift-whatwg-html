@@ -42,7 +42,7 @@ extension WHATWG_HTML {
     /// ## Example
     ///
     /// ```swift
-    /// extension WHATWG_HTML.Forms {
+    /// extension WHATWG_HTML.Element {
     ///     public struct Form: WHATWG_HTML.Element.`Protocol` {
     ///         public static var tag: String { "form" }
     ///         public static var categories: Set<Content.Category> { [.flow, .palpable] }

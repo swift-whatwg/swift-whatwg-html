@@ -14,13 +14,13 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `ListType Test` {
-    @Test func `ListType attribute should be type`() { #expect(ListType.attribute == "type") }
+    @Test func `ListType attribute should be type`() { #expect(WHATWG_HTML.Attribute.ListType.attribute == "type") }
 
     @Test func `ListType should have predefined values`() {
-        #expect(ListType.lowerAlpha.rawValue == "a")
-        #expect(ListType.upperAlpha.rawValue == "A")
-        #expect(ListType.lowerRoman.rawValue == "i")
-        #expect(ListType.upperRoman.rawValue == "I")
-        #expect(ListType.decimal.rawValue == "1")
+        #expect(WHATWG_HTML.Attribute.ListType.lowerAlpha.rawValue == "a")
+        #expect(WHATWG_HTML.Attribute.ListType.upperAlpha.rawValue == "A")
+        #expect(WHATWG_HTML.Attribute.ListType.lowerRoman.rawValue == "i")
+        #expect(WHATWG_HTML.Attribute.ListType.upperRoman.rawValue == "I")
+        #expect(WHATWG_HTML.Attribute.ListType.decimal.rawValue == "1")
     }
 }

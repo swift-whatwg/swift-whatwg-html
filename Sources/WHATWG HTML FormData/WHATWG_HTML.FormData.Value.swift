@@ -13,7 +13,7 @@
 public import WHATWG_HTML_Forms
 import WHATWG_HTML_Shared
 
-extension Form.Data {
+extension WHATWG_HTML.Element.Form.Data {
     /// The value of a form data entry.
     ///
     /// Per the WHATWG HTML specification, form data values can be either strings or files.
@@ -55,7 +55,7 @@ extension Form.Data {
     }
 }
 
-extension Form.Data.Value {
+extension WHATWG_HTML.Element.Form.Data.Value {
     /// Returns the value as a string if it is a string value.
     @inlinable public var stringValue: String? {
         guard case .string(let value) = self else { return nil }
@@ -83,13 +83,13 @@ extension Form.Data.Value {
 
 // MARK: - ExpressibleByStringLiteral
 
-extension Form.Data.Value: ExpressibleByStringLiteral {
+extension WHATWG_HTML.Element.Form.Data.Value: ExpressibleByStringLiteral {
     @inlinable public init(stringLiteral value: String) { self = .string(value) }
 }
 
 // MARK: - CustomStringConvertible
 
-extension Form.Data.Value: CustomStringConvertible {
+extension WHATWG_HTML.Element.Form.Data.Value: CustomStringConvertible {
     public var description: String {
         switch self {
         case .string(let value): return value

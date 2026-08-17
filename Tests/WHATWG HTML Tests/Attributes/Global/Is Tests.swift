@@ -19,20 +19,20 @@ import WHATWG_HTML
 #endif
 
 @Suite struct `Is Test` {
-    @Test func `Is attribute should be is`() { #expect(Is.attribute == "is") }
+    @Test func `Is attribute should be is`() { #expect(WHATWG_HTML.Attribute.Is.attribute == "is") }
 
     @Test func `Is should store and return its value`() {
-        let `is` = Is("custom-button")
+        let `is` = WHATWG_HTML.Attribute.Is("custom-button")
         #expect(`is`.rawValue == "custom-button")
     }
 
     @Test func `Is description should return its value`() {
-        let `is` = Is("file-viewer")
+        let `is` = WHATWG_HTML.Attribute.Is("file-viewer")
         #expect(`is`.description == "file-viewer")
     }
 
     @Test func `Is should be initializable with string literal`() {
-        let `is`: Is = "special-element"
+        let `is`: WHATWG_HTML.Attribute.Is = "special-element"
         #expect(`is`.rawValue == "special-element")
     }
 }

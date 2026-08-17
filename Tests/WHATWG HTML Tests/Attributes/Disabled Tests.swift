@@ -15,6 +15,6 @@ import WHATWG_HTML
 
 @Suite struct `Disabled Test` {
     @Test func `Disabled attribute should be disabled`() {
-        #expect(Disabled.attribute == "disabled")
+        #expect(WHATWG_HTML.Attribute.Disabled.attribute == "disabled")
     }
 }

@@ -13,7 +13,7 @@
 public import WHATWG_HTML_Forms
 import WHATWG_HTML_Shared
 
-extension Form.Data.Entry {
+extension WHATWG_HTML.Element.Form.Data.Entry {
     /// A collection of form data entries representing a "form data set".
     ///
     /// An entry list is an ordered collection of name-value pairs that represents the data
@@ -70,7 +70,7 @@ extension Form.Data.Entry {
     }
 }
 
-extension Form.Data.Entry.List {
+extension WHATWG_HTML.Element.Form.Data.Entry.List {
     /// Appends an entry to the list.
     ///
     /// - Parameter entry: The entry to append
@@ -167,7 +167,7 @@ extension Form.Data.Entry.List {
 
 // MARK: - Collection Conformance
 
-extension Form.Data.Entry.List: Swift.Collection {
+extension WHATWG_HTML.Element.Form.Data.Entry.List: Swift.Collection {
     public typealias Index = Array<Form.Data.Entry>.Index
     public typealias Element = Form.Data.Entry
 
@@ -182,7 +182,7 @@ extension Form.Data.Entry.List: Swift.Collection {
 
 // MARK: - Sequence Protocol
 
-extension Form.Data.Entry.List: Swift.Sequence {
+extension WHATWG_HTML.Element.Form.Data.Entry.List: Swift.Sequence {
     @inlinable public func makeIterator() -> Array<Form.Data.Entry>.Iterator {
         entries.makeIterator()
     }
@@ -190,23 +190,23 @@ extension Form.Data.Entry.List: Swift.Sequence {
 
 // MARK: - ExpressibleByArrayLiteral
 
-extension Form.Data.Entry.List: ExpressibleByArrayLiteral {
+extension WHATWG_HTML.Element.Form.Data.Entry.List: ExpressibleByArrayLiteral {
     @inlinable public init(arrayLiteral elements: Form.Data.Entry...) { self.entries = elements }
 }
 
 // MARK: - Equatable & Hashable
 
-extension Form.Data.Entry.List: Equatable {
+extension WHATWG_HTML.Element.Form.Data.Entry.List: Equatable {
     @inlinable public static func == (lhs: Self, rhs: Self) -> Bool { lhs.entries == rhs.entries }
 }
 
-extension Form.Data.Entry.List: Hashable {
+extension WHATWG_HTML.Element.Form.Data.Entry.List: Hashable {
     @inlinable public func hash(into hasher: inout Hasher) { hasher.combine(entries) }
 }
 
 // MARK: - CustomStringConvertible
 
-extension Form.Data.Entry.List: CustomStringConvertible {
+extension WHATWG_HTML.Element.Form.Data.Entry.List: CustomStringConvertible {
     public var description: String {
         let entryDescriptions = entries.map { entry in "\(entry.name): \(entry.value)" }
         return "EntryList(\(entryDescriptions.joined(separator: ", ")))"
@@ -215,7 +215,7 @@ extension Form.Data.Entry.List: CustomStringConvertible {
 
 // MARK: - CustomDebugStringConvertible
 
-extension Form.Data.Entry.List: CustomDebugStringConvertible {
+extension WHATWG_HTML.Element.Form.Data.Entry.List: CustomDebugStringConvertible {
     public var debugDescription: String {
         """
         Form.Data.Entry.List(count: \(count)) {

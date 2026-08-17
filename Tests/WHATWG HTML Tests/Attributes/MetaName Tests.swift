@@ -14,17 +14,17 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `MetaName Test` {
-    @Test func `MetaName attribute should be name`() { #expect(MetaName.attribute == "name") }
+    @Test func `MetaName attribute should be name`() { #expect(WHATWG_HTML.Attribute.MetaName.attribute == "name") }
 
     @Test func `MetaName should have predefined values`() {
-        #expect(MetaName.application.rawValue == "application-name")
-        #expect(MetaName.author.rawValue == "author")
-        #expect(MetaName.description.rawValue == "description")
-        #expect(MetaName.generator.rawValue == "generator")
-        #expect(MetaName.keywords.rawValue == "keywords")
-        #expect(MetaName.referrer.rawValue == "referrer")
-        #expect(MetaName.themeColor.rawValue == "theme-color")
-        #expect(MetaName.robots.rawValue == "robots")
-        #expect(MetaName.viewport.rawValue == "viewport")
+        #expect(WHATWG_HTML.Attribute.MetaName.application.rawValue == "application-name")
+        #expect(WHATWG_HTML.Attribute.MetaName.author.rawValue == "author")
+        #expect(WHATWG_HTML.Attribute.MetaName.description.rawValue == "description")
+        #expect(WHATWG_HTML.Attribute.MetaName.generator.rawValue == "generator")
+        #expect(WHATWG_HTML.Attribute.MetaName.keywords.rawValue == "keywords")
+        #expect(WHATWG_HTML.Attribute.MetaName.referrer.rawValue == "referrer")
+        #expect(WHATWG_HTML.Attribute.MetaName.themeColor.rawValue == "theme-color")
+        #expect(WHATWG_HTML.Attribute.MetaName.robots.rawValue == "robots")
+        #expect(WHATWG_HTML.Attribute.MetaName.viewport.rawValue == "viewport")
     }
 }

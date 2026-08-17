@@ -18,23 +18,23 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@Suite struct `WHATWG_HTML_GlobalAttributes.Title Test` {
-    @Test func `WHATWG_HTML_GlobalAttributes.Title attribute should be title`() {
-        #expect(WHATWG_HTML_GlobalAttributes.Title.attribute == "title")
+@Suite struct `WHATWG_HTML.Attribute.Title Test` {
+    @Test func `WHATWG_HTML.Attribute.Title attribute should be title`() {
+        #expect(WHATWG_HTML.Attribute.Title.attribute == "title")
     }
 
-    @Test func `WHATWG_HTML_GlobalAttributes.Title should store and return its value`() {
-        let title = WHATWG_HTML_GlobalAttributes.Title("Helpful information")
+    @Test func `WHATWG_HTML.Attribute.Title should store and return its value`() {
+        let title = WHATWG_HTML.Attribute.Title("Helpful information")
         #expect(title.rawValue == "Helpful information")
     }
 
-    @Test func `WHATWG_HTML_GlobalAttributes.Title description should return its value`() {
-        let title = WHATWG_HTML_GlobalAttributes.Title("Click to submit the form")
+    @Test func `WHATWG_HTML.Attribute.Title description should return its value`() {
+        let title = WHATWG_HTML.Attribute.Title("Click to submit the form")
         #expect(title.description == "Click to submit the form")
     }
 
-    @Test func `WHATWG_HTML_GlobalAttributes.Title should be initializable with string literal`() {
-        let title: WHATWG_HTML_GlobalAttributes.Title = "Hover for more details"
+    @Test func `WHATWG_HTML.Attribute.Title should be initializable with string literal`() {
+        let title: WHATWG_HTML.Attribute.Title = "Hover for more details"
         #expect(title.rawValue == "Hover for more details")
     }
 }

@@ -15,13 +15,13 @@ import WHATWG_HTML
 
 @Suite struct `Direction Test` {
     @Test func `Direction attribute should be direction`() {
-        #expect(Direction.attribute == "direction")
+        #expect(WHATWG_HTML.Attribute.Direction.attribute == "direction")
     }
 
     @Test func `Direction convenience properties`() {
-        #expect(Direction.left.rawValue == "left")
-        #expect(Direction.right.rawValue == "right")
-        #expect(Direction.up.rawValue == "up")
-        #expect(Direction.down.rawValue == "down")
+        #expect(WHATWG_HTML.Attribute.Direction.left.rawValue == "left")
+        #expect(WHATWG_HTML.Attribute.Direction.right.rawValue == "right")
+        #expect(WHATWG_HTML.Attribute.Direction.up.rawValue == "up")
+        #expect(WHATWG_HTML.Attribute.Direction.down.rawValue == "down")
     }
 }

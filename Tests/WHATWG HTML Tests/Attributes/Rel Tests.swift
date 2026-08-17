@@ -14,26 +14,26 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Rel Test` {
-    @Test func `Rel attribute should be rel`() { #expect(Rel.attribute == "rel") }
+    @Test func `Rel attribute should be rel`() { #expect(WHATWG_HTML.Attribute.Rel.attribute == "rel") }
 
     @Test func `Rel convenience properties`() {
-        #expect(Rel.stylesheet.rawValue == "stylesheet")
-        #expect(Rel.icon.rawValue == "icon")
-        #expect(Rel.canonical.rawValue == "canonical")
-        #expect(Rel.external.rawValue == "external")
-        #expect(Rel.noopener.rawValue == "noopener")
-        #expect(Rel.noreferrer.rawValue == "noreferrer")
-        #expect(Rel.preload.rawValue == "preload")
+        #expect(WHATWG_HTML.Attribute.Rel.stylesheet.rawValue == "stylesheet")
+        #expect(WHATWG_HTML.Attribute.Rel.icon.rawValue == "icon")
+        #expect(WHATWG_HTML.Attribute.Rel.canonical.rawValue == "canonical")
+        #expect(WHATWG_HTML.Attribute.Rel.external.rawValue == "external")
+        #expect(WHATWG_HTML.Attribute.Rel.noopener.rawValue == "noopener")
+        #expect(WHATWG_HTML.Attribute.Rel.noreferrer.rawValue == "noreferrer")
+        #expect(WHATWG_HTML.Attribute.Rel.preload.rawValue == "preload")
     }
 
     @Test func `Rel array literal support`() {
-        let rel: Rel = ["external", "noopener", "noreferrer"]
+        let rel: WHATWG_HTML.Attribute.Rel = ["external", "noopener", "noreferrer"]
         #expect(rel.rawValue == "external noopener noreferrer")
     }
 
     @Test func `Rel secure external convenience`() {
-        #expect(Rel.secureExternal.rawValue.contains("external"))
-        #expect(Rel.secureExternal.rawValue.contains("noopener"))
-        #expect(Rel.secureExternal.rawValue.contains("noreferrer"))
+        #expect(WHATWG_HTML.Attribute.Rel.secureExternal.rawValue.contains("external"))
+        #expect(WHATWG_HTML.Attribute.Rel.secureExternal.rawValue.contains("noopener"))
+        #expect(WHATWG_HTML.Attribute.Rel.secureExternal.rawValue.contains("noreferrer"))
     }
 }

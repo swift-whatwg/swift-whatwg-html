@@ -15,6 +15,6 @@ import WHATWG_HTML
 
 @Suite struct `ImageSizes Test` {
     @Test func `ImageSizes attribute should be imagesizes`() {
-        #expect(ImageSizes.attribute == "imagesizes")
+        #expect(WHATWG_HTML.Attribute.ImageSizes.attribute == "imagesizes")
     }
 }

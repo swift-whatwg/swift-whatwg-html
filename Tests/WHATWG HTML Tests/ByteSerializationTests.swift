@@ -19,7 +19,7 @@ import Testing
     // MARK: - Boolean Attributes
 
     @Test func `Autofocus byte serialization - true`() {
-        let attr: Autofocus = true
+        let attr: WHATWG_HTML.Attribute.Autofocus = true
         let bytes = [UInt8](attr)
 
         #expect(bytes == Array("autofocus".utf8))
@@ -27,7 +27,7 @@ import Testing
     }
 
     @Test func `Autofocus byte serialization - false`() {
-        let attr: Autofocus = false
+        let attr: WHATWG_HTML.Attribute.Autofocus = false
         let bytes = [UInt8](attr)
 
         #expect(bytes.isEmpty)
@@ -37,7 +37,7 @@ import Testing
     // MARK: - String Attributes
 
     @Test func `Id byte serialization - ASCII`() {
-        let attr = Id(value: "main")
+        let attr = WHATWG_HTML.Attribute.Id(value: "main")
         let bytes = [UInt8](attr)
         let expected = Array("id=\"main\"".utf8)
 
@@ -46,7 +46,7 @@ import Testing
     }
 
     @Test func `Id byte serialization - UTF-8`() {
-        let attr = Id(value: "日本")
+        let attr = WHATWG_HTML.Attribute.Id(value: "日本")
         let bytes = [UInt8](attr)
 
         // Should handle UTF-8 correctly
@@ -59,7 +59,7 @@ import Testing
     }
 
     @Test func `Id byte serialization - complex value`() {
-        let attr = Id(value: "my-complex-id_123")
+        let attr = WHATWG_HTML.Attribute.Id(value: "my-complex-id_123")
         let bytes = [UInt8](attr)
         let expected = Array("id=\"my-complex-id_123\"".utf8)
 
@@ -70,7 +70,7 @@ import Testing
     // MARK: - RFC Pattern Verification
 
     @Test func `String initializer composes through bytes`() {
-        let attr: Autofocus = true
+        let attr: WHATWG_HTML.Attribute.Autofocus = true
 
         // Verify category theory: Autofocus → [UInt8] → String
         let bytes = [UInt8](attr)
@@ -81,7 +81,7 @@ import Testing
     }
 
     @Test func `Byte serialization is authoritative`() {
-        let id = Id(value: "test")
+        let id = WHATWG_HTML.Attribute.Id(value: "test")
 
         // The authoritative serialization
         let bytes = [UInt8](id)

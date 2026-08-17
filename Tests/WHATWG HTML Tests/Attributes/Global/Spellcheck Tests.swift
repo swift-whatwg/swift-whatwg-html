@@ -20,11 +20,11 @@ import WHATWG_HTML
 
 @Suite struct `Spellcheck Test` {
     @Test func `Spellcheck attribute should be spellcheck`() {
-        #expect(Spellcheck.attribute == "spellcheck")
+        #expect(WHATWG_HTML.Attribute.Spellcheck.attribute == "spellcheck")
     }
 
-    @Test("Spellcheck cases description should match the spec", arguments: Spellcheck.allCases)
-    func cases(spellcheck: Spellcheck) {
+    @Test("Spellcheck cases description should match the spec", arguments: WHATWG_HTML.Attribute.Spellcheck.allCases)
+    func cases(spellcheck: WHATWG_HTML.Attribute.Spellcheck) {
         switch spellcheck.rawValue {
         case true: #expect(spellcheck.description == "true")
         case false: #expect(spellcheck.description == "false")
@@ -32,8 +32,8 @@ import WHATWG_HTML
     }
 
     @Test func `Spellcheck should conform to CaseIterable`() {
-        #expect(Spellcheck.allCases.count == 2)
-        #expect(Spellcheck.allCases.contains(true))
-        #expect(Spellcheck.allCases.contains(false))
+        #expect(WHATWG_HTML.Attribute.Spellcheck.allCases.count == 2)
+        #expect(WHATWG_HTML.Attribute.Spellcheck.allCases.contains(true))
+        #expect(WHATWG_HTML.Attribute.Spellcheck.allCases.contains(false))
     }
 }

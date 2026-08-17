@@ -15,6 +15,6 @@ import WHATWG_HTML
 
 @Suite struct `Hreflang Test` {
     @Test func `Hreflang attribute should be hreflang`() {
-        #expect(Hreflang.attribute == "hreflang")
+        #expect(WHATWG_HTML.Attribute.Hreflang.attribute == "hreflang")
     }
 }

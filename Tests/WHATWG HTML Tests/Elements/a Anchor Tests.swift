@@ -16,72 +16,72 @@ import WHATWG_HTML
 @Suite struct `Anchor Tests` {
 
     @Test func `Basic anchor creation`() {
-        let anchor = Anchor()
-        #expect(Anchor.tag == "a")
+        let anchor = WHATWG_HTML.Element.Anchor()
+        #expect(WHATWG_HTML.Element.Anchor.tag == "a")
         #expect(anchor.href == nil)
         #expect(anchor.target == nil)
         #expect(anchor.rel == nil)
     }
 
     @Test func `Anchor with href`() {
-        let href = Href("https://example.com")
-        let anchor = Anchor(href: href)
+        let href = WHATWG_HTML.Attribute.Href("https://example.com")
+        let anchor = WHATWG_HTML.Element.Anchor(href: href)
         #expect(anchor.href == href)
     }
 
     @Test func `Anchor with target`() {
-        let target = Target.blank
-        let anchor = Anchor(target: target)
+        let target = WHATWG_HTML.Attribute.Target.blank
+        let anchor = WHATWG_HTML.Element.Anchor(target: target)
         #expect(anchor.target == target)
     }
 
     @Test func `Anchor with rel`() {
-        let rel = Rel("noopener noreferrer")
-        let anchor = Anchor(rel: rel)
+        let rel = WHATWG_HTML.Attribute.Rel("noopener noreferrer")
+        let anchor = WHATWG_HTML.Element.Anchor(rel: rel)
         #expect(anchor.rel == rel)
     }
 
     @Test func `Anchor with download`() {
-        let download = Download("filename.pdf")
-        let anchor = Anchor(download: download)
+        let download = WHATWG_HTML.Attribute.Download("filename.pdf")
+        let anchor = WHATWG_HTML.Element.Anchor(download: download)
         #expect(anchor.download == download)
     }
 
     @Test func `Anchor with hreflang`() {
-        let hreflang = Hreflang("en")
-        let anchor = Anchor(hreflang: hreflang)
+        let hreflang = WHATWG_HTML.Attribute.Hreflang("en")
+        let anchor = WHATWG_HTML.Element.Anchor(hreflang: hreflang)
         #expect(anchor.hreflang == hreflang)
     }
 
     @Test func `Anchor with ping`() {
-        let ping = Ping("https://analytics.example.com/ping")
-        let anchor = Anchor(ping: ping)
+        let ping = WHATWG_HTML.Attribute.Ping("https://analytics.example.com/ping")
+        let anchor = WHATWG_HTML.Element.Anchor(ping: ping)
         #expect(anchor.ping == ping)
     }
 
     @Test func `Anchor with referrer policy`() {
-        let policy = ReferrerPolicy.noReferrer
-        let anchor = Anchor(referrerpolicy: policy)
+        let policy = WHATWG_HTML.Attribute.ReferrerPolicy.noReferrer
+        let anchor = WHATWG_HTML.Element.Anchor(referrerpolicy: policy)
         #expect(anchor.referrerpolicy == policy)
     }
 
     @Test func `Anchor with attribution source`() {
-        let attributionsrc = AttributionSrc()
-        let anchor = Anchor(attributionsrc: attributionsrc)
+        let attributionsrc = WHATWG_HTML.Attribute.AttributionSrc()
+        let anchor = WHATWG_HTML.Element.Anchor(attributionsrc: attributionsrc)
         #expect(anchor.attributionsrc == attributionsrc)
     }
 
     @Test func `Complete anchor configuration`() {
-        let href = Href("https://example.com")
-        let target = Target.blank
-        let rel = Rel("noopener noreferrer")
-        let download = Download("document.pdf")
-        let hreflang = Hreflang("en")
-        let ping = Ping("https://analytics.example.com/ping")
-        let referrerpolicy = ReferrerPolicy.noReferrer
-        let attributionsrc = AttributionSrc()
+        let href = WHATWG_HTML.Attribute.Href("https://example.com")
+        let target = WHATWG_HTML.Attribute.Target.blank
+        let rel = WHATWG_HTML.Attribute.Rel("noopener noreferrer")
+        let download = WHATWG_HTML.Attribute.Download("document.pdf")
+        let hreflang = WHATWG_HTML.Attribute.Hreflang("en")
+        let ping = WHATWG_HTML.Attribute.Ping("https://analytics.example.com/ping")
+        let referrerpolicy = WHATWG_HTML.Attribute.ReferrerPolicy.noReferrer
+        let attributionsrc = WHATWG_HTML.Attribute.AttributionSrc()
 
-        let anchor = Anchor(
+        let anchor = WHATWG_HTML.Element.Anchor(
             attributionsrc: attributionsrc,
             download: download,
             href: href,
@@ -105,29 +105,29 @@ import WHATWG_HTML
     @Suite struct `Common Use Cases` {
 
         @Test func `Email link`() {
-            let href = Href("mailto:contact@example.com")
-            let anchor = Anchor(href: href)
+            let href = WHATWG_HTML.Attribute.Href("mailto:contact@example.com")
+            let anchor = WHATWG_HTML.Element.Anchor(href: href)
             #expect(anchor.href == href)
         }
 
         @Test func `Telephone link`() {
-            let href = Href("tel:+15555555555")
-            let anchor = Anchor(href: href)
+            let href = WHATWG_HTML.Attribute.Href("tel:+15555555555")
+            let anchor = WHATWG_HTML.Element.Anchor(href: href)
             #expect(anchor.href == href)
         }
 
         @Test func `In-page navigation`() {
-            let href = Href("#section-id")
-            let anchor = Anchor(href: href)
+            let href = WHATWG_HTML.Attribute.Href("#section-id")
+            let anchor = WHATWG_HTML.Element.Anchor(href: href)
             #expect(anchor.href == href)
         }
 
         @Test func `External link with security`() {
-            let href = Href("https://external-site.com")
-            let target = Target.blank
-            let rel = Rel("noopener noreferrer")
+            let href = WHATWG_HTML.Attribute.Href("https://external-site.com")
+            let target = WHATWG_HTML.Attribute.Target.blank
+            let rel = WHATWG_HTML.Attribute.Rel("noopener noreferrer")
 
-            let anchor = Anchor(href: href, rel: rel, target: target)
+            let anchor = WHATWG_HTML.Element.Anchor(href: href, rel: rel, target: target)
 
             #expect(anchor.href == href)
             #expect(anchor.target == target)
@@ -135,30 +135,30 @@ import WHATWG_HTML
         }
 
         @Test func `Download link`() {
-            let href = Href("/files/document.pdf")
-            let download = Download("important-document.pdf")
+            let href = WHATWG_HTML.Attribute.Href("/files/document.pdf")
+            let download = WHATWG_HTML.Attribute.Download("important-document.pdf")
 
-            let anchor = Anchor(download: download, href: href)
+            let anchor = WHATWG_HTML.Element.Anchor(download: download, href: href)
 
             #expect(anchor.href == href)
             #expect(anchor.download == download)
         }
 
         @Test func `Multilingual link`() {
-            let href = Href("https://example.fr")
-            let hreflang = Hreflang("fr")
+            let href = WHATWG_HTML.Attribute.Href("https://example.fr")
+            let hreflang = WHATWG_HTML.Attribute.Hreflang("fr")
 
-            let anchor = Anchor(href: href, hreflang: hreflang)
+            let anchor = WHATWG_HTML.Element.Anchor(href: href, hreflang: hreflang)
 
             #expect(anchor.href == href)
             #expect(anchor.hreflang == hreflang)
         }
 
         @Test func `Tracked link`() {
-            let href = Href("https://example.com")
-            let ping = Ping("https://analytics.example.com/ping https://tracking.example.com/click")
+            let href = WHATWG_HTML.Attribute.Href("https://example.com")
+            let ping = WHATWG_HTML.Attribute.Ping("https://analytics.example.com/ping https://tracking.example.com/click")
 
-            let anchor = Anchor(href: href, ping: ping)
+            let anchor = WHATWG_HTML.Element.Anchor(href: href, ping: ping)
 
             #expect(anchor.href == href)
             #expect(anchor.ping == ping)
@@ -168,32 +168,32 @@ import WHATWG_HTML
     @Suite struct `Target Attribute Tests` {
 
         @Test func `Target self`() {
-            let target = Target.`self`
-            let anchor = Anchor(target: target)
+            let target = WHATWG_HTML.Attribute.Target.`self`
+            let anchor = WHATWG_HTML.Element.Anchor(target: target)
             #expect(anchor.target == target)
         }
 
         @Test func `Target blank`() {
-            let target = Target.blank
-            let anchor = Anchor(target: target)
+            let target = WHATWG_HTML.Attribute.Target.blank
+            let anchor = WHATWG_HTML.Element.Anchor(target: target)
             #expect(anchor.target == target)
         }
 
         @Test func `Target parent`() {
-            let target = Target.parent
-            let anchor = Anchor(target: target)
+            let target = WHATWG_HTML.Attribute.Target.parent
+            let anchor = WHATWG_HTML.Element.Anchor(target: target)
             #expect(anchor.target == target)
         }
 
         @Test func `Target top`() {
-            let target = Target.top
-            let anchor = Anchor(target: target)
+            let target = WHATWG_HTML.Attribute.Target.top
+            let anchor = WHATWG_HTML.Element.Anchor(target: target)
             #expect(anchor.target == target)
         }
 
         @Test func `Custom target`() {
-            let target = Target("myframe")
-            let anchor = Anchor(target: target)
+            let target = WHATWG_HTML.Attribute.Target("myframe")
+            let anchor = WHATWG_HTML.Element.Anchor(target: target)
             #expect(anchor.target == target)
         }
     }
@@ -201,26 +201,26 @@ import WHATWG_HTML
     @Suite struct `Referrer Policy Tests` {
 
         @Test func `No referrer`() {
-            let policy = ReferrerPolicy.noReferrer
-            let anchor = Anchor(referrerpolicy: policy)
+            let policy = WHATWG_HTML.Attribute.ReferrerPolicy.noReferrer
+            let anchor = WHATWG_HTML.Element.Anchor(referrerpolicy: policy)
             #expect(anchor.referrerpolicy == policy)
         }
 
         @Test func `Origin`() {
-            let policy = ReferrerPolicy.origin
-            let anchor = Anchor(referrerpolicy: policy)
+            let policy = WHATWG_HTML.Attribute.ReferrerPolicy.origin
+            let anchor = WHATWG_HTML.Element.Anchor(referrerpolicy: policy)
             #expect(anchor.referrerpolicy == policy)
         }
 
         @Test func `Same origin`() {
-            let policy = ReferrerPolicy.sameOrigin
-            let anchor = Anchor(referrerpolicy: policy)
+            let policy = WHATWG_HTML.Attribute.ReferrerPolicy.sameOrigin
+            let anchor = WHATWG_HTML.Element.Anchor(referrerpolicy: policy)
             #expect(anchor.referrerpolicy == policy)
         }
 
         @Test func `Strict origin`() {
-            let policy = ReferrerPolicy.strictOrigin
-            let anchor = Anchor(referrerpolicy: policy)
+            let policy = WHATWG_HTML.Attribute.ReferrerPolicy.strictOrigin
+            let anchor = WHATWG_HTML.Element.Anchor(referrerpolicy: policy)
             #expect(anchor.referrerpolicy == policy)
         }
     }

@@ -88,14 +88,14 @@ Add the product to a target that needs it:
 import WHATWG_HTML
 
 // Create form with typed input element
-let searchInput = Input(
-    name: Name("query"),
+let searchInput = WHATWG_HTML.Element.Input(
+    name: WHATWG_HTML.Attribute.Name("query"),
     disabled: nil,
     form: nil,
     type: .search(
-        Input.Search(
-            value: Value(""),
-            placeholder: Placeholder("Search...")
+        WHATWG_HTML.Element.Input.Search(
+            value: WHATWG_HTML.Attribute.Value(""),
+            placeholder: WHATWG_HTML.Attribute.Placeholder("Search...")
         )
     )
 )
@@ -108,10 +108,10 @@ import WHATWG_HTML_Forms
 import WHATWG_HTML_FormAttributes
 
 // Only import what you need
-let form = Form(
-    action: Action("/search"),
-    method: Method.get,
-    enctype: EncType.urlencoded
+let form = WHATWG_HTML.Element.Form(
+    action: WHATWG_HTML.Attribute.Action("/search"),
+    method: WHATWG_HTML.Attribute.Method.get,
+    enctype: WHATWG_HTML.Attribute.EncType.urlencoded
 )
 ```
 
@@ -122,31 +122,31 @@ let form = Form(
 Each input type exposes only its valid attributes. The `search` input type:
 
 ```swift
-let search = Input.search(
-    name: Name?("query"),
-    value: Value<String>?(nil),
-    list: List?(nil),
-    maxlength: Maxlength?(nil),
-    minlength: Minlength?(nil),
-    pattern: Pattern?(nil),
-    placeholder: Placeholder?("Search..."),
-    readonly: Readonly?(nil),
-    size: Size?(nil),
-    spellcheck: Spellcheck?(nil),
-    required: Required?(nil),
-    disabled: Disabled?(nil),
-    form: Form.ID?(nil)
+let search = WHATWG_HTML.Element.Input.search(
+    name: WHATWG_HTML.Attribute.Name?("query"),
+    value: WHATWG_HTML.Attribute.Value<String>?(nil),
+    list: WHATWG_HTML.Attribute.List?(nil),
+    maxlength: WHATWG_HTML.Attribute.Maxlength?(nil),
+    minlength: WHATWG_HTML.Attribute.Minlength?(nil),
+    pattern: WHATWG_HTML.Attribute.Pattern?(nil),
+    placeholder: WHATWG_HTML.Attribute.Placeholder?("Search..."),
+    readonly: WHATWG_HTML.Attribute.Readonly?(nil),
+    size: WHATWG_HTML.Attribute.Size?(nil),
+    spellcheck: WHATWG_HTML.Attribute.Spellcheck?(nil),
+    required: WHATWG_HTML.Attribute.Required?(nil),
+    disabled: WHATWG_HTML.Attribute.Disabled?(nil),
+    form: WHATWG_HTML.Attribute.Form.ID?(nil)
 )
 ```
 
 Contrast with the `color` input type:
 
 ```swift
-let color = Input.color(
-    name: Name?("theme"),
-    value: Value<String>?(nil),
-    disabled: Disabled?(nil),
-    form: Form.ID?(nil)
+let color = WHATWG_HTML.Element.Input.color(
+    name: WHATWG_HTML.Attribute.Name?("theme"),
+    value: WHATWG_HTML.Attribute.Value<String>?(nil),
+    disabled: WHATWG_HTML.Attribute.Disabled?(nil),
+    form: WHATWG_HTML.Attribute.Form.ID?(nil)
 )
 ```
 
@@ -158,11 +158,11 @@ Media attributes use RFC 2045 ContentType for MIME validation:
 import WHATWG_HTML_Embedded
 import RFC_2045
 
-let video = Video(
-    src: Src("/video.mp4"),
-    type: SourceType(contentType: .videoMP4),  // RFC 2045 MIME type
-    controls: Controls(),
-    preload: Video.Preload.metadata
+let video = WHATWG_HTML.Element.Video(
+    src: WHATWG_HTML.Attribute.Src("/video.mp4"),
+    type: WHATWG_HTML.Attribute.SourceType(contentType: .videoMP4),  // RFC 2045 MIME type
+    controls: WHATWG_HTML.Attribute.Controls(),
+    preload: WHATWG_HTML.Element.Video.Preload.metadata
 )
 ```
 
@@ -174,8 +174,8 @@ Time-related attributes use ISO 8601 DateTime:
 import WHATWG_HTML_TextSemantics
 import ISO_8601
 
-let time = Time(
-    datetime: WHATWG_HTML_GlobalAttributes.DateTime(
+let time = WHATWG_HTML.Element.Time(
+    datetime: WHATWG_HTML.Attribute.DateTime(
         date: Date(year: 2025, month: 11, day: 21)
     )
 )

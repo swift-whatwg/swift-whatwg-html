@@ -15,6 +15,6 @@ import WHATWG_HTML
 
 @Suite struct `Nomodule Test` {
     @Test func `Nomodule attribute should be nomodule`() {
-        #expect(Nomodule.attribute == "nomodule")
+        #expect(WHATWG_HTML.Attribute.Nomodule.attribute == "nomodule")
     }
 }

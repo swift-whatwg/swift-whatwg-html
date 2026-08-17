@@ -14,12 +14,12 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Kind Test` {
-    @Test func `Kind attribute should be kind`() { #expect(Kind.attribute == "kind") }
+    @Test func `Kind attribute should be kind`() { #expect(WHATWG_HTML.Attribute.Kind.attribute == "kind") }
 
     @Test func `Kind convenience properties`() {
-        #expect(Kind.subtitles.rawValue == "subtitles")
-        #expect(Kind.captions.rawValue == "captions")
-        #expect(Kind.chapters.rawValue == "chapters")
-        #expect(Kind.metadata.rawValue == "metadata")
+        #expect(WHATWG_HTML.Attribute.Kind.subtitles.rawValue == "subtitles")
+        #expect(WHATWG_HTML.Attribute.Kind.captions.rawValue == "captions")
+        #expect(WHATWG_HTML.Attribute.Kind.chapters.rawValue == "chapters")
+        #expect(WHATWG_HTML.Attribute.Kind.metadata.rawValue == "metadata")
     }
 }

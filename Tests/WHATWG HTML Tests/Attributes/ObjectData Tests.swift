@@ -14,5 +14,5 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `ObjectData Test` {
-    @Test func `ObjectData attribute should be data`() { #expect(ObjectData.attribute == "data") }
+    @Test func `ObjectData attribute should be data`() { #expect(WHATWG_HTML.Attribute.ObjectData.attribute == "data") }
 }

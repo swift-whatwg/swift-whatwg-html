@@ -15,19 +15,19 @@ import WHATWG_HTML
 
 @Suite struct `FetchPriority Test` {
     @Test func `FetchPriority attribute should be fetchpriority`() {
-        #expect(FetchPriority.attribute == "fetchpriority")
+        #expect(WHATWG_HTML.Attribute.FetchPriority.attribute == "fetchpriority")
     }
 
     @Test func `FetchPriority convenience properties`() {
-        #expect(FetchPriority.high.rawValue == "high")
-        #expect(FetchPriority.low.rawValue == "low")
-        #expect(FetchPriority.auto.rawValue == "auto")
+        #expect(WHATWG_HTML.Attribute.FetchPriority.high.rawValue == "high")
+        #expect(WHATWG_HTML.Attribute.FetchPriority.low.rawValue == "low")
+        #expect(WHATWG_HTML.Attribute.FetchPriority.auto.rawValue == "auto")
     }
 
     @Test func `FetchPriority should conform to CaseIterable`() {
-        #expect(FetchPriority.allCases.count == 3)
-        #expect(FetchPriority.allCases.contains(.high))
-        #expect(FetchPriority.allCases.contains(.low))
-        #expect(FetchPriority.allCases.contains(.auto))
+        #expect(WHATWG_HTML.Attribute.FetchPriority.allCases.count == 3)
+        #expect(WHATWG_HTML.Attribute.FetchPriority.allCases.contains(.high))
+        #expect(WHATWG_HTML.Attribute.FetchPriority.allCases.contains(.low))
+        #expect(WHATWG_HTML.Attribute.FetchPriority.allCases.contains(.auto))
     }
 }

@@ -19,25 +19,25 @@ import WHATWG_HTML
 #endif
 
 @Suite struct `Part Test` {
-    @Test func `Part attribute should be part`() { #expect(Part.attribute == "part") }
+    @Test func `Part attribute should be part`() { #expect(WHATWG_HTML.Attribute.Part.attribute == "part") }
 
     @Test func `Part description should reflect the initialized values`() {
-        let singlePart = Part("header")
+        let singlePart = WHATWG_HTML.Attribute.Part("header")
         #expect(singlePart.description == "header")
 
-        let multipleParts: Part = ["header", "title"]
+        let multipleParts: WHATWG_HTML.Attribute.Part = ["header", "title"]
         #expect(multipleParts.description == "header title")
 
-        let emptyPart = Part("")
+        let emptyPart = WHATWG_HTML.Attribute.Part("")
         #expect(emptyPart.description.isEmpty)
     }
 
     @Test func `Part can be initialized with single string or array of strings`() {
-        let singlePart: Part = "header"
-        let arrayPart: Part = "header"
+        let singlePart: WHATWG_HTML.Attribute.Part = "header"
+        let arrayPart: WHATWG_HTML.Attribute.Part = "header"
         #expect(singlePart.description == arrayPart.description)
 
-        let multipleParts: Part = ["header", "title"]
+        let multipleParts: WHATWG_HTML.Attribute.Part = ["header", "title"]
         #expect(multipleParts.description == "header title")
     }
 }

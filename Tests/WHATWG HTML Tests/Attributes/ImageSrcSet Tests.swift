@@ -15,6 +15,6 @@ import WHATWG_HTML
 
 @Suite struct `ImageSrcSet Test` {
     @Test func `ImageSrcSet attribute should be imagesrcset`() {
-        #expect(ImageSrcSet.attribute == "imagesrcset")
+        #expect(WHATWG_HTML.Attribute.ImageSrcSet.attribute == "imagesrcset")
     }
 }

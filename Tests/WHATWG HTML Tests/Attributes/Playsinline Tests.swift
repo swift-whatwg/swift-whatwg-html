@@ -15,6 +15,6 @@ import WHATWG_HTML
 
 @Suite struct `Playsinline Test` {
     @Test func `Playsinline attribute should be playsinline`() {
-        #expect(Playsinline.attribute == "playsinline")
+        #expect(WHATWG_HTML.Attribute.Playsinline.attribute == "playsinline")
     }
 }

@@ -20,11 +20,11 @@ import WHATWG_HTML
 
 @Suite struct `Autocorrect Test` {
     @Test func `Autocorrect attribute should be autocorrect`() {
-        #expect(Autocorrect.attribute == "autocorrect")
+        #expect(WHATWG_HTML.Attribute.Autocorrect.attribute == "autocorrect")
     }
 
-    @Test("Autocorrect cases description should match the spec", arguments: Autocorrect.allCases)
-    func cases(autocorrect: Autocorrect) {
+    @Test("Autocorrect cases description should match the spec", arguments: WHATWG_HTML.Attribute.Autocorrect.allCases)
+    func cases(autocorrect: WHATWG_HTML.Attribute.Autocorrect) {
         switch autocorrect {
         case .on: #expect(autocorrect.description == "on")
         case .empty: #expect(autocorrect.description == "\"\"")
@@ -34,27 +34,27 @@ import WHATWG_HTML
     }
 
     @Test func `Autocorrect should conform to CaseIterable`() {
-        #expect(Autocorrect.allCases.count == 3)
-        #expect(Autocorrect.allCases.contains(.on))
-        #expect(Autocorrect.allCases.contains(.empty))
-        #expect(Autocorrect.allCases.contains(.off))
+        #expect(WHATWG_HTML.Attribute.Autocorrect.allCases.count == 3)
+        #expect(WHATWG_HTML.Attribute.Autocorrect.allCases.contains(.on))
+        #expect(WHATWG_HTML.Attribute.Autocorrect.allCases.contains(.empty))
+        #expect(WHATWG_HTML.Attribute.Autocorrect.allCases.contains(.off))
     }
 
-    @Test(arguments: Autocorrect.allCases)
-    func `Autocorrect rawValue should match description`(autocorrect: Autocorrect) {
+    @Test(arguments: WHATWG_HTML.Attribute.Autocorrect.allCases)
+    func `Autocorrect rawValue should match description`(autocorrect: WHATWG_HTML.Attribute.Autocorrect) {
         #expect(autocorrect.rawValue == autocorrect.description)
     }
 
     @Test(
-        arguments: [("on", Autocorrect.on), ("\"\"", Autocorrect.empty), ("off", Autocorrect.off)]
+        arguments: [("on", WHATWG_HTML.Attribute.Autocorrect.on), ("\"\"", WHATWG_HTML.Attribute.Autocorrect.empty), ("off", WHATWG_HTML.Attribute.Autocorrect.off)]
     ) func `Autocorrect should be initializable from rawValue`(
         input: String,
-        expected: Autocorrect?
+        expected: WHATWG_HTML.Attribute.Autocorrect?
     ) {
-        #expect(Autocorrect(rawValue: input) == expected)
+        #expect(WHATWG_HTML.Attribute.Autocorrect(rawValue: input) == expected)
     }
 
     @Test func `Autocorrect empty case should have the correct raw value`() {
-        #expect(Autocorrect.empty.rawValue == "\"\"")
+        #expect(WHATWG_HTML.Attribute.Autocorrect.empty.rawValue == "\"\"")
     }
 }

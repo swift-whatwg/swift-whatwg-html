@@ -15,6 +15,6 @@ import WHATWG_HTML
 
 @Suite struct `Controls Test` {
     @Test func `Controls attribute should be controls`() {
-        #expect(Controls.attribute == "controls")
+        #expect(WHATWG_HTML.Attribute.Controls.attribute == "controls")
     }
 }

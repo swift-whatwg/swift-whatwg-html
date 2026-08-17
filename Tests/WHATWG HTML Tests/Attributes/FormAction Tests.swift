@@ -15,6 +15,6 @@ import WHATWG_HTML
 
 @Suite struct `FormAction Test` {
     @Test func `FormAction attribute should be formaction`() {
-        #expect(FormAction.attribute == "formaction")
+        #expect(WHATWG_HTML.Attribute.FormAction.attribute == "formaction")
     }
 }

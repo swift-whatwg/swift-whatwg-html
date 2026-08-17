@@ -15,6 +15,6 @@ import WHATWG_HTML
 
 @Suite struct `Readonly Test` {
     @Test func `Readonly attribute should be readonly`() {
-        #expect(Readonly.attribute == "readonly")
+        #expect(WHATWG_HTML.Attribute.Readonly.attribute == "readonly")
     }
 }
