@@ -17,7 +17,7 @@ extension WHATWG.HTML.PlainText {
     @available(
         *,
         deprecated,
-        message: "The plaintext element is obsolete. Use the pre element or the text/plain MIME type instead."
+        message: "The plaintext element is obsolete. Use pre or the text/plain MIME type instead."
     ) public struct Element: WHATWG.HTML.Element {
 
         public init() {}
@@ -27,7 +27,7 @@ extension WHATWG.HTML.PlainText {
 @available(
     *,
     deprecated,
-    message: "The plaintext element is obsolete. Use the pre element or the text/plain MIME type instead."
+    message: "The plaintext element is obsolete. Use pre or the text/plain MIME type instead."
 )
 extension WHATWG.HTML.PlainText.Element {
     @inlinable public static var tag: String { "plaintext" }
