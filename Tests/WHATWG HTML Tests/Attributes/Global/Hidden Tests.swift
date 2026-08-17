@@ -20,14 +20,14 @@ import WHATWG_HTML
 
 @Suite struct `Hidden Test` {
     @Test func `Hidden attribute should be hidden`() {
-        #expect(WHATWG_HTML.Attribute.Hidden.attribute == "hidden")
+        #expect(WHATWG.HTML.Attribute.Hidden.attribute == "hidden")
     }
 
     @Test(
         "Hidden cases description should match the spec",
-        arguments: WHATWG_HTML.Attribute.Hidden.allCases
+        arguments: WHATWG.HTML.Attribute.Hidden.allCases
     ) func cases(
-        hidden: WHATWG_HTML.Attribute.Hidden
+        hidden: WHATWG.HTML.Attribute.Hidden
     ) {
         switch hidden {
         case .hidden: #expect(hidden.description == "hidden")
@@ -38,31 +38,31 @@ import WHATWG_HTML
     }
 
     @Test func `Hidden should conform to CaseIterable`() {
-        #expect(WHATWG_HTML.Attribute.Hidden.allCases.count == 3)
-        #expect(WHATWG_HTML.Attribute.Hidden.allCases.contains(.hidden))
-        #expect(WHATWG_HTML.Attribute.Hidden.allCases.contains(.untilFound))
+        #expect(WHATWG.HTML.Attribute.Hidden.allCases.count == 3)
+        #expect(WHATWG.HTML.Attribute.Hidden.allCases.contains(.hidden))
+        #expect(WHATWG.HTML.Attribute.Hidden.allCases.contains(.untilFound))
     }
 
-    @Test(arguments: WHATWG_HTML.Attribute.Hidden.allCases)
-    func `Hidden rawValue should match description`(hidden: WHATWG_HTML.Attribute.Hidden) {
+    @Test(arguments: WHATWG.HTML.Attribute.Hidden.allCases)
+    func `Hidden rawValue should match description`(hidden: WHATWG.HTML.Attribute.Hidden) {
         #expect(hidden.rawValue == hidden.description)
     }
 
     @Test(
         arguments: [
-            ("hidden", WHATWG_HTML.Attribute.Hidden.hidden),
-            ("until-found", WHATWG_HTML.Attribute.Hidden.untilFound),
+            ("hidden", WHATWG.HTML.Attribute.Hidden.hidden),
+            ("until-found", WHATWG.HTML.Attribute.Hidden.untilFound),
 
         ]
     ) func `Hidden should be initializable from rawValue`(
         input: String,
-        expected: WHATWG_HTML.Attribute.Hidden?
+        expected: WHATWG.HTML.Attribute.Hidden?
     ) {
-        #expect(WHATWG_HTML.Attribute.Hidden(rawValue: input) == expected)
+        #expect(WHATWG.HTML.Attribute.Hidden(rawValue: input) == expected)
     }
 
     @Test func `Empty Hidden should use default mode`() {
-        let hiddenDefault = WHATWG_HTML.Attribute.Hidden()
+        let hiddenDefault = WHATWG.HTML.Attribute.Hidden()
         #expect(hiddenDefault == .hidden)
     }
 }

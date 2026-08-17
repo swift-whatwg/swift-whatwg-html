@@ -15,6 +15,6 @@ import WHATWG_HTML
 
 @Suite struct `Allowfullscreen Test` {
     @Test func `Allowfullscreen attribute should be allowfullscreen`() {
-        #expect(WHATWG_HTML.Attribute.Allowfullscreen.attribute == "allowfullscreen")
+        #expect(WHATWG.HTML.Attribute.Allowfullscreen.attribute == "allowfullscreen")
     }
 }

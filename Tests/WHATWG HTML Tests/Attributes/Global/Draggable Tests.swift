@@ -20,14 +20,14 @@ import WHATWG_HTML
 
 @Suite struct `Draggable Test` {
     @Test func `Draggable attribute should be draggable`() {
-        #expect(WHATWG_HTML.Attribute.Draggable.attribute == "draggable")
+        #expect(WHATWG.HTML.Attribute.Draggable.attribute == "draggable")
     }
 
     @Test(
         "Draggable cases description should match the spec",
-        arguments: WHATWG_HTML.Attribute.Draggable.allCases
+        arguments: WHATWG.HTML.Attribute.Draggable.allCases
     )
-    func cases(draggable: WHATWG_HTML.Attribute.Draggable) {
+    func cases(draggable: WHATWG.HTML.Attribute.Draggable) {
         switch draggable {
         case .true: #expect(draggable.description == "true")
         case .false: #expect(draggable.description == "false")
@@ -37,27 +37,27 @@ import WHATWG_HTML
     }
 
     @Test func `Draggable should conform to CaseIterable`() {
-        #expect(WHATWG_HTML.Attribute.Draggable.allCases.count == 3)
-        #expect(WHATWG_HTML.Attribute.Draggable.allCases.contains(.true))
-        #expect(WHATWG_HTML.Attribute.Draggable.allCases.contains(.false))
-        #expect(WHATWG_HTML.Attribute.Draggable.allCases.contains(.auto))
+        #expect(WHATWG.HTML.Attribute.Draggable.allCases.count == 3)
+        #expect(WHATWG.HTML.Attribute.Draggable.allCases.contains(.true))
+        #expect(WHATWG.HTML.Attribute.Draggable.allCases.contains(.false))
+        #expect(WHATWG.HTML.Attribute.Draggable.allCases.contains(.auto))
     }
 
-    @Test(arguments: WHATWG_HTML.Attribute.Draggable.allCases)
-    func `Draggable rawValue should match description`(draggable: WHATWG_HTML.Attribute.Draggable) {
+    @Test(arguments: WHATWG.HTML.Attribute.Draggable.allCases)
+    func `Draggable rawValue should match description`(draggable: WHATWG.HTML.Attribute.Draggable) {
         #expect(draggable.rawValue == draggable.description)
     }
 
     @Test(
         arguments: [
-            ("true", WHATWG_HTML.Attribute.Draggable.true),
-            ("false", WHATWG_HTML.Attribute.Draggable.false),
-            ("auto", WHATWG_HTML.Attribute.Draggable.auto),
+            ("true", WHATWG.HTML.Attribute.Draggable.true),
+            ("false", WHATWG.HTML.Attribute.Draggable.false),
+            ("auto", WHATWG.HTML.Attribute.Draggable.auto),
         ]
     ) func `Draggable should be initializable from rawValue`(
         input: String,
-        expected: WHATWG_HTML.Attribute.Draggable?
+        expected: WHATWG.HTML.Attribute.Draggable?
     ) {
-        #expect(WHATWG_HTML.Attribute.Draggable(rawValue: input) == expected)
+        #expect(WHATWG.HTML.Attribute.Draggable(rawValue: input) == expected)
     }
 }

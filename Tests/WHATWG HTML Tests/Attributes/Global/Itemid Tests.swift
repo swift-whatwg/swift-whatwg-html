@@ -20,21 +20,21 @@ import WHATWG_HTML
 
 @Suite struct `Itemid Test` {
     @Test func `Itemid attribute should be itemid`() {
-        #expect(WHATWG_HTML.Attribute.Itemid.attribute == "itemid")
+        #expect(WHATWG.HTML.Attribute.Itemid.attribute == "itemid")
     }
 
     @Test func `Itemid should store and return its value`() {
-        let itemid = WHATWG_HTML.Attribute.Itemid("urn:isbn:978-0374228484")
+        let itemid = WHATWG.HTML.Attribute.Itemid("urn:isbn:978-0374228484")
         #expect(itemid.rawValue == "urn:isbn:978-0374228484")
     }
 
     @Test func `Itemid description should return its value`() {
-        let itemid = WHATWG_HTML.Attribute.Itemid("https://example.com/products/123")
+        let itemid = WHATWG.HTML.Attribute.Itemid("https://example.com/products/123")
         #expect(itemid.description == "https://example.com/products/123")
     }
 
     @Test func `Itemid should be initializable with string literal`() {
-        let itemid: WHATWG_HTML.Attribute.Itemid = "urn:isbn:978-0374228484"
+        let itemid: WHATWG.HTML.Attribute.Itemid = "urn:isbn:978-0374228484"
         #expect(itemid.rawValue == "urn:isbn:978-0374228484")
     }
 }

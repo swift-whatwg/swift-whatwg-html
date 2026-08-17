@@ -15,21 +15,21 @@ import WHATWG_HTML
 
 @Suite struct `Nonce Test` {
     @Test func `Nonce attribute should be nonce`() {
-        #expect(WHATWG_HTML.Attribute.Nonce.attribute == "nonce")
+        #expect(WHATWG.HTML.Attribute.Nonce.attribute == "nonce")
     }
 
     @Test func `Nonce should store and return its value`() {
-        let nonce = WHATWG_HTML.Attribute.Nonce("abc123xyz789")
+        let nonce = WHATWG.HTML.Attribute.Nonce("abc123xyz789")
         #expect(nonce.rawValue == "abc123xyz789")
     }
 
     @Test func `Nonce description should return its value`() {
-        let nonce = WHATWG_HTML.Attribute.Nonce("xyz987abc321")
+        let nonce = WHATWG.HTML.Attribute.Nonce("xyz987abc321")
         #expect(nonce.description == "xyz987abc321")
     }
 
     @Test func `Nonce should be initializable with string literal`() {
-        let nonce: WHATWG_HTML.Attribute.Nonce = "pqr456mno789"
+        let nonce: WHATWG.HTML.Attribute.Nonce = "pqr456mno789"
         #expect(nonce.rawValue == "pqr456mno789")
     }
 }

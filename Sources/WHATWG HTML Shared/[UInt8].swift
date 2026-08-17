@@ -52,8 +52,8 @@ extension [UInt8] {
     ///
     /// ## See Also
     ///
-    /// - ``WHATWG_HTML/BooleanAttribute``
-    public init<T: WHATWG_HTML.BooleanAttribute>(_ attribute: T) {
+    /// - ``WHATWG/HTML/BooleanAttribute``
+    public init<T: WHATWG.HTML.BooleanAttribute>(_ attribute: T) {
         if attribute.rawValue {
             // Attribute name is ASCII-only, use unchecked for performance
             self = Array(T.attribute.utf8)
@@ -105,8 +105,8 @@ extension [UInt8] {
     ///
     /// ## See Also
     ///
-    /// - ``WHATWG_HTML/StringAttribute``
-    public init<T: WHATWG_HTML.StringAttribute>(_ attribute: T) {
+    /// - ``WHATWG/HTML/StringAttribute``
+    public init<T: WHATWG.HTML.StringAttribute>(_ attribute: T) {
         self = []
 
         // Pre-allocate capacity: name + ="value"

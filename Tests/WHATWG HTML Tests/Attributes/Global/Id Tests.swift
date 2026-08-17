@@ -19,20 +19,20 @@ import WHATWG_HTML
 #endif
 
 @Suite struct `Id Test` {
-    @Test func `Id attribute should be id`() { #expect(WHATWG_HTML.Attribute.Id.attribute == "id") }
+    @Test func `Id attribute should be id`() { #expect(WHATWG.HTML.Attribute.Id.attribute == "id") }
 
     @Test func `Id should store and return its value`() {
-        let id = WHATWG_HTML.Attribute.Id("header-section")
+        let id = WHATWG.HTML.Attribute.Id("header-section")
         #expect(id.rawValue == "header-section")
     }
 
     @Test func `Id description should return its value`() {
-        let id = WHATWG_HTML.Attribute.Id("main-content")
+        let id = WHATWG.HTML.Attribute.Id("main-content")
         #expect(id.description == "main-content")
     }
 
     @Test func `Id should be initializable with string literal`() {
-        let id: WHATWG_HTML.Attribute.Id = "footer"
+        let id: WHATWG.HTML.Attribute.Id = "footer"
         #expect(id.rawValue == "footer")
     }
 }

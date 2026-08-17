@@ -15,17 +15,17 @@ import WHATWG_HTML
 
 @Suite struct `Loading Test` {
     @Test func `Loading attribute should be loading`() {
-        #expect(WHATWG_HTML.Attribute.Loading.attribute == "loading")
+        #expect(WHATWG.HTML.Attribute.Loading.attribute == "loading")
     }
 
     @Test func `Loading convenience properties`() {
-        #expect(WHATWG_HTML.Attribute.Loading.lazy.rawValue == "lazy")
-        #expect(WHATWG_HTML.Attribute.Loading.eager.rawValue == "eager")
+        #expect(WHATWG.HTML.Attribute.Loading.lazy.rawValue == "lazy")
+        #expect(WHATWG.HTML.Attribute.Loading.eager.rawValue == "eager")
     }
 
     @Test func `Loading should conform to CaseIterable`() {
-        #expect(WHATWG_HTML.Attribute.Loading.allCases.count == 2)
-        #expect(WHATWG_HTML.Attribute.Loading.allCases.contains(.lazy))
-        #expect(WHATWG_HTML.Attribute.Loading.allCases.contains(.eager))
+        #expect(WHATWG.HTML.Attribute.Loading.allCases.count == 2)
+        #expect(WHATWG.HTML.Attribute.Loading.allCases.contains(.lazy))
+        #expect(WHATWG.HTML.Attribute.Loading.allCases.contains(.eager))
     }
 }

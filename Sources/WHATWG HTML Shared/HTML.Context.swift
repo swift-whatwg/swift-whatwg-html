@@ -10,13 +10,13 @@
 //// MARK: - HTML Geometry Conversion
 //
 ///// Provides conversion utilities for HTML geometry types.
-// extension WHATWG_HTML.Geometry {
+// extension WHATWG.HTML.Geometry {
 //    public enum Context {
 //        /// Convert a width value to an HTML attribute string.
 //        ///
 //        /// - Parameter width: The width in HTML space.
 //        /// - Returns: String representation for HTML attribute (e.g., "400").
-//        public static func attribute(width: WHATWG_HTML.Width) -> String {
+//        public static func attribute(width: WHATWG.HTML.Width) -> String {
 //            String(width.rawValue)
 //        }
 //
@@ -24,18 +24,18 @@
 //        ///
 //        /// - Parameter height: The height in HTML space.
 //        /// - Returns: String representation for HTML attribute (e.g., "300").
-//        public static func attribute(height: WHATWG_HTML.Height) -> String {
+//        public static func attribute(height: WHATWG.HTML.Height) -> String {
 //            String(height.rawValue)
 //        }
 //    }
 // }
 //
-// extension WHATWG_HTML.Rectangle {
+// extension WHATWG.HTML.Rectangle {
 //    public struct Context {
-//        let rectangle: WHATWG_HTML.Rectangle
+//        let rectangle: WHATWG.HTML.Rectangle
 //
 //        /// Initialize with a rectangle value.
-//        public init(_ rectangle: WHATWG_HTML.Rectangle) {
+//        public init(_ rectangle: WHATWG.HTML.Rectangle) {
 //            self.rectangle = rectangle
 //        }
 //
@@ -50,7 +50,7 @@
 //        }
 //    }
 // }
-// extension Geometry.Orthotope where N == 2, Space == WHATWG_HTML.Space, Scalar == Double {
+// extension Geometry.Orthotope where N == 2, Space == WHATWG.HTML.Space, Scalar == Double {
 //    /// Access HTML-specific functionality for this rectangle.
 //    public var html: HTMLRectangleContext { HTMLRectangleContext(self) }
 // }

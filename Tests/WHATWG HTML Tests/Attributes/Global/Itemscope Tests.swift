@@ -20,6 +20,6 @@ import WHATWG_HTML
 
 @Suite struct `Itemscope Test` {
     @Test func `Itemscope attribute should be itemscope`() {
-        #expect(WHATWG_HTML.Attribute.Itemscope.attribute == "itemscope")
+        #expect(WHATWG.HTML.Attribute.Itemscope.attribute == "itemscope")
     }
 }

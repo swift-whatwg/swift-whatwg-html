@@ -15,6 +15,6 @@ import WHATWG_HTML
 
 @Suite struct `Required Test` {
     @Test func `Required attribute should be required`() {
-        #expect(WHATWG_HTML.Attribute.Required.attribute == "required")
+        #expect(WHATWG.HTML.Attribute.Required.attribute == "required")
     }
 }

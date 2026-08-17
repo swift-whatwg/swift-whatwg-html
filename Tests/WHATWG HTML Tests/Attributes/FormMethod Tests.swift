@@ -15,17 +15,17 @@ import WHATWG_HTML
 
 @Suite struct `FormMethod Test` {
     @Test func `FormMethod attribute should be formmethod`() {
-        #expect(WHATWG_HTML.Attribute.FormMethod.attribute == "formmethod")
+        #expect(WHATWG.HTML.Attribute.FormMethod.attribute == "formmethod")
     }
 
     @Test func `FormMethod should have predefined values`() {
-        #expect(WHATWG_HTML.Attribute.FormMethod.get.rawValue == "get")
-        #expect(WHATWG_HTML.Attribute.FormMethod.post.rawValue == "post")
-        #expect(WHATWG_HTML.Attribute.FormMethod.dialog.rawValue == "dialog")
+        #expect(WHATWG.HTML.Attribute.FormMethod.get.rawValue == "get")
+        #expect(WHATWG.HTML.Attribute.FormMethod.post.rawValue == "post")
+        #expect(WHATWG.HTML.Attribute.FormMethod.dialog.rawValue == "dialog")
     }
 
     @Test func `FormMethod should convert to lowercase`() {
-        let method = WHATWG_HTML.Attribute.FormMethod(value: "POST")
+        let method = WHATWG.HTML.Attribute.FormMethod(value: "POST")
         #expect(method.rawValue == "post")
     }
 }

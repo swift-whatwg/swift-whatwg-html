@@ -15,6 +15,6 @@ import WHATWG_HTML
 
 @Suite struct `Multiple Test` {
     @Test func `Multiple attribute should be multiple`() {
-        #expect(WHATWG_HTML.Attribute.Multiple.attribute == "multiple")
+        #expect(WHATWG.HTML.Attribute.Multiple.attribute == "multiple")
     }
 }

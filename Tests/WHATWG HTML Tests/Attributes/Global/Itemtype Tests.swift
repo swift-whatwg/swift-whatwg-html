@@ -20,33 +20,33 @@ import WHATWG_HTML
 
 @Suite struct `Itemtype Test` {
     @Test func `Itemtype attribute should be itemtype`() {
-        #expect(WHATWG_HTML.Attribute.Itemtype.attribute == "itemtype")
+        #expect(WHATWG.HTML.Attribute.Itemtype.attribute == "itemtype")
     }
 
     @Test func `Itemtype should store and return its value`() {
-        let itemtype = WHATWG_HTML.Attribute.Itemtype("https://schema.org/Person")
+        let itemtype = WHATWG.HTML.Attribute.Itemtype("https://schema.org/Person")
         #expect(itemtype.rawValue == "https://schema.org/Person")
     }
 
     @Test func `Itemtype description should return its value`() {
-        let itemtype = WHATWG_HTML.Attribute.Itemtype("https://schema.org/Product")
+        let itemtype = WHATWG.HTML.Attribute.Itemtype("https://schema.org/Product")
         #expect(itemtype.description == "https://schema.org/Product")
     }
 
     @Test func `Itemtype should be initializable with string literal`() {
-        let itemtype: WHATWG_HTML.Attribute.Itemtype = "https://schema.org/Movie"
+        let itemtype: WHATWG.HTML.Attribute.Itemtype = "https://schema.org/Movie"
         #expect(itemtype.rawValue == "https://schema.org/Movie")
     }
 
     @Test func `Itemtype should be initializable with array literal`() {
-        let itemtype: WHATWG_HTML.Attribute.Itemtype = [
+        let itemtype: WHATWG.HTML.Attribute.Itemtype = [
             "https://schema.org/Person", "https://schema.org/Teacher",
         ]
         #expect(itemtype.rawValue == "https://schema.org/Person https://schema.org/Teacher")
     }
 
     @Test func `Itemtype should support SchemaOrg initialization`() {
-        let itemtype = WHATWG_HTML.Attribute.Itemtype(schemaOrg: "Person")
+        let itemtype = WHATWG.HTML.Attribute.Itemtype(schemaOrg: "Person")
         #expect(itemtype.rawValue == "https://schema.org/Person")
     }
 }

@@ -20,6 +20,6 @@ import WHATWG_HTML
 
 @Suite struct `Inert Test` {
     @Test func `Inert attribute should be inert`() {
-        #expect(WHATWG_HTML.Attribute.Inert.attribute == "inert")
+        #expect(WHATWG.HTML.Attribute.Inert.attribute == "inert")
     }
 }

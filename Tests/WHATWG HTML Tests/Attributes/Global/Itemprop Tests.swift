@@ -20,26 +20,26 @@ import WHATWG_HTML
 
 @Suite struct `Itemprop Test` {
     @Test func `Itemprop attribute should be itemprop`() {
-        #expect(WHATWG_HTML.Attribute.Itemprop.attribute == "itemprop")
+        #expect(WHATWG.HTML.Attribute.Itemprop.attribute == "itemprop")
     }
 
     @Test func `Itemprop should store and return its value`() {
-        let itemprop = WHATWG_HTML.Attribute.Itemprop("name")
+        let itemprop = WHATWG.HTML.Attribute.Itemprop("name")
         #expect(itemprop.rawValue == "name")
     }
 
     @Test func `Itemprop description should return its value`() {
-        let itemprop = WHATWG_HTML.Attribute.Itemprop("director")
+        let itemprop = WHATWG.HTML.Attribute.Itemprop("director")
         #expect(itemprop.description == "director")
     }
 
     @Test func `Itemprop should be initializable with string literal`() {
-        let itemprop: WHATWG_HTML.Attribute.Itemprop = "author"
+        let itemprop: WHATWG.HTML.Attribute.Itemprop = "author"
         #expect(itemprop.rawValue == "author")
     }
 
     @Test func `Itemprop should be initializable with array literal`() {
-        let itemprop: WHATWG_HTML.Attribute.Itemprop = ["favorite-color", "favorite-fruit"]
+        let itemprop: WHATWG.HTML.Attribute.Itemprop = ["favorite-color", "favorite-fruit"]
         #expect(itemprop.rawValue == "favorite-color favorite-fruit")
     }
 }

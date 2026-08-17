@@ -20,21 +20,21 @@ import WHATWG_HTML
 
 @Suite struct `Lang Test` {
     @Test func `Lang attribute should be lang`() {
-        #expect(WHATWG_HTML.Attribute.Lang.attribute == "lang")
+        #expect(WHATWG.HTML.Attribute.Lang.attribute == "lang")
     }
 
     @Test func `Lang should store and return its value`() {
-        let lang = WHATWG_HTML.Attribute.Lang("en-US")
+        let lang = WHATWG.HTML.Attribute.Lang("en-US")
         #expect(lang.rawValue == "en-US")
     }
 
     @Test func `Lang description should return its value`() {
-        let lang = WHATWG_HTML.Attribute.Lang("es")
+        let lang = WHATWG.HTML.Attribute.Lang("es")
         #expect(lang.description == "es")
     }
 
     @Test func `Lang should be initializable with string literal`() {
-        let lang: WHATWG_HTML.Attribute.Lang = "fr-CA"
+        let lang: WHATWG.HTML.Attribute.Lang = "fr-CA"
         #expect(lang.rawValue == "fr-CA")
     }
 }

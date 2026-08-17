@@ -15,14 +15,14 @@ import WHATWG_HTML
 
 @Suite struct `ScriptType Test` {
     @Test func `ScriptType attribute should be type`() {
-        #expect(WHATWG_HTML.Attribute.ScriptType.attribute == "type")
+        #expect(WHATWG.HTML.Attribute.ScriptType.attribute == "type")
     }
 
     @Test func `ScriptType should have predefined values`() {
-        #expect(WHATWG_HTML.Attribute.ScriptType.module.rawValue == "module")
-        #expect(WHATWG_HTML.Attribute.ScriptType.importmap.rawValue == "importmap")
-        #expect(WHATWG_HTML.Attribute.ScriptType.speculationrules.rawValue == "speculationrules")
-        #expect(WHATWG_HTML.Attribute.ScriptType.json.rawValue == "application/json")
-        #expect(WHATWG_HTML.Attribute.ScriptType.textPlain.rawValue == "text/plain")
+        #expect(WHATWG.HTML.Attribute.ScriptType.module.rawValue == "module")
+        #expect(WHATWG.HTML.Attribute.ScriptType.importmap.rawValue == "importmap")
+        #expect(WHATWG.HTML.Attribute.ScriptType.speculationrules.rawValue == "speculationrules")
+        #expect(WHATWG.HTML.Attribute.ScriptType.json.rawValue == "application/json")
+        #expect(WHATWG.HTML.Attribute.ScriptType.textPlain.rawValue == "text/plain")
     }
 }

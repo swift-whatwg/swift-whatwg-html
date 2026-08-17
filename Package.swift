@@ -81,6 +81,7 @@ extension Target.Dependency {
     static var whatwgHTMLAttributes: Self { .target(name: .whatwgHTMLAttributes) }
 
     // External dependencies
+    static var whatwg: Self { .product(name: "WHATWG", package: "swift-whatwg") }
     static var rfc2045: Self { .product(name: "RFC 2045", package: "swift-rfc-2045") }
     static var iso8601: Self { .product(name: "ISO 8601", package: "swift-iso-8601") }
     static var standards: Self { .product(name: "Standard Library Extensions", package: "swift-standard-library-extensions") }
@@ -95,11 +96,11 @@ extension Target.Dependency {
 let package = Package(
     name: "swift-whatwg-html",
     platforms: [
-        .macOS(.v26),
-        .iOS(.v26),
-        .tvOS(.v26),
-        .watchOS(.v26),
-        .visionOS(.v26)
+        .macOS("27"),
+        .iOS("27"),
+        .tvOS("27"),
+        .watchOS("27"),
+        .visionOS("27")
     ],
     products: [
         // ============================================================
@@ -233,6 +234,7 @@ let package = Package(
         )
     ],
     dependencies: [
+        .package(url: "https://github.com/swift-whatwg/swift-whatwg.git", branch: "main"),
         .package(url: "https://github.com/swift-ietf/swift-rfc-2045.git", branch: "main"),
         .package(url: "https://github.com/swift-iso/swift-iso-8601.git", branch: "main"),
         .package(url: "https://github.com/swift-primitives/swift-standard-library-extensions.git", branch: "main"),
@@ -247,6 +249,7 @@ let package = Package(
         .target(
             name: "WHATWG HTML Shared",
             dependencies: [
+                .whatwg,
                 .standards,
                 .geometry,
                 .incits41986

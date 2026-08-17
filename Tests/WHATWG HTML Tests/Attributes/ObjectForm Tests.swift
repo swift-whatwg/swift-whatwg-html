@@ -15,6 +15,6 @@ import WHATWG_HTML
 
 @Suite struct `ObjectForm Test` {
     @Test func `ObjectForm attribute should be form`() {
-        #expect(WHATWG_HTML.Attribute.ObjectForm.attribute == "form")
+        #expect(WHATWG.HTML.Attribute.ObjectForm.attribute == "form")
     }
 }

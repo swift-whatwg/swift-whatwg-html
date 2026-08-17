@@ -18,7 +18,7 @@ import WHATWG_HTML_Forms
 @Suite struct `EntryList Tests` {
 
     @Test func `EntryList empty initialization`() {
-        let list = WHATWG_HTML.Attribute.Form.Data.Entry.List()
+        let list = WHATWG.HTML.Attribute.Form.Data.Entry.List()
 
         #expect(list.isEmpty)
         #expect(list.isEmpty == true)
@@ -26,18 +26,18 @@ import WHATWG_HTML_Forms
 
     @Test func `EntryList initialization with entries`() {
         let entries = [
-            WHATWG_HTML.Attribute.Form.Data.Entry(name: "field1", stringValue: "value1"),
-            WHATWG_HTML.Attribute.Form.Data.Entry(name: "field2", stringValue: "value2"),
+            WHATWG.HTML.Attribute.Form.Data.Entry(name: "field1", stringValue: "value1"),
+            WHATWG.HTML.Attribute.Form.Data.Entry(name: "field2", stringValue: "value2"),
         ]
-        let list = WHATWG_HTML.Attribute.Form.Data.Entry.List(entries: entries)
+        let list = WHATWG.HTML.Attribute.Form.Data.Entry.List(entries: entries)
 
         #expect(list.count == 2)
         #expect(list.isEmpty == false)
     }
 
     @Test func `EntryList append entry`() {
-        var list = WHATWG_HTML.Attribute.Form.Data.Entry.List()
-        let entry = WHATWG_HTML.Attribute.Form.Data.Entry(name: "test", stringValue: "value")
+        var list = WHATWG.HTML.Attribute.Form.Data.Entry.List()
+        let entry = WHATWG.HTML.Attribute.Form.Data.Entry(name: "test", stringValue: "value")
 
         list.append(entry)
 
@@ -46,7 +46,7 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `EntryList append with name and value`() {
-        var list = WHATWG_HTML.Attribute.Form.Data.Entry.List()
+        var list = WHATWG.HTML.Attribute.Form.Data.Entry.List()
         list.append(name: "username", value: .string("alice"))
 
         #expect(list.count == 1)
@@ -55,7 +55,7 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `EntryList append string convenience`() {
-        var list = WHATWG_HTML.Attribute.Form.Data.Entry.List()
+        var list = WHATWG.HTML.Attribute.Form.Data.Entry.List()
         list.append(name: "email", value: "alice@example.com")
 
         #expect(list.count == 1)
@@ -63,8 +63,8 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `EntryList append file convenience`() {
-        var list = WHATWG_HTML.Attribute.Form.Data.Entry.List()
-        let file = WHATWG_HTML.Attribute.Form.Data.File(
+        var list = WHATWG.HTML.Attribute.Form.Data.Entry.List()
+        let file = WHATWG.HTML.Attribute.Form.Data.File(
             name: "photo.jpg",
             type: "image/jpeg",
             body: [UInt8]([1, 2, 3])
@@ -76,7 +76,7 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `EntryList subscript by name returns all values`() {
-        var list = WHATWG_HTML.Attribute.Form.Data.Entry.List()
+        var list = WHATWG.HTML.Attribute.Form.Data.Entry.List()
         list.append(name: "interests", value: "swift")
         list.append(name: "interests", value: "webdev")
         list.append(name: "username", value: "alice")
@@ -92,12 +92,12 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `EntryList subscript returns nil for missing name`() {
-        let list = WHATWG_HTML.Attribute.Form.Data.Entry.List()
+        let list = WHATWG.HTML.Attribute.Form.Data.Entry.List()
         #expect(list["nonexistent"] == nil)
     }
 
     @Test func `EntryList first named returns first value`() {
-        var list = WHATWG_HTML.Attribute.Form.Data.Entry.List()
+        var list = WHATWG.HTML.Attribute.Form.Data.Entry.List()
         list.append(name: "field", value: "first")
         list.append(name: "field", value: "second")
 
@@ -107,12 +107,12 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `EntryList first named returns nil for missing`() {
-        let list = WHATWG_HTML.Attribute.Form.Data.Entry.List()
+        let list = WHATWG.HTML.Attribute.Form.Data.Entry.List()
         #expect(list.first(named: "missing") == nil)
     }
 
     @Test func `EntryList all named returns all values`() {
-        var list = WHATWG_HTML.Attribute.Form.Data.Entry.List()
+        var list = WHATWG.HTML.Attribute.Form.Data.Entry.List()
         list.append(name: "tags", value: "swift")
         list.append(name: "tags", value: "web")
         list.append(name: "tags", value: "server")
@@ -126,14 +126,14 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `EntryList all named returns empty array for missing`() {
-        let list = WHATWG_HTML.Attribute.Form.Data.Entry.List()
+        let list = WHATWG.HTML.Attribute.Form.Data.Entry.List()
         let values = list.all(named: "missing")
 
         #expect(values.isEmpty == true)
     }
 
     @Test func `EntryList contains name`() {
-        var list = WHATWG_HTML.Attribute.Form.Data.Entry.List()
+        var list = WHATWG.HTML.Attribute.Form.Data.Entry.List()
         list.append(name: "username", value: "alice")
 
         #expect(list.contains(name: "username") == true)
@@ -141,7 +141,7 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `EntryList remove by name`() {
-        var list = WHATWG_HTML.Attribute.Form.Data.Entry.List()
+        var list = WHATWG.HTML.Attribute.Form.Data.Entry.List()
         list.append(name: "field1", value: "value1")
         list.append(name: "field2", value: "value2")
         list.append(name: "field1", value: "value3")
@@ -154,7 +154,7 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `EntryList names returns unique names in order`() {
-        var list = WHATWG_HTML.Attribute.Form.Data.Entry.List()
+        var list = WHATWG.HTML.Attribute.Form.Data.Entry.List()
         list.append(name: "username", value: "alice")
         list.append(name: "email", value: "alice@example.com")
         list.append(name: "username", value: "bob")
@@ -168,7 +168,7 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `EntryList conforms to Collection`() {
-        var list = WHATWG_HTML.Attribute.Form.Data.Entry.List()
+        var list = WHATWG.HTML.Attribute.Form.Data.Entry.List()
         list.append(name: "field1", value: "value1")
         list.append(name: "field2", value: "value2")
 
@@ -180,7 +180,7 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `EntryList can be iterated`() {
-        var list = WHATWG_HTML.Attribute.Form.Data.Entry.List()
+        var list = WHATWG.HTML.Attribute.Form.Data.Entry.List()
         list.append(name: "a", value: "1")
         list.append(name: "b", value: "2")
         list.append(name: "c", value: "3")
@@ -192,9 +192,9 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `EntryList array literal initialization`() {
-        let list: WHATWG_HTML.Attribute.Form.Data.Entry.List = [
-            WHATWG_HTML.Attribute.Form.Data.Entry(name: "field1", stringValue: "value1"),
-            WHATWG_HTML.Attribute.Form.Data.Entry(name: "field2", stringValue: "value2"),
+        let list: WHATWG.HTML.Attribute.Form.Data.Entry.List = [
+            WHATWG.HTML.Attribute.Form.Data.Entry(name: "field1", stringValue: "value1"),
+            WHATWG.HTML.Attribute.Form.Data.Entry(name: "field2", stringValue: "value2"),
         ]
 
         #expect(list.count == 2)
@@ -203,42 +203,42 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `EntryList conforms to Equatable`() {
-        let list1: WHATWG_HTML.Attribute.Form.Data.Entry.List = [
-            WHATWG_HTML.Attribute.Form.Data.Entry(name: "a", stringValue: "1"),
-            WHATWG_HTML.Attribute.Form.Data.Entry(name: "b", stringValue: "2"),
+        let list1: WHATWG.HTML.Attribute.Form.Data.Entry.List = [
+            WHATWG.HTML.Attribute.Form.Data.Entry(name: "a", stringValue: "1"),
+            WHATWG.HTML.Attribute.Form.Data.Entry(name: "b", stringValue: "2"),
         ]
-        let list2: WHATWG_HTML.Attribute.Form.Data.Entry.List = [
-            WHATWG_HTML.Attribute.Form.Data.Entry(name: "a", stringValue: "1"),
-            WHATWG_HTML.Attribute.Form.Data.Entry(name: "b", stringValue: "2"),
+        let list2: WHATWG.HTML.Attribute.Form.Data.Entry.List = [
+            WHATWG.HTML.Attribute.Form.Data.Entry(name: "a", stringValue: "1"),
+            WHATWG.HTML.Attribute.Form.Data.Entry(name: "b", stringValue: "2"),
         ]
 
         #expect(list1 == list2)
     }
 
     @Test func `EntryList different entries not equal`() {
-        let list1: WHATWG_HTML.Attribute.Form.Data.Entry.List = [
-            WHATWG_HTML.Attribute.Form.Data.Entry(name: "a", stringValue: "1")
+        let list1: WHATWG.HTML.Attribute.Form.Data.Entry.List = [
+            WHATWG.HTML.Attribute.Form.Data.Entry(name: "a", stringValue: "1")
         ]
-        let list2: WHATWG_HTML.Attribute.Form.Data.Entry.List = [
-            WHATWG_HTML.Attribute.Form.Data.Entry(name: "b", stringValue: "2")
+        let list2: WHATWG.HTML.Attribute.Form.Data.Entry.List = [
+            WHATWG.HTML.Attribute.Form.Data.Entry(name: "b", stringValue: "2")
         ]
 
         #expect(list1 != list2)
     }
 
     @Test func `EntryList conforms to Hashable`() {
-        let list1: WHATWG_HTML.Attribute.Form.Data.Entry.List = [
-            WHATWG_HTML.Attribute.Form.Data.Entry(name: "a", stringValue: "1")
+        let list1: WHATWG.HTML.Attribute.Form.Data.Entry.List = [
+            WHATWG.HTML.Attribute.Form.Data.Entry(name: "a", stringValue: "1")
         ]
-        let list2: WHATWG_HTML.Attribute.Form.Data.Entry.List = [
-            WHATWG_HTML.Attribute.Form.Data.Entry(name: "a", stringValue: "1")
+        let list2: WHATWG.HTML.Attribute.Form.Data.Entry.List = [
+            WHATWG.HTML.Attribute.Form.Data.Entry(name: "a", stringValue: "1")
         ]
 
         #expect(list1.hashValue == list2.hashValue)
     }
 
     @Test func `EntryList description`() {
-        var list = WHATWG_HTML.Attribute.Form.Data.Entry.List()
+        var list = WHATWG.HTML.Attribute.Form.Data.Entry.List()
         list.append(name: "username", value: "alice")
         list.append(name: "email", value: "alice@example.com")
 
@@ -251,7 +251,7 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `EntryList debug description`() {
-        var list = WHATWG_HTML.Attribute.Form.Data.Entry.List()
+        var list = WHATWG.HTML.Attribute.Form.Data.Entry.List()
         list.append(name: "test", value: "value")
 
         let debugDescription = list.debugDescription
@@ -262,7 +262,7 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `EntryList preserves insertion order`() {
-        var list = WHATWG_HTML.Attribute.Form.Data.Entry.List()
+        var list = WHATWG.HTML.Attribute.Form.Data.Entry.List()
         list.append(name: "third", value: "3")
         list.append(name: "first", value: "1")
         list.append(name: "second", value: "2")
@@ -273,7 +273,7 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `EntryList supports multiple values for same name`() {
-        var list = WHATWG_HTML.Attribute.Form.Data.Entry.List()
+        var list = WHATWG.HTML.Attribute.Form.Data.Entry.List()
         list.append(name: "checkbox", value: "option1")
         list.append(name: "checkbox", value: "option2")
         list.append(name: "checkbox", value: "option3")
@@ -289,7 +289,7 @@ import WHATWG_HTML_Forms
     @Test func `EntryList conforms to Sendable`() {
         // Compile-time check that EntryList is Sendable
         func acceptSendable<T: Sendable>(_: T) {}
-        let list = WHATWG_HTML.Attribute.Form.Data.Entry.List()
+        let list = WHATWG.HTML.Attribute.Form.Data.Entry.List()
         acceptSendable(list)
     }
 }

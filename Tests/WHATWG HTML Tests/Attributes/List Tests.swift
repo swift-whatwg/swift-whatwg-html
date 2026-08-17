@@ -15,6 +15,6 @@ import WHATWG_HTML
 
 @Suite struct `List Test` {
     @Test func `List attribute should be list`() {
-        #expect(WHATWG_HTML.Attribute.List.attribute == "list")
+        #expect(WHATWG.HTML.Attribute.List.attribute == "list")
     }
 }

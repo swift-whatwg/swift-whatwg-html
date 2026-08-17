@@ -15,6 +15,6 @@ import WHATWG_HTML
 
 @Suite struct `Cols Test` {
     @Test func `Cols attribute should be cols`() {
-        #expect(WHATWG_HTML.Attribute.Cols.attribute == "cols")
+        #expect(WHATWG.HTML.Attribute.Cols.attribute == "cols")
     }
 }

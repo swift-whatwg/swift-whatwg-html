@@ -15,6 +15,6 @@ import WHATWG_HTML
 
 @Suite struct `Scope Test` {
     @Test func `Scope attribute should be scope`() {
-        #expect(WHATWG_HTML.Attribute.Scope.attribute == "scope")
+        #expect(WHATWG.HTML.Attribute.Scope.attribute == "scope")
     }
 }

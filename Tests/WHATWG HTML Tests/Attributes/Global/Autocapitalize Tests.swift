@@ -20,13 +20,13 @@ import WHATWG_HTML
 
 @Suite struct `Autocapitalize Test` {
     @Test func `Autocapitalize attribute should be autocapitalize`() {
-        #expect(WHATWG_HTML.Attribute.Autocapitalize.attribute == "autocapitalize")
+        #expect(WHATWG.HTML.Attribute.Autocapitalize.attribute == "autocapitalize")
     }
 
     @Test(
         "Autocapitalize cases description should match the spec",
-        arguments: WHATWG_HTML.Attribute.Autocapitalize.allCases
-    ) func cases(autocapitalize: WHATWG_HTML.Attribute.Autocapitalize) {
+        arguments: WHATWG.HTML.Attribute.Autocapitalize.allCases
+    ) func cases(autocapitalize: WHATWG.HTML.Attribute.Autocapitalize) {
         switch autocapitalize {
         case .none: #expect(autocapitalize.description == "none")
         case .off: #expect(autocapitalize.description == "off")
@@ -39,32 +39,32 @@ import WHATWG_HTML
     }
 
     @Test func `Autocapitalize should conform to CaseIterable`() {
-        #expect(WHATWG_HTML.Attribute.Autocapitalize.allCases.count == 6)
-        #expect(WHATWG_HTML.Attribute.Autocapitalize.allCases.contains(.none))
-        #expect(WHATWG_HTML.Attribute.Autocapitalize.allCases.contains(.off))
-        #expect(WHATWG_HTML.Attribute.Autocapitalize.allCases.contains(.sentences))
-        #expect(WHATWG_HTML.Attribute.Autocapitalize.allCases.contains(.on))
-        #expect(WHATWG_HTML.Attribute.Autocapitalize.allCases.contains(.words))
-        #expect(WHATWG_HTML.Attribute.Autocapitalize.allCases.contains(.characters))
+        #expect(WHATWG.HTML.Attribute.Autocapitalize.allCases.count == 6)
+        #expect(WHATWG.HTML.Attribute.Autocapitalize.allCases.contains(.none))
+        #expect(WHATWG.HTML.Attribute.Autocapitalize.allCases.contains(.off))
+        #expect(WHATWG.HTML.Attribute.Autocapitalize.allCases.contains(.sentences))
+        #expect(WHATWG.HTML.Attribute.Autocapitalize.allCases.contains(.on))
+        #expect(WHATWG.HTML.Attribute.Autocapitalize.allCases.contains(.words))
+        #expect(WHATWG.HTML.Attribute.Autocapitalize.allCases.contains(.characters))
     }
 
-    @Test(arguments: WHATWG_HTML.Attribute.Autocapitalize.allCases)
+    @Test(arguments: WHATWG.HTML.Attribute.Autocapitalize.allCases)
     func `Autocapitalize rawValue should match description`(
-        autocapitalize: WHATWG_HTML.Attribute.Autocapitalize
+        autocapitalize: WHATWG.HTML.Attribute.Autocapitalize
     ) {
         #expect(autocapitalize.rawValue == autocapitalize.description)
     }
 
     @Test(
         arguments: [
-            ("none", WHATWG_HTML.Attribute.Autocapitalize.none), ("off", .off),
+            ("none", WHATWG.HTML.Attribute.Autocapitalize.none), ("off", .off),
             ("sentences", .sentences), ("on", .on),
             ("words", .words), ("characters", .characters),
         ]
     ) func `Autocapitalize should be initializable from rawValue`(
         input: String,
-        expected: WHATWG_HTML.Attribute.Autocapitalize?
+        expected: WHATWG.HTML.Attribute.Autocapitalize?
     ) {
-        #expect(WHATWG_HTML.Attribute.Autocapitalize(rawValue: input) == expected)
+        #expect(WHATWG.HTML.Attribute.Autocapitalize(rawValue: input) == expected)
     }
 }

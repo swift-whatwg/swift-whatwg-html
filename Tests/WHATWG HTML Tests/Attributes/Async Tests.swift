@@ -15,6 +15,6 @@ import WHATWG_HTML
 
 @Suite struct `Async Test` {
     @Test func `Async attribute should be async`() {
-        #expect(WHATWG_HTML.Attribute.Async.attribute == "async")
+        #expect(WHATWG.HTML.Attribute.Async.attribute == "async")
     }
 }

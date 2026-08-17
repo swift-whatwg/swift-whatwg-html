@@ -15,11 +15,11 @@ import WHATWG_HTML
 
 @Suite struct `Span Test` {
     @Test func `Span attribute should be span`() {
-        #expect(WHATWG_HTML.Attribute.Span.attribute == "span")
+        #expect(WHATWG.HTML.Attribute.Span.attribute == "span")
     }
 
     @Test func `Span should support integer literal`() {
-        let span: WHATWG_HTML.Attribute.Span = 3
+        let span: WHATWG.HTML.Attribute.Span = 3
         #expect(span.rawValue == "3")
     }
 }

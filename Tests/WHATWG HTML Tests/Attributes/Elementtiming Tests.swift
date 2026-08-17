@@ -15,14 +15,14 @@ import WHATWG_HTML
 
 @Suite struct `Elementtiming Test` {
     @Test func `Elementtiming attribute should be elementtiming`() {
-        #expect(WHATWG_HTML.Attribute.Elementtiming.attribute == "elementtiming")
+        #expect(WHATWG.HTML.Attribute.Elementtiming.attribute == "elementtiming")
     }
 
     @Test func `Elementtiming should support category-based initialization`() {
-        let timing = WHATWG_HTML.Attribute.Elementtiming(category: "hero", name: "image")
+        let timing = WHATWG.HTML.Attribute.Elementtiming(category: "hero", name: "image")
         #expect(timing.rawValue == "hero-image")
 
-        let customSeparator = WHATWG_HTML.Attribute.Elementtiming(
+        let customSeparator = WHATWG.HTML.Attribute.Elementtiming(
             category: "main",
             name: "content",
             separator: "_"
@@ -31,17 +31,17 @@ import WHATWG_HTML
     }
 
     @Test func `Elementtiming should have predefined categories`() {
-        #expect(WHATWG_HTML.Attribute.Elementtiming.Category.hero.value == "hero")
-        #expect(WHATWG_HTML.Attribute.Elementtiming.Category.main.value == "main")
-        #expect(WHATWG_HTML.Attribute.Elementtiming.Category.header.value == "header")
-        #expect(WHATWG_HTML.Attribute.Elementtiming.Category.image.value == "image")
+        #expect(WHATWG.HTML.Attribute.Elementtiming.Category.hero.value == "hero")
+        #expect(WHATWG.HTML.Attribute.Elementtiming.Category.main.value == "main")
+        #expect(WHATWG.HTML.Attribute.Elementtiming.Category.header.value == "header")
+        #expect(WHATWG.HTML.Attribute.Elementtiming.Category.image.value == "image")
     }
 
     @Test func `Elementtiming should support Category-based initialization`() {
-        let timing = WHATWG_HTML.Attribute.Elementtiming(category: .hero, name: "banner")
+        let timing = WHATWG.HTML.Attribute.Elementtiming(category: .hero, name: "banner")
         #expect(timing.rawValue == "hero-banner")
 
-        let customTiming = WHATWG_HTML.Attribute.Elementtiming(category: .custom, name: "special")
+        let customTiming = WHATWG.HTML.Attribute.Elementtiming(category: .custom, name: "special")
         #expect(customTiming.rawValue == "special")
     }
 }

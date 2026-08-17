@@ -18,7 +18,7 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@dynamicMemberLookup private struct TestBooleanAttribute: WHATWG_HTML.BooleanAttribute {
+@dynamicMemberLookup private struct TestBooleanAttribute: WHATWG.HTML.BooleanAttribute {
     var rawValue: Bool
 
     init(value: Bool) { self.rawValue = value }
@@ -28,7 +28,7 @@ extension TestBooleanAttribute {
     static var attribute: String { "test-bool-attr" }
 }
 
-@Suite struct `WHATWG_HTML.BooleanAttribute Test` {
+@Suite struct `WHATWG.HTML.BooleanAttribute Test` {
 
     @Test func `Attribute name is correct`() {
         #expect(TestBooleanAttribute.attribute == "test-bool-attr")
@@ -122,9 +122,9 @@ extension TestBooleanAttribute {
         #expect(falseMessage == "Bool attribute: false")
     }
 
-    @Test func `Any WHATWG_HTML.BooleanAttribute type erasure`() {
-        let trueAttr: any WHATWG_HTML.BooleanAttribute = TestBooleanAttribute(value: true)
-        let falseAttr: any WHATWG_HTML.BooleanAttribute = TestBooleanAttribute(value: false)
+    @Test func `Any WHATWG.HTML.BooleanAttribute type erasure`() {
+        let trueAttr: any WHATWG.HTML.BooleanAttribute = TestBooleanAttribute(value: true)
+        let falseAttr: any WHATWG.HTML.BooleanAttribute = TestBooleanAttribute(value: false)
 
         #expect(trueAttr.rawValue == true)
         #expect(falseAttr.rawValue == false)
@@ -132,18 +132,18 @@ extension TestBooleanAttribute {
         #expect(falseAttr.description == "false")
     }
 
-    @Test func `Any WHATWG_HTML.BooleanAttribute equality through protocol`() {
-        let trueAttr1: any WHATWG_HTML.BooleanAttribute = TestBooleanAttribute(value: true)
-        let trueAttr2: any WHATWG_HTML.BooleanAttribute = TestBooleanAttribute(value: true)
-        let falseAttr: any WHATWG_HTML.BooleanAttribute = TestBooleanAttribute(value: false)
+    @Test func `Any WHATWG.HTML.BooleanAttribute equality through protocol`() {
+        let trueAttr1: any WHATWG.HTML.BooleanAttribute = TestBooleanAttribute(value: true)
+        let trueAttr2: any WHATWG.HTML.BooleanAttribute = TestBooleanAttribute(value: true)
+        let falseAttr: any WHATWG.HTML.BooleanAttribute = TestBooleanAttribute(value: false)
 
         #expect(trueAttr1.rawValue == trueAttr2.rawValue)
         #expect(trueAttr1.rawValue != falseAttr.rawValue)
     }
 
-    @Test func `Any WHATWG_HTML.BooleanAttribute CaseIterable`() {
+    @Test func `Any WHATWG.HTML.BooleanAttribute CaseIterable`() {
         let allCases = TestBooleanAttribute.allCases
-        let anyAllCases: [any WHATWG_HTML.BooleanAttribute] = allCases
+        let anyAllCases: [any WHATWG.HTML.BooleanAttribute] = allCases
 
         #expect(anyAllCases.count == 2)
         #expect(anyAllCases.map(\.rawValue).contains(true))
@@ -151,7 +151,7 @@ extension TestBooleanAttribute {
     }
 
     @Test func `Default value initialization pattern`() {
-        struct TestWithDefault: WHATWG_HTML.BooleanAttribute {
+        struct TestWithDefault: WHATWG.HTML.BooleanAttribute {
             static var attribute: String { "test-default" }
             var rawValue: Bool
 

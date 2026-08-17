@@ -15,14 +15,14 @@ import WHATWG_HTML
 
 @Suite struct `FormTarget Test` {
     @Test func `FormTarget attribute should be formtarget`() {
-        #expect(WHATWG_HTML.Attribute.FormTarget.attribute == "formtarget")
+        #expect(WHATWG.HTML.Attribute.FormTarget.attribute == "formtarget")
     }
 
     @Test func `FormTarget should have predefined values`() {
-        #expect(WHATWG_HTML.Attribute.FormTarget.`self`.rawValue == "_self")
-        #expect(WHATWG_HTML.Attribute.FormTarget.blank.rawValue == "_blank")
-        #expect(WHATWG_HTML.Attribute.FormTarget.parent.rawValue == "_parent")
-        #expect(WHATWG_HTML.Attribute.FormTarget.top.rawValue == "_top")
-        #expect(WHATWG_HTML.Attribute.FormTarget.unfencedTop.rawValue == "_unfencedTop")
+        #expect(WHATWG.HTML.Attribute.FormTarget.`self`.rawValue == "_self")
+        #expect(WHATWG.HTML.Attribute.FormTarget.blank.rawValue == "_blank")
+        #expect(WHATWG.HTML.Attribute.FormTarget.parent.rawValue == "_parent")
+        #expect(WHATWG.HTML.Attribute.FormTarget.top.rawValue == "_top")
+        #expect(WHATWG.HTML.Attribute.FormTarget.unfencedTop.rawValue == "_unfencedTop")
     }
 }

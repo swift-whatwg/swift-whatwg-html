@@ -15,6 +15,6 @@ import WHATWG_HTML
 
 @Suite struct `Selected Test` {
     @Test func `Selected attribute should be selected`() {
-        #expect(WHATWG_HTML.Attribute.Selected.attribute == "selected")
+        #expect(WHATWG.HTML.Attribute.Selected.attribute == "selected")
     }
 }

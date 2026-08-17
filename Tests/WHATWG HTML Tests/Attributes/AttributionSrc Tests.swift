@@ -15,33 +15,33 @@ import WHATWG_HTML
 
 @Suite struct `AttributionSrc Test` {
     @Test func `AttributionSrc attribute should be attributionsrc`() {
-        #expect(WHATWG_HTML.Attribute.AttributionSrc.attribute == "attributionsrc")
+        #expect(WHATWG.HTML.Attribute.AttributionSrc.attribute == "attributionsrc")
     }
 
     @Test func `AttributionSrc should support boolean initialization`() {
-        let attrTrue = WHATWG_HTML.Attribute.AttributionSrc(true)
+        let attrTrue = WHATWG.HTML.Attribute.AttributionSrc(true)
         #expect(attrTrue.shouldInclude == true)
 
-        let attrFalse = WHATWG_HTML.Attribute.AttributionSrc(false)
+        let attrFalse = WHATWG.HTML.Attribute.AttributionSrc(false)
         #expect(attrFalse.shouldInclude == false)
     }
 
     @Test func `AttributionSrc should support URL initialization`() {
-        let attr = WHATWG_HTML.Attribute.AttributionSrc("https://example.com/register")
+        let attr = WHATWG.HTML.Attribute.AttributionSrc("https://example.com/register")
         #expect(attr.shouldInclude == true)
         #expect(attr.description == "https://example.com/register")
     }
 
     @Test func `AttributionSrc should support boolean literal`() {
-        let attrTrue: WHATWG_HTML.Attribute.AttributionSrc = true
+        let attrTrue: WHATWG.HTML.Attribute.AttributionSrc = true
         #expect(attrTrue.shouldInclude == true)
 
-        let attrFalse: WHATWG_HTML.Attribute.AttributionSrc = false
+        let attrFalse: WHATWG.HTML.Attribute.AttributionSrc = false
         #expect(attrFalse.shouldInclude == false)
     }
 
     @Test func `AttributionSrc should support string literal`() {
-        let attr: WHATWG_HTML.Attribute.AttributionSrc = "https://analytics.example.com"
+        let attr: WHATWG.HTML.Attribute.AttributionSrc = "https://analytics.example.com"
         #expect(attr.description == "https://analytics.example.com")
     }
 }

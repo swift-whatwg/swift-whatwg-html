@@ -15,6 +15,6 @@ import WHATWG_HTML
 
 @Suite struct `ShadowRootClonable Test` {
     @Test func `ShadowRootClonable attribute should be shadowrootclonable`() {
-        #expect(WHATWG_HTML.Attribute.ShadowRootClonable.attribute == "shadowrootclonable")
+        #expect(WHATWG.HTML.Attribute.ShadowRootClonable.attribute == "shadowrootclonable")
     }
 }

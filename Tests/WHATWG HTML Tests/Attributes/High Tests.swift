@@ -15,23 +15,23 @@ import WHATWG_HTML
 
 @Suite struct `High Test` {
     @Test func `High attribute should be high`() {
-        #expect(WHATWG_HTML.Attribute.High.attribute == "high")
+        #expect(WHATWG.HTML.Attribute.High.attribute == "high")
     }
 
     @Test func `High should support integer literal`() {
-        let high: WHATWG_HTML.Attribute.High = 75
+        let high: WHATWG.HTML.Attribute.High = 75
         #expect(high.value == 75.0)
         #expect(high.description == "75.0")
     }
 
     @Test func `High should support float literal`() {
-        let high: WHATWG_HTML.Attribute.High = 67.5
+        let high: WHATWG.HTML.Attribute.High = 67.5
         #expect(high.value == 67.5)
         #expect(high.description == "67.5")
     }
 
     @Test func `High init with double`() {
-        let high = WHATWG_HTML.Attribute.High(90.0)
+        let high = WHATWG.HTML.Attribute.High(90.0)
         #expect(high.value == 90.0)
         #expect(high.description == "90.0")
     }

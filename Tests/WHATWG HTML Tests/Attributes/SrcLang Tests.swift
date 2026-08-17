@@ -15,6 +15,6 @@ import WHATWG_HTML
 
 @Suite struct `SrcLang Test` {
     @Test func `SrcLang attribute should be srclang`() {
-        #expect(WHATWG_HTML.Attribute.SrcLang.attribute == "srclang")
+        #expect(WHATWG.HTML.Attribute.SrcLang.attribute == "srclang")
     }
 }

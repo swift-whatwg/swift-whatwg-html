@@ -15,11 +15,11 @@ import WHATWG_HTML
 
 @Suite struct `Ping Test` {
     @Test func `Ping attribute should be ping`() {
-        #expect(WHATWG_HTML.Attribute.Ping.attribute == "ping")
+        #expect(WHATWG.HTML.Attribute.Ping.attribute == "ping")
     }
 
     @Test func `Ping array literal support`() {
-        let ping: WHATWG_HTML.Attribute.Ping = [
+        let ping: WHATWG.HTML.Attribute.Ping = [
             "https://example.com/ping", "https://analytics.example.com/track",
         ]
         #expect(ping.rawValue == "https://example.com/ping https://analytics.example.com/track")

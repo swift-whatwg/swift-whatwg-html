@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-extension WHATWG_HTML {
+extension WHATWG.HTML {
     /// Protocol for HTML string attributes
     ///
     /// String attributes represent textual values in HTML.
@@ -18,15 +18,15 @@ extension WHATWG_HTML {
     /// ## Example
     ///
     /// ```swift
-    /// extension WHATWG_HTML.Attribute {
-    ///     public struct Class: WHATWG_HTML.StringAttribute {
+    /// extension WHATWG.HTML.Attribute {
+    ///     public struct Class: WHATWG.HTML.StringAttribute {
     ///         public static var attribute: String { "class" }
     ///         public var rawValue: String
     ///         public init(value: String) { self.rawValue = value }
     ///     }
     /// }
     /// ```
-    public protocol StringAttribute: WHATWG_HTML.Attribute.`Protocol`, CustomStringConvertible,
+    public protocol StringAttribute: WHATWG.HTML.Attribute.`Protocol`, CustomStringConvertible,
         ExpressibleByStringLiteral,
         ExpressibleByStringInterpolation, RawRepresentable
     {
@@ -35,19 +35,19 @@ extension WHATWG_HTML {
     }
 }
 
-extension WHATWG_HTML.StringAttribute {
+extension WHATWG.HTML.StringAttribute {
     public init?(rawValue value: String) { self = .init(value: value) }
 }
 
-extension WHATWG_HTML.StringAttribute {
+extension WHATWG.HTML.StringAttribute {
     public init(_ value: String) { self = .init(value: value) }
 }
 
-extension WHATWG_HTML.StringAttribute {
+extension WHATWG.HTML.StringAttribute {
     public init(stringLiteral value: String) { self = .init(value: value) }
 }
 
-extension WHATWG_HTML.StringAttribute {
+extension WHATWG.HTML.StringAttribute {
     /// String representation of the string attribute
     ///
     /// For attributes implementing byte serialization (Id, etc.),
@@ -56,7 +56,7 @@ extension WHATWG_HTML.StringAttribute {
     public var description: String { rawValue }
 }
 
-extension WHATWG_HTML.StringAttribute {
+extension WHATWG.HTML.StringAttribute {
     public subscript<T>(dynamicMember keyPath: KeyPath<String, T>) -> T {
         self.rawValue[keyPath: keyPath]
     }
