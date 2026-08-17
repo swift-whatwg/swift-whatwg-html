@@ -122,7 +122,9 @@ import WHATWG_HTML
 
     @Suite struct `Element Properties` {
 
-        @Test func `Tag name is correct`() { #expect(WHATWG_HTML.Element.Abbreviation.tag == "abbr") }
+        @Test func `Tag name is correct`() {
+            #expect(WHATWG_HTML.Element.Abbreviation.tag == "abbr")
+        }
 
         @Test func `Element creation is consistent`() {
             let abbreviation1 = WHATWG_HTML.Element.Abbreviation()
@@ -140,7 +142,10 @@ import WHATWG_HTML
     @Suite struct `Integration Tests` {
 
         @Test func `Can be used in collections`() {
-            let abbreviations = [WHATWG_HTML.Element.Abbreviation(), WHATWG_HTML.Element.Abbreviation(), WHATWG_HTML.Element.Abbreviation()]
+            let abbreviations = [
+                WHATWG_HTML.Element.Abbreviation(), WHATWG_HTML.Element.Abbreviation(),
+                WHATWG_HTML.Element.Abbreviation(),
+            ]
 
             #expect(abbreviations.count == 3)
             #expect(abbreviations.allSatisfy { $0 == WHATWG_HTML.Element.Abbreviation() })
@@ -148,7 +153,8 @@ import WHATWG_HTML
 
         @Test func `Can be used as dictionary values`() {
             let abbreviationMap: [String: WHATWG_HTML.Element.Abbreviation] = [
-                "HTML": WHATWG_HTML.Element.Abbreviation(), "CSS": WHATWG_HTML.Element.Abbreviation(), "JS": WHATWG_HTML.Element.Abbreviation(),
+                "HTML": WHATWG_HTML.Element.Abbreviation(),
+                "CSS": WHATWG_HTML.Element.Abbreviation(), "JS": WHATWG_HTML.Element.Abbreviation(),
             ]
 
             #expect(abbreviationMap.count == 3)
@@ -156,7 +162,8 @@ import WHATWG_HTML
         }
 
         @Test func `Can be used in optional contexts`() {
-            let maybeAbbreviation: WHATWG_HTML.Element.Abbreviation? = WHATWG_HTML.Element.Abbreviation()
+            let maybeAbbreviation: WHATWG_HTML.Element.Abbreviation? = WHATWG_HTML.Element
+                .Abbreviation()
             let noAbbreviation: WHATWG_HTML.Element.Abbreviation? = nil
 
             #expect(maybeAbbreviation != nil)

@@ -46,17 +46,17 @@ extension WHATWG_HTML.Attribute.AcceptCharset {
 // MARK: - Common Character Encodings
 extension WHATWG_HTML.Attribute.AcceptCharset {
     /// UTF-8 encoding (recommended for most applications)
-    public static let utf8: AcceptCharset = "UTF-8"
+    public static let utf8: WHATWG_HTML.Attribute.AcceptCharset = "UTF-8"
 
     /// ISO Latin-1 encoding
-    public static let latin1: AcceptCharset = "ISO-8859-1"
+    public static let latin1: WHATWG_HTML.Attribute.AcceptCharset = "ISO-8859-1"
 
     /// ASCII encoding
-    public static let ascii: AcceptCharset = "US-ASCII"
+    public static let ascii: WHATWG_HTML.Attribute.AcceptCharset = "US-ASCII"
 
     /// Windows-1252 encoding (commonly used in Western European countries)
-    public static let windows1252: AcceptCharset = "windows-1252"
+    public static let windows1252: WHATWG_HTML.Attribute.AcceptCharset = "windows-1252"
 
     /// UTF-8 and ISO Latin-1 encodings
-    public static let utf8AndLatin1: AcceptCharset = "UTF-8,ISO-8859-1"
+    public static let utf8AndLatin1: WHATWG_HTML.Attribute.AcceptCharset = "UTF-8,ISO-8859-1"
 }

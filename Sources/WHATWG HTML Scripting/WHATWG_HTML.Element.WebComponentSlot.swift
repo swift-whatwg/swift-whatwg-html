@@ -39,13 +39,13 @@ extension WHATWG_HTML.Element {
         /// The slot's name.
         /// When the slot's containing component gets rendered, the slot is rendered with the
         /// custom element's child that has a matching slot attribute.
-        public var name: Attribute.Name?
+        public var name: WHATWG_HTML.Attribute.Name?
 
         /// Creates a new WebComponentSlot element with the specified attributes.
         ///
         /// - Parameters:
         ///   - name: The slot's name. Elements with a matching slot attribute will be inserted here.
-        public init(name: Attribute.Name? = nil) {
+        public init(name: WHATWG_HTML.Attribute.Name? = nil) {
             self.name = name
 
         }

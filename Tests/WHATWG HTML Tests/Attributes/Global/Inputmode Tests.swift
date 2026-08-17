@@ -23,7 +23,10 @@ import WHATWG_HTML
         #expect(WHATWG_HTML.Attribute.Inputmode.attribute == "inputmode")
     }
 
-    @Test("Inputmode cases description should match the spec", arguments: WHATWG_HTML.Attribute.Inputmode.allCases)
+    @Test(
+        "Inputmode cases description should match the spec",
+        arguments: WHATWG_HTML.Attribute.Inputmode.allCases
+    )
     func cases(inputmode: WHATWG_HTML.Attribute.Inputmode) {
         switch inputmode {
         case .none: #expect(inputmode.description == "none")
@@ -57,11 +60,19 @@ import WHATWG_HTML
 
     @Test(
         arguments: [
-            ("none", WHATWG_HTML.Attribute.Inputmode.none), ("text", WHATWG_HTML.Attribute.Inputmode.text), ("decimal", WHATWG_HTML.Attribute.Inputmode.decimal),
-            ("numeric", WHATWG_HTML.Attribute.Inputmode.numeric), ("tel", WHATWG_HTML.Attribute.Inputmode.tel), ("search", WHATWG_HTML.Attribute.Inputmode.search),
-            ("email", WHATWG_HTML.Attribute.Inputmode.email), ("url", WHATWG_HTML.Attribute.Inputmode.url),
+            ("none", WHATWG_HTML.Attribute.Inputmode.none),
+            ("text", WHATWG_HTML.Attribute.Inputmode.text),
+            ("decimal", WHATWG_HTML.Attribute.Inputmode.decimal),
+            ("numeric", WHATWG_HTML.Attribute.Inputmode.numeric),
+            ("tel", WHATWG_HTML.Attribute.Inputmode.tel),
+            ("search", WHATWG_HTML.Attribute.Inputmode.search),
+            ("email", WHATWG_HTML.Attribute.Inputmode.email),
+            ("url", WHATWG_HTML.Attribute.Inputmode.url),
         ]
-    ) func `Inputmode should be initializable from rawValue`(input: String, expected: WHATWG_HTML.Attribute.Inputmode?) {
+    ) func `Inputmode should be initializable from rawValue`(
+        input: String,
+        expected: WHATWG_HTML.Attribute.Inputmode?
+    ) {
         #expect(WHATWG_HTML.Attribute.Inputmode(rawValue: input) == expected)
     }
 }

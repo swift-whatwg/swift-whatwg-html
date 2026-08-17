@@ -27,7 +27,9 @@ extension `Performance Tests` {
         }
 
         @Test(.timed(threshold: .milliseconds(1)))
-        func `Autofocus UTF-8 direct`() { let _ = Array(WHATWG_HTML.Attribute.Autofocus.attribute.utf8) }
+        func `Autofocus UTF-8 direct`() {
+            let _ = Array(WHATWG_HTML.Attribute.Autofocus.attribute.utf8)
+        }
 
         // MARK: - String Attributes (ASCII)
 

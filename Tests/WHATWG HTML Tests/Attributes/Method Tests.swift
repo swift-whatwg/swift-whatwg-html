@@ -14,7 +14,9 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Method Test` {
-    @Test func `Method attribute should be method`() { #expect(WHATWG_HTML.Attribute.Method.attribute == "method") }
+    @Test func `Method attribute should be method`() {
+        #expect(WHATWG_HTML.Attribute.Method.attribute == "method")
+    }
 
     @Test func `Method convenience properties`() {
         #expect(WHATWG_HTML.Attribute.Method.get.rawValue == "get")

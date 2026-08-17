@@ -15,11 +15,15 @@ public import WHATWG_HTML_Shared
 
 extension WHATWG_HTML.Element {
     public struct Image: WHATWG_HTML.Element.`Protocol` {
-        public var src: Attribute.Src?
-        public var alt: Attribute.Alt?
-        public var loading: Attribute.Loading?
+        public var src: WHATWG_HTML.Attribute.Src?
+        public var alt: WHATWG_HTML.Attribute.Alt?
+        public var loading: WHATWG_HTML.Attribute.Loading?
 
-        public init(src: Attribute.Src? = nil, alt: Attribute.Alt? = nil, loading: Attribute.Loading? = nil) {
+        public init(
+            src: WHATWG_HTML.Attribute.Src? = nil,
+            alt: WHATWG_HTML.Attribute.Alt? = nil,
+            loading: WHATWG_HTML.Attribute.Loading? = nil
+        ) {
             self.src = src
             self.alt = alt
             self.loading = loading

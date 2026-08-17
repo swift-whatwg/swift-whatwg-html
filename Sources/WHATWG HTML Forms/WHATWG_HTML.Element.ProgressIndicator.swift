@@ -42,20 +42,23 @@ extension WHATWG_HTML.Element {
         /// This attribute describes how much work the task indicated by the progress element requires.
         /// The max attribute, if present, must have a value greater than 0 and be a valid floating point number.
         /// The default value is `1`.
-        public var max: Attribute.Max?
+        public var max: WHATWG_HTML.Attribute.Max?
 
         /// This attribute specifies how much of the task that has been completed.
         /// It must be a valid floating point number between 0 and max, or between 0 and 1 if max is omitted.
         /// If there is no value attribute, the progress bar is indeterminate; this indicates that an activity
         /// is ongoing with no indication of how long it is expected to take.
-        public var value: Attribute.Value<Float>?
+        public var value: WHATWG_HTML.Attribute.Value<Float>?
 
         /// Creates a new ProgressIndicator element with the specified attributes.
         ///
         /// - Parameters:
         ///   - max: The maximum value, describing how much work the task requires. Default is 1.
         ///   - value: The current progress value. If nil, the progress bar is indeterminate., typically a text fallback for browsers that don't support the progress element.
-        public init(max: Attribute.Max? = nil, value: Attribute.Value<Float>? = nil) {
+        public init(
+            max: WHATWG_HTML.Attribute.Max? = nil,
+            value: WHATWG_HTML.Attribute.Value<Float>? = nil
+        ) {
             self.max = max
             self.value = value
 

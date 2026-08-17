@@ -26,7 +26,8 @@ extension WHATWG_HTML {
     ///     }
     /// }
     /// ```
-    public protocol StringAttribute: WHATWG_HTML.Attribute.`Protocol`, CustomStringConvertible, ExpressibleByStringLiteral,
+    public protocol StringAttribute: WHATWG_HTML.Attribute.`Protocol`, CustomStringConvertible,
+        ExpressibleByStringLiteral,
         ExpressibleByStringInterpolation, RawRepresentable
     {
         var rawValue: String { get }

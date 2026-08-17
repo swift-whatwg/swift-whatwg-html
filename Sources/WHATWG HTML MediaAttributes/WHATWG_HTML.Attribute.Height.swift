@@ -38,8 +38,8 @@ public import WHATWG_HTML_Shared
 /// ```
 
 extension WHATWG_HTML.Attribute {
-    @dynamicMemberLookup public struct Height: WHATWG_HTML.StringAttribute, ExpressibleByIntegerLiteral
-    {
+    @dynamicMemberLookup
+    public struct Height: WHATWG_HTML.StringAttribute, ExpressibleByIntegerLiteral {
 
         /// The attribute value
         public let rawValue: String

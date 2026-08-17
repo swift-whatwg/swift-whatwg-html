@@ -97,13 +97,17 @@ extension WHATWG_HTML.Attribute.EncType {
 
 extension WHATWG_HTML.Attribute.EncType {
     /// Standard form encoding (default) - application/x-www-form-urlencoded
-    public static let urlEncoded = EncType(contentType: .applicationXWWWFormURLEncoded)
+    public static let urlEncoded = WHATWG_HTML.Attribute.EncType(
+        contentType: .applicationXWWWFormURLEncoded
+    )
 
     /// Required for file uploads - multipart/form-data (RFC 7578)
-    public static let multipartFormData = EncType(contentType: .multipartFormData())
+    public static let multipartFormData = WHATWG_HTML.Attribute.EncType(
+        contentType: .multipartFormData()
+    )
 
     /// Minimal encoding, useful for debugging - text/plain
-    public static let textPlain = EncType(contentType: .textPlain)
+    public static let textPlain = WHATWG_HTML.Attribute.EncType(contentType: .textPlain)
 }
 
 // MARK: - RFC 2045 ContentType Extensions

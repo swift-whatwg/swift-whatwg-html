@@ -139,7 +139,9 @@ import WHATWG_HTML
 
         @Test func `Author attribution separation`() {
             // Attribution should be outside blockquote element
-            let blockquote = WHATWG_HTML.Element.BlockQuote(cite: WHATWG_HTML.Attribute.Cite(value: "https://example.com/source"))
+            let blockquote = WHATWG_HTML.Element.BlockQuote(
+                cite: WHATWG_HTML.Attribute.Cite(value: "https://example.com/source")
+            )
             #expect(WHATWG_HTML.Element.BlockQuote.tag == "blockquote")
         }
 
@@ -276,7 +278,9 @@ import WHATWG_HTML
 
         @Test func `External attribution placement`() {
             // Attribution should be outside blockquote
-            let blockquote = WHATWG_HTML.Element.BlockQuote(cite: WHATWG_HTML.Attribute.Cite(value: "https://example.com/source"))
+            let blockquote = WHATWG_HTML.Element.BlockQuote(
+                cite: WHATWG_HTML.Attribute.Cite(value: "https://example.com/source")
+            )
             #expect(WHATWG_HTML.Element.BlockQuote.tag == "blockquote")
         }
 

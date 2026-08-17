@@ -14,5 +14,7 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Label Test` {
-    @Test func `Label attribute should be label`() { #expect(WHATWG_HTML.Attribute.Label.attribute == "label") }
+    @Test func `Label attribute should be label`() {
+        #expect(WHATWG_HTML.Attribute.Label.attribute == "label")
+    }
 }

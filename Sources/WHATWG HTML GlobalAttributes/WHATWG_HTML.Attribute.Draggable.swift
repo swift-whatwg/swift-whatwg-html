@@ -94,7 +94,7 @@ extension WHATWG_HTML.Attribute.Draggable {
 }
 
 extension WHATWG_HTML.Attribute.Draggable: CaseIterable {
-    public static let allCases: [Draggable] = [.true, .false, .auto]
+    public static let allCases: [WHATWG_HTML.Attribute.Draggable] = [.true, .false, .auto]
 }
 
 extension WHATWG_HTML.Attribute.Draggable: ExpressibleByBooleanLiteral {

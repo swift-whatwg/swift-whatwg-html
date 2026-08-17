@@ -14,12 +14,15 @@ extension WHATWG_HTML.Element {
     public struct Frameset: WHATWG_HTML.Element.`Protocol` {
 
         /// Specifies the number and size of horizontal spaces in a frameset
-        public var cols: Attribute.Cols?
+        public var cols: WHATWG_HTML.Attribute.Cols?
 
         /// Specifies the number and size of vertical spaces in a frameset
-        public var rows: Attribute.Rows?
+        public var rows: WHATWG_HTML.Attribute.Rows?
 
-        public init(cols: Attribute.Cols? = nil, rows: Attribute.Rows? = nil) {
+        public init(
+            cols: WHATWG_HTML.Attribute.Cols? = nil,
+            rows: WHATWG_HTML.Attribute.Rows? = nil
+        ) {
             self.cols = cols
             self.rows = rows
         }

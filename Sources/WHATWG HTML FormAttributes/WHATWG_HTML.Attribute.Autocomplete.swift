@@ -74,28 +74,38 @@ extension WHATWG_HTML.Attribute.Autocomplete {
 
 extension WHATWG_HTML.Attribute.Autocomplete {
     /// Create an autocomplete value for a shipping address field
-    public static func shipping(_ detailToken: Token.Address) -> Autocomplete {
-        return Autocomplete([Token.grouping(.shipping), Token.address(detailToken)])
+    public static func shipping(_ detailToken: Token.Address) -> WHATWG_HTML.Attribute.Autocomplete
+    {
+        return WHATWG_HTML.Attribute.Autocomplete([
+            Token.grouping(.shipping), Token.address(detailToken),
+        ])
     }
 
     /// Create an autocomplete value for a billing address field
-    public static func billing(_ detailToken: Token.Address) -> Autocomplete {
-        return Autocomplete([Token.grouping(.billing), Token.address(detailToken)])
+    public static func billing(_ detailToken: Token.Address) -> WHATWG_HTML.Attribute.Autocomplete {
+        return WHATWG_HTML.Attribute.Autocomplete([
+            Token.grouping(.billing), Token.address(detailToken),
+        ])
     }
 
     /// Create an autocomplete value for a contact field with a specified recipient type
     public static func contact(
         _ recipientType: RecipientType,
         _ contactToken: Token.DigitalContact
-    ) -> Autocomplete {
-        return Autocomplete([Token.recipientType(recipientType), Token.contact(contactToken)])
+    ) -> WHATWG_HTML.Attribute.Autocomplete {
+        return WHATWG_HTML.Attribute.Autocomplete([
+            Token.recipientType(recipientType), Token.contact(contactToken),
+        ])
     }
 
     /// Create an autocomplete value for a named section
-    public static func section(_ name: String, _ tokens: Autocomplete.Token...) -> Autocomplete {
-        var allTokens: [Autocomplete.Token] = [Token.section(name)]
+    public static func section(
+        _ name: String,
+        _ tokens: WHATWG_HTML.Attribute.Autocomplete.Token...
+    ) -> WHATWG_HTML.Attribute.Autocomplete {
+        var allTokens: [WHATWG_HTML.Attribute.Autocomplete.Token] = [Token.section(name)]
         allTokens.append(contentsOf: tokens)
-        return Autocomplete(allTokens)
+        return WHATWG_HTML.Attribute.Autocomplete(allTokens)
     }
 }
 
@@ -112,7 +122,7 @@ extension WHATWG_HTML.Attribute.Autocomplete {
         case recipientType(RecipientType)
 
         /// Token for name-related fields
-        case name(Autocomplete.Token.Name)
+        case name(WHATWG_HTML.Attribute.Autocomplete.Token.Name)
 
         /// Token for address-related fields
         case address(Address)

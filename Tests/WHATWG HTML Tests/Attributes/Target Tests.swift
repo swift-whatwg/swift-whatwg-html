@@ -14,7 +14,9 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Target Test` {
-    @Test func `Target attribute should be target`() { #expect(WHATWG_HTML.Attribute.Target.attribute == "target") }
+    @Test func `Target attribute should be target`() {
+        #expect(WHATWG_HTML.Attribute.Target.attribute == "target")
+    }
 
     @Test func `Target convenience properties`() {
         #expect(WHATWG_HTML.Attribute.Target.`self`.rawValue == "_self")

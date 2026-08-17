@@ -39,7 +39,9 @@ import WHATWG_HTML
     }
 
     @Test func `Itemtype should be initializable with array literal`() {
-        let itemtype: WHATWG_HTML.Attribute.Itemtype = ["https://schema.org/Person", "https://schema.org/Teacher"]
+        let itemtype: WHATWG_HTML.Attribute.Itemtype = [
+            "https://schema.org/Person", "https://schema.org/Teacher",
+        ]
         #expect(itemtype.rawValue == "https://schema.org/Person https://schema.org/Teacher")
     }
 

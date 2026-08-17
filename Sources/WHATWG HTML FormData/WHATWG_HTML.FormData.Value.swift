@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_Forms
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 extension WHATWG_HTML.Element.Form.Data {
     /// The value of a form data entry.
@@ -63,7 +63,7 @@ extension WHATWG_HTML.Element.Form.Data.Value {
     }
 
     /// Returns the value as a file if it is a file value.
-    @inlinable public var fileValue: Form.Data.File? {
+    @inlinable public var fileValue: WHATWG_HTML.Element.Form.Data.File? {
         guard case .file(let file) = self else { return nil }
         return file
     }

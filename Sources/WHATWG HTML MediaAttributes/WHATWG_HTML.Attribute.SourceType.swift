@@ -70,57 +70,59 @@ extension WHATWG_HTML.Attribute.SourceType {
 
 extension WHATWG_HTML.Attribute.SourceType {
     /// video/mp4
-    public static let videoMP4 = SourceType(contentType: .videoMP4)
+    public static let videoMP4 = WHATWG_HTML.Attribute.SourceType(contentType: .videoMP4)
 
     /// video/webm
-    public static let videoWebM = SourceType(contentType: .videoWebM)
+    public static let videoWebM = WHATWG_HTML.Attribute.SourceType(contentType: .videoWebM)
 
     /// video/ogg
-    public static let videoOgg = SourceType(contentType: .videoOgg)
+    public static let videoOgg = WHATWG_HTML.Attribute.SourceType(contentType: .videoOgg)
 
     /// audio/mpeg (MP3)
-    public static let audioMPEG = SourceType(contentType: .audioMPEG)
+    public static let audioMPEG = WHATWG_HTML.Attribute.SourceType(contentType: .audioMPEG)
 
     /// audio/ogg
-    public static let audioOgg = SourceType(contentType: .audioOgg)
+    public static let audioOgg = WHATWG_HTML.Attribute.SourceType(contentType: .audioOgg)
 
     /// audio/wav
-    public static let audioWav = SourceType(contentType: .audioWav)
+    public static let audioWav = WHATWG_HTML.Attribute.SourceType(contentType: .audioWav)
 
     /// audio/webm
-    public static let audioWebM = SourceType(contentType: .audioWebM)
+    public static let audioWebM = WHATWG_HTML.Attribute.SourceType(contentType: .audioWebM)
 
     /// image/webp
-    public static let imageWEBP = SourceType(contentType: .imageWEBP)
+    public static let imageWEBP = WHATWG_HTML.Attribute.SourceType(contentType: .imageWEBP)
 
     /// image/avif
-    public static let imageAVIF = SourceType(contentType: .imageAVIF)
+    public static let imageAVIF = WHATWG_HTML.Attribute.SourceType(contentType: .imageAVIF)
 }
 
 // MARK: - Link/Non-Media MIME Types
 
 extension WHATWG_HTML.Attribute.SourceType {
     /// text/css
-    public static let css = SourceType(contentType: .textCSS)
+    public static let css = WHATWG_HTML.Attribute.SourceType(contentType: .textCSS)
 
     /// text/javascript
-    public static let javascript = SourceType(contentType: .textJavaScript)
+    public static let javascript = WHATWG_HTML.Attribute.SourceType(contentType: .textJavaScript)
 
     /// image/svg+xml
-    public static let svg = SourceType(contentType: .imageSVG)
+    public static let svg = WHATWG_HTML.Attribute.SourceType(contentType: .imageSVG)
 
     /// image/png
-    public static let png = SourceType(contentType: .imagePNG)
+    public static let png = WHATWG_HTML.Attribute.SourceType(contentType: .imagePNG)
 
     /// application/manifest+json
-    public static let manifest = SourceType(contentType: .applicationManifestJSON)
+    public static let manifest = WHATWG_HTML.Attribute.SourceType(
+        contentType: .applicationManifestJSON
+    )
 
     /// application/rss+xml
-    public static let rss = SourceType(contentType: .applicationRSSXML)
+    public static let rss = WHATWG_HTML.Attribute.SourceType(contentType: .applicationRSSXML)
 
     /// application/atom+xml
-    public static let atom = SourceType(contentType: .applicationAtomXML)
+    public static let atom = WHATWG_HTML.Attribute.SourceType(contentType: .applicationAtomXML)
 
     /// application/json
-    public static let json = SourceType(contentType: .applicationJSON)
+    public static let json = WHATWG_HTML.Attribute.SourceType(contentType: .applicationJSON)
 }

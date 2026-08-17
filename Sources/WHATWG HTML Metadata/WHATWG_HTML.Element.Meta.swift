@@ -62,29 +62,29 @@ extension WHATWG_HTML.Element {
         ///
         /// In HTML5, the only valid value is "utf-8". The charset meta element
         /// should be placed as early as possible within the head element.
-        public var charset: Attribute.CharSet?
+        public var charset: WHATWG_HTML.Attribute.CharSet?
 
         /// Contains the value for the http-equiv or name attribute.
         ///
         /// The format and meaning of this attribute depends on which attribute
         /// it's paired with (name, http-equiv, or itemprop).
-        public var content: Attribute.Content?
+        public var content: WHATWG_HTML.Attribute.Content?
 
         /// Defines a pragma directive.
         ///
         /// Provides information equivalent to what can be given by a similarly named HTTP header.
         /// Uses the HttpEquiv enum for type-safe value selection.
-        public var httpEquiv: Attribute.HttpEquiv?
+        public var httpEquiv: WHATWG_HTML.Attribute.HttpEquiv?
 
         /// Defines the media for which the theme color applies.
         ///
         /// Only used with `name="theme-color"`. Accepts a media query.
-        public var media: Attribute.Media?
+        public var media: WHATWG_HTML.Attribute.Media?
 
         /// Provides document-level metadata in terms of name-value pairs.
         ///
         /// Uses the Name enum for type-safe value selection of common metadata types.
-        public var name: Attribute.MetaName?
+        public var name: WHATWG_HTML.Attribute.MetaName?
 
         /// Creates a new Meta element with custom attributes.
         ///
@@ -97,11 +97,11 @@ extension WHATWG_HTML.Element {
         ///   - media: Media query for theme-color
         ///   - name: Metadata name
         public init(
-            charset: Attribute.CharSet? = nil,
-            content: Attribute.Content? = nil,
-            httpEquiv: Attribute.HttpEquiv? = nil,
-            media: Attribute.Media? = nil,
-            name: Attribute.MetaName? = nil
+            charset: WHATWG_HTML.Attribute.CharSet? = nil,
+            content: WHATWG_HTML.Attribute.Content? = nil,
+            httpEquiv: WHATWG_HTML.Attribute.HttpEquiv? = nil,
+            media: WHATWG_HTML.Attribute.Media? = nil,
+            name: WHATWG_HTML.Attribute.MetaName? = nil
         ) {
             self.charset = charset
             self.content = content
@@ -119,7 +119,11 @@ extension WHATWG_HTML.Element {
         ///   - name: The metadata name (from standard set)
         ///   - content: The metadata value
         ///   - media: Optional media query (only for theme-color)
-        public init(name: Attribute.MetaName, content: Attribute.Content, media: Attribute.Media? = nil) {
+        public init(
+            name: WHATWG_HTML.Attribute.MetaName,
+            content: WHATWG_HTML.Attribute.Content,
+            media: WHATWG_HTML.Attribute.Media? = nil
+        ) {
             self.name = name
             self.content = content
             self.media = media
@@ -133,7 +137,10 @@ extension WHATWG_HTML.Element {
         ///   - name: The custom metadata name
         ///   - content: The metadata value
         ///   - media: Optional media query
-        public init(content: Attribute.Content, media: Attribute.Media? = nil) {
+        public init(
+            content: WHATWG_HTML.Attribute.Content,
+            media: WHATWG_HTML.Attribute.Media? = nil
+        ) {
             self.content = content
             self.media = media
         }
@@ -145,7 +152,10 @@ extension WHATWG_HTML.Element {
         /// - Parameters:
         ///   - httpEquiv: The pragma directive name
         ///   - content: The directive value
-        public init(httpEquiv: Attribute.HttpEquiv, content: Attribute.Content) {
+        public init(
+            httpEquiv: WHATWG_HTML.Attribute.HttpEquiv,
+            content: WHATWG_HTML.Attribute.Content
+        ) {
             self.httpEquiv = httpEquiv
             self.content = content
         }
@@ -162,10 +172,10 @@ extension WHATWG_HTML.Element.Meta {
 
 extension WHATWG_HTML.Element.Meta {
     /// Creates a meta element for UTF-8 character encoding.
-    public static let utf8 = Meta(charset: "utf-8")
+    public static let utf8 = WHATWG_HTML.Element.Meta(charset: "utf-8")
 
     /// Creates a meta element for responsive viewport.
-    public static let viewport = Meta(
+    public static let viewport = WHATWG_HTML.Element.Meta(
         name: .viewport,
         content: "width=device-width, initial-scale=1"
     )
@@ -208,7 +218,10 @@ extension WHATWG_HTML.Element.Meta {
     ///   - property: The Open Graph property (e.g., "og:title", "og:description")
     ///   - content: The property value
     /// - Returns: A meta element with property and content attributes
-    public static func openGraph(property: String, content: Attribute.Content) -> Meta {
-        return Meta(name: .init(stringLiteral: property), content: content)
+    public static func openGraph(
+        property: String,
+        content: WHATWG_HTML.Attribute.Content
+    ) -> WHATWG_HTML.Element.Meta {
+        return WHATWG_HTML.Element.Meta(name: .init(stringLiteral: property), content: content)
     }
 }

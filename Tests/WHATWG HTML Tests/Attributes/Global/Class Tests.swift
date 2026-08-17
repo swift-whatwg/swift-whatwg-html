@@ -19,7 +19,9 @@ import WHATWG_HTML
 #endif
 
 @Suite struct `Class Test` {
-    @Test func `Class attribute should be class`() { #expect(WHATWG_HTML.Attribute.Class.attribute == "class") }
+    @Test func `Class attribute should be class`() {
+        #expect(WHATWG_HTML.Attribute.Class.attribute == "class")
+    }
 
     @Test func `Class description should reflect the initialized values`() {
         let singleClass: WHATWG_HTML.Attribute.Class = WHATWG_HTML.Attribute.Class("header")
@@ -37,7 +39,9 @@ import WHATWG_HTML
         let arrayClass: WHATWG_HTML.Attribute.Class = ["header"]
         #expect(singleClass.description == arrayClass.description)
 
-        let multipleClasses: WHATWG_HTML.Attribute.Class = WHATWG_HTML.Attribute.Class("header large primary")
+        let multipleClasses: WHATWG_HTML.Attribute.Class = WHATWG_HTML.Attribute.Class(
+            "header large primary"
+        )
         let arrayMultipleClasses: WHATWG_HTML.Attribute.Class = ["header", "large", "primary"]
         #expect(multipleClasses.description == arrayMultipleClasses.description)
     }

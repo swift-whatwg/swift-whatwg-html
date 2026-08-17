@@ -70,41 +70,41 @@ extension WHATWG_HTML.Element {
         ///
         /// This text provides an alternative description when images are not displayed
         /// or for screen readers. Required when href is present for accessibility.
-        public var alt: Attribute.Alt?
+        public var alt: WHATWG_HTML.Attribute.Alt?
 
         /// The URL for the hyperlink target.
         ///
         /// Defines the destination that will be loaded when the area is clicked.
         /// If omitted, the area does not represent a hyperlink.
-        public var href: Attribute.Href?
+        public var href: WHATWG_HTML.Attribute.Href?
 
         /// Indicates that the linked resource should be downloaded rather than displayed.
         ///
         /// When present, suggests to the browser that the linked resource is intended to be
         /// downloaded rather than displayed in the browser.
-        public var download: Attribute.Download?
+        public var download: WHATWG_HTML.Attribute.Download?
 
         /// A space-separated list of URLs to be notified if the link is followed.
         ///
         /// When the hyperlink is followed, the browser sends POST requests with the body PING
         /// to the URLs in this list (in the background). Typically used for tracking.
-        public var ping: Attribute.Ping?
+        public var ping: WHATWG_HTML.Attribute.Ping?
 
         /// Indicates which referrer information to include when navigating to the target.
         ///
         /// Controls the `Referer` HTTP header attached to the request when following the link.
-        public var referrerpolicy: Attribute.ReferrerPolicy?
+        public var referrerpolicy: WHATWG_HTML.Attribute.ReferrerPolicy?
 
         /// Defines the relationship between the linked resource and the current document.
         ///
         /// A space-separated list of link relation types (e.g., "nofollow", "noopener").
         /// Only meaningful when href is present.
-        public var rel: Attribute.Rel?
+        public var rel: WHATWG_HTML.Attribute.Rel?
 
         /// Defines where to display the linked resource.
         ///
         /// Specifies the browsing context (tab, window, iframe) where the linked URL will open.
-        public var target: Attribute.Target?
+        public var target: WHATWG_HTML.Attribute.Target?
 
         /// Creates a new Area element with the specified attributes.
         ///
@@ -120,13 +120,13 @@ extension WHATWG_HTML.Element {
         ///   - target: Where to display the linked resource
         public init(
             shape: Shape? = nil,
-            alt: Attribute.Alt? = nil,
-            href: Attribute.Href? = nil,
-            download: Attribute.Download? = nil,
-            ping: Attribute.Ping? = nil,
-            referrerpolicy: Attribute.ReferrerPolicy? = nil,
-            rel: Attribute.Rel? = nil,
-            target: Attribute.Target? = nil
+            alt: WHATWG_HTML.Attribute.Alt? = nil,
+            href: WHATWG_HTML.Attribute.Href? = nil,
+            download: WHATWG_HTML.Attribute.Download? = nil,
+            ping: WHATWG_HTML.Attribute.Ping? = nil,
+            referrerpolicy: WHATWG_HTML.Attribute.ReferrerPolicy? = nil,
+            rel: WHATWG_HTML.Attribute.Rel? = nil,
+            target: WHATWG_HTML.Attribute.Target? = nil
         ) {
             self.shape = shape
             self.alt = alt
@@ -146,7 +146,12 @@ extension WHATWG_HTML.Element {
         ///   - href: URL for the hyperlink target (required)
         ///   - alt: Alternative text description (required for accessibility)
         ///   - target: Where to display the linked resource
-        public init(shape: Shape, href: Attribute.Href, alt: Attribute.Alt, target: Attribute.Target? = nil) {
+        public init(
+            shape: Shape,
+            href: WHATWG_HTML.Attribute.Href,
+            alt: WHATWG_HTML.Attribute.Alt,
+            target: WHATWG_HTML.Attribute.Target? = nil
+        ) {
             self.shape = shape
             self.href = href
             self.alt = alt
@@ -228,12 +233,17 @@ extension WHATWG_HTML.Element.Area {
         y1: Int,
         x2: Int,
         y2: Int,
-        href: Attribute.Href,
-        alt: Attribute.Alt,
-        target: Attribute.Target? = nil
-    ) -> Area {
+        href: WHATWG_HTML.Attribute.Href,
+        alt: WHATWG_HTML.Attribute.Alt,
+        target: WHATWG_HTML.Attribute.Target? = nil
+    ) -> WHATWG_HTML.Element.Area {
         let coords = "\(x1),\(y1),\(x2),\(y2)"
-        return Area(shape: .rect(coords: coords), href: href, alt: alt, target: target)
+        return WHATWG_HTML.Element.Area(
+            shape: .rect(coords: coords),
+            href: href,
+            alt: alt,
+            target: target
+        )
     }
 
     /// Creates a circular area in an image map.
@@ -250,12 +260,17 @@ extension WHATWG_HTML.Element.Area {
         x: Int,
         y: Int,
         radius: Int,
-        href: Attribute.Href,
-        alt: Attribute.Alt,
-        target: Attribute.Target? = nil
-    ) -> Area {
+        href: WHATWG_HTML.Attribute.Href,
+        alt: WHATWG_HTML.Attribute.Alt,
+        target: WHATWG_HTML.Attribute.Target? = nil
+    ) -> WHATWG_HTML.Element.Area {
         let coords = "\(x),\(y),\(radius)"
-        return Area(shape: .circle(coords: coords), href: href, alt: alt, target: target)
+        return WHATWG_HTML.Element.Area(
+            shape: .circle(coords: coords),
+            href: href,
+            alt: alt,
+            target: target
+        )
     }
 
     /// Creates a polygon area in an image map.
@@ -268,12 +283,17 @@ extension WHATWG_HTML.Element.Area {
     /// - Returns: An Area with polygon shape
     @_disfavoredOverload public static func polygon(
         points: [(Int, Int)],
-        href: Attribute.Href,
-        alt: Attribute.Alt,
-        target: Attribute.Target? = nil
-    ) -> Area {
+        href: WHATWG_HTML.Attribute.Href,
+        alt: WHATWG_HTML.Attribute.Alt,
+        target: WHATWG_HTML.Attribute.Target? = nil
+    ) -> WHATWG_HTML.Element.Area {
         let coords = points.map { "\($0.0),\($0.1)" }.joined(separator: ",")
-        return Area(shape: .poly(coords: coords), href: href, alt: alt, target: target)
+        return WHATWG_HTML.Element.Area(
+            shape: .poly(coords: coords),
+            href: href,
+            alt: alt,
+            target: target
+        )
     }
 
     /// Creates a default area in an image map (entire region beyond defined shapes).
@@ -283,7 +303,11 @@ extension WHATWG_HTML.Element.Area {
     ///   - alt: Alternative text description
     ///   - target: Where to display the linked resource
     /// - Returns: An Area with default shape
-    public static func defaultArea(href: Attribute.Href, alt: Attribute.Alt, target: Attribute.Target? = nil) -> Area {
-        return Area(shape: .default, href: href, alt: alt, target: target)
+    public static func defaultArea(
+        href: WHATWG_HTML.Attribute.Href,
+        alt: WHATWG_HTML.Attribute.Alt,
+        target: WHATWG_HTML.Attribute.Target? = nil
+    ) -> WHATWG_HTML.Element.Area {
+        return WHATWG_HTML.Element.Area(shape: .default, href: href, alt: alt, target: target)
     }
 }

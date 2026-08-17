@@ -86,10 +86,13 @@ extension WHATWG_HTML.Attribute.DateTime {
 
 extension WHATWG_HTML.Attribute.DateTime {
     /// Create a datetime for a specific date
-    public static func date(year: Int, month: Int, day: Int) throws(ISO_8601.Date.Error) -> DateTime
-    {
+    public static func date(
+        year: Int,
+        month: Int,
+        day: Int
+    ) throws(ISO_8601.Date.Error) -> WHATWG_HTML.Attribute.DateTime {
         let dt = try ISO_8601.DateTime(year: year, month: month, day: day)
-        return DateTime(dateTime: dt)
+        return WHATWG_HTML.Attribute.DateTime(dateTime: dt)
     }
 
     /// Create a datetime for a specific date and time (local)
@@ -100,7 +103,7 @@ extension WHATWG_HTML.Attribute.DateTime {
         hour: Int,
         minute: Int,
         second: Int = 0
-    ) throws(ISO_8601.Date.Error) -> DateTime {
+    ) throws(ISO_8601.Date.Error) -> WHATWG_HTML.Attribute.DateTime {
         let dt = try ISO_8601.DateTime(
             year: year,
             month: month,
@@ -109,7 +112,7 @@ extension WHATWG_HTML.Attribute.DateTime {
             minute: minute,
             second: second
         )
-        return DateTime(dateTime: dt)
+        return WHATWG_HTML.Attribute.DateTime(dateTime: dt)
     }
 
     /// Create a datetime for a specific date and time with timezone offset
@@ -121,7 +124,7 @@ extension WHATWG_HTML.Attribute.DateTime {
         minute: Int,
         second: Int = 0,
         timezoneOffsetSeconds: Int
-    ) throws(ISO_8601.Date.Error) -> DateTime {
+    ) throws(ISO_8601.Date.Error) -> WHATWG_HTML.Attribute.DateTime {
         let dt = try ISO_8601.DateTime(
             year: year,
             month: month,
@@ -131,7 +134,7 @@ extension WHATWG_HTML.Attribute.DateTime {
             second: second,
             timezoneOffsetSeconds: timezoneOffsetSeconds
         )
-        return DateTime(dateTime: dt)
+        return WHATWG_HTML.Attribute.DateTime(dateTime: dt)
     }
 
     /// Create a datetime for UTC (Z timezone)
@@ -142,7 +145,7 @@ extension WHATWG_HTML.Attribute.DateTime {
         hour: Int,
         minute: Int,
         second: Int = 0
-    ) throws(ISO_8601.Date.Error) -> DateTime {
+    ) throws(ISO_8601.Date.Error) -> WHATWG_HTML.Attribute.DateTime {
         let dt = try ISO_8601.DateTime(
             year: year,
             month: month,
@@ -151,33 +154,39 @@ extension WHATWG_HTML.Attribute.DateTime {
             minute: minute,
             second: second
         )
-        return DateTime(dateTime: dt)
+        return WHATWG_HTML.Attribute.DateTime(dateTime: dt)
     }
 
     /// Create a year-month datetime
-    public static func yearMonth(year: Int, month: Int) -> DateTime {
-        DateTime(
+    public static func yearMonth(year: Int, month: Int) -> WHATWG_HTML.Attribute.DateTime {
+        WHATWG_HTML.Attribute.DateTime(
             "\(year.formatted(.decimal.zeroPadded(width: 4)))-\(month.formatted(.decimal.zeroPadded(width: 2)))"
         )
     }
 
     /// Create a year-only datetime
-    public static func year(_ year: Int) -> DateTime {
-        DateTime(year.formatted(.decimal.zeroPadded(width: 4)))
+    public static func year(_ year: Int) -> WHATWG_HTML.Attribute.DateTime {
+        WHATWG_HTML.Attribute.DateTime(year.formatted(.decimal.zeroPadded(width: 4)))
     }
 
     /// Create a time-only datetime
-    public static func time(hour: Int, minute: Int, second: Int = 0) -> DateTime {
+    public static func time(
+        hour: Int,
+        minute: Int,
+        second: Int = 0
+    ) -> WHATWG_HTML.Attribute.DateTime {
         let h = hour.formatted(.decimal.zeroPadded(width: 2))
         let m = minute.formatted(.decimal.zeroPadded(width: 2))
         if second > 0 {
             let s = second.formatted(.decimal.zeroPadded(width: 2))
-            return DateTime("\(h):\(m):\(s)")
+            return WHATWG_HTML.Attribute.DateTime("\(h):\(m):\(s)")
         } else {
-            return DateTime("\(h):\(m)")
+            return WHATWG_HTML.Attribute.DateTime("\(h):\(m)")
         }
     }
 
     /// Create a duration (e.g., "PT2H30M" for 2 hours 30 minutes)
-    public static func duration(_ iso8601Duration: String) -> DateTime { DateTime(iso8601Duration) }
+    public static func duration(_ iso8601Duration: String) -> WHATWG_HTML.Attribute.DateTime {
+        WHATWG_HTML.Attribute.DateTime(iso8601Duration)
+    }
 }

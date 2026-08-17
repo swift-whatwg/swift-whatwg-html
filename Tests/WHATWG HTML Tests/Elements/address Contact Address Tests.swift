@@ -147,20 +147,27 @@ import WHATWG_HTML
             #expect(address == copy)
         }
 
-        @Test func `Static tag property access`() { #expect(WHATWG_HTML.Element.Address.tag == "address") }
+        @Test func `Static tag property access`() {
+            #expect(WHATWG_HTML.Element.Address.tag == "address")
+        }
     }
 
     @Suite struct `Integration Tests` {
 
         @Test func `Can be used in collections`() {
-            let addresses = [WHATWG_HTML.Element.Address(), WHATWG_HTML.Element.Address(), WHATWG_HTML.Element.Address()]
+            let addresses = [
+                WHATWG_HTML.Element.Address(), WHATWG_HTML.Element.Address(),
+                WHATWG_HTML.Element.Address(),
+            ]
 
             #expect(addresses.count == 3)
             #expect(addresses.allSatisfy { $0 == WHATWG_HTML.Element.Address() })
         }
 
         @Test func `Can be used as dictionary keys`() {
-            let addressTypes: [WHATWG_HTML.Element.Address: String] = [WHATWG_HTML.Element.Address(): "contact"]
+            let addressTypes: [WHATWG_HTML.Element.Address: String] = [
+                WHATWG_HTML.Element.Address(): "contact"
+            ]
 
             #expect(addressTypes.count == 1)
             #expect(addressTypes[WHATWG_HTML.Element.Address()] == "contact")
@@ -168,7 +175,8 @@ import WHATWG_HTML
 
         @Test func `Can be used as dictionary values`() {
             let contactMethods: [String: WHATWG_HTML.Element.Address] = [
-                "email": WHATWG_HTML.Element.Address(), "postal": WHATWG_HTML.Element.Address(), "phone": WHATWG_HTML.Element.Address(),
+                "email": WHATWG_HTML.Element.Address(), "postal": WHATWG_HTML.Element.Address(),
+                "phone": WHATWG_HTML.Element.Address(),
             ]
 
             #expect(contactMethods.count == 3)
@@ -185,7 +193,10 @@ import WHATWG_HTML
         }
 
         @Test func `Can be used in sets`() {
-            let addressSet: Set<WHATWG_HTML.Element.Address> = [WHATWG_HTML.Element.Address(), WHATWG_HTML.Element.Address(), WHATWG_HTML.Element.Address()]
+            let addressSet: Set<WHATWG_HTML.Element.Address> = [
+                WHATWG_HTML.Element.Address(), WHATWG_HTML.Element.Address(),
+                WHATWG_HTML.Element.Address(),
+            ]
 
             #expect(addressSet.count == 1)  // All WHATWG_HTML.Element.Address() instances are equal
             #expect(addressSet.contains(WHATWG_HTML.Element.Address()))

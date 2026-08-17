@@ -37,7 +37,8 @@ extension WHATWG_HTML.Attribute {
     /// // Or directly with integer literal
     /// img.width(400)
     /// ```
-    @dynamicMemberLookup public struct Width: WHATWG_HTML.StringAttribute, ExpressibleByIntegerLiteral {
+    @dynamicMemberLookup
+    public struct Width: WHATWG_HTML.StringAttribute, ExpressibleByIntegerLiteral {
 
         /// The attribute value
         public let rawValue: String

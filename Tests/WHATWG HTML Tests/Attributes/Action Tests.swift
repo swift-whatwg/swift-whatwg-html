@@ -14,7 +14,9 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Action Test` {
-    @Test func `Action attribute should be action`() { #expect(WHATWG_HTML.Attribute.Action.attribute == "action") }
+    @Test func `Action attribute should be action`() {
+        #expect(WHATWG_HTML.Attribute.Action.attribute == "action")
+    }
 
     @Test func `Action relative path factory`() {
         #expect(WHATWG_HTML.Attribute.Action.relative("submit").rawValue == "/submit")
@@ -23,7 +25,8 @@ import WHATWG_HTML
 
     @Test func `Action absolute URL factory`() {
         #expect(
-            WHATWG_HTML.Attribute.Action.absolute("https://example.com/submit").rawValue == "https://example.com/submit"
+            WHATWG_HTML.Attribute.Action.absolute("https://example.com/submit").rawValue
+                == "https://example.com/submit"
         )
     }
 

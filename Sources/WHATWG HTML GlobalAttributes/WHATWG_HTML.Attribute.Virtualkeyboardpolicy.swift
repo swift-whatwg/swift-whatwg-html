@@ -97,5 +97,5 @@ extension WHATWG_HTML.Attribute.Virtualkeyboardpolicy {
 }
 
 extension WHATWG_HTML.Attribute.Virtualkeyboardpolicy: CaseIterable {
-    public static let allCases: [Virtualkeyboardpolicy] = [.auto, .manual]
+    public static let allCases: [WHATWG_HTML.Attribute.Virtualkeyboardpolicy] = [.auto, .manual]
 }

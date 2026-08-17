@@ -79,23 +79,23 @@ extension WHATWG_HTML.Attribute.ScriptType {
 
 extension WHATWG_HTML.Attribute.ScriptType {
     /// JavaScript module
-    public static let module = ScriptType("module")
+    public static let module = WHATWG_HTML.Attribute.ScriptType("module")
 
     /// Import map
-    public static let importmap = ScriptType("importmap")
+    public static let importmap = WHATWG_HTML.Attribute.ScriptType("importmap")
 
     /// Speculation rules
-    public static let speculationrules = ScriptType("speculationrules")
+    public static let speculationrules = WHATWG_HTML.Attribute.ScriptType("speculationrules")
 }
 
 // MARK: - Common MIME Types
 
 extension WHATWG_HTML.Attribute.ScriptType {
     /// application/json - for JSON data blocks
-    public static let json = ScriptType(contentType: .applicationJSON)
+    public static let json = WHATWG_HTML.Attribute.ScriptType(contentType: .applicationJSON)
 
     /// text/plain - for plain text data blocks
-    public static let textPlain = ScriptType(contentType: .textPlain)
+    public static let textPlain = WHATWG_HTML.Attribute.ScriptType(contentType: .textPlain)
 }
 
 // MARK: - RFC 2045 ContentType Support

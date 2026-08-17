@@ -19,7 +19,9 @@ import WHATWG_HTML
 #endif
 
 @Suite struct `Slot Test` {
-    @Test func `Slot attribute should be slot`() { #expect(WHATWG_HTML.Attribute.Slot.attribute == "slot") }
+    @Test func `Slot attribute should be slot`() {
+        #expect(WHATWG_HTML.Attribute.Slot.attribute == "slot")
+    }
 
     @Test func `Slot should store and return its value`() {
         let slot = WHATWG_HTML.Attribute.Slot("header")

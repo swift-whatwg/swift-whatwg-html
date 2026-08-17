@@ -82,51 +82,57 @@ extension WHATWG_HTML.Attribute.Href {
     /// Create an Href for a telephone number
     /// - Parameter phoneNumber: The phone number (can include country code, dashes, spaces, etc.)
     /// - Returns: An Href with a tel: scheme
-    public static func tel(_ phoneNumber: String) -> Href {
-        return Href(value: "tel:\(phoneNumber)")
+    public static func tel(_ phoneNumber: String) -> WHATWG_HTML.Attribute.Href {
+        return WHATWG_HTML.Attribute.Href(value: "tel:\(phoneNumber)")
     }
 
     /// Create an Href for an email address
     /// - Parameter email: The email address
     /// - Returns: An Href with a mailto: scheme
-    public static func mailto(_ email: String) -> Href { return Href(value: "mailto:\(email)") }
+    public static func mailto(_ email: String) -> WHATWG_HTML.Attribute.Href {
+        return WHATWG_HTML.Attribute.Href(value: "mailto:\(email)")
+    }
 
     /// Create an Href for SMS
     /// - Parameter phoneNumber: The phone number to send SMS to
     /// - Returns: An Href with an sms: scheme
-    public static func sms(_ phoneNumber: String) -> Href {
-        return Href(value: "sms:\(phoneNumber)")
+    public static func sms(_ phoneNumber: String) -> WHATWG_HTML.Attribute.Href {
+        return WHATWG_HTML.Attribute.Href(value: "sms:\(phoneNumber)")
     }
 
     /// Create an Href for a file URL
     /// - Parameter path: The file path
     /// - Returns: An Href with a file: scheme
-    public static func file(_ path: String) -> Href { return Href(value: "file://\(path)") }
+    public static func file(_ path: String) -> WHATWG_HTML.Attribute.Href {
+        return WHATWG_HTML.Attribute.Href(value: "file://\(path)")
+    }
 
     /// Create an Href for a fragment (anchor) within the current page
     /// - Parameter fragment: The fragment identifier (without the # symbol)
     /// - Returns: An Href with just the fragment
-    public static func fragment(_ fragment: String) -> Href { return Href(value: "#\(fragment)") }
+    public static func fragment(_ fragment: String) -> WHATWG_HTML.Attribute.Href {
+        return WHATWG_HTML.Attribute.Href(value: "#\(fragment)")
+    }
 
     /// Create an Href for WhatsApp
     /// - Parameter phoneNumber: The phone number (with country code)
     /// - Returns: An Href with a WhatsApp URL scheme
-    public static func whatsapp(_ phoneNumber: String) -> Href {
-        return Href(value: "https://wa.me/\(phoneNumber)")
+    public static func whatsapp(_ phoneNumber: String) -> WHATWG_HTML.Attribute.Href {
+        return WHATWG_HTML.Attribute.Href(value: "https://wa.me/\(phoneNumber)")
     }
 
     /// Create an Href for FaceTime
     /// - Parameter contact: Phone number or email address
     /// - Returns: An Href with a facetime: scheme
-    public static func facetime(_ contact: String) -> Href {
-        return Href(value: "facetime:\(contact)")
+    public static func facetime(_ contact: String) -> WHATWG_HTML.Attribute.Href {
+        return WHATWG_HTML.Attribute.Href(value: "facetime:\(contact)")
     }
 
     /// Create an Href for FaceTime video call
     /// - Parameter contact: Phone number or email address
     /// - Returns: An Href with a facetime-video: scheme
-    public static func facetimeVideo(_ contact: String) -> Href {
-        return Href(value: "facetime-video:\(contact)")
+    public static func facetimeVideo(_ contact: String) -> WHATWG_HTML.Attribute.Href {
+        return WHATWG_HTML.Attribute.Href(value: "facetime-video:\(contact)")
     }
 }
 
@@ -162,16 +168,16 @@ extension WHATWG_HTML.Attribute.Href {
 
 extension WHATWG_HTML.Attribute.Href {
     /// Creates a link with a fragment identifier (#section)
-    public static func fragment(_ base: String, fragment: String) -> Href {
+    public static func fragment(_ base: String, fragment: String) -> WHATWG_HTML.Attribute.Href {
         let baseWithoutFragment = base.split(separator: "#")[0]
         let fragmentWithoutHash = fragment.hasPrefix("#") ? String(fragment.dropFirst()) : fragment
-        return Href("\(baseWithoutFragment)#\(fragmentWithoutHash)")
+        return WHATWG_HTML.Attribute.Href("\(baseWithoutFragment)#\(fragmentWithoutHash)")
     }
 
     /// Creates a link to a specific fragment on the current page
-    public static func anchor(_ fragmentId: String) -> Href {
+    public static func anchor(_ fragmentId: String) -> WHATWG_HTML.Attribute.Href {
         let fragmentWithoutHash = fragmentId.hasPrefix("#") ? fragmentId : "#\(fragmentId)"
-        return Href(fragmentWithoutHash)
+        return WHATWG_HTML.Attribute.Href(fragmentWithoutHash)
     }
 
     /// Creates an email link (mailto:) with optional subject and body
@@ -188,8 +194,11 @@ extension WHATWG_HTML.Attribute.Href {
     /// )
     /// // Result: "mailto:user@example.com?subject=Hello&body=This%20is%20a%20test%20message"
     /// ```
-    public static func email(_ address: String, subject: String? = nil, body: String? = nil) -> Href
-    {
+    public static func email(
+        _ address: String,
+        subject: String? = nil,
+        body: String? = nil
+    ) -> WHATWG_HTML.Attribute.Href {
         var url = "mailto:\(address)"
 
         if subject != nil || body != nil {
@@ -209,7 +218,7 @@ extension WHATWG_HTML.Attribute.Href {
             url += queryParts.joined(separator: "&")
         }
 
-        return Href(url)
+        return WHATWG_HTML.Attribute.Href(url)
     }
 
     /// Percent-encodes a string for use in URL query parameters

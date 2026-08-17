@@ -119,23 +119,23 @@ extension WHATWG_HTML.Attribute.Max: ExpressibleByFloatLiteral {
 
 extension WHATWG_HTML.Attribute.Max {
     /// Create a max value for a date input
-    public static func date(_ year: Int, month: Int, day: Int) -> Max {
-        return Max(String.format(year: year, month: month, day: day))
+    public static func date(_ year: Int, month: Int, day: Int) -> WHATWG_HTML.Attribute.Max {
+        return WHATWG_HTML.Attribute.Max(String.format(year: year, month: month, day: day))
     }
 
     /// Create a max value for a month input
-    public static func month(_ year: Int, month: Int) -> Max {
-        return Max(String.format(year: year, month: month))
+    public static func month(_ year: Int, month: Int) -> WHATWG_HTML.Attribute.Max {
+        return WHATWG_HTML.Attribute.Max(String.format(year: year, month: month))
     }
 
     /// Create a max value for a week input
-    public static func week(_ year: Int, week: Int) -> Max {
-        return Max(String.format(year: year, week: week))
+    public static func week(_ year: Int, week: Int) -> WHATWG_HTML.Attribute.Max {
+        return WHATWG_HTML.Attribute.Max(String.format(year: year, week: week))
     }
 
     /// Create a max value for a time input
-    public static func time(_ hour: Int, minute: Int) -> Max {
-        return Max(String.format(hour: hour, minute: minute))
+    public static func time(_ hour: Int, minute: Int) -> WHATWG_HTML.Attribute.Max {
+        return WHATWG_HTML.Attribute.Max(String.format(hour: hour, minute: minute))
     }
 
     /// Create a max value for a datetime-local input
@@ -145,7 +145,9 @@ extension WHATWG_HTML.Attribute.Max {
         day: Int,
         hour: Int,
         minute: Int
-    ) -> Max {
-        return Max(String.format(year: year, month: month, day: day, hour: hour, minute: minute))
+    ) -> WHATWG_HTML.Attribute.Max {
+        return WHATWG_HTML.Attribute.Max(
+            String.format(year: year, month: month, day: day, hour: hour, minute: minute)
+        )
     }
 }

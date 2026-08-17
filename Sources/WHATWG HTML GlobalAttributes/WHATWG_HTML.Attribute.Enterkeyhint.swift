@@ -142,7 +142,7 @@ extension WHATWG_HTML.Attribute.Enterkeyhint {
 }
 
 extension WHATWG_HTML.Attribute.Enterkeyhint: CaseIterable {
-    public static let allCases: [Enterkeyhint] = [
+    public static let allCases: [WHATWG_HTML.Attribute.Enterkeyhint] = [
         .enter, .done, .go, .next, .previous, .search, .send,
     ]
 }

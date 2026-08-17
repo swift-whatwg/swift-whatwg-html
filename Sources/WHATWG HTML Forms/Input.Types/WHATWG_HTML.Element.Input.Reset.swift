@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_FormAttributes
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// `<input type="reset">` elements are rendered as buttons, with a default click event
 /// handler that resets all inputs in the form to their initial values.
@@ -25,12 +25,15 @@ extension WHATWG_HTML.Element.Input {
         /// the button with an accessible description. If you don't specify a value, you get
         /// a button with the default label (typically "Reset," but this will vary depending
         /// on the user agent).
-        public var value: Attribute.Value<String>?
+        public var value: WHATWG_HTML.Attribute.Value<String>?
 
-        public var required: Attribute.Required?
+        public var required: WHATWG_HTML.Attribute.Required?
 
         /// Creates a new reset input configuration
-        public init(value: Attribute.Value<String>? = nil, required: Attribute.Required? = nil) {
+        public init(
+            value: WHATWG_HTML.Attribute.Value<String>? = nil,
+            required: WHATWG_HTML.Attribute.Required? = nil
+        ) {
             self.value = value
             self.required = required
         }
@@ -43,9 +46,9 @@ extension WHATWG_HTML.Element.Input {
 
     /// Creates a new reset input element
     public static func reset(
-        name: Attribute.Name? = nil,
-        value: Attribute.Value<String>? = nil,
-        disabled: Attribute.Disabled? = nil,
+        name: WHATWG_HTML.Attribute.Name? = nil,
+        value: WHATWG_HTML.Attribute.Value<String>? = nil,
+        disabled: WHATWG_HTML.Attribute.Disabled? = nil,
         form: WHATWG_HTML.Attribute.Form.ID? = nil
     ) -> Self {
         .init(name: name, disabled: disabled, form: form, type: .reset(.init(value: value)))

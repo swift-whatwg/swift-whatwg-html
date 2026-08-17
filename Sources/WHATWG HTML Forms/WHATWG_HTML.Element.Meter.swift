@@ -44,22 +44,22 @@ extension WHATWG_HTML.Element {
     ///
     public struct Meter: WHATWG_HTML.Element.`Protocol` {
         /// The current numeric value, which must be between the minimum and maximum values
-        public var value: Attribute.Value<Double>
+        public var value: WHATWG_HTML.Attribute.Value<Double>
 
         /// The lower numeric bound of the measured range (defaults to 0)
-        public var min: Attribute.Min?
+        public var min: WHATWG_HTML.Attribute.Min?
 
         /// The upper numeric bound of the measured range (defaults to 1)
-        public var max: Attribute.Max?
+        public var max: WHATWG_HTML.Attribute.Max?
 
         /// The upper numeric bound of the low end of the measured range
-        public var low: Attribute.Low?
+        public var low: WHATWG_HTML.Attribute.Low?
 
         /// The lower numeric bound of the high end of the measured range
-        public var high: Attribute.High?
+        public var high: WHATWG_HTML.Attribute.High?
 
         /// The optimal numeric value, which must be within the range
-        public var optimum: Attribute.Optimum?
+        public var optimum: WHATWG_HTML.Attribute.Optimum?
 
         /// The ID of the form element that the meter is associated with
         public var form: WHATWG_HTML.Attribute.Form.ID?
@@ -75,12 +75,12 @@ extension WHATWG_HTML.Element {
         ///   - optimum: The optimal value within the range
         ///   - form: The ID of the form element that the meter is associated with
         public init(
-            value: Attribute.Value<Double>,
-            min: Attribute.Min? = nil,
-            max: Attribute.Max? = nil,
-            low: Attribute.Low? = nil,
-            high: Attribute.High? = nil,
-            optimum: Attribute.Optimum? = nil,
+            value: WHATWG_HTML.Attribute.Value<Double>,
+            min: WHATWG_HTML.Attribute.Min? = nil,
+            max: WHATWG_HTML.Attribute.Max? = nil,
+            low: WHATWG_HTML.Attribute.Low? = nil,
+            high: WHATWG_HTML.Attribute.High? = nil,
+            optimum: WHATWG_HTML.Attribute.Optimum? = nil,
             form: WHATWG_HTML.Attribute.Form.ID? = nil
         ) {
             self.value = value

@@ -46,7 +46,7 @@ extension WHATWG_HTML.Element {
         /// If set, none of the items in this option group is selectable.
         /// Often browsers grey out such control and it won't receive any browsing events,
         /// like mouse clicks or focus-related ones.
-        public var disabled: Attribute.Disabled?
+        public var disabled: WHATWG_HTML.Attribute.Disabled?
 
         /// The name of the group of options, which the browser can use when labeling
         /// the options in the user interface. This attribute is mandatory if this element is used.
@@ -57,7 +57,10 @@ extension WHATWG_HTML.Element {
         /// - Parameters:
         ///   - disabled: If set, none of the items in this option group will be selectable
         ///   - label: The name of the group of options (mandatory) (typically `<option>` elements)
-        public init(disabled: Attribute.Disabled? = nil, label: WHATWG_HTML.Attribute.Label? = nil) {
+        public init(
+            disabled: WHATWG_HTML.Attribute.Disabled? = nil,
+            label: WHATWG_HTML.Attribute.Label? = nil
+        ) {
             self.disabled = disabled
             self.label = label
 

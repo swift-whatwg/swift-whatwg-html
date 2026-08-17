@@ -63,8 +63,12 @@ extension WHATWG_HTML.Element {
         ///
         /// - Note: This attribute has been deprecated in HTML. Instead, use the `accept` attribute
         ///   on individual `<input type="file">` elements.
-        @available(*, deprecated, message: "Use accept attribute on input[type=file] elements instead")
-        public var accept: Attribute.Accept?
+        @available(
+            *,
+            deprecated,
+            message: "Use accept attribute on input[type=file] elements instead"
+        )
+        public var accept: WHATWG_HTML.Attribute.Accept?
 
         /// The character encoding for form submission.
         ///
@@ -73,7 +77,7 @@ extension WHATWG_HTML.Element {
         /// Historically, multiple character encodings could be specified.
         ///
         /// - Default: "utf-8"
-        public var acceptCharset: Attribute.AcceptCharset?
+        public var acceptCharset: WHATWG_HTML.Attribute.AcceptCharset?
 
         /// Controls whether inputted text is automatically capitalized.
         ///
@@ -82,7 +86,7 @@ extension WHATWG_HTML.Element {
         /// - `sentences`: Capitalize the first letter of each sentence
         /// - `words`: Capitalize the first letter of each word
         /// - `characters`: Capitalize all characters
-        public var autocapitalize: Attribute.Autocapitalize?
+        public var autocapitalize: WHATWG_HTML.Attribute.Autocapitalize?
 
         /// Controls whether the browser can automatically complete input values.
         ///
@@ -90,26 +94,26 @@ extension WHATWG_HTML.Element {
         /// can have their values automatically completed by the browser. This attribute
         /// on the form element can be overridden by `autocomplete` attributes on
         /// individual input elements.
-        public var autocomplete: Attribute.Autocomplete?
+        public var autocomplete: WHATWG_HTML.Attribute.Autocomplete?
 
         /// The name of the form.
         ///
         /// This value must not be empty and must be unique among the form elements
         /// in the forms collection within the same document.
-        public var name: Attribute.Name?
+        public var name: WHATWG_HTML.Attribute.Name?
 
         /// Controls annotations and link relationships for the form.
         ///
         /// Annotations can include: external, nofollow, opener, noopener, and noreferrer.
         /// Link types can include: help, prev, next, search, and license.
-        public var rel: Attribute.Rel?
+        public var rel: WHATWG_HTML.Attribute.Rel?
 
         /// The URL that processes the form submission.
         ///
         /// This URL receives the form data when the form is submitted. If omitted,
         /// the form is submitted to the current page URL.
         /// This attribute is ignored when `method="dialog"` is set.
-        public var action: Attribute.Action?
+        public var action: WHATWG_HTML.Attribute.Action?
 
         /// The MIME type of the form submission.
         ///
@@ -120,7 +124,7 @@ extension WHATWG_HTML.Element {
         /// - `application/x-www-form-urlencoded` (default)
         /// - `multipart/form-data` (required for file uploads)
         /// - `text/plain` (for debugging)
-        public var enctype: Attribute.EncType?
+        public var enctype: WHATWG_HTML.Attribute.EncType?
 
         /// The HTTP method to use when submitting the form.
         ///
@@ -128,14 +132,14 @@ extension WHATWG_HTML.Element {
         /// - `GET` (default): Form data appended to the URL
         /// - `POST`: Form data sent in the HTTP request body
         /// - `DIALOG`: For forms inside a dialog, closes the dialog on submission
-        public var method: Attribute.Method?
+        public var method: WHATWG_HTML.Attribute.Method?
 
         /// Disables browser validation when submitting the form.
         ///
         /// When present, this boolean attribute indicates that the form shouldn't be validated
         /// before submission. This allows bypassing built-in browser validation for elements
         /// with attributes like `required`, `pattern`, `min`/`max`, etc.
-        public var novalidate: Attribute.Novalidate?
+        public var novalidate: WHATWG_HTML.Attribute.Novalidate?
 
         /// Indicates where to display the response after submitting the form.
         ///
@@ -147,7 +151,7 @@ extension WHATWG_HTML.Element {
         /// - `_blank`: New tab or window
         /// - `_parent`: Parent browsing context
         /// - `_top`: Top-level browsing context
-        public var target: Attribute.Target?
+        public var target: WHATWG_HTML.Attribute.Target?
 
         /// Creates a new HTML form element with the specified attributes and content.
         ///
@@ -162,15 +166,15 @@ extension WHATWG_HTML.Element {
         ///   - novalidate: Whether to disable browser validation
         ///   - target: Where to display the response
         public init(
-            autocapitalize: Attribute.Autocapitalize? = nil,
-            autocomplete: Attribute.Autocomplete? = nil,
-            name: Attribute.Name? = nil,
-            rel: Attribute.Rel? = nil,
-            action: Attribute.Action? = nil,
-            enctype: Attribute.EncType? = nil,
-            method: Attribute.Method? = nil,
-            novalidate: Attribute.Novalidate? = nil,
-            target: Attribute.Target? = nil
+            autocapitalize: WHATWG_HTML.Attribute.Autocapitalize? = nil,
+            autocomplete: WHATWG_HTML.Attribute.Autocomplete? = nil,
+            name: WHATWG_HTML.Attribute.Name? = nil,
+            rel: WHATWG_HTML.Attribute.Rel? = nil,
+            action: WHATWG_HTML.Attribute.Action? = nil,
+            enctype: WHATWG_HTML.Attribute.EncType? = nil,
+            method: WHATWG_HTML.Attribute.Method? = nil,
+            novalidate: WHATWG_HTML.Attribute.Novalidate? = nil,
+            target: WHATWG_HTML.Attribute.Target? = nil
         ) {
             self.autocapitalize = autocapitalize
             self.autocomplete = autocomplete

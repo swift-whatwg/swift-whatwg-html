@@ -47,7 +47,7 @@ extension WHATWG_HTML.Element {
     public struct Option: WHATWG_HTML.Element.`Protocol` {
         /// If set, this option is not checkable. Often browsers grey out such control
         /// and it won't receive browsing events like mouse clicks or focus-related ones.
-        public var disabled: Attribute.Disabled?
+        public var disabled: WHATWG_HTML.Attribute.Disabled?
 
         /// Text for the label indicating the meaning of the option.
         /// If not defined, the element's text content is used.
@@ -55,11 +55,11 @@ extension WHATWG_HTML.Element {
 
         /// If present, indicates that the option is initially selected.
         /// In a single-select control, only one option can be selected at a time.
-        public var selected: Attribute.Selected?
+        public var selected: WHATWG_HTML.Attribute.Selected?
 
         /// The value to be submitted with the form, should this option be selected.
         /// If omitted, the value is taken from the text content of the option element.
-        public var value: Attribute.Value<String>
+        public var value: WHATWG_HTML.Attribute.Value<String>
 
         /// Creates a new Option element with the specified attributes.
         ///
@@ -69,10 +69,10 @@ extension WHATWG_HTML.Element {
         ///   - selected: If set, this option is initially selected
         ///   - value: The value to be submitted if this option is selected
         public init(
-            disabled: Attribute.Disabled? = nil,
+            disabled: WHATWG_HTML.Attribute.Disabled? = nil,
             label: WHATWG_HTML.Attribute.Label? = nil,
-            selected: Attribute.Selected? = nil,
-            value: Attribute.Value<String>
+            selected: WHATWG_HTML.Attribute.Selected? = nil,
+            value: WHATWG_HTML.Attribute.Value<String>
         ) {
             self.disabled = disabled
             self.label = label

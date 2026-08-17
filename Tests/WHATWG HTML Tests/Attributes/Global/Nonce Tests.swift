@@ -14,7 +14,9 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Nonce Test` {
-    @Test func `Nonce attribute should be nonce`() { #expect(WHATWG_HTML.Attribute.Nonce.attribute == "nonce") }
+    @Test func `Nonce attribute should be nonce`() {
+        #expect(WHATWG_HTML.Attribute.Nonce.attribute == "nonce")
+    }
 
     @Test func `Nonce should store and return its value`() {
         let nonce = WHATWG_HTML.Attribute.Nonce("abc123xyz789")

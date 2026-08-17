@@ -91,11 +91,15 @@ extension WHATWG_HTML.Attribute.Rel: ExpressibleByArrayLiteral {
 
 extension WHATWG_HTML.Attribute.Rel {
     /// Create a rel value for external links with recommended security attributes
-    public static let secureExternal: Self = .init([Rel.external, .noopener, .noreferrer])
+    public static let secureExternal: Self = .init([
+        WHATWG_HTML.Attribute.Rel.external, .noopener, .noreferrer,
+    ])
 }
 
 extension WHATWG_HTML.Attribute.Rel {
-    public init(_ rels: [Rel]) { self = .init(rels.map(\.description).joined(separator: " ")) }
+    public init(_ rels: [WHATWG_HTML.Attribute.Rel]) {
+        self = .init(rels.map(\.description).joined(separator: " "))
+    }
 }
 
 extension WHATWG_HTML.Attribute.Rel {

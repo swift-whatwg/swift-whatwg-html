@@ -39,13 +39,13 @@ extension WHATWG_HTML.Element {
     public struct Map: WHATWG_HTML.Element.`Protocol` {
         /// The name attribute gives the map a unique name so that it can be referenced.
         /// The name must be non-empty with no space characters and must be unique across all maps in the document.
-        public var name: Attribute.Name?
+        public var name: WHATWG_HTML.Attribute.Name?
 
         /// Creates a new Map element with the specified attributes.
         ///
         /// - Parameters:
         ///   - name: A unique identifier for the map, used to reference it from an image's `usemap` attribute, typically containing `<area>` elements
-        public init(name: Attribute.Name? = nil) {
+        public init(name: WHATWG_HTML.Attribute.Name? = nil) {
             self.name = name
 
         }

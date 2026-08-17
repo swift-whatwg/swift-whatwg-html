@@ -49,25 +49,25 @@ extension WHATWG_HTML.Element {
     ///
     public struct Source: WHATWG_HTML.Element.`Protocol` {
         /// The MIME media type of the resource
-        public var type: Attribute.SourceType?
+        public var type: WHATWG_HTML.Attribute.SourceType?
 
         /// The URL of the media resource (used with `<audio>` and `<video>`)
-        public var src: Attribute.Src?
+        public var src: WHATWG_HTML.Attribute.Src?
 
         /// A comma-separated list of image URLs and their descriptors (used with `<picture>`)
-        public var srcset: Attribute.ImageSrcSet?
+        public var srcset: WHATWG_HTML.Attribute.ImageSrcSet?
 
         /// A list of source sizes that describe the final rendered width of the image
-        public var sizes: Attribute.Sizes?
+        public var sizes: WHATWG_HTML.Attribute.Sizes?
 
         /// A media query for the resource's intended media
-        public var media: Attribute.Media?
+        public var media: WHATWG_HTML.Attribute.Media?
 
         /// The intrinsic height of the image in pixels (for `<picture>`)
-        public var height: Attribute.Height?
+        public var height: WHATWG_HTML.Attribute.Height?
 
         /// The intrinsic width of the image in pixels (for `<picture>`)
-        public var width: Attribute.Width?
+        public var width: WHATWG_HTML.Attribute.Width?
 
         /// Creates a new Source element with the specified attributes.
         ///
@@ -80,13 +80,13 @@ extension WHATWG_HTML.Element {
         ///   - height: The intrinsic height of the image in pixels (for `<picture>`)
         ///   - width: The intrinsic width of the image in pixels (for `<picture>`)
         public init(
-            type: Attribute.SourceType? = nil,
-            src: Attribute.Src? = nil,
-            srcset: Attribute.ImageSrcSet? = nil,
-            sizes: Attribute.Sizes? = nil,
-            media: Attribute.Media? = nil,
-            height: Attribute.Height? = nil,
-            width: Attribute.Width? = nil
+            type: WHATWG_HTML.Attribute.SourceType? = nil,
+            src: WHATWG_HTML.Attribute.Src? = nil,
+            srcset: WHATWG_HTML.Attribute.ImageSrcSet? = nil,
+            sizes: WHATWG_HTML.Attribute.Sizes? = nil,
+            media: WHATWG_HTML.Attribute.Media? = nil,
+            height: WHATWG_HTML.Attribute.Height? = nil,
+            width: WHATWG_HTML.Attribute.Width? = nil
         ) {
             self.type = type
             self.src = src

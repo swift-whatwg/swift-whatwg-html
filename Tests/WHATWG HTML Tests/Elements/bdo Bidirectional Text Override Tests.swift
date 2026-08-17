@@ -229,7 +229,9 @@ import WHATWG_HTML
             #expect(autoDir.rawValue == "auto")
         }
 
-        @Test func `BDO tag name validation`() { #expect(WHATWG_HTML.Element.BidirectionalTextOverride.tag == "bdo") }
+        @Test func `BDO tag name validation`() {
+            #expect(WHATWG_HTML.Element.BidirectionalTextOverride.tag == "bdo")
+        }
 
         @Test func `HTMLElement protocol compliance`() {
             let bdo = WHATWG_HTML.Element.BidirectionalTextOverride(dir: .ltr)

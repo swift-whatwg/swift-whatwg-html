@@ -42,34 +42,34 @@ extension WHATWG_HTML.Element {
     /// - Specify both `width` and `height` attributes to prevent layout shifts as the page loads
     public struct InlineFrame: WHATWG_HTML.Element.`Protocol` {
         /// The URL of the page to embed
-        public var src: Attribute.Src?
+        public var src: WHATWG_HTML.Attribute.Src?
 
         /// Inline HTML to embed, overriding the src attribute
         public var srcdoc: String?
 
         /// A targetable name for the embedded browsing context
-        public var name: Attribute.Name?
+        public var name: WHATWG_HTML.Attribute.Name?
 
         /// Controls restrictions applied to the content embedded in the iframe
         public var sandbox: String?
 
         /// Set to true if the iframe can activate fullscreen mode
-        public var allowfullscreen: Attribute.Allowfullscreen?
+        public var allowfullscreen: WHATWG_HTML.Attribute.Allowfullscreen?
 
         /// Specifies a Permissions Policy for the iframe
-        public var allow: Attribute.Allow?
+        public var allow: WHATWG_HTML.Attribute.Allow?
 
         /// The width of the frame in CSS pixels (default is 300)
-        public var width: Attribute.Width?
+        public var width: WHATWG_HTML.Attribute.Width?
 
         /// The height of the frame in CSS pixels (default is 150)
-        public var height: Attribute.Height?
+        public var height: WHATWG_HTML.Attribute.Height?
 
         /// Indicates how the browser should load the iframe (eager or lazy)
-        public var loading: Attribute.Loading?
+        public var loading: WHATWG_HTML.Attribute.Loading?
 
         /// Controls referrer policy when fetching the frame's resource
-        public var referrerpolicy: Attribute.ReferrerPolicy?
+        public var referrerpolicy: WHATWG_HTML.Attribute.ReferrerPolicy?
 
         /// Creates a new InlineFrame element with the specified attributes.
         ///
@@ -85,16 +85,16 @@ extension WHATWG_HTML.Element {
         ///   - loading: Indicates how the browser should load the iframe
         ///   - referrerpolicy: Controls referrer policy when fetching the frame's resource (typically empty for iframes)
         public init(
-            src: Attribute.Src? = nil,
+            src: WHATWG_HTML.Attribute.Src? = nil,
             srcdoc: String? = nil,
-            name: Attribute.Name? = nil,
+            name: WHATWG_HTML.Attribute.Name? = nil,
             sandbox: String? = nil,
-            allowfullscreen: Attribute.Allowfullscreen? = nil,
-            allow: Attribute.Allow? = nil,
-            width: Attribute.Width? = nil,
-            height: Attribute.Height? = nil,
-            loading: Attribute.Loading? = nil,
-            referrerpolicy: Attribute.ReferrerPolicy? = nil
+            allowfullscreen: WHATWG_HTML.Attribute.Allowfullscreen? = nil,
+            allow: WHATWG_HTML.Attribute.Allow? = nil,
+            width: WHATWG_HTML.Attribute.Width? = nil,
+            height: WHATWG_HTML.Attribute.Height? = nil,
+            loading: WHATWG_HTML.Attribute.Loading? = nil,
+            referrerpolicy: WHATWG_HTML.Attribute.ReferrerPolicy? = nil
         ) {
             self.src = src
             self.srcdoc = srcdoc

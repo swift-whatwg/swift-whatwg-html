@@ -34,7 +34,11 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `Entry convenience init with file`() {
-        let file = WHATWG_HTML.Attribute.Form.Data.File(name: "avatar.png", type: "image/png", body: [UInt8]([1, 2, 3]))
+        let file = WHATWG_HTML.Attribute.Form.Data.File(
+            name: "avatar.png",
+            type: "image/png",
+            body: [UInt8]([1, 2, 3])
+        )
         let entry = WHATWG_HTML.Attribute.Form.Data.Entry(name: "avatar", file: file)
 
         #expect(entry.name == "avatar")

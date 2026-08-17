@@ -47,13 +47,13 @@ extension WHATWG_HTML.Element {
     public struct Time: WHATWG_HTML.Element.`Protocol` {
 
         /// The datetime attribute that provides a machine-readable format of the date and/or time
-        public var datetime: Attribute.DateTime?
+        public var datetime: WHATWG_HTML.Attribute.DateTime?
 
         /// Creates a new Time element with the specified attributes.
         ///
         /// - Parameters:
         ///   - datetime: A machine-readable representation of the date or time, typically a human-readable date or time
-        public init(datetime: Attribute.DateTime? = nil) {
+        public init(datetime: WHATWG_HTML.Attribute.DateTime? = nil) {
             self.datetime = datetime
 
         }

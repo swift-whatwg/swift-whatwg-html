@@ -78,7 +78,7 @@ extension WHATWG_HTML.Element {
         /// Can be a boolean or a space-separated list of URLs where the header should be sent.
         ///
         /// - Note: Still experimental as of 2025
-        public var attributionsrc: Attribute.AttributionSrc?
+        public var attributionsrc: WHATWG_HTML.Attribute.AttributionSrc?
 
         /// Causes the browser to treat the linked URL as a download.
         ///
@@ -106,7 +106,7 @@ extension WHATWG_HTML.Element {
         /// - If the header specifies a filename, it takes priority over a filename specified in this attribute.
         /// - If the header specifies a disposition of inline, modern browsers prioritize
         ///   this attribute and treat it as a download.
-        public var download: Attribute.Download?
+        public var download: WHATWG_HTML.Attribute.Download?
 
         /// The URL that the hyperlink points to.
         ///
@@ -115,25 +115,25 @@ extension WHATWG_HTML.Element {
         /// - `tel:` for telephone numbers
         /// - `sms:` for text messages
         /// - Document fragments starting with `#` for in-page navigation
-        public var href: Attribute.Href?
+        public var href: WHATWG_HTML.Attribute.Href?
 
         /// Hints at the human language of the linked URL.
         ///
         /// This attribute indicates the language of the linked resource.
         /// Values are language codes like "en", "fr", "ja", etc.
-        public var hreflang: Attribute.Hreflang?
+        public var hreflang: WHATWG_HTML.Attribute.Hreflang?
 
         /// A space-separated list of URLs to ping when the link is followed.
         ///
         /// When the link is followed, the browser will send POST requests with the body PING to the URLs.
         /// Typically used for tracking.
-        public var ping: Attribute.Ping?
+        public var ping: WHATWG_HTML.Attribute.Ping?
 
         /// How much of the referrer to send when following the link.
         ///
         /// Controls the information included in the Referer header when navigating to the linked resource.
         /// Options include no-referrer, origin, same-origin, strict-origin, etc.
-        public var referrerpolicy: Attribute.ReferrerPolicy?
+        public var referrerpolicy: WHATWG_HTML.Attribute.ReferrerPolicy?
 
         /// The relationship of the linked URL as space-separated link types.
         ///
@@ -142,7 +142,7 @@ extension WHATWG_HTML.Element {
         /// - `noopener` - Prevents the opened page from accessing the window.opener property
         /// - `noreferrer` - Prevents passing the referrer information to the linked page
         /// - `alternate`, `author`, `help`, `license`, etc.
-        public var rel: Attribute.Rel?
+        public var rel: WHATWG_HTML.Attribute.Rel?
 
         /// Where to display the linked URL, as the name for a browsing context.
         ///
@@ -155,7 +155,7 @@ extension WHATWG_HTML.Element {
         ///
         /// Note: Setting `target="_blank"` on anchor elements implicitly provides the same
         /// behavior as setting `rel="noopener"` in modern browsers.
-        public var target: Attribute.Target?
+        public var target: WHATWG_HTML.Attribute.Target?
 
         /// Creates a new Anchor element with the specified attributes.
         ///
@@ -169,14 +169,14 @@ extension WHATWG_HTML.Element {
         ///   - rel: Relationship between the current document and linked resource
         ///   - target: Where to display the linked URL
         public init(
-            attributionsrc: Attribute.AttributionSrc? = nil,
-            download: Attribute.Download? = nil,
-            href: Attribute.Href? = nil,
-            hreflang: Attribute.Hreflang? = nil,
-            ping: Attribute.Ping? = nil,
-            referrerpolicy: Attribute.ReferrerPolicy? = nil,
-            rel: Attribute.Rel? = nil,
-            target: Attribute.Target? = nil
+            attributionsrc: WHATWG_HTML.Attribute.AttributionSrc? = nil,
+            download: WHATWG_HTML.Attribute.Download? = nil,
+            href: WHATWG_HTML.Attribute.Href? = nil,
+            hreflang: WHATWG_HTML.Attribute.Hreflang? = nil,
+            ping: WHATWG_HTML.Attribute.Ping? = nil,
+            referrerpolicy: WHATWG_HTML.Attribute.ReferrerPolicy? = nil,
+            rel: WHATWG_HTML.Attribute.Rel? = nil,
+            target: WHATWG_HTML.Attribute.Target? = nil
         ) {
             self.attributionsrc = attributionsrc
             self.download = download

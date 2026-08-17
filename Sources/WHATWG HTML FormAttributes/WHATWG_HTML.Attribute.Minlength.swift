@@ -71,10 +71,12 @@ extension WHATWG_HTML.Attribute.Minlength {
     @inlinable public static var attribute: String { "minlength" }
 
     /// Create a minlength attribute with the given number of characters
-    public static func characters(_ count: Int) -> Minlength { return Minlength(count) }
+    public static func characters(_ count: Int) -> WHATWG_HTML.Attribute.Minlength {
+        return WHATWG_HTML.Attribute.Minlength(count)
+    }
 
     /// Minimum length of zero (effectively no minimum)
-    public static let none = Minlength(0)
+    public static let none = WHATWG_HTML.Attribute.Minlength(0)
 }
 
 extension WHATWG_HTML.Attribute.Minlength: ExpressibleByIntegerLiteral {

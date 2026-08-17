@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_FormAttributes
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// `<input type="file">` elements let the user choose one or more files from their device storage.
 /// Once chosen, the files can be uploaded to a server using form submission, or manipulated
@@ -26,27 +26,27 @@ extension WHATWG_HTML.Element.Input {
         /// - "image/png, image/jpeg" or ".png, .jpg, .jpeg" — Accept PNG or JPEG files.
         /// - "image/*" — Accept any file with an image/* MIME type.
         /// - ".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" — accept anything that is an MS Word document.
-        public var accept: Attribute.Accept?
+        public var accept: WHATWG_HTML.Attribute.Accept?
 
         /// The capture attribute value is a string that specifies which camera to use for capture of
         /// image or video data, if the accept attribute indicates that the input should be of one of those types.
         ///
         /// - "user" indicates that the user-facing camera and/or microphone should be used.
         /// - "environment" specifies that the outward-facing camera and/or microphone should be used.
-        public var capture: Attribute.Capture?
+        public var capture: WHATWG_HTML.Attribute.Capture?
 
         /// When the multiple Boolean attribute is specified, the file input allows the user to select
         /// more than one file.
-        public var multiple: Attribute.Multiple?
+        public var multiple: WHATWG_HTML.Attribute.Multiple?
 
-        public var required: Attribute.Required?
+        public var required: WHATWG_HTML.Attribute.Required?
 
         /// Creates a new file input configuration
         public init(
-            accept: Attribute.Accept? = nil,
-            capture: Attribute.Capture? = nil,
-            multiple: Attribute.Multiple? = nil,
-            required: Attribute.Required? = nil
+            accept: WHATWG_HTML.Attribute.Accept? = nil,
+            capture: WHATWG_HTML.Attribute.Capture? = nil,
+            multiple: WHATWG_HTML.Attribute.Multiple? = nil,
+            required: WHATWG_HTML.Attribute.Required? = nil
         ) {
             self.accept = accept
             self.capture = capture
@@ -62,12 +62,12 @@ extension WHATWG_HTML.Element.Input {
 
     /// Creates a new file input element
     public static func file(
-        name: Attribute.Name? = nil,
-        accept: Attribute.Accept? = nil,
-        capture: Attribute.Capture? = nil,
-        multiple: Attribute.Multiple? = nil,
-        disabled: Attribute.Disabled? = nil,
-        required: Attribute.Required? = nil,
+        name: WHATWG_HTML.Attribute.Name? = nil,
+        accept: WHATWG_HTML.Attribute.Accept? = nil,
+        capture: WHATWG_HTML.Attribute.Capture? = nil,
+        multiple: WHATWG_HTML.Attribute.Multiple? = nil,
+        disabled: WHATWG_HTML.Attribute.Disabled? = nil,
+        required: WHATWG_HTML.Attribute.Required? = nil,
         form: WHATWG_HTML.Attribute.Form.ID? = nil
     ) -> Self {
         .init(

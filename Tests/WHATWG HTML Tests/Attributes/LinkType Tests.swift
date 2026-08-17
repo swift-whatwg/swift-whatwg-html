@@ -14,7 +14,9 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `LinkType Test` {
-    @Test func `LinkType attribute should be type`() { #expect(WHATWG_HTML.Attribute.LinkType.attribute == "type") }
+    @Test func `LinkType attribute should be type`() {
+        #expect(WHATWG_HTML.Attribute.LinkType.attribute == "type")
+    }
 
     @Test func `LinkType convenience properties`() {
         #expect(WHATWG_HTML.Attribute.LinkType.css.rawValue == "text/css")

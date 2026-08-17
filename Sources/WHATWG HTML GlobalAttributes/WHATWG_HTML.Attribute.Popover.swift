@@ -100,4 +100,6 @@ extension WHATWG_HTML.Attribute.Popover {
     @inlinable public static var hint: Self { "hint" }
 }
 
-extension WHATWG_HTML.Attribute.Popover: CaseIterable { public static let allCases: [Popover] = [.auto, .manual, .hint] }
+extension WHATWG_HTML.Attribute.Popover: CaseIterable {
+    public static let allCases: [WHATWG_HTML.Attribute.Popover] = [.auto, .manual, .hint]
+}

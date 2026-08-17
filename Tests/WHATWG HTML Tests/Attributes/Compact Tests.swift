@@ -14,5 +14,7 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Compact Test` {
-    @Test func `Compact attribute should be compact`() { #expect(WHATWG_HTML.Attribute.Compact.attribute == "compact") }
+    @Test func `Compact attribute should be compact`() {
+        #expect(WHATWG_HTML.Attribute.Compact.attribute == "compact")
+    }
 }

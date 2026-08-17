@@ -14,5 +14,7 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Defer Test` {
-    @Test func `Defer attribute should be defer`() { #expect(WHATWG_HTML.Attribute.Defer.attribute == "defer") }
+    @Test func `Defer attribute should be defer`() {
+        #expect(WHATWG_HTML.Attribute.Defer.attribute == "defer")
+    }
 }

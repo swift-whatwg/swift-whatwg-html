@@ -14,9 +14,9 @@ extension WHATWG_HTML.Element {
     public struct Directory: WHATWG_HTML.Element.`Protocol` {
 
         /// Boolean attribute that hints the list should be rendered in a compact style
-        public var compact: Attribute.Compact?
+        public var compact: WHATWG_HTML.Attribute.Compact?
 
-        public init(compact: Attribute.Compact? = nil) { self.compact = compact }
+        public init(compact: WHATWG_HTML.Attribute.Compact? = nil) { self.compact = compact }
     }
 }
 

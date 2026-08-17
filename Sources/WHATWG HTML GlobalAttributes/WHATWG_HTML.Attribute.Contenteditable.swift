@@ -96,7 +96,9 @@ extension WHATWG_HTML.Attribute.Contenteditable {
 }
 
 extension WHATWG_HTML.Attribute.Contenteditable: CaseIterable {
-    public static let allCases: [Contenteditable] = [.true, .empty, .false, .plaintextOnly]
+    public static let allCases: [WHATWG_HTML.Attribute.Contenteditable] = [
+        .true, .empty, .false, .plaintextOnly,
+    ]
 }
 
 extension WHATWG_HTML.Attribute.Contenteditable: ExpressibleByBooleanLiteral {

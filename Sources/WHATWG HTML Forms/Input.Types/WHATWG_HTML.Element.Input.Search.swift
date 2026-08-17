@@ -12,7 +12,7 @@
 
 public import WHATWG_HTML_FormAttributes
 public import WHATWG_HTML_GlobalAttributes
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// `<input type="search">` elements are text fields designed for the user to enter search queries into.
 /// These are functionally identical to text inputs, but may be styled differently by the user agent.
@@ -25,58 +25,58 @@ extension WHATWG_HTML.Element.Input {
         /// The value attribute contains a string representing the value contained in the search field.
         /// If no validation constraints are in place for the input, the value can be any text string
         /// or an empty string ("").
-        public var value: Attribute.Value<String>?
+        public var value: WHATWG_HTML.Attribute.Value<String>?
 
         /// The list attribute is the id of a <datalist> element located in the same document.
         /// The <datalist> provides a list of predefined values to suggest to the user for this input.
-        public var list: Attribute.List?
+        public var list: WHATWG_HTML.Attribute.List?
 
         /// The maximum string length (measured in UTF-16 code units) that the user can enter into
         /// the search field. This must be an integer value of 0 or higher. If no maxlength is specified,
         /// or an invalid value is specified, the search field has no maximum length.
-        public var maxlength: Attribute.Maxlength?
+        public var maxlength: WHATWG_HTML.Attribute.Maxlength?
 
         /// The minimum string length (measured in UTF-16 code units) that the user can enter into
         /// the search field. This must be a non-negative integer value smaller than or equal to the
         /// value specified by maxlength.
-        public var minlength: Attribute.Minlength?
+        public var minlength: WHATWG_HTML.Attribute.Minlength?
 
         /// The pattern attribute is a regular expression that the input's value must match for the value
         /// to pass constraint validation. It must be a valid JavaScript regular expression.
-        public var pattern: Attribute.Pattern?
+        public var pattern: WHATWG_HTML.Attribute.Pattern?
 
         /// The placeholder attribute is a string that provides a brief hint to the user as to what kind
         /// of information is expected in the field. It should be a word or short phrase that demonstrates
         /// the expected type of data, rather than an explanatory message.
-        public var placeholder: Attribute.Placeholder?
+        public var placeholder: WHATWG_HTML.Attribute.Placeholder?
 
         /// A Boolean attribute which, if present, means this field cannot be edited by the user.
-        public var readonly: Attribute.Readonly?
+        public var readonly: WHATWG_HTML.Attribute.Readonly?
 
         /// The size attribute is a numeric value indicating how many characters wide the input field should be.
         /// The value must be a number greater than zero, and the default value is 20.
-        public var size: Attribute.Size?
+        public var size: WHATWG_HTML.Attribute.Size?
 
         /// The spellcheck attribute is used to indicate whether to enable spell-checking for an element.
         /// The permitted values are true (enable spell-checking), false (disable spell-checking),
         /// and an empty string or no value (follow the element's default behavior).
-        public var spellcheck: Attribute.Spellcheck?
+        public var spellcheck: WHATWG_HTML.Attribute.Spellcheck?
 
         /// Indicates if the field is required to be filled in before the form can be submitted.
-        public var required: Attribute.Required?
+        public var required: WHATWG_HTML.Attribute.Required?
 
         /// Creates a new search input configuration
         public init(
-            value: Attribute.Value<String>? = nil,
-            list: Attribute.List? = nil,
-            maxlength: Attribute.Maxlength? = nil,
-            minlength: Attribute.Minlength? = nil,
-            pattern: Attribute.Pattern? = nil,
-            placeholder: Attribute.Placeholder? = nil,
-            readonly: Attribute.Readonly? = nil,
-            size: Attribute.Size? = nil,
-            spellcheck: Attribute.Spellcheck? = nil,
-            required: Attribute.Required? = nil
+            value: WHATWG_HTML.Attribute.Value<String>? = nil,
+            list: WHATWG_HTML.Attribute.List? = nil,
+            maxlength: WHATWG_HTML.Attribute.Maxlength? = nil,
+            minlength: WHATWG_HTML.Attribute.Minlength? = nil,
+            pattern: WHATWG_HTML.Attribute.Pattern? = nil,
+            placeholder: WHATWG_HTML.Attribute.Placeholder? = nil,
+            readonly: WHATWG_HTML.Attribute.Readonly? = nil,
+            size: WHATWG_HTML.Attribute.Size? = nil,
+            spellcheck: WHATWG_HTML.Attribute.Spellcheck? = nil,
+            required: WHATWG_HTML.Attribute.Required? = nil
         ) {
             self.value = value
             self.list = list
@@ -98,18 +98,18 @@ extension WHATWG_HTML.Element.Input {
 
     /// Creates a new search input element
     public static func search(
-        name: Attribute.Name? = nil,
-        value: Attribute.Value<String>? = nil,
-        list: Attribute.List? = nil,
-        maxlength: Attribute.Maxlength? = nil,
-        minlength: Attribute.Minlength? = nil,
-        pattern: Attribute.Pattern? = nil,
-        placeholder: Attribute.Placeholder? = nil,
-        readonly: Attribute.Readonly? = nil,
-        size: Attribute.Size? = nil,
-        spellcheck: Attribute.Spellcheck? = nil,
-        required: Attribute.Required? = nil,
-        disabled: Attribute.Disabled? = nil,
+        name: WHATWG_HTML.Attribute.Name? = nil,
+        value: WHATWG_HTML.Attribute.Value<String>? = nil,
+        list: WHATWG_HTML.Attribute.List? = nil,
+        maxlength: WHATWG_HTML.Attribute.Maxlength? = nil,
+        minlength: WHATWG_HTML.Attribute.Minlength? = nil,
+        pattern: WHATWG_HTML.Attribute.Pattern? = nil,
+        placeholder: WHATWG_HTML.Attribute.Placeholder? = nil,
+        readonly: WHATWG_HTML.Attribute.Readonly? = nil,
+        size: WHATWG_HTML.Attribute.Size? = nil,
+        spellcheck: WHATWG_HTML.Attribute.Spellcheck? = nil,
+        required: WHATWG_HTML.Attribute.Required? = nil,
+        disabled: WHATWG_HTML.Attribute.Disabled? = nil,
         form: WHATWG_HTML.Attribute.Form.ID? = nil
     ) -> Self {
         .init(

@@ -182,7 +182,13 @@ import WHATWG_HTML
             let href = WHATWG_HTML.Attribute.Href("circle.html")
             let alt = WHATWG_HTML.Attribute.Alt("Circle link")
 
-            let area = WHATWG_HTML.Element.Area.circle(x: 50, y: 50, radius: 25, href: href, alt: alt)
+            let area = WHATWG_HTML.Element.Area.circle(
+                x: 50,
+                y: 50,
+                radius: 25,
+                href: href,
+                alt: alt
+            )
 
             #expect(area.coords == "50,50,25")
             #expect(area.href == href)
@@ -282,7 +288,11 @@ import WHATWG_HTML
         @Test func `Alt text is required for links`() {
             let href = WHATWG_HTML.Attribute.Href("link.html")
             let alt = WHATWG_HTML.Attribute.Alt("Accessible link")
-            let area = WHATWG_HTML.Element.Area(shape: .rect(coords: "0,0,100,100"), alt: alt, href: href)
+            let area = WHATWG_HTML.Element.Area(
+                shape: .rect(coords: "0,0,100,100"),
+                alt: alt,
+                href: href
+            )
 
             #expect(area.alt == alt)
             #expect(area.href == href)
@@ -318,7 +328,11 @@ import WHATWG_HTML
                     radius: 25,
                     href: WHATWG_HTML.Attribute.Href("center.html"),
                     alt: WHATWG_HTML.Attribute.Alt("Center")
-                ), WHATWG_HTML.Element.Area.defaultArea(href: WHATWG_HTML.Attribute.Href("default.html"), alt: WHATWG_HTML.Attribute.Alt("Default area")),
+                ),
+                WHATWG_HTML.Element.Area.defaultArea(
+                    href: WHATWG_HTML.Attribute.Href("default.html"),
+                    alt: WHATWG_HTML.Attribute.Alt("Default area")
+                ),
             ]
 
             #expect(areas.count == 3)

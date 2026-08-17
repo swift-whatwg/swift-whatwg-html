@@ -108,7 +108,10 @@ import WHATWG_HTML
     @Suite struct `Integration Tests` {
 
         @Test func `Multiple articles in feed`() {
-            let articles = [WHATWG_HTML.Element.Article(), WHATWG_HTML.Element.Article(), WHATWG_HTML.Element.Article()]
+            let articles = [
+                WHATWG_HTML.Element.Article(), WHATWG_HTML.Element.Article(),
+                WHATWG_HTML.Element.Article(),
+            ]
 
             #expect(articles.count == 3)
             articles.forEach { article in #expect(type(of: article).tag == "article") }

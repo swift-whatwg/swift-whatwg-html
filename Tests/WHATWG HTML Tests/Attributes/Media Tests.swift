@@ -14,5 +14,7 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Media Test` {
-    @Test func `Media attribute should be media`() { #expect(WHATWG_HTML.Attribute.Media.attribute == "media") }
+    @Test func `Media attribute should be media`() {
+        #expect(WHATWG_HTML.Attribute.Media.attribute == "media")
+    }
 }

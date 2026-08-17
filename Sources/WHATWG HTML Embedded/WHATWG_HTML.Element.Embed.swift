@@ -40,16 +40,16 @@ extension WHATWG_HTML.Element {
     ///
     public struct Embed: WHATWG_HTML.Element.`Protocol` {
         /// The URL of the resource being embedded
-        public var src: Attribute.Src?
+        public var src: WHATWG_HTML.Attribute.Src?
 
         /// The MIME type to use to select the plug-in to instantiate
-        public var type: Attribute.ScriptType?
+        public var type: WHATWG_HTML.Attribute.ScriptType?
 
         /// The displayed height of the resource in CSS pixels
-        public var height: Attribute.Height?
+        public var height: WHATWG_HTML.Attribute.Height?
 
         /// The displayed width of the resource in CSS pixels
-        public var width: Attribute.Width?
+        public var width: WHATWG_HTML.Attribute.Width?
 
         /// Creates a new Embed element with the specified attributes.
         ///
@@ -59,10 +59,10 @@ extension WHATWG_HTML.Element {
         ///   - width: The displayed width of the resource in CSS pixels
         ///   - height: The displayed height of the resource in CSS pixels
         public init(
-            src: Attribute.Src? = nil,
-            type: Attribute.ScriptType? = nil,
-            width: Attribute.Width? = nil,
-            height: Attribute.Height? = nil
+            src: WHATWG_HTML.Attribute.Src? = nil,
+            type: WHATWG_HTML.Attribute.ScriptType? = nil,
+            width: WHATWG_HTML.Attribute.Width? = nil,
+            height: WHATWG_HTML.Attribute.Height? = nil
         ) {
             self.src = src
             self.type = type

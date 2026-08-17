@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_FormAttributes
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// `<input type="password">` elements provide a way for the user to securely enter a password.
 ///
@@ -26,36 +26,36 @@ extension WHATWG_HTML.Element.Input {
         /// The value attribute contains a string whose value is the current contents of the text
         /// editing control being used to enter the password. If the user hasn't entered anything yet,
         /// this value is an empty string ("").
-        public var value: Attribute.Value<String>?
+        public var value: WHATWG_HTML.Attribute.Value<String>?
 
         /// The maximum string length (measured in UTF-16 code units) that the user can enter into the password field.
         /// This must be an integer value of 0 or higher. If no maxlength is specified, or an invalid value is specified,
         /// the password field has no maximum length. This value must also be greater than or equal to the value of minlength.
-        public var maxlength: Attribute.Maxlength?
+        public var maxlength: WHATWG_HTML.Attribute.Maxlength?
 
         /// The minimum string length (measured in UTF-16 code units) that the user can enter into the password entry field.
         /// This must be a non-negative integer value smaller than or equal to the value specified by maxlength.
         /// If no minlength is specified, or an invalid value is specified, the password input has no minimum length.
-        public var minlength: Attribute.Minlength?
+        public var minlength: WHATWG_HTML.Attribute.Minlength?
 
         /// The pattern attribute, when specified, is a regular expression that the input's value must match
         /// for the value to pass constraint validation. It must be a valid JavaScript regular expression.
         ///
         /// Use of a pattern is strongly recommended for password inputs, in order to help ensure that valid
         /// passwords using a wide assortment of character classes are selected and used by your users.
-        public var pattern: Attribute.Pattern?
+        public var pattern: WHATWG_HTML.Attribute.Pattern?
 
         /// The placeholder attribute is a string that provides a brief hint to the user as to what kind
         /// of information is expected in the field. It should be a word or short phrase that demonstrates
         /// the expected type of data, rather than an explanatory message.
-        public var placeholder: Attribute.Placeholder?
+        public var placeholder: WHATWG_HTML.Attribute.Placeholder?
 
         /// A Boolean attribute which, if present, means this field cannot be edited by the user.
-        public var readonly: Attribute.Readonly?
+        public var readonly: WHATWG_HTML.Attribute.Readonly?
 
         /// The size attribute is a numeric value indicating how many characters wide the input field should be.
         /// The value must be a number greater than zero, and the default value is 20.
-        public var size: Attribute.Size?
+        public var size: WHATWG_HTML.Attribute.Size?
 
         /// The autocomplete attribute allows the browser to fill out the password field automatically.
         ///
@@ -64,21 +64,21 @@ extension WHATWG_HTML.Element.Input {
         /// - "new-password" - For registration and password change forms
         /// - "one-time-code" - For one-time passwords
         /// - "off" - Don't autocomplete (though some browsers might ignore this)
-        public var autocomplete: Attribute.Autocomplete?
+        public var autocomplete: WHATWG_HTML.Attribute.Autocomplete?
 
-        public var required: Attribute.Required?
+        public var required: WHATWG_HTML.Attribute.Required?
 
         /// Creates a new password input configuration
         public init(
-            value: Attribute.Value<String>? = nil,
-            maxlength: Attribute.Maxlength? = nil,
-            minlength: Attribute.Minlength? = nil,
-            pattern: Attribute.Pattern? = nil,
-            placeholder: Attribute.Placeholder? = nil,
-            readonly: Attribute.Readonly? = nil,
-            size: Attribute.Size? = nil,
-            autocomplete: Attribute.Autocomplete? = nil,
-            required: Attribute.Required? = nil
+            value: WHATWG_HTML.Attribute.Value<String>? = nil,
+            maxlength: WHATWG_HTML.Attribute.Maxlength? = nil,
+            minlength: WHATWG_HTML.Attribute.Minlength? = nil,
+            pattern: WHATWG_HTML.Attribute.Pattern? = nil,
+            placeholder: WHATWG_HTML.Attribute.Placeholder? = nil,
+            readonly: WHATWG_HTML.Attribute.Readonly? = nil,
+            size: WHATWG_HTML.Attribute.Size? = nil,
+            autocomplete: WHATWG_HTML.Attribute.Autocomplete? = nil,
+            required: WHATWG_HTML.Attribute.Required? = nil
         ) {
             self.value = value
             self.maxlength = maxlength
@@ -99,18 +99,18 @@ extension WHATWG_HTML.Element.Input {
 
     /// Creates a new password input element
     public static func password(
-        name: Attribute.Name? = nil,
-        value: Attribute.Value<String>? = nil,
-        maxlength: Attribute.Maxlength? = nil,
-        minlength: Attribute.Minlength? = nil,
-        pattern: Attribute.Pattern? = nil,
-        placeholder: Attribute.Placeholder? = nil,
-        readonly: Attribute.Readonly? = nil,
-        size: Attribute.Size? = nil,
-        autocomplete: Attribute.Autocomplete? = nil,
-        disabled: Attribute.Disabled? = nil,
+        name: WHATWG_HTML.Attribute.Name? = nil,
+        value: WHATWG_HTML.Attribute.Value<String>? = nil,
+        maxlength: WHATWG_HTML.Attribute.Maxlength? = nil,
+        minlength: WHATWG_HTML.Attribute.Minlength? = nil,
+        pattern: WHATWG_HTML.Attribute.Pattern? = nil,
+        placeholder: WHATWG_HTML.Attribute.Placeholder? = nil,
+        readonly: WHATWG_HTML.Attribute.Readonly? = nil,
+        size: WHATWG_HTML.Attribute.Size? = nil,
+        autocomplete: WHATWG_HTML.Attribute.Autocomplete? = nil,
+        disabled: WHATWG_HTML.Attribute.Disabled? = nil,
         form: WHATWG_HTML.Attribute.Form.ID? = nil,
-        required: Attribute.Required? = nil
+        required: WHATWG_HTML.Attribute.Required? = nil
     ) -> Self {
         .init(
             name: name,

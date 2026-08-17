@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_FormAttributes
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// `<input type="checkbox">` elements are rendered by default as boxes that are checked (ticked) when activated.
 /// A checkbox allows you to select single values for submission in a form (or not).
@@ -28,17 +28,20 @@ extension WHATWG_HTML.Element.Input {
         ///
         /// Note: If a checkbox is unchecked when its form is submitted, neither the name nor the value is
         /// submitted to the server.
-        public var value: Attribute.Value<String>?
+        public var value: WHATWG_HTML.Attribute.Value<String>?
 
         /// A boolean attribute indicating whether this checkbox is checked by default (when the page loads).
-        public var checked: Attribute.Checked?
+        public var checked: WHATWG_HTML.Attribute.Checked?
 
         /// A boolean attribute indicating whether this checkbox is checked by default (when the page loads).
-        public var required: Attribute.Required?
+        public var required: WHATWG_HTML.Attribute.Required?
 
         /// Creates a new checkbox input configuration
-        public init(value: Attribute.Value<String>? = nil, checked: Attribute.Checked? = nil, required: Attribute.Required? = nil)
-        {
+        public init(
+            value: WHATWG_HTML.Attribute.Value<String>? = nil,
+            checked: WHATWG_HTML.Attribute.Checked? = nil,
+            required: WHATWG_HTML.Attribute.Required? = nil
+        ) {
             self.value = value
             self.checked = checked
             self.required = required
@@ -52,11 +55,11 @@ extension WHATWG_HTML.Element.Input {
 
     /// Creates a new checkbox input element
     public static func checkbox(
-        name: Attribute.Name? = nil,
-        value: Attribute.Value<String>? = nil,
-        checked: Attribute.Checked? = nil,
-        required: Attribute.Required? = nil,
-        disabled: Attribute.Disabled? = nil,
+        name: WHATWG_HTML.Attribute.Name? = nil,
+        value: WHATWG_HTML.Attribute.Value<String>? = nil,
+        checked: WHATWG_HTML.Attribute.Checked? = nil,
+        required: WHATWG_HTML.Attribute.Required? = nil,
+        disabled: WHATWG_HTML.Attribute.Disabled? = nil,
         form: WHATWG_HTML.Attribute.Form.ID? = nil
     ) -> Self {
         .init(

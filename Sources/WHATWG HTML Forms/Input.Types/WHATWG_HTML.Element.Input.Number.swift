@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_FormAttributes
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// `<input type="number">` elements are used to let the user enter a number. They include built-in
 /// validation to reject non-numerical entries.
@@ -27,29 +27,29 @@ extension WHATWG_HTML.Element.Input {
     public struct Number: Sendable, Hashable {
         /// A number representing the value of the number entered into the input.
         /// You can set a default value for the input by including a number inside the value attribute.
-        public var value: Attribute.Value<String>?
+        public var value: WHATWG_HTML.Attribute.Value<String>?
 
         /// The maximum value to accept for this input. If the value entered into the element exceeds this,
         /// the element fails constraint validation. If the value of the max attribute isn't a number,
         /// then the element has no maximum value.
         ///
         /// This value must be greater than or equal to the value of the min attribute.
-        public var max: Attribute.Max?
+        public var max: WHATWG_HTML.Attribute.Max?
 
         /// The minimum value to accept for this input. If the value of the element is less than this,
         /// the element fails constraint validation. If a value is specified for min that isn't a valid number,
         /// the input has no minimum value.
         ///
         /// This value must be less than or equal to the value of the max attribute.
-        public var min: Attribute.Min?
+        public var min: WHATWG_HTML.Attribute.Min?
 
         /// The placeholder attribute is a string that provides a brief hint to the user as to what kind
         /// of information is expected in the field. It should be a word or short phrase that demonstrates
         /// the expected type of data, rather than an explanatory message.
-        public var placeholder: Attribute.Placeholder?
+        public var placeholder: WHATWG_HTML.Attribute.Placeholder?
 
         /// A Boolean attribute which, if present, means this field cannot be edited by the user.
-        public var readonly: Attribute.Readonly?
+        public var readonly: WHATWG_HTML.Attribute.Readonly?
 
         /// The step attribute is a number that specifies the granularity that the value must adhere to.
         /// Only values which are equal to the basis for stepping (min if specified, value otherwise,
@@ -62,19 +62,19 @@ extension WHATWG_HTML.Element.Input {
         /// decimals to two decimal places).
         ///
         /// If you want to allow arbitrary decimal values, you can set the step value to "any".
-        public var step: Attribute.Step?
+        public var step: WHATWG_HTML.Attribute.Step?
 
-        public var required: Attribute.Required?
+        public var required: WHATWG_HTML.Attribute.Required?
 
         /// Creates a new number input configuration
         public init(
-            value: Attribute.Value<String>? = nil,
-            min: Attribute.Min? = nil,
-            max: Attribute.Max? = nil,
-            placeholder: Attribute.Placeholder? = nil,
-            readonly: Attribute.Readonly? = nil,
-            required: Attribute.Required? = nil,
-            step: Attribute.Step? = nil
+            value: WHATWG_HTML.Attribute.Value<String>? = nil,
+            min: WHATWG_HTML.Attribute.Min? = nil,
+            max: WHATWG_HTML.Attribute.Max? = nil,
+            placeholder: WHATWG_HTML.Attribute.Placeholder? = nil,
+            readonly: WHATWG_HTML.Attribute.Readonly? = nil,
+            required: WHATWG_HTML.Attribute.Required? = nil,
+            step: WHATWG_HTML.Attribute.Step? = nil
         ) {
             self.value = value
             self.min = min
@@ -93,15 +93,15 @@ extension WHATWG_HTML.Element.Input {
 
     /// Creates a new number input element
     public static func number(
-        name: Attribute.Name? = nil,
-        value: Attribute.Value<String>? = nil,
-        min: Attribute.Min? = nil,
-        max: Attribute.Max? = nil,
-        placeholder: Attribute.Placeholder? = nil,
-        readonly: Attribute.Readonly? = nil,
-        required: Attribute.Required? = nil,
-        step: Attribute.Step? = nil,
-        disabled: Attribute.Disabled? = nil,
+        name: WHATWG_HTML.Attribute.Name? = nil,
+        value: WHATWG_HTML.Attribute.Value<String>? = nil,
+        min: WHATWG_HTML.Attribute.Min? = nil,
+        max: WHATWG_HTML.Attribute.Max? = nil,
+        placeholder: WHATWG_HTML.Attribute.Placeholder? = nil,
+        readonly: WHATWG_HTML.Attribute.Readonly? = nil,
+        required: WHATWG_HTML.Attribute.Required? = nil,
+        step: WHATWG_HTML.Attribute.Step? = nil,
+        disabled: WHATWG_HTML.Attribute.Disabled? = nil,
         form: WHATWG_HTML.Attribute.Form.ID? = nil
     ) -> Self {
         .init(

@@ -34,13 +34,13 @@ extension WHATWG_HTML.Element {
     ///
     public struct FencedFrame: WHATWG_HTML.Element.`Protocol` {
         /// Specifies a Permissions Policy for the fencedframe
-        public var allow: Attribute.Allow?
+        public var allow: WHATWG_HTML.Attribute.Allow?
 
         /// Height of the fencedframe in CSS pixels (default is 150)
-        public var height: Attribute.Height?
+        public var height: WHATWG_HTML.Attribute.Height?
 
         /// Width of the fencedframe in CSS pixels (default is 300)
-        public var width: Attribute.Width?
+        public var width: WHATWG_HTML.Attribute.Width?
 
         /// Creates a new FencedFrame element with the specified attributes.
         ///
@@ -48,7 +48,11 @@ extension WHATWG_HTML.Element {
         ///   - allow: Permissions Policy for the fencedframe
         ///   - height: Height in CSS pixels
         ///   - width: Width in CSS pixels
-        public init(allow: Attribute.Allow? = nil, height: Attribute.Height? = nil, width: Attribute.Width? = nil) {
+        public init(
+            allow: WHATWG_HTML.Attribute.Allow? = nil,
+            height: WHATWG_HTML.Attribute.Height? = nil,
+            width: WHATWG_HTML.Attribute.Width? = nil
+        ) {
             self.allow = allow
             self.height = height
             self.width = width

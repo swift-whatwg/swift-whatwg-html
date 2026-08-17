@@ -14,5 +14,7 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Ismap Test` {
-    @Test func `Ismap attribute should be ismap`() { #expect(WHATWG_HTML.Attribute.Ismap.attribute == "ismap") }
+    @Test func `Ismap attribute should be ismap`() {
+        #expect(WHATWG_HTML.Attribute.Ismap.attribute == "ismap")
+    }
 }

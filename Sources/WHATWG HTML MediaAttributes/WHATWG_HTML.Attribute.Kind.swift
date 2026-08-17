@@ -18,7 +18,9 @@ extension WHATWG_HTML.Attribute {
         /// The attribute value
         public let rawValue: String
 
-        public init(value: String = Kind.subtitles.rawValue) { self.rawValue = value }
+        public init(value: String = WHATWG_HTML.Attribute.Kind.subtitles.rawValue) {
+            self.rawValue = value
+        }
     }
 }
 

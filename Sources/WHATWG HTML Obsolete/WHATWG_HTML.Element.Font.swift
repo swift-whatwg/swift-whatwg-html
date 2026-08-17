@@ -14,15 +14,19 @@ extension WHATWG_HTML.Element {
     public struct Font: WHATWG_HTML.Element.`Protocol` {
 
         /// The color of the text
-        public var color: Attribute.Color?
+        public var color: WHATWG_HTML.Attribute.Color?
 
         /// The font face to use
-        public var face: Attribute.Face?
+        public var face: WHATWG_HTML.Attribute.Face?
 
         /// The font size
-        public var size: Attribute.FontSize?
+        public var size: WHATWG_HTML.Attribute.FontSize?
 
-        public init(color: Attribute.Color? = nil, face: Attribute.Face? = nil, size: Attribute.FontSize? = nil) {
+        public init(
+            color: WHATWG_HTML.Attribute.Color? = nil,
+            face: WHATWG_HTML.Attribute.Face? = nil,
+            size: WHATWG_HTML.Attribute.FontSize? = nil
+        ) {
             self.color = color
             self.face = face
             self.size = size

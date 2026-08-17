@@ -70,11 +70,17 @@ extension WHATWG_HTML.Attribute.Integrity {
 
 extension WHATWG_HTML.Attribute.Integrity {
     /// Creates an integrity hash using the SHA-256 algorithm
-    public static func sha256(_ hash: String) -> Integrity { return Integrity("sha256-\(hash)") }
+    public static func sha256(_ hash: String) -> WHATWG_HTML.Attribute.Integrity {
+        return WHATWG_HTML.Attribute.Integrity("sha256-\(hash)")
+    }
 
     /// Creates an integrity hash using the SHA-384 algorithm
-    public static func sha384(_ hash: String) -> Integrity { return Integrity("sha384-\(hash)") }
+    public static func sha384(_ hash: String) -> WHATWG_HTML.Attribute.Integrity {
+        return WHATWG_HTML.Attribute.Integrity("sha384-\(hash)")
+    }
 
     /// Creates an integrity hash using the SHA-512 algorithm
-    public static func sha512(_ hash: String) -> Integrity { return Integrity("sha512-\(hash)") }
+    public static func sha512(_ hash: String) -> WHATWG_HTML.Attribute.Integrity {
+        return WHATWG_HTML.Attribute.Integrity("sha512-\(hash)")
+    }
 }

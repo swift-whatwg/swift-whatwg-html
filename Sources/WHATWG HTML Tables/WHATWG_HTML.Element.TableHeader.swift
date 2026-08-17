@@ -53,19 +53,19 @@ extension WHATWG_HTML.Element {
     public struct TableHeader: WHATWG_HTML.Element.`Protocol` {
 
         /// A short, abbreviated description of the header cell's content
-        public var abbr: Attribute.Abbr?
+        public var abbr: WHATWG_HTML.Attribute.Abbr?
 
         /// Number of columns this header cell spans
-        public var colspan: Attribute.ColSpan?
+        public var colspan: WHATWG_HTML.Attribute.ColSpan?
 
         /// Space-separated list of IDs of other header cells that provide headers for this cell
-        public var headers: Attribute.Headers?
+        public var headers: WHATWG_HTML.Attribute.Headers?
 
         /// Number of rows this header cell spans
-        public var rowspan: Attribute.RowSpan?
+        public var rowspan: WHATWG_HTML.Attribute.RowSpan?
 
         /// Defines which cells this header relates to (row, col, rowgroup, colgroup)
-        public var scope: Attribute.Scope?
+        public var scope: WHATWG_HTML.Attribute.Scope?
 
         /// Creates a new TableHeader element with the specified attributes.
         ///
@@ -76,11 +76,11 @@ extension WHATWG_HTML.Element {
         ///   - rowspan: Number of rows this cell spans (default is 1)
         ///   - scope: Defines which cells this header relates to
         public init(
-            abbr: Attribute.Abbr? = nil,
-            colspan: Attribute.ColSpan? = nil,
-            headers: Attribute.Headers? = nil,
-            rowspan: Attribute.RowSpan? = nil,
-            scope: Attribute.Scope? = nil
+            abbr: WHATWG_HTML.Attribute.Abbr? = nil,
+            colspan: WHATWG_HTML.Attribute.ColSpan? = nil,
+            headers: WHATWG_HTML.Attribute.Headers? = nil,
+            rowspan: WHATWG_HTML.Attribute.RowSpan? = nil,
+            scope: WHATWG_HTML.Attribute.Scope? = nil
         ) {
             self.abbr = abbr
             self.colspan = colspan

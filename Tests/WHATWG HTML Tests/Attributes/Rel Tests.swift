@@ -14,7 +14,9 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Rel Test` {
-    @Test func `Rel attribute should be rel`() { #expect(WHATWG_HTML.Attribute.Rel.attribute == "rel") }
+    @Test func `Rel attribute should be rel`() {
+        #expect(WHATWG_HTML.Attribute.Rel.attribute == "rel")
+    }
 
     @Test func `Rel convenience properties`() {
         #expect(WHATWG_HTML.Attribute.Rel.stylesheet.rawValue == "stylesheet")

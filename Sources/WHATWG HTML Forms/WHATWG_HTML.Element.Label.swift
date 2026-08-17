@@ -58,13 +58,13 @@ extension WHATWG_HTML.Element {
         /// the label and a form control. The value should match the ID of the form control.
         /// A label can only be associated with one form control, but a form control
         /// can have multiple associated labels.
-        public var `for`: Attribute.For?
+        public var `for`: WHATWG_HTML.Attribute.For?
 
         /// Creates a new Label element with optional explicit association.
         ///
         /// - Parameters:
         ///   - htmlFor: ID of the form control this label is associated with (optional)
-        public init(for: Attribute.For? = nil) {
+        public init(for: WHATWG_HTML.Attribute.For? = nil) {
             self.for = `for`
 
         }

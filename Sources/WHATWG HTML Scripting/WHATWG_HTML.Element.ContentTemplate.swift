@@ -44,13 +44,13 @@ extension WHATWG_HTML.Element {
     public struct ContentTemplate: WHATWG_HTML.Element.`Protocol` {
 
         /// Creates a shadow root for the parent element in "open" or "closed" mode
-        public var shadowrootmode: Attribute.ShadowRootMode?
+        public var shadowrootmode: WHATWG_HTML.Attribute.ShadowRootMode?
 
         /// When true, cloning the shadow host will include a shadow root in the copy
-        public var shadowrootclonable: Attribute.ShadowRootClonable?
+        public var shadowrootclonable: WHATWG_HTML.Attribute.ShadowRootClonable?
 
         /// When true, focus is delegated to the first focusable element in the shadow tree
-        public var shadowrootdelegatesfocus: Attribute.ShadowRootDelegatesFocus?
+        public var shadowrootdelegatesfocus: WHATWG_HTML.Attribute.ShadowRootDelegatesFocus?
 
         /// Creates a new ContentTemplate element with the specified attributes.
         ///
@@ -59,9 +59,9 @@ extension WHATWG_HTML.Element {
         ///   - shadowrootclonable: Whether shadow roots are cloned with their hosts
         ///   - shadowrootdelegatesfocus: Whether focus should be delegated in the shadow tree
         public init(
-            shadowrootmode: Attribute.ShadowRootMode? = nil,
-            shadowrootclonable: Attribute.ShadowRootClonable? = nil,
-            shadowrootdelegatesfocus: Attribute.ShadowRootDelegatesFocus? = nil
+            shadowrootmode: WHATWG_HTML.Attribute.ShadowRootMode? = nil,
+            shadowrootclonable: WHATWG_HTML.Attribute.ShadowRootClonable? = nil,
+            shadowrootdelegatesfocus: WHATWG_HTML.Attribute.ShadowRootDelegatesFocus? = nil
         ) {
             self.shadowrootmode = shadowrootmode
             self.shadowrootclonable = shadowrootclonable

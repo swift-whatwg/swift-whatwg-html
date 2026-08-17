@@ -91,7 +91,8 @@ extension WHATWG_HTML.Attribute.Value: LosslessStringConvertible where Element =
     public init?(_ description: String) { self = .init(description) }
 }
 
-extension WHATWG_HTML.Attribute.Value: ExpressibleByStringLiteral where Element: ExpressibleByStringLiteral {
+extension WHATWG_HTML.Attribute.Value: ExpressibleByStringLiteral
+where Element: ExpressibleByStringLiteral {
     public typealias StringLiteralType = Element.StringLiteralType
 
     public init(stringLiteral value: StringLiteralType) {
@@ -117,7 +118,8 @@ where Element: ExpressibleByUnicodeScalarLiteral {
     }
 }
 
-extension WHATWG_HTML.Attribute.Value: ExpressibleByIntegerLiteral where Element: ExpressibleByIntegerLiteral {
+extension WHATWG_HTML.Attribute.Value: ExpressibleByIntegerLiteral
+where Element: ExpressibleByIntegerLiteral {
     public typealias IntLiteralType = Element.IntegerLiteralType
 
     public init(integerLiteral value: IntLiteralType) {
@@ -125,12 +127,14 @@ extension WHATWG_HTML.Attribute.Value: ExpressibleByIntegerLiteral where Element
     }
 }
 
-extension WHATWG_HTML.Attribute.Value: ExpressibleByFloatLiteral where Element: ExpressibleByFloatLiteral {
+extension WHATWG_HTML.Attribute.Value: ExpressibleByFloatLiteral
+where Element: ExpressibleByFloatLiteral {
     public typealias FloatLiteralType = Element.FloatLiteralType
 
     public init(floatLiteral value: FloatLiteralType) { self.value = Element(floatLiteral: value) }
 }
 
-extension WHATWG_HTML.Attribute.Value: CustomStringConvertible where Element: CustomStringConvertible {
+extension WHATWG_HTML.Attribute.Value: CustomStringConvertible
+where Element: CustomStringConvertible {
     public var description: String { value.description }
 }

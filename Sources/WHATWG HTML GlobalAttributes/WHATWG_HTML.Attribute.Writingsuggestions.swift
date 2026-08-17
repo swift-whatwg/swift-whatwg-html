@@ -86,5 +86,5 @@ extension WHATWG_HTML.Attribute.Writingsuggestions {
 }
 
 extension WHATWG_HTML.Attribute.Writingsuggestions: CaseIterable {
-    public static let allCases: [Writingsuggestions] = [.true, .false]
+    public static let allCases: [WHATWG_HTML.Attribute.Writingsuggestions] = [.true, .false]
 }

@@ -37,14 +37,14 @@ extension WHATWG_HTML.Element {
     public struct Output: WHATWG_HTML.Element.`Protocol` {
         /// A space-separated list of other elements' IDs, indicating that those elements contributed
         /// input values to (or otherwise affected) the calculation.
-        public var `for`: Attribute.For?
+        public var `for`: WHATWG_HTML.Attribute.For?
 
         /// The form element to associate the output with (its form owner).
         /// Allows associating the output with a form anywhere in the document.
         public var form: WHATWG_HTML.Attribute.Form.ID?
 
         /// The element's name. Used in the form.elements API.
-        public var name: Attribute.Name?
+        public var name: WHATWG_HTML.Attribute.Name?
 
         /// Creates a new Output element with the specified attributes.
         ///
@@ -53,9 +53,9 @@ extension WHATWG_HTML.Element {
         ///   - form: ID of the form to associate with
         ///   - name: Name of the output element
         public init(
-            `for`: Attribute.For? = nil,
+            `for`: WHATWG_HTML.Attribute.For? = nil,
             form: WHATWG_HTML.Attribute.Form.ID? = nil,
-            name: Attribute.Name? = nil
+            name: WHATWG_HTML.Attribute.Name? = nil
         ) {
             self.`for` = `for`
             self.form = form

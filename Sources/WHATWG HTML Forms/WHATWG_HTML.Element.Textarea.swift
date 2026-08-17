@@ -43,55 +43,55 @@ extension WHATWG_HTML.Element {
     ///
     public struct Textarea: WHATWG_HTML.Element.`Protocol` {
         /// Controls whether inputted text is automatically capitalized
-        public var autocapitalize: Attribute.Autocapitalize?
+        public var autocapitalize: WHATWG_HTML.Attribute.Autocapitalize?
 
         /// Controls whether entered text can be automatically completed by the browser
-        public var autocomplete: Attribute.Autocomplete?
+        public var autocomplete: WHATWG_HTML.Attribute.Autocomplete?
 
         /// Controls automatic spelling correction while editing
-        public var autocorrect: Attribute.Autocorrect?
+        public var autocorrect: WHATWG_HTML.Attribute.Autocorrect?
 
         /// Automatically focus the control when page loads
-        public var autofocus: Attribute.Autofocus?
+        public var autofocus: WHATWG_HTML.Attribute.Autofocus?
 
         /// The visible width of the text control, in average character widths
-        public var cols: Attribute.Cols?
+        public var cols: WHATWG_HTML.Attribute.Cols?
 
         /// Indicates the text directionality of the element contents
-        public var dirname: Attribute.Dirname?
+        public var dirname: WHATWG_HTML.Attribute.Dirname?
 
         /// Whether the control is disabled
-        public var disabled: Attribute.Disabled?
+        public var disabled: WHATWG_HTML.Attribute.Disabled?
 
         /// Associates the control with a form element
         public var form: WHATWG_HTML.Attribute.Form.ID?
 
         /// Maximum number of characters allowed
-        public var maxlength: Attribute.Maxlength?
+        public var maxlength: WHATWG_HTML.Attribute.Maxlength?
 
         /// Minimum number of characters required
-        public var minlength: Attribute.Minlength?
+        public var minlength: WHATWG_HTML.Attribute.Minlength?
 
         /// Name of the control
-        public var name: Attribute.Name?
+        public var name: WHATWG_HTML.Attribute.Name?
 
         /// Hint to the user of what can be entered
-        public var placeholder: Attribute.Placeholder?
+        public var placeholder: WHATWG_HTML.Attribute.Placeholder?
 
         /// Whether the control is read-only
-        public var readonly: Attribute.Readonly?
+        public var readonly: WHATWG_HTML.Attribute.Readonly?
 
         /// Whether the control is required
-        public var required: Attribute.Required?
+        public var required: WHATWG_HTML.Attribute.Required?
 
         /// The number of visible text lines
-        public var rows: Attribute.Rows?
+        public var rows: WHATWG_HTML.Attribute.Rows?
 
         /// Whether the textarea is subject to spell-checking
-        public var spellcheck: Attribute.Spellcheck?
+        public var spellcheck: WHATWG_HTML.Attribute.Spellcheck?
 
         /// Indicates how the control wraps text for form submission
-        public var wrap: Attribute.TextareaWrap?
+        public var wrap: WHATWG_HTML.Attribute.TextareaWrap?
 
         /// Creates a new Textarea element with the specified attributes.
         ///
@@ -114,23 +114,23 @@ extension WHATWG_HTML.Element {
         ///   - spellcheck: Whether spelling should be checked
         ///   - wrap: How text should wrap for form submission
         public init(
-            autocapitalize: Attribute.Autocapitalize? = nil,
-            autocomplete: Attribute.Autocomplete? = nil,
-            autocorrect: Attribute.Autocorrect? = nil,
-            autofocus: Attribute.Autofocus? = nil,
-            cols: Attribute.Cols? = nil,
-            dirname: Attribute.Dirname? = nil,
-            disabled: Attribute.Disabled? = nil,
+            autocapitalize: WHATWG_HTML.Attribute.Autocapitalize? = nil,
+            autocomplete: WHATWG_HTML.Attribute.Autocomplete? = nil,
+            autocorrect: WHATWG_HTML.Attribute.Autocorrect? = nil,
+            autofocus: WHATWG_HTML.Attribute.Autofocus? = nil,
+            cols: WHATWG_HTML.Attribute.Cols? = nil,
+            dirname: WHATWG_HTML.Attribute.Dirname? = nil,
+            disabled: WHATWG_HTML.Attribute.Disabled? = nil,
             form: WHATWG_HTML.Attribute.Form.ID? = nil,
-            maxlength: Attribute.Maxlength? = nil,
-            minlength: Attribute.Minlength? = nil,
-            name: Attribute.Name? = nil,
-            placeholder: Attribute.Placeholder? = nil,
-            readonly: Attribute.Readonly? = nil,
-            required: Attribute.Required? = nil,
-            rows: Attribute.Rows? = nil,
-            spellcheck: Attribute.Spellcheck? = nil,
-            wrap: Attribute.TextareaWrap? = nil
+            maxlength: WHATWG_HTML.Attribute.Maxlength? = nil,
+            minlength: WHATWG_HTML.Attribute.Minlength? = nil,
+            name: WHATWG_HTML.Attribute.Name? = nil,
+            placeholder: WHATWG_HTML.Attribute.Placeholder? = nil,
+            readonly: WHATWG_HTML.Attribute.Readonly? = nil,
+            required: WHATWG_HTML.Attribute.Required? = nil,
+            rows: WHATWG_HTML.Attribute.Rows? = nil,
+            spellcheck: WHATWG_HTML.Attribute.Spellcheck? = nil,
+            wrap: WHATWG_HTML.Attribute.TextareaWrap? = nil
         ) {
             self.autocapitalize = autocapitalize
             self.autocomplete = autocomplete

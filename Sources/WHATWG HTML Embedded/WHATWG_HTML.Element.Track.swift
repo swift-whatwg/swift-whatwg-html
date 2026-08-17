@@ -43,19 +43,19 @@ extension WHATWG_HTML.Element {
     ///
     public struct Track: WHATWG_HTML.Element.`Protocol` {
         /// Indicates that the track should be enabled by default unless the user's preferences indicate otherwise
-        public var `default`: Attribute.Default?
+        public var `default`: WHATWG_HTML.Attribute.Default?
 
         /// How the text track is meant to be used (subtitles, captions, chapters, or metadata)
-        public var kind: Attribute.Kind?
+        public var kind: WHATWG_HTML.Attribute.Kind?
 
         /// A user-readable title of the text track which is used by the browser when listing available text tracks
-        public var label: Attribute.Label?
+        public var label: WHATWG_HTML.Attribute.Label?
 
         /// Address of the track (.vtt file)
-        public var src: Attribute.Src
+        public var src: WHATWG_HTML.Attribute.Src
 
         /// Language of the track text data (BCP 47 language tag)
-        public var srclang: Attribute.SrcLang?
+        public var srclang: WHATWG_HTML.Attribute.SrcLang?
 
         /// Creates a new Track element.
         ///
@@ -66,11 +66,11 @@ extension WHATWG_HTML.Element {
         ///   - label: User-readable title of the text track
         ///   - defaultTrack: Whether this track should be enabled by default
         public init(
-            default: Attribute.Default? = nil,
-            kind: Attribute.Kind? = nil,
-            src: Attribute.Src,
-            srclang: Attribute.SrcLang? = nil,
-            label: Attribute.Label? = nil
+            default: WHATWG_HTML.Attribute.Default? = nil,
+            kind: WHATWG_HTML.Attribute.Kind? = nil,
+            src: WHATWG_HTML.Attribute.Src,
+            srclang: WHATWG_HTML.Attribute.SrcLang? = nil,
+            label: WHATWG_HTML.Attribute.Label? = nil
         ) {
             self.default = `default`
             self.kind = kind

@@ -55,43 +55,43 @@ extension WHATWG_HTML.Element {
     /// - Note: When rendered, this generates an HTML `<button>` element that is interactive and clickable.
     public struct Button: WHATWG_HTML.Element.`Protocol` {
         /// The button type (submit, reset, or button)
-        public var type: Attribute.ButtonType?
+        public var type: WHATWG_HTML.Attribute.ButtonType?
 
         /// Whether the button is disabled
-        public var disabled: Attribute.Disabled?
+        public var disabled: WHATWG_HTML.Attribute.Disabled?
 
         /// The ID of the form this button is associated with
         public var form: WHATWG_HTML.Attribute.Form.ID?
 
         /// The name of the button, used when submitting forms
-        public var name: Attribute.Name?
+        public var name: WHATWG_HTML.Attribute.Name?
 
         /// The value associated with the button, used when submitting forms
-        public var value: Attribute.Value<String>?
+        public var value: WHATWG_HTML.Attribute.Value<String>?
 
         /// Whether the button should automatically get focus on page load
-        public var autofocus: Attribute.Autofocus?
+        public var autofocus: WHATWG_HTML.Attribute.Autofocus?
 
         /// The URL that processes the form submission (for submit buttons)
-        public var formaction: Attribute.FormAction?
+        public var formaction: WHATWG_HTML.Attribute.FormAction?
 
         /// How form data should be encoded before submission (for submit buttons)
-        public var formenctype: Attribute.FormEncType?
+        public var formenctype: WHATWG_HTML.Attribute.FormEncType?
 
         /// The HTTP method used for form submission (for submit buttons)
-        public var formmethod: Attribute.FormMethod?
+        public var formmethod: WHATWG_HTML.Attribute.FormMethod?
 
         /// Whether to skip form validation on submission (for submit buttons)
-        public var formnovalidate: Attribute.FormNovalidate?
+        public var formnovalidate: WHATWG_HTML.Attribute.FormNovalidate?
 
         /// Where to display the response after form submission (for submit buttons)
-        public var formtarget: Attribute.FormTarget?
+        public var formtarget: WHATWG_HTML.Attribute.FormTarget?
 
         /// The ID of the popover element to control (for popover control buttons)
-        public var popovertarget: Attribute.PopoverTarget?
+        public var popovertarget: WHATWG_HTML.Attribute.PopoverTarget?
 
         /// The action to perform on the popover (show, hide, or toggle)
-        public var popovertargetaction: Attribute.PopoverTargetAction?
+        public var popovertargetaction: WHATWG_HTML.Attribute.PopoverTargetAction?
 
         /// Creates a new Button element with the specified attributes and content.
         ///
@@ -110,19 +110,19 @@ extension WHATWG_HTML.Element {
         ///   - popovertarget: The ID of the popover element to control
         ///   - popovertargetaction: The action to perform on the popover (show, hide, or toggle)
         public init(
-            type: Attribute.ButtonType? = nil,
-            disabled: Attribute.Disabled? = nil,
+            type: WHATWG_HTML.Attribute.ButtonType? = nil,
+            disabled: WHATWG_HTML.Attribute.Disabled? = nil,
             form: WHATWG_HTML.Attribute.Form.ID? = nil,
-            name: Attribute.Name? = nil,
-            value: Attribute.Value<String>? = nil,
-            autofocus: Attribute.Autofocus? = nil,
-            formaction: Attribute.FormAction? = nil,
-            formenctype: Attribute.FormEncType? = nil,
-            formmethod: Attribute.FormMethod? = nil,
-            formnovalidate: Attribute.FormNovalidate? = nil,
-            formtarget: Attribute.FormTarget? = nil,
-            popovertarget: Attribute.PopoverTarget? = nil,
-            popovertargetaction: Attribute.PopoverTargetAction? = nil
+            name: WHATWG_HTML.Attribute.Name? = nil,
+            value: WHATWG_HTML.Attribute.Value<String>? = nil,
+            autofocus: WHATWG_HTML.Attribute.Autofocus? = nil,
+            formaction: WHATWG_HTML.Attribute.FormAction? = nil,
+            formenctype: WHATWG_HTML.Attribute.FormEncType? = nil,
+            formmethod: WHATWG_HTML.Attribute.FormMethod? = nil,
+            formnovalidate: WHATWG_HTML.Attribute.FormNovalidate? = nil,
+            formtarget: WHATWG_HTML.Attribute.FormTarget? = nil,
+            popovertarget: WHATWG_HTML.Attribute.PopoverTarget? = nil,
+            popovertargetaction: WHATWG_HTML.Attribute.PopoverTargetAction? = nil
         ) {
             self.type = type
             self.disabled = disabled

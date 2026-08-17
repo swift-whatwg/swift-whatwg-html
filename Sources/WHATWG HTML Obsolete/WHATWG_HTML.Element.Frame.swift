@@ -35,25 +35,25 @@ extension WHATWG_HTML.Element {
     public struct Frame: WHATWG_HTML.Element.`Protocol` {
 
         /// The URL of the document to be displayed in the frame
-        public var src: Attribute.Src?
+        public var src: WHATWG_HTML.Attribute.Src?
 
         /// A name for the frame, used for targeting links
-        public var name: Attribute.Name?
+        public var name: WHATWG_HTML.Attribute.Name?
 
         /// Prevents user from resizing the frame
-        public var noresize: Attribute.NoResize?
+        public var noresize: WHATWG_HTML.Attribute.NoResize?
 
         /// Controls scrollbar appearance
-        public var scrolling: Attribute.Scrolling?
+        public var scrolling: WHATWG_HTML.Attribute.Scrolling?
 
         /// Margins between frames (height)
-        public var marginheight: Attribute.MarginHeight?
+        public var marginheight: WHATWG_HTML.Attribute.MarginHeight?
 
         /// Margins between frames (width)
-        public var marginwidth: Attribute.MarginWidth?
+        public var marginwidth: WHATWG_HTML.Attribute.MarginWidth?
 
         /// Controls frame border appearance
-        public var frameborder: Attribute.FrameBorder?
+        public var frameborder: WHATWG_HTML.Attribute.FrameBorder?
 
         /// Creates a new Frame element with the specified attributes.
         ///
@@ -66,13 +66,13 @@ extension WHATWG_HTML.Element {
         ///   - marginwidth: Width of margins between frames
         ///   - frameborder: Frame border appearance
         public init(
-            src: Attribute.Src? = nil,
-            name: Attribute.Name? = nil,
-            noresize: Attribute.NoResize? = nil,
-            scrolling: Attribute.Scrolling? = nil,
-            marginheight: Attribute.MarginHeight? = nil,
-            marginwidth: Attribute.MarginWidth? = nil,
-            frameborder: Attribute.FrameBorder? = nil
+            src: WHATWG_HTML.Attribute.Src? = nil,
+            name: WHATWG_HTML.Attribute.Name? = nil,
+            noresize: WHATWG_HTML.Attribute.NoResize? = nil,
+            scrolling: WHATWG_HTML.Attribute.Scrolling? = nil,
+            marginheight: WHATWG_HTML.Attribute.MarginHeight? = nil,
+            marginwidth: WHATWG_HTML.Attribute.MarginWidth? = nil,
+            frameborder: WHATWG_HTML.Attribute.FrameBorder? = nil
         ) {
             self.src = src
             self.name = name

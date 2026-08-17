@@ -14,30 +14,30 @@ extension WHATWG_HTML.Element {
     @available(*, deprecated, message: "Use CSS animations instead.")
     public struct Marquee: WHATWG_HTML.Element.`Protocol` {
 
-        public var behavior: Attribute.Behavior?
+        public var behavior: WHATWG_HTML.Attribute.Behavior?
         public var bgcolor: String?
         public var direction: WHATWG_HTML.Attribute.Direction?
-        public var height: Attribute.Height?
+        public var height: WHATWG_HTML.Attribute.Height?
         public var hspace: String?
-        public var loop: Attribute.Loop?
+        public var loop: WHATWG_HTML.Attribute.Loop?
         public var scrollamount: String?
         public var scrolldelay: String?
-        public var truespeed: Attribute.Truespeed?
+        public var truespeed: WHATWG_HTML.Attribute.Truespeed?
         public var vspace: String?
-        public var width: Attribute.Width?
+        public var width: WHATWG_HTML.Attribute.Width?
 
         public init(
-            behavior: Attribute.Behavior? = nil,
+            behavior: WHATWG_HTML.Attribute.Behavior? = nil,
             bgcolor: String? = nil,
             direction: WHATWG_HTML.Attribute.Direction? = nil,
-            height: Attribute.Height? = nil,
+            height: WHATWG_HTML.Attribute.Height? = nil,
             hspace: String? = nil,
-            loop: Attribute.Loop? = nil,
+            loop: WHATWG_HTML.Attribute.Loop? = nil,
             scrollamount: String? = nil,
             scrolldelay: String? = nil,
-            truespeed: Attribute.Truespeed? = nil,
+            truespeed: WHATWG_HTML.Attribute.Truespeed? = nil,
             vspace: String? = nil,
-            width: Attribute.Width? = nil
+            width: WHATWG_HTML.Attribute.Width? = nil
         ) {
             self.behavior = behavior
             self.bgcolor = bgcolor

@@ -19,9 +19,14 @@ import WHATWG_HTML
 #endif
 
 @Suite struct `Popover Test` {
-    @Test func `Popover attribute should be popover`() { #expect(WHATWG_HTML.Attribute.Popover.attribute == "popover") }
+    @Test func `Popover attribute should be popover`() {
+        #expect(WHATWG_HTML.Attribute.Popover.attribute == "popover")
+    }
 
-    @Test("Popover cases description should match the spec", arguments: WHATWG_HTML.Attribute.Popover.allCases)
+    @Test(
+        "Popover cases description should match the spec",
+        arguments: WHATWG_HTML.Attribute.Popover.allCases
+    )
     func cases(popover: WHATWG_HTML.Attribute.Popover) {
         switch popover {
         case .auto: #expect(popover.description == "auto")
@@ -44,8 +49,14 @@ import WHATWG_HTML
     }
 
     @Test(
-        arguments: [("auto", WHATWG_HTML.Attribute.Popover.auto), ("manual", WHATWG_HTML.Attribute.Popover.manual)]
-    ) func `Popover should be initializable from rawValue`(input: String, expected: WHATWG_HTML.Attribute.Popover?) {
+        arguments: [
+            ("auto", WHATWG_HTML.Attribute.Popover.auto),
+            ("manual", WHATWG_HTML.Attribute.Popover.manual),
+        ]
+    ) func `Popover should be initializable from rawValue`(
+        input: String,
+        expected: WHATWG_HTML.Attribute.Popover?
+    ) {
         #expect(WHATWG_HTML.Attribute.Popover(rawValue: input) == expected)
     }
 }

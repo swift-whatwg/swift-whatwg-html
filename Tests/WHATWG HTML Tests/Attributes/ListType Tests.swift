@@ -14,7 +14,9 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `ListType Test` {
-    @Test func `ListType attribute should be type`() { #expect(WHATWG_HTML.Attribute.ListType.attribute == "type") }
+    @Test func `ListType attribute should be type`() {
+        #expect(WHATWG_HTML.Attribute.ListType.attribute == "type")
+    }
 
     @Test func `ListType should have predefined values`() {
         #expect(WHATWG_HTML.Attribute.ListType.lowerAlpha.rawValue == "a")

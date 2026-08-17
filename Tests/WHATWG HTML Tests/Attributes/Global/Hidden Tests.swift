@@ -19,9 +19,14 @@ import WHATWG_HTML
 #endif
 
 @Suite struct `Hidden Test` {
-    @Test func `Hidden attribute should be hidden`() { #expect(WHATWG_HTML.Attribute.Hidden.attribute == "hidden") }
+    @Test func `Hidden attribute should be hidden`() {
+        #expect(WHATWG_HTML.Attribute.Hidden.attribute == "hidden")
+    }
 
-    @Test("Hidden cases description should match the spec", arguments: WHATWG_HTML.Attribute.Hidden.allCases) func cases(
+    @Test(
+        "Hidden cases description should match the spec",
+        arguments: WHATWG_HTML.Attribute.Hidden.allCases
+    ) func cases(
         hidden: WHATWG_HTML.Attribute.Hidden
     ) {
         switch hidden {
@@ -45,10 +50,14 @@ import WHATWG_HTML
 
     @Test(
         arguments: [
-            ("hidden", WHATWG_HTML.Attribute.Hidden.hidden), ("until-found", WHATWG_HTML.Attribute.Hidden.untilFound),
+            ("hidden", WHATWG_HTML.Attribute.Hidden.hidden),
+            ("until-found", WHATWG_HTML.Attribute.Hidden.untilFound),
 
         ]
-    ) func `Hidden should be initializable from rawValue`(input: String, expected: WHATWG_HTML.Attribute.Hidden?) {
+    ) func `Hidden should be initializable from rawValue`(
+        input: String,
+        expected: WHATWG_HTML.Attribute.Hidden?
+    ) {
         #expect(WHATWG_HTML.Attribute.Hidden(rawValue: input) == expected)
     }
 

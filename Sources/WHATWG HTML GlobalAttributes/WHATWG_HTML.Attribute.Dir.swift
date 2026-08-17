@@ -100,4 +100,6 @@ extension WHATWG_HTML.Attribute.Dir {
     @inlinable public static var auto: Self { "auto" }
 }
 
-extension WHATWG_HTML.Attribute.Dir: CaseIterable { public static let allCases: [Dir] = [ltr, rtl, auto] }
+extension WHATWG_HTML.Attribute.Dir: CaseIterable {
+    public static let allCases: [WHATWG_HTML.Attribute.Dir] = [ltr, rtl, auto]
+}

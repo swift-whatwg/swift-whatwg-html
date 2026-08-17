@@ -38,11 +38,11 @@ extension WHATWG_HTML.Element {
     ///   attributes based on the input type.
     public struct Input: WHATWG_HTML.Element.`Protocol` {
         /// Name of the form control. Submitted with the form as part of a name/value pair.
-        public var name: Attribute.Name?
+        public var name: WHATWG_HTML.Attribute.Name?
 
         /// Whether the form control is disabled.
         /// When set, the input element is disabled and cannot be interacted with or submitted.
-        public var disabled: Attribute.Disabled?
+        public var disabled: WHATWG_HTML.Attribute.Disabled?
 
         /// Associates the control with a form element.
         /// When specified, this overrides the form's `id` attribute if the input is outside the form.
@@ -51,7 +51,7 @@ extension WHATWG_HTML.Element {
         /// Type of form control.
         /// Determines the appearance and behavior of the input element.
         /// See `Input.Variant` for all available input types.
-        public var type: Input.Variant
+        public var type: WHATWG_HTML.Element.Input.Variant
 
         /// Creates a new Input element with the specified attributes.
         ///
@@ -61,10 +61,10 @@ extension WHATWG_HTML.Element {
         ///   - form: The ID of the form this input belongs to (optional)
         ///   - type: The type of input element to create
         public init(
-            name: Attribute.Name? = nil,
-            disabled: Attribute.Disabled? = nil,
+            name: WHATWG_HTML.Attribute.Name? = nil,
+            disabled: WHATWG_HTML.Attribute.Disabled? = nil,
             form: WHATWG_HTML.Attribute.Form.ID? = nil,
-            type: Input.Variant
+            type: WHATWG_HTML.Element.Input.Variant
         ) {
             self.name = name
             self.disabled = disabled

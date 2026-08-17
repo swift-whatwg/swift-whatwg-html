@@ -55,13 +55,13 @@ extension WHATWG_HTML.Element {
         /// The ordinal value of the list item (only meaningful within `<ol>` elements).
         /// This integer attribute indicates the current ordinal value as defined by the
         /// parent `<ol>` element. List items that follow this one continue numbering from this value.
-        public var value: Attribute.Value<Int>?
+        public var value: WHATWG_HTML.Attribute.Value<Int>?
 
         /// Creates a new list item element with the specified value.
         ///
         /// - Parameters:
         ///   - value: The ordinal value of the list item (only meaningful within `<ol>` elements)
-        public init(value: Attribute.Value<Int>? = nil) {
+        public init(value: WHATWG_HTML.Attribute.Value<Int>? = nil) {
             self.value = value
 
         }

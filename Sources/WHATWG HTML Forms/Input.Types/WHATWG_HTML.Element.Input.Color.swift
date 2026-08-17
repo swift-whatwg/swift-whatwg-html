@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_FormAttributes
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// `<input type="color">` elements provide a user interface element that lets a user specify a color,
 /// either by using a visual color picker interface or by entering the color into a text field in #rrggbb
@@ -33,10 +33,10 @@ extension WHATWG_HTML.Element.Input {
         ///
         /// Note: Setting the value to anything that isn't a valid, fully-opaque, RGB color in hexadecimal notation
         /// will result in the value being set to #000000. Colors with an alpha channel are not supported.
-        public var value: Attribute.Value<String>?
+        public var value: WHATWG_HTML.Attribute.Value<String>?
 
         /// Creates a new color input configuration
-        public init(value: Attribute.Value<String>? = nil) { self.value = value }
+        public init(value: WHATWG_HTML.Attribute.Value<String>? = nil) { self.value = value }
     }
 }
 
@@ -46,9 +46,9 @@ extension WHATWG_HTML.Element.Input {
 
     /// Creates a new color input element
     public static func color(
-        name: Attribute.Name? = nil,
-        value: Attribute.Value<String>? = nil,
-        disabled: Attribute.Disabled? = nil,
+        name: WHATWG_HTML.Attribute.Name? = nil,
+        value: WHATWG_HTML.Attribute.Value<String>? = nil,
+        disabled: WHATWG_HTML.Attribute.Disabled? = nil,
         form: WHATWG_HTML.Attribute.Form.ID? = nil
     ) -> Self {
         .init(name: name, disabled: disabled, form: form, type: .color(.init(value: value)))

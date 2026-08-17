@@ -12,53 +12,53 @@
 
 public import WHATWG_HTML_FormAttributes
 public import WHATWG_HTML_GlobalAttributes
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// `<input type="text">` elements create basic single-line text fields.
 extension WHATWG_HTML.Element.Input {
     public struct Text: Sendable, Hashable {
         /// A string that contains the current value of the text entered into the text field.
-        public var value: Attribute.Value<String>?
+        public var value: WHATWG_HTML.Attribute.Value<String>?
 
         /// The id of a datalist element that provides a list of predefined values to suggest to the user.
-        public var list: Attribute.List?
+        public var list: WHATWG_HTML.Attribute.List?
 
         /// The maximum string length (measured in UTF-16 code units) that the user can enter.
-        public var maxlength: Attribute.Maxlength?
+        public var maxlength: WHATWG_HTML.Attribute.Maxlength?
 
         /// The minimum string length (measured in UTF-16 code units) that the user can enter.
-        public var minlength: Attribute.Minlength?
+        public var minlength: WHATWG_HTML.Attribute.Minlength?
 
         /// A regular expression that the input's value must match to be valid.
-        public var pattern: Attribute.Pattern?
+        public var pattern: WHATWG_HTML.Attribute.Pattern?
 
         /// A brief hint displayed in the input field when it is empty.
-        public var placeholder: Attribute.Placeholder?
+        public var placeholder: WHATWG_HTML.Attribute.Placeholder?
 
         /// A Boolean attribute which, if present, means this field cannot be edited by the user.
-        public var readonly: Attribute.Readonly?
+        public var readonly: WHATWG_HTML.Attribute.Readonly?
 
         /// The visible width of the input field in characters.
-        public var size: Attribute.Size?
+        public var size: WHATWG_HTML.Attribute.Size?
 
         /// Enable or disable spell-checking for this element.
-        public var spellcheck: Attribute.Spellcheck?
+        public var spellcheck: WHATWG_HTML.Attribute.Spellcheck?
 
         /// Whether the input field is required to have a value before form submission.
-        public var required: Attribute.Required?
+        public var required: WHATWG_HTML.Attribute.Required?
 
         /// Creates a new text input configuration
         public init(
-            value: Attribute.Value<String>? = nil,
-            list: Attribute.List? = nil,
-            maxlength: Attribute.Maxlength? = nil,
-            minlength: Attribute.Minlength? = nil,
-            pattern: Attribute.Pattern? = nil,
-            placeholder: Attribute.Placeholder? = nil,
-            readonly: Attribute.Readonly? = nil,
-            size: Attribute.Size? = nil,
-            spellcheck: Attribute.Spellcheck? = nil,
-            required: Attribute.Required? = nil
+            value: WHATWG_HTML.Attribute.Value<String>? = nil,
+            list: WHATWG_HTML.Attribute.List? = nil,
+            maxlength: WHATWG_HTML.Attribute.Maxlength? = nil,
+            minlength: WHATWG_HTML.Attribute.Minlength? = nil,
+            pattern: WHATWG_HTML.Attribute.Pattern? = nil,
+            placeholder: WHATWG_HTML.Attribute.Placeholder? = nil,
+            readonly: WHATWG_HTML.Attribute.Readonly? = nil,
+            size: WHATWG_HTML.Attribute.Size? = nil,
+            spellcheck: WHATWG_HTML.Attribute.Spellcheck? = nil,
+            required: WHATWG_HTML.Attribute.Required? = nil
         ) {
             self.value = value
             self.list = list
@@ -80,18 +80,18 @@ extension WHATWG_HTML.Element.Input {
 
     /// Creates a new text input element
     public static func text(
-        name: Attribute.Name? = nil,
-        value: Attribute.Value<String>? = nil,
-        list: Attribute.List? = nil,
-        maxlength: Attribute.Maxlength? = nil,
-        minlength: Attribute.Minlength? = nil,
-        pattern: Attribute.Pattern? = nil,
-        placeholder: Attribute.Placeholder? = nil,
-        readonly: Attribute.Readonly? = nil,
-        size: Attribute.Size? = nil,
-        spellcheck: Attribute.Spellcheck? = nil,
-        required: Attribute.Required? = nil,
-        disabled: Attribute.Disabled? = nil,
+        name: WHATWG_HTML.Attribute.Name? = nil,
+        value: WHATWG_HTML.Attribute.Value<String>? = nil,
+        list: WHATWG_HTML.Attribute.List? = nil,
+        maxlength: WHATWG_HTML.Attribute.Maxlength? = nil,
+        minlength: WHATWG_HTML.Attribute.Minlength? = nil,
+        pattern: WHATWG_HTML.Attribute.Pattern? = nil,
+        placeholder: WHATWG_HTML.Attribute.Placeholder? = nil,
+        readonly: WHATWG_HTML.Attribute.Readonly? = nil,
+        size: WHATWG_HTML.Attribute.Size? = nil,
+        spellcheck: WHATWG_HTML.Attribute.Spellcheck? = nil,
+        required: WHATWG_HTML.Attribute.Required? = nil,
+        disabled: WHATWG_HTML.Attribute.Disabled? = nil,
         form: WHATWG_HTML.Attribute.Form.ID? = nil
     ) -> Self {
         .init(

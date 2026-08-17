@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_FormAttributes
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// `<input type="radio">` elements are generally used in radio groups—collections of radio buttons
 /// describing a set of related options.
@@ -30,7 +30,7 @@ extension WHATWG_HTML.Element.Input {
         /// When a form is submitted, only radio buttons which are currently checked are submitted to the server,
         /// and the reported value is the value of the value attribute. If the value is not otherwise specified,
         /// it is the string "on" by default.
-        public var value: Attribute.Value<String>?
+        public var value: WHATWG_HTML.Attribute.Value<String>?
 
         /// A Boolean attribute which, if present, indicates that this radio button is the default
         /// selected one in the group.
@@ -38,16 +38,19 @@ extension WHATWG_HTML.Element.Input {
         /// If you put the checked attribute on more than one radio button with the same name,
         /// later instances will override earlier ones; that is, the last checked radio button
         /// will be the one that is selected.
-        public var checked: Attribute.Checked?
+        public var checked: WHATWG_HTML.Attribute.Checked?
 
         /// The required attribute is one which most `<input>`s share. If any radio button in a
         /// same-named group of radio buttons has the required attribute, a radio button in that
         /// group must be checked, although it doesn't have to be the one with the attribute applied.
-        public var required: Attribute.Required?
+        public var required: WHATWG_HTML.Attribute.Required?
 
         /// Creates a new radio input configuration
-        public init(value: Attribute.Value<String>? = nil, checked: Attribute.Checked? = nil, required: Attribute.Required? = nil)
-        {
+        public init(
+            value: WHATWG_HTML.Attribute.Value<String>? = nil,
+            checked: WHATWG_HTML.Attribute.Checked? = nil,
+            required: WHATWG_HTML.Attribute.Required? = nil
+        ) {
             self.value = value
             self.checked = checked
             self.required = required
@@ -61,11 +64,11 @@ extension WHATWG_HTML.Element.Input {
 
     /// Creates a new radio input element
     public static func radio(
-        name: Attribute.Name? = nil,
-        value: Attribute.Value<String>? = nil,
-        checked: Attribute.Checked? = nil,
-        required: Attribute.Required? = nil,
-        disabled: Attribute.Disabled? = nil,
+        name: WHATWG_HTML.Attribute.Name? = nil,
+        value: WHATWG_HTML.Attribute.Value<String>? = nil,
+        checked: WHATWG_HTML.Attribute.Checked? = nil,
+        required: WHATWG_HTML.Attribute.Required? = nil,
+        disabled: WHATWG_HTML.Attribute.Disabled? = nil,
         form: WHATWG_HTML.Attribute.Form.ID? = nil
     ) -> Self {
         .init(

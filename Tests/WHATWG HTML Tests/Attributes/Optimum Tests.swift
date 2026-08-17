@@ -14,7 +14,9 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Optimum Test` {
-    @Test func `Optimum attribute should be optimum`() { #expect(WHATWG_HTML.Attribute.Optimum.attribute == "optimum") }
+    @Test func `Optimum attribute should be optimum`() {
+        #expect(WHATWG_HTML.Attribute.Optimum.attribute == "optimum")
+    }
 
     @Test func `Optimum should support integer literal`() {
         let optimum: WHATWG_HTML.Attribute.Optimum = 50

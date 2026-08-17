@@ -38,13 +38,13 @@ extension WHATWG_HTML.Element {
     public struct Data: WHATWG_HTML.Element.`Protocol` {
 
         /// The machine-readable translation of the content
-        public var value: Attribute.Value<String>
+        public var value: WHATWG_HTML.Attribute.Value<String>
 
         /// Creates a new Data element with the specified value.
         ///
         /// - Parameters:
         ///   - value: The machine-readable translation of the content
-        public init(value: Attribute.Value<String>) {
+        public init(value: WHATWG_HTML.Attribute.Value<String>) {
             self.value = value
 
         }

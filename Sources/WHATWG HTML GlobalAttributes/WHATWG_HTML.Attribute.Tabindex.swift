@@ -83,10 +83,10 @@ extension WHATWG_HTML.Attribute.Tabindex {
 
 extension WHATWG_HTML.Attribute.Tabindex {
     /// A constant for the common -1 value (not in tab order but focusable via script)
-    public static let notTabbable = Tabindex(-1)
+    public static let notTabbable = WHATWG_HTML.Attribute.Tabindex(-1)
 
     /// A constant for the common 0 value (in natural tab order)
-    public static let inDocumentOrder = Tabindex(0)
+    public static let inDocumentOrder = WHATWG_HTML.Attribute.Tabindex(0)
 }
 
 extension WHATWG_HTML.Attribute.Tabindex: CustomStringConvertible {

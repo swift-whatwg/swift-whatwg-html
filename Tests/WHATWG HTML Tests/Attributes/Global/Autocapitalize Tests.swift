@@ -49,13 +49,16 @@ import WHATWG_HTML
     }
 
     @Test(arguments: WHATWG_HTML.Attribute.Autocapitalize.allCases)
-    func `Autocapitalize rawValue should match description`(autocapitalize: WHATWG_HTML.Attribute.Autocapitalize) {
+    func `Autocapitalize rawValue should match description`(
+        autocapitalize: WHATWG_HTML.Attribute.Autocapitalize
+    ) {
         #expect(autocapitalize.rawValue == autocapitalize.description)
     }
 
     @Test(
         arguments: [
-            ("none", WHATWG_HTML.Attribute.Autocapitalize.none), ("off", .off), ("sentences", .sentences), ("on", .on),
+            ("none", WHATWG_HTML.Attribute.Autocapitalize.none), ("off", .off),
+            ("sentences", .sentences), ("on", .on),
             ("words", .words), ("characters", .characters),
         ]
     ) func `Autocapitalize should be initializable from rawValue`(

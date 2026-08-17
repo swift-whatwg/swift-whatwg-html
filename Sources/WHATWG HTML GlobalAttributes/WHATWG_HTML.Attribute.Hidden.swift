@@ -114,5 +114,5 @@ extension WHATWG_HTML.Attribute.Hidden {
 }
 
 extension WHATWG_HTML.Attribute.Hidden: CaseIterable {
-    public static let allCases: [Hidden] = [.empty, .hidden, .untilFound]
+    public static let allCases: [WHATWG_HTML.Attribute.Hidden] = [.empty, .hidden, .untilFound]
 }

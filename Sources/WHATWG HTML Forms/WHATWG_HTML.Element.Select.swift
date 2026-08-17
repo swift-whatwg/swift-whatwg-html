@@ -43,25 +43,25 @@ extension WHATWG_HTML.Element {
     ///
     public struct Select: WHATWG_HTML.Element.`Protocol` {
         /// Specifies that multiple options can be selected
-        public var multiple: Attribute.Multiple?
+        public var multiple: WHATWG_HTML.Attribute.Multiple?
 
         /// Specifies the name of the control
-        public var name: Attribute.Name?
+        public var name: WHATWG_HTML.Attribute.Name?
 
         /// Specifies that the control is required
-        public var required: Attribute.Required?
+        public var required: WHATWG_HTML.Attribute.Required?
 
         /// Specifies the number of visible options
-        public var size: Attribute.Size?
+        public var size: WHATWG_HTML.Attribute.Size?
 
         /// Specifies that the select should be disabled
-        public var disabled: Attribute.Disabled?
+        public var disabled: WHATWG_HTML.Attribute.Disabled?
 
         /// Specifies a form to which the select belongs
         public var form: WHATWG_HTML.Attribute.Form.ID?
 
         /// Automatically focuses the select when the page loads
-        public var autofocus: Attribute.Autofocus?
+        public var autofocus: WHATWG_HTML.Attribute.Autofocus?
 
         /// Creates a new Select element with the specified attributes.
         ///
@@ -74,13 +74,13 @@ extension WHATWG_HTML.Element {
         ///   - form: A form to which the select belongs
         ///   - autofocus: Whether the select should be focused when the page loads (typically option elements)
         public init(
-            multiple: Attribute.Multiple? = nil,
-            name: Attribute.Name? = nil,
-            required: Attribute.Required? = nil,
-            size: Attribute.Size? = nil,
-            disabled: Attribute.Disabled? = nil,
+            multiple: WHATWG_HTML.Attribute.Multiple? = nil,
+            name: WHATWG_HTML.Attribute.Name? = nil,
+            required: WHATWG_HTML.Attribute.Required? = nil,
+            size: WHATWG_HTML.Attribute.Size? = nil,
+            disabled: WHATWG_HTML.Attribute.Disabled? = nil,
             form: WHATWG_HTML.Attribute.Form.ID? = nil,
-            autofocus: Attribute.Autofocus? = nil
+            autofocus: WHATWG_HTML.Attribute.Autofocus? = nil
         ) {
             self.multiple = multiple
             self.name = name

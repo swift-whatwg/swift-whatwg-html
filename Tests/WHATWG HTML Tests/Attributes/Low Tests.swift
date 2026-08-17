@@ -14,7 +14,9 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Low Test` {
-    @Test func `Low attribute should be low`() { #expect(WHATWG_HTML.Attribute.Low.attribute == "low") }
+    @Test func `Low attribute should be low`() {
+        #expect(WHATWG_HTML.Attribute.Low.attribute == "low")
+    }
 
     @Test func `Low should support integer literal`() {
         let low: WHATWG_HTML.Attribute.Low = 25

@@ -19,7 +19,10 @@ import WHATWG_HTML
     }
 
     @Test func `HttpEquiv convenience properties`() {
-        #expect(WHATWG_HTML.Attribute.HttpEquiv.contentSecurityPolicy.rawValue == "content-security-policy")
+        #expect(
+            WHATWG_HTML.Attribute.HttpEquiv.contentSecurityPolicy.rawValue
+                == "content-security-policy"
+        )
         #expect(WHATWG_HTML.Attribute.HttpEquiv.contentType.rawValue == "content-type")
         #expect(WHATWG_HTML.Attribute.HttpEquiv.defaultStyle.rawValue == "default-style")
         #expect(WHATWG_HTML.Attribute.HttpEquiv.refresh.rawValue == "refresh")

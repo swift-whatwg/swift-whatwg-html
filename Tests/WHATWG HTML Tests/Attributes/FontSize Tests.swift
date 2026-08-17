@@ -14,7 +14,9 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `FontSize Test` {
-    @Test func `FontSize attribute should be size`() { #expect(WHATWG_HTML.Attribute.FontSize.attribute == "size") }
+    @Test func `FontSize attribute should be size`() {
+        #expect(WHATWG_HTML.Attribute.FontSize.attribute == "size")
+    }
 
     @Test func `FontSize should support numeric initialization`() {
         let fontSize = WHATWG_HTML.Attribute.FontSize(numericValue: 5)

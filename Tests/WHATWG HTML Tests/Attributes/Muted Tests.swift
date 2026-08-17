@@ -14,5 +14,7 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Muted Test` {
-    @Test func `Muted attribute should be muted`() { #expect(WHATWG_HTML.Attribute.Muted.attribute == "muted") }
+    @Test func `Muted attribute should be muted`() {
+        #expect(WHATWG_HTML.Attribute.Muted.attribute == "muted")
+    }
 }

@@ -14,7 +14,9 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Loading Test` {
-    @Test func `Loading attribute should be loading`() { #expect(WHATWG_HTML.Attribute.Loading.attribute == "loading") }
+    @Test func `Loading attribute should be loading`() {
+        #expect(WHATWG_HTML.Attribute.Loading.attribute == "loading")
+    }
 
     @Test func `Loading convenience properties`() {
         #expect(WHATWG_HTML.Attribute.Loading.lazy.rawValue == "lazy")

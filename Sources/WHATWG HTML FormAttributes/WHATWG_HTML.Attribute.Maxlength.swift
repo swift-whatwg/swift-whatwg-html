@@ -72,7 +72,9 @@ extension WHATWG_HTML.Attribute.Maxlength {
 
 extension WHATWG_HTML.Attribute.Maxlength {
     /// Create a maxlength attribute with the given number of characters
-    public static func characters(_ count: Int) -> Maxlength { return Maxlength(count) }
+    public static func characters(_ count: Int) -> WHATWG_HTML.Attribute.Maxlength {
+        return WHATWG_HTML.Attribute.Maxlength(count)
+    }
 }
 
 extension WHATWG_HTML.Attribute.Maxlength: ExpressibleByIntegerLiteral {

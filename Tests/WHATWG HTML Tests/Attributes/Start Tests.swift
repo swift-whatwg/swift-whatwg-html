@@ -14,7 +14,9 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Start Test` {
-    @Test func `Start attribute should be start`() { #expect(WHATWG_HTML.Attribute.Start.attribute == "start") }
+    @Test func `Start attribute should be start`() {
+        #expect(WHATWG_HTML.Attribute.Start.attribute == "start")
+    }
 
     @Test func `Start should support integer initialization`() {
         let start = WHATWG_HTML.Attribute.Start(4)

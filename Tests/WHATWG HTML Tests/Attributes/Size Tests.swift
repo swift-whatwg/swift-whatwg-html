@@ -14,7 +14,9 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Size Test` {
-    @Test func `Size attribute should be size`() { #expect(WHATWG_HTML.Attribute.Size.attribute == "size") }
+    @Test func `Size attribute should be size`() {
+        #expect(WHATWG_HTML.Attribute.Size.attribute == "size")
+    }
 
     @Test func `Size convenience properties`() {
         #expect(WHATWG_HTML.Attribute.Size.standardTextField.rawValue == "30")

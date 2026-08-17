@@ -19,7 +19,9 @@ import WHATWG_HTML
 #endif
 
 @Suite struct `Part Test` {
-    @Test func `Part attribute should be part`() { #expect(WHATWG_HTML.Attribute.Part.attribute == "part") }
+    @Test func `Part attribute should be part`() {
+        #expect(WHATWG_HTML.Attribute.Part.attribute == "part")
+    }
 
     @Test func `Part description should reflect the initialized values`() {
         let singlePart = WHATWG_HTML.Attribute.Part("header")

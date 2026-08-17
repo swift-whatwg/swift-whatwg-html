@@ -14,7 +14,9 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Step Test` {
-    @Test func `Step attribute should be step`() { #expect(WHATWG_HTML.Attribute.Step.attribute == "step") }
+    @Test func `Step attribute should be step`() {
+        #expect(WHATWG_HTML.Attribute.Step.attribute == "step")
+    }
 
     @Test func `Step should support enum cases`() {
         #expect(WHATWG_HTML.Attribute.Step.any.rawValue == "any")

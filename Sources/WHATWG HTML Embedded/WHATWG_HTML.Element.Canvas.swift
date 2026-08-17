@@ -54,17 +54,20 @@ extension WHATWG_HTML.Element {
     ///   for drawing graphics with JavaScript.
     public struct Canvas: WHATWG_HTML.Element.`Protocol` {
         /// The width of the canvas in CSS pixels (defaults to 300 if not specified)
-        public var width: Attribute.Width?
+        public var width: WHATWG_HTML.Attribute.Width?
 
         /// The height of the canvas in CSS pixels (defaults to 150 if not specified)
-        public var height: Attribute.Height?
+        public var height: WHATWG_HTML.Attribute.Height?
 
         /// Creates a new Canvas element with the specified dimensions and fallback content.
         ///
         /// - Parameters:
         ///   - width: The width of the canvas in CSS pixels
         ///   - height: The height of the canvas in CSS pixels
-        public init(width: Attribute.Width? = nil, height: Attribute.Height? = nil) {
+        public init(
+            width: WHATWG_HTML.Attribute.Width? = nil,
+            height: WHATWG_HTML.Attribute.Height? = nil
+        ) {
             self.width = width
             self.height = height
         }

@@ -9,7 +9,11 @@ extension WHATWG_HTML.Element {
     /// Represents the obsolete `<strike>` element that renders strikethrough text.
     ///
     /// **Deprecated**: Use `<s>` for generic strikethrough or `<del>` for deleted text.
-    @available(*, deprecated, message: "Use <s> for generic strikethrough or <del> for deleted text.")
+    @available(
+        *,
+        deprecated,
+        message: "Use <s> for generic strikethrough or <del> for deleted text."
+    )
     public struct Strike: WHATWG_HTML.Element.`Protocol` {
 
         public init() {}

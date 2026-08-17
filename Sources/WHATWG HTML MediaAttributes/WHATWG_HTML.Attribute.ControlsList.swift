@@ -38,11 +38,13 @@ extension WHATWG_HTML.Attribute.ControlsList {
     @inlinable public static var noremoteplayback: Self { "noremoteplayback" }
 
     /// Combines multiple controlslist values
-    public static func combine(_ values: [ControlsList]) -> Self {
+    public static func combine(_ values: [WHATWG_HTML.Attribute.ControlsList]) -> Self {
         return Self(values.map(\.rawValue).joined(separator: " "))
     }
 }
 
 extension WHATWG_HTML.Attribute.ControlsList: ExpressibleByArrayLiteral {
-    public init(arrayLiteral elements: ControlsList...) { self = Self.combine(elements) }
+    public init(arrayLiteral elements: WHATWG_HTML.Attribute.ControlsList...) {
+        self = Self.combine(elements)
+    }
 }

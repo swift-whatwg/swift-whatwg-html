@@ -47,13 +47,13 @@ extension WHATWG_HTML.Element {
     public struct TableDataCell: WHATWG_HTML.Element.`Protocol` {
 
         /// Number of columns this cell spans
-        public var colspan: Attribute.ColSpan?
+        public var colspan: WHATWG_HTML.Attribute.ColSpan?
 
         /// Space-separated list of IDs of header cells that provide headers for this cell
-        public var headers: Attribute.Headers?
+        public var headers: WHATWG_HTML.Attribute.Headers?
 
         /// Number of rows this cell spans
-        public var rowspan: Attribute.RowSpan?
+        public var rowspan: WHATWG_HTML.Attribute.RowSpan?
 
         /// Creates a new TableDataCell element with the specified attributes.
         ///
@@ -61,7 +61,11 @@ extension WHATWG_HTML.Element {
         ///   - colspan: Number of columns this cell spans (default is 1)
         ///   - headers: IDs of related header cells for accessibility
         ///   - rowspan: Number of rows this cell spans (default is 1)
-        public init(colspan: Attribute.ColSpan? = nil, headers: Attribute.Headers? = nil, rowspan: Attribute.RowSpan? = nil) {
+        public init(
+            colspan: WHATWG_HTML.Attribute.ColSpan? = nil,
+            headers: WHATWG_HTML.Attribute.Headers? = nil,
+            rowspan: WHATWG_HTML.Attribute.RowSpan? = nil
+        ) {
             self.colspan = colspan
             self.headers = headers
             self.rowspan = rowspan

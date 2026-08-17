@@ -19,7 +19,9 @@ import WHATWG_HTML
 #endif
 
 @Suite struct `Itemref Test` {
-    @Test func `Itemref attribute should be itemref`() { #expect(WHATWG_HTML.Attribute.Itemref.attribute == "itemref") }
+    @Test func `Itemref attribute should be itemref`() {
+        #expect(WHATWG_HTML.Attribute.Itemref.attribute == "itemref")
+    }
 
     @Test func `Itemref should store and return its value`() {
         let itemref = WHATWG_HTML.Attribute.Itemref("details contact")

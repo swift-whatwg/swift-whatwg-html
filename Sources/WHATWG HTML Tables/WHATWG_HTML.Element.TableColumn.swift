@@ -60,10 +60,10 @@ extension WHATWG_HTML.Element {
     public struct TableColumn: WHATWG_HTML.Element.`Protocol` {
 
         /// The number of consecutive columns this column element spans
-        public var span: Attribute.Span?
+        public var span: WHATWG_HTML.Attribute.Span?
 
         /// The width for the column
-        public var width: Attribute.Width?
+        public var width: WHATWG_HTML.Attribute.Width?
 
         /// Creates a new TableColumn element with optional span and width attributes.
         ///
@@ -73,7 +73,10 @@ extension WHATWG_HTML.Element {
         /// - Parameters:
         ///   - span: The number of consecutive columns this `<col>` element spans
         ///   - width: The width for the column(s)
-        public init(span: Attribute.Span? = nil, width: Attribute.Width? = nil) {
+        public init(
+            span: WHATWG_HTML.Attribute.Span? = nil,
+            width: WHATWG_HTML.Attribute.Width? = nil
+        ) {
             self.span = span
             self.width = width
         }

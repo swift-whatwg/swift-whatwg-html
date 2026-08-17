@@ -23,7 +23,10 @@ import WHATWG_HTML
         #expect(WHATWG_HTML.Attribute.Spellcheck.attribute == "spellcheck")
     }
 
-    @Test("Spellcheck cases description should match the spec", arguments: WHATWG_HTML.Attribute.Spellcheck.allCases)
+    @Test(
+        "Spellcheck cases description should match the spec",
+        arguments: WHATWG_HTML.Attribute.Spellcheck.allCases
+    )
     func cases(spellcheck: WHATWG_HTML.Attribute.Spellcheck) {
         switch spellcheck.rawValue {
         case true: #expect(spellcheck.description == "true")

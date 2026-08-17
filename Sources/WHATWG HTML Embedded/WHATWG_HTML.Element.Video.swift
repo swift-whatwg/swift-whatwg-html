@@ -63,46 +63,46 @@ extension WHATWG_HTML.Element {
     ///
     public struct Video: WHATWG_HTML.Element.`Protocol` {
         /// The URL of the video to embed
-        public var src: Attribute.Src?
+        public var src: WHATWG_HTML.Attribute.Src?
 
         /// Whether to display playback controls
-        public var controls: Attribute.Controls?
+        public var controls: WHATWG_HTML.Attribute.Controls?
 
         /// Whether to automatically begin playback
-        public var autoplay: Attribute.Autoplay?
+        public var autoplay: WHATWG_HTML.Attribute.Autoplay?
 
         /// URL for an image to be shown while the video is downloading
-        public var poster: Attribute.Poster?
+        public var poster: WHATWG_HTML.Attribute.Poster?
 
         /// Whether to automatically seek back to the start after reaching the end
-        public var loop: Attribute.Loop?
+        public var loop: WHATWG_HTML.Attribute.Loop?
 
         /// Whether to initially silence the audio
-        public var muted: Attribute.Muted?
+        public var muted: WHATWG_HTML.Attribute.Muted?
 
         /// The width of the video's display area in CSS pixels
-        public var width: Attribute.Width?
+        public var width: WHATWG_HTML.Attribute.Width?
 
         /// The height of the video's display area in CSS pixels
-        public var height: Attribute.Height?
+        public var height: WHATWG_HTML.Attribute.Height?
 
         /// Provides a hint about what content to preload
-        public var preload: Attribute.Preload?
+        public var preload: WHATWG_HTML.Attribute.Preload?
 
         /// Whether to play the video inline rather than fullscreen (especially important for iOS)
-        public var playsinline: Attribute.Playsinline?
+        public var playsinline: WHATWG_HTML.Attribute.Playsinline?
 
         /// How to handle cross-origin requests
-        public var crossorigin: Attribute.Crossorigin?
+        public var crossorigin: WHATWG_HTML.Attribute.Crossorigin?
 
         /// Helps the browser select what controls to show when controls are enabled
-        public var controlslist: Attribute.ControlsList?
+        public var controlslist: WHATWG_HTML.Attribute.ControlsList?
 
         /// Prevents the browser from suggesting Picture-in-Picture
-        public var disablepictureinpicture: Attribute.DisablePictureInPicture?
+        public var disablepictureinpicture: WHATWG_HTML.Attribute.DisablePictureInPicture?
 
         /// Disables remote playback capabilities
-        public var disableremoteplayback: Attribute.DisableRemotePlayback?
+        public var disableremoteplayback: WHATWG_HTML.Attribute.DisableRemotePlayback?
 
         /// Creates a new Video element with the specified attributes.
         ///
@@ -122,20 +122,20 @@ extension WHATWG_HTML.Element {
         ///   - disablepictureinpicture: Prevents the browser from suggesting Picture-in-Picture
         ///   - disableremoteplayback: Disables remote playback capabilities, typically source elements or fallback content
         public init(
-            src: Attribute.Src? = nil,
-            controls: Attribute.Controls? = nil,
-            autoplay: Attribute.Autoplay? = nil,
-            poster: Attribute.Poster? = nil,
-            loop: Attribute.Loop? = nil,
-            muted: Attribute.Muted? = nil,
-            width: Attribute.Width? = nil,
-            height: Attribute.Height? = nil,
-            preload: Attribute.Preload? = nil,
-            playsinline: Attribute.Playsinline? = nil,
-            crossorigin: Attribute.Crossorigin? = nil,
-            controlslist: Attribute.ControlsList? = nil,
-            disablepictureinpicture: Attribute.DisablePictureInPicture? = nil,
-            disableremoteplayback: Attribute.DisableRemotePlayback? = nil
+            src: WHATWG_HTML.Attribute.Src? = nil,
+            controls: WHATWG_HTML.Attribute.Controls? = nil,
+            autoplay: WHATWG_HTML.Attribute.Autoplay? = nil,
+            poster: WHATWG_HTML.Attribute.Poster? = nil,
+            loop: WHATWG_HTML.Attribute.Loop? = nil,
+            muted: WHATWG_HTML.Attribute.Muted? = nil,
+            width: WHATWG_HTML.Attribute.Width? = nil,
+            height: WHATWG_HTML.Attribute.Height? = nil,
+            preload: WHATWG_HTML.Attribute.Preload? = nil,
+            playsinline: WHATWG_HTML.Attribute.Playsinline? = nil,
+            crossorigin: WHATWG_HTML.Attribute.Crossorigin? = nil,
+            controlslist: WHATWG_HTML.Attribute.ControlsList? = nil,
+            disablepictureinpicture: WHATWG_HTML.Attribute.DisablePictureInPicture? = nil,
+            disableremoteplayback: WHATWG_HTML.Attribute.DisableRemotePlayback? = nil
         ) {
             self.src = src
             self.controls = controls

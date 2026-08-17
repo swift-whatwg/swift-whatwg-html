@@ -14,7 +14,9 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Dirname Test` {
-    @Test func `Dirname attribute should be dirname`() { #expect(WHATWG_HTML.Attribute.Dirname.attribute == "dirname") }
+    @Test func `Dirname attribute should be dirname`() {
+        #expect(WHATWG_HTML.Attribute.Dirname.attribute == "dirname")
+    }
 
     @Test func `Dirname should support initialization based on element name`() {
         let dirname = WHATWG_HTML.Attribute.Dirname(basedOn: "comment")

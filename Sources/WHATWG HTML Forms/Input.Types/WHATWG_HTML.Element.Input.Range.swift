@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_FormAttributes
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// `<input type="range">` elements let the user specify a numeric value which must be no less than a given value,
 /// and no more than another given value. The precise value, however, is not considered important.
@@ -34,7 +34,7 @@ extension WHATWG_HTML.Element.Input {
         ///
         /// If an attempt is made to set the value lower than the minimum, it is set to the minimum.
         /// Similarly, an attempt to set the value higher than the maximum results in it being set to the maximum.
-        public var value: Attribute.Value<String>?
+        public var value: WHATWG_HTML.Attribute.Value<String>?
 
         /// The greatest value in the range of permitted values. If the value entered into the element
         /// exceeds this, the element fails constraint validation. If the value of the max attribute isn't
@@ -42,7 +42,7 @@ extension WHATWG_HTML.Element.Input {
         ///
         /// This value must be greater than or equal to the value of the min attribute.
         /// Default value is 100.
-        public var max: Attribute.Max?
+        public var max: WHATWG_HTML.Attribute.Max?
 
         /// The lowest value in the range of permitted values. If the value of the element is less than this,
         /// the element fails constraint validation. If a value is specified for min that isn't a valid number,
@@ -50,27 +50,27 @@ extension WHATWG_HTML.Element.Input {
         ///
         /// This value must be less than or equal to the value of the max attribute.
         /// Default value is 0.
-        public var min: Attribute.Min?
+        public var min: WHATWG_HTML.Attribute.Min?
 
         /// The step attribute is a number that specifies the granularity that the value must adhere to.
         /// Only values that match the specified stepping interval are valid.
         ///
         /// The default stepping value for range inputs is 1, allowing only integers to be entered—unless
         /// the stepping base is not an integer.
-        public var step: Attribute.Step?
+        public var step: WHATWG_HTML.Attribute.Step?
 
         /// The value of the list attribute is the id of a <datalist> element located in the same document.
         /// The <datalist> provides tick marks on the range control. Each point is represented using an <option>
         /// element with its value attribute set to the range's value at which a mark should be drawn.
-        public var list: Attribute.List?
+        public var list: WHATWG_HTML.Attribute.List?
 
         /// Creates a new range input configuration
         public init(
-            value: Attribute.Value<String>? = nil,
-            min: Attribute.Min? = nil,
-            max: Attribute.Max? = nil,
-            step: Attribute.Step? = nil,
-            list: Attribute.List? = nil
+            value: WHATWG_HTML.Attribute.Value<String>? = nil,
+            min: WHATWG_HTML.Attribute.Min? = nil,
+            max: WHATWG_HTML.Attribute.Max? = nil,
+            step: WHATWG_HTML.Attribute.Step? = nil,
+            list: WHATWG_HTML.Attribute.List? = nil
         ) {
             self.value = value
             self.min = min
@@ -87,13 +87,13 @@ extension WHATWG_HTML.Element.Input {
 
     /// Creates a new range input element
     public static func range(
-        name: Attribute.Name? = nil,
-        value: Attribute.Value<String>? = nil,
-        min: Attribute.Min? = nil,
-        max: Attribute.Max? = nil,
-        step: Attribute.Step? = nil,
-        list: Attribute.List? = nil,
-        disabled: Attribute.Disabled? = nil,
+        name: WHATWG_HTML.Attribute.Name? = nil,
+        value: WHATWG_HTML.Attribute.Value<String>? = nil,
+        min: WHATWG_HTML.Attribute.Min? = nil,
+        max: WHATWG_HTML.Attribute.Max? = nil,
+        step: WHATWG_HTML.Attribute.Step? = nil,
+        list: WHATWG_HTML.Attribute.List? = nil,
+        disabled: WHATWG_HTML.Attribute.Disabled? = nil,
         form: WHATWG_HTML.Attribute.Form.ID? = nil
     ) -> Self {
         .init(

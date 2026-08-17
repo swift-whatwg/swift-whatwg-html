@@ -14,7 +14,9 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Height Test` {
-    @Test func `Height attribute should be height`() { #expect(WHATWG_HTML.Attribute.Height.attribute == "height") }
+    @Test func `Height attribute should be height`() {
+        #expect(WHATWG_HTML.Attribute.Height.attribute == "height")
+    }
 
     @Test func `Height should support integer literal`() {
         let height: WHATWG_HTML.Attribute.Height = 300

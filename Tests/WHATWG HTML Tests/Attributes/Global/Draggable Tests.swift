@@ -23,7 +23,10 @@ import WHATWG_HTML
         #expect(WHATWG_HTML.Attribute.Draggable.attribute == "draggable")
     }
 
-    @Test("Draggable cases description should match the spec", arguments: WHATWG_HTML.Attribute.Draggable.allCases)
+    @Test(
+        "Draggable cases description should match the spec",
+        arguments: WHATWG_HTML.Attribute.Draggable.allCases
+    )
     func cases(draggable: WHATWG_HTML.Attribute.Draggable) {
         switch draggable {
         case .true: #expect(draggable.description == "true")
@@ -46,8 +49,15 @@ import WHATWG_HTML
     }
 
     @Test(
-        arguments: [("true", WHATWG_HTML.Attribute.Draggable.true), ("false", WHATWG_HTML.Attribute.Draggable.false), ("auto", WHATWG_HTML.Attribute.Draggable.auto)]
-    ) func `Draggable should be initializable from rawValue`(input: String, expected: WHATWG_HTML.Attribute.Draggable?) {
+        arguments: [
+            ("true", WHATWG_HTML.Attribute.Draggable.true),
+            ("false", WHATWG_HTML.Attribute.Draggable.false),
+            ("auto", WHATWG_HTML.Attribute.Draggable.auto),
+        ]
+    ) func `Draggable should be initializable from rawValue`(
+        input: String,
+        expected: WHATWG_HTML.Attribute.Draggable?
+    ) {
         #expect(WHATWG_HTML.Attribute.Draggable(rawValue: input) == expected)
     }
 }

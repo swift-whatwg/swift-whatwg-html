@@ -72,7 +72,10 @@ import WHATWG_HTML
         @Test func `Configuration with both href and target`() {
             let href = WHATWG_HTML.Attribute.Href("https://example.com/")
             let target = WHATWG_HTML.Attribute.Target.blank
-            let configuration = WHATWG_HTML.Element.Base.Configuration.both(href: href, target: target)
+            let configuration = WHATWG_HTML.Element.Base.Configuration.both(
+                href: href,
+                target: target
+            )
             let base = WHATWG_HTML.Element.Base(configuration: configuration)
 
             #expect(base.configuration == configuration)
@@ -254,8 +257,12 @@ import WHATWG_HTML
 
         @Test func `Multiple base configurations`() {
             let bases = [
-                WHATWG_HTML.Element.Base(href: WHATWG_HTML.Attribute.Href("https://example.com/")), WHATWG_HTML.Element.Base(target: WHATWG_HTML.Attribute.Target.blank),
-                WHATWG_HTML.Element.Base(href: WHATWG_HTML.Attribute.Href("https://cdn.example.com/"), target: WHATWG_HTML.Attribute.Target.`self`),
+                WHATWG_HTML.Element.Base(href: WHATWG_HTML.Attribute.Href("https://example.com/")),
+                WHATWG_HTML.Element.Base(target: WHATWG_HTML.Attribute.Target.blank),
+                WHATWG_HTML.Element.Base(
+                    href: WHATWG_HTML.Attribute.Href("https://cdn.example.com/"),
+                    target: WHATWG_HTML.Attribute.Target.`self`
+                ),
             ]
 
             #expect(bases.count == 3)

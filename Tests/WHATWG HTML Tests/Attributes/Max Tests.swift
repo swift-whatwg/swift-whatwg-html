@@ -14,7 +14,9 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Max Test` {
-    @Test func `Max attribute should be max`() { #expect(WHATWG_HTML.Attribute.Max.attribute == "max") }
+    @Test func `Max attribute should be max`() {
+        #expect(WHATWG_HTML.Attribute.Max.attribute == "max")
+    }
 
     @Test func `Max should support integer literal`() {
         let max: WHATWG_HTML.Attribute.Max = 100

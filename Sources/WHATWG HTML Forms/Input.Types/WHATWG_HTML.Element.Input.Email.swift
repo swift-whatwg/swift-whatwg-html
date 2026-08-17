@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_FormAttributes
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// `<input type="email">` elements are used to let the user enter and edit an email address, or,
 /// if the multiple attribute is specified, a list of email addresses.
@@ -24,51 +24,51 @@ extension WHATWG_HTML.Element.Input {
     public struct Email: Sendable, Hashable {
         /// A string which is automatically validated as conforming to email syntax.
         /// This is the value that will be submitted with the form.
-        public var value: Attribute.Value<String>?
+        public var value: WHATWG_HTML.Attribute.Value<String>?
 
         /// The maximum string length (measured in UTF-16 code units) that the user can enter into the email input.
         /// This must be an integer value of 0 or higher. If no maxlength is specified, or an invalid value is specified,
         /// the email input has no maximum length. This value must also be greater than or equal to the value of minlength.
-        public var maxlength: Attribute.Maxlength?
+        public var maxlength: WHATWG_HTML.Attribute.Maxlength?
 
         /// The minimum string length (measured in UTF-16 code units) that the user can enter into the email input.
         /// This must be a non-negative integer value smaller than or equal to the value specified by maxlength.
         /// If no minlength is specified, or an invalid value is specified, the email input has no minimum length.
-        public var minlength: Attribute.Minlength?
+        public var minlength: WHATWG_HTML.Attribute.Minlength?
 
-        public var required: Attribute.Required?
+        public var required: WHATWG_HTML.Attribute.Required?
 
         /// A Boolean attribute which, if present, indicates that the user can enter a list of multiple
         /// email addresses, separated by commas and, optionally, whitespace characters.
-        public var multiple: Attribute.Multiple?
+        public var multiple: WHATWG_HTML.Attribute.Multiple?
 
         /// The pattern attribute is a regular expression that the input's value must match for the value
         /// to pass constraint validation. It must be a valid JavaScript regular expression.
-        public var pattern: Attribute.Pattern?
+        public var pattern: WHATWG_HTML.Attribute.Pattern?
 
         /// The placeholder attribute is a string that provides a brief hint to the user as to what kind
         /// of information is expected in the field. It should be a word or short phrase that demonstrates
         /// the expected type of data, rather than an explanatory message.
-        public var placeholder: Attribute.Placeholder?
+        public var placeholder: WHATWG_HTML.Attribute.Placeholder?
 
         /// A Boolean attribute which, if present, means this field cannot be edited by the user.
-        public var readonly: Attribute.Readonly?
+        public var readonly: WHATWG_HTML.Attribute.Readonly?
 
         /// The size attribute is a numeric value indicating how many characters wide the input field should be.
         /// The value must be a number greater than zero, and the default value is 20.
-        public var size: Attribute.Size?
+        public var size: WHATWG_HTML.Attribute.Size?
 
         /// Creates a new email input configuration
         public init(
-            value: Attribute.Value<String>? = nil,
-            maxlength: Attribute.Maxlength? = nil,
-            minlength: Attribute.Minlength? = nil,
-            required: Attribute.Required? = nil,
-            multiple: Attribute.Multiple? = nil,
-            pattern: Attribute.Pattern? = nil,
-            placeholder: Attribute.Placeholder? = nil,
-            readonly: Attribute.Readonly? = nil,
-            size: Attribute.Size? = nil
+            value: WHATWG_HTML.Attribute.Value<String>? = nil,
+            maxlength: WHATWG_HTML.Attribute.Maxlength? = nil,
+            minlength: WHATWG_HTML.Attribute.Minlength? = nil,
+            required: WHATWG_HTML.Attribute.Required? = nil,
+            multiple: WHATWG_HTML.Attribute.Multiple? = nil,
+            pattern: WHATWG_HTML.Attribute.Pattern? = nil,
+            placeholder: WHATWG_HTML.Attribute.Placeholder? = nil,
+            readonly: WHATWG_HTML.Attribute.Readonly? = nil,
+            size: WHATWG_HTML.Attribute.Size? = nil
         ) {
             self.value = value
             self.maxlength = maxlength
@@ -94,17 +94,17 @@ extension WHATWG_HTML.Element.Input {
 
     /// Creates a new email input element
     public static func email(
-        name: Attribute.Name? = nil,
-        value: Attribute.Value<String>? = nil,
-        maxlength: Attribute.Maxlength? = nil,
-        minlength: Attribute.Minlength? = nil,
-        required: Attribute.Required? = nil,
-        multiple: Attribute.Multiple? = nil,
-        pattern: Attribute.Pattern? = nil,
-        placeholder: Attribute.Placeholder? = nil,
-        readonly: Attribute.Readonly? = nil,
-        size: Attribute.Size? = nil,
-        disabled: Attribute.Disabled? = nil,
+        name: WHATWG_HTML.Attribute.Name? = nil,
+        value: WHATWG_HTML.Attribute.Value<String>? = nil,
+        maxlength: WHATWG_HTML.Attribute.Maxlength? = nil,
+        minlength: WHATWG_HTML.Attribute.Minlength? = nil,
+        required: WHATWG_HTML.Attribute.Required? = nil,
+        multiple: WHATWG_HTML.Attribute.Multiple? = nil,
+        pattern: WHATWG_HTML.Attribute.Pattern? = nil,
+        placeholder: WHATWG_HTML.Attribute.Placeholder? = nil,
+        readonly: WHATWG_HTML.Attribute.Readonly? = nil,
+        size: WHATWG_HTML.Attribute.Size? = nil,
+        disabled: WHATWG_HTML.Attribute.Disabled? = nil,
         form: WHATWG_HTML.Attribute.Form.ID? = nil
     ) -> Self {
         .init(

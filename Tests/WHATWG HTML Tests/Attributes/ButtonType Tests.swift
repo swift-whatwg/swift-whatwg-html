@@ -14,7 +14,9 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `ButtonType Test` {
-    @Test func `ButtonType attribute should be type`() { #expect(WHATWG_HTML.Attribute.ButtonType.attribute == "type") }
+    @Test func `ButtonType attribute should be type`() {
+        #expect(WHATWG_HTML.Attribute.ButtonType.attribute == "type")
+    }
 
     @Test func `ButtonType convenience properties`() {
         #expect(WHATWG_HTML.Attribute.ButtonType.submit.rawValue == "submit")

@@ -27,7 +27,11 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `Value file case stores file`() {
-        let file = WHATWG_HTML.Attribute.Form.Data.File(name: "test.txt", type: "text/plain", body: [UInt8]([1, 2, 3]))
+        let file = WHATWG_HTML.Attribute.Form.Data.File(
+            name: "test.txt",
+            type: "text/plain",
+            body: [UInt8]([1, 2, 3])
+        )
         let value = WHATWG_HTML.Attribute.Form.Data.Value.file(file)
 
         #expect(value.stringValue == nil)
@@ -49,7 +53,11 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `Value description for file includes file info`() {
-        let file = WHATWG_HTML.Attribute.Form.Data.File(name: "image.png", type: "image/png", body: [UInt8]([1, 2, 3]))
+        let file = WHATWG_HTML.Attribute.Form.Data.File(
+            name: "image.png",
+            type: "image/png",
+            body: [UInt8]([1, 2, 3])
+        )
         let value = WHATWG_HTML.Attribute.Form.Data.Value.file(file)
 
         let description = value.description
@@ -76,7 +84,11 @@ import WHATWG_HTML_Forms
     @Test func `String and file values are not equal`() {
         let stringValue = WHATWG_HTML.Attribute.Form.Data.Value.string("test")
         let fileValue = WHATWG_HTML.Attribute.Form.Data.Value.file(
-            WHATWG_HTML.Attribute.Form.Data.File(name: "test.txt", type: "text/plain", body: [UInt8]())
+            WHATWG_HTML.Attribute.Form.Data.File(
+                name: "test.txt",
+                type: "text/plain",
+                body: [UInt8]()
+            )
         )
 
         #expect(stringValue != fileValue)

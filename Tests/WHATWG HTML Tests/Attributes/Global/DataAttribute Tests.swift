@@ -19,7 +19,9 @@ import WHATWG_HTML
 #endif
 
 @Suite struct `DataAttribute Test` {
-    @Test func `DataAttribute prefix should be data-`() { #expect(WHATWG_HTML.Attribute.DataAttribute.prefix == "data-") }
+    @Test func `DataAttribute prefix should be data-`() {
+        #expect(WHATWG_HTML.Attribute.DataAttribute.prefix == "data-")
+    }
 
     @Test func `DataAttribute should initialize with name and value`() {
         let dataAttr = WHATWG_HTML.Attribute.DataAttribute(name: "user-id", value: "123")

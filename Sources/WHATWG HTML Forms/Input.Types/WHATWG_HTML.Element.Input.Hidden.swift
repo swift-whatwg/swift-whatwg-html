@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_FormAttributes
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// `<input type="hidden">` elements let web developers include data that cannot be seen or modified
 /// by users when a form is submitted. For example, the ID of the content that is currently being
@@ -28,10 +28,10 @@ extension WHATWG_HTML.Element.Input {
         /// The value attribute holds a string that contains the hidden data you want to include when
         /// the form is submitted to the server. This specifically can't be edited or seen by the user
         /// via the user interface, although it could be edited via browser developer tools.
-        public var value: Attribute.Value<String>?
+        public var value: WHATWG_HTML.Attribute.Value<String>?
 
         /// Creates a new hidden input configuration
-        public init(value: Attribute.Value<String>? = nil) { self.value = value }
+        public init(value: WHATWG_HTML.Attribute.Value<String>? = nil) { self.value = value }
     }
 }
 
@@ -41,9 +41,9 @@ extension WHATWG_HTML.Element.Input {
 
     /// Creates a new hidden input element
     public static func hidden(
-        name: Attribute.Name? = nil,
-        value: Attribute.Value<String>? = nil,
-        disabled: Attribute.Disabled? = nil,
+        name: WHATWG_HTML.Attribute.Name? = nil,
+        value: WHATWG_HTML.Attribute.Value<String>? = nil,
+        disabled: WHATWG_HTML.Attribute.Disabled? = nil,
         form: WHATWG_HTML.Attribute.Form.ID? = nil
     ) -> Self {
         .init(name: name, disabled: disabled, form: form, type: .hidden(.init(value: value)))

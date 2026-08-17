@@ -166,7 +166,10 @@ import WHATWG_HTML
         }
 
         @Test func `Aside collection`() {
-            let asides = [WHATWG_HTML.Element.Aside(), WHATWG_HTML.Element.Aside(), WHATWG_HTML.Element.Aside()]
+            let asides = [
+                WHATWG_HTML.Element.Aside(), WHATWG_HTML.Element.Aside(),
+                WHATWG_HTML.Element.Aside(),
+            ]
 
             #expect(asides.count == 3)
             asides.forEach { aside in #expect(type(of: aside).tag == "aside") }

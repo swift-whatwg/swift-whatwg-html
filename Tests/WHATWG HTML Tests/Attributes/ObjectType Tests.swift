@@ -14,7 +14,9 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `ObjectType Test` {
-    @Test func `ObjectType attribute should be type`() { #expect(WHATWG_HTML.Attribute.ObjectType.attribute == "type") }
+    @Test func `ObjectType attribute should be type`() {
+        #expect(WHATWG_HTML.Attribute.ObjectType.attribute == "type")
+    }
 
     @Test func `ObjectType should have predefined MIME types`() {
         #expect(WHATWG_HTML.Attribute.ObjectType.pdf.rawValue == "application/pdf")

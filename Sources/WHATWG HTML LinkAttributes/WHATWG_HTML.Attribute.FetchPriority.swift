@@ -81,5 +81,5 @@ extension WHATWG_HTML.Attribute.FetchPriority {
 }
 
 extension WHATWG_HTML.Attribute.FetchPriority: CaseIterable {
-    public static let allCases: [FetchPriority] = [.high, .low, .auto]
+    public static let allCases: [WHATWG_HTML.Attribute.FetchPriority] = [.high, .low, .auto]
 }

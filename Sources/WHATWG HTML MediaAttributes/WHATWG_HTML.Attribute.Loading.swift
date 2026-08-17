@@ -71,4 +71,6 @@ extension WHATWG_HTML.Attribute.Loading {
     @inlinable public static var eager: Self { "eager" }
 }
 
-extension WHATWG_HTML.Attribute.Loading: CaseIterable { public static let allCases: [Loading] = [.lazy, .eager] }
+extension WHATWG_HTML.Attribute.Loading: CaseIterable {
+    public static let allCases: [WHATWG_HTML.Attribute.Loading] = [.lazy, .eager]
+}

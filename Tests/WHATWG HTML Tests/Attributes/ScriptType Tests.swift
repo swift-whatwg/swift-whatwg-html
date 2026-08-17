@@ -14,7 +14,9 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `ScriptType Test` {
-    @Test func `ScriptType attribute should be type`() { #expect(WHATWG_HTML.Attribute.ScriptType.attribute == "type") }
+    @Test func `ScriptType attribute should be type`() {
+        #expect(WHATWG_HTML.Attribute.ScriptType.attribute == "type")
+    }
 
     @Test func `ScriptType should have predefined values`() {
         #expect(WHATWG_HTML.Attribute.ScriptType.module.rawValue == "module")

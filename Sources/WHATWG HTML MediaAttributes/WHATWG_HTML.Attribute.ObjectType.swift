@@ -67,20 +67,20 @@ extension WHATWG_HTML.Attribute.ObjectType {
 
 extension WHATWG_HTML.Attribute.ObjectType {
     /// application/pdf
-    public static let pdf = ObjectType(contentType: .applicationPDF)
+    public static let pdf = WHATWG_HTML.Attribute.ObjectType(contentType: .applicationPDF)
 
     /// video/mp4
-    public static let mp4 = ObjectType(contentType: .videoMP4)
+    public static let mp4 = WHATWG_HTML.Attribute.ObjectType(contentType: .videoMP4)
 
     /// audio/mpeg (MP3)
-    public static let mp3 = ObjectType(contentType: .audioMPEG)
+    public static let mp3 = WHATWG_HTML.Attribute.ObjectType(contentType: .audioMPEG)
 
     /// image/jpeg
-    public static let jpeg = ObjectType(contentType: .imageJPEG)
+    public static let jpeg = WHATWG_HTML.Attribute.ObjectType(contentType: .imageJPEG)
 
     /// image/png
-    public static let png = ObjectType(contentType: .imagePNG)
+    public static let png = WHATWG_HTML.Attribute.ObjectType(contentType: .imagePNG)
 
     /// text/html
-    public static let html = ObjectType(contentType: .textHTML)
+    public static let html = WHATWG_HTML.Attribute.ObjectType(contentType: .textHTML)
 }

@@ -156,7 +156,9 @@ import WHATWG_HTML
 
         @Test func `Tracked link`() {
             let href = WHATWG_HTML.Attribute.Href("https://example.com")
-            let ping = WHATWG_HTML.Attribute.Ping("https://analytics.example.com/ping https://tracking.example.com/click")
+            let ping = WHATWG_HTML.Attribute.Ping(
+                "https://analytics.example.com/ping https://tracking.example.com/click"
+            )
 
             let anchor = WHATWG_HTML.Element.Anchor(href: href, ping: ping)
 

@@ -66,13 +66,13 @@ extension WHATWG_HTML.Element {
         /// w
         /// This attribute is subject to HTTP access controls. You can either use this
         /// attribute or provide `<source>` elements as children of the audio element.
-        public var src: Attribute.Src?
+        public var src: WHATWG_HTML.Attribute.Src?
 
         /// Indicates whether the browser should show playback controls.
         ///
         /// When present, the browser will offer controls to allow the user to control
         /// audio playback, including volume, seeking, and pause/resume playback.
-        public var controls: Attribute.Controls?
+        public var controls: WHATWG_HTML.Attribute.Controls?
 
         /// Indicates whether the audio should automatically begin playback.
         ///
@@ -81,41 +81,41 @@ extension WHATWG_HTML.Element {
         ///
         /// - Note: Use autoplay with caution as it can create an unpleasant user experience.
         /// Many browsers now block autoplay by default unless the audio is muted.
-        public var autoplay: Attribute.Autoplay?
+        public var autoplay: WHATWG_HTML.Attribute.Autoplay?
 
         /// Indicates whether the audio will loop.
         ///
         /// When present, the audio player will automatically seek back to the start
         /// upon reaching the end of the audio.
-        public var loop: Attribute.Loop?
+        public var loop: WHATWG_HTML.Attribute.Loop?
 
         /// Indicates whether the audio should be initially muted.
         ///
         /// When present, the audio will be initially silenced. Its default value is false.
-        public var muted: Attribute.Muted?
+        public var muted: WHATWG_HTML.Attribute.Muted?
 
         /// Provides a hint to the browser about preloading strategy.
         ///
         /// This attribute tells the browser what the author thinks will lead to the best
         /// user experience regarding resource preloading.
-        public var preload: Attribute.Preload?
+        public var preload: WHATWG_HTML.Attribute.Preload?
 
         /// Indicates whether to use CORS to fetch the related audio file.
         ///
         /// This is particularly important if you intend to use the audio in a canvas element.
-        public var crossorigin: Attribute.Crossorigin?
+        public var crossorigin: WHATWG_HTML.Attribute.Crossorigin?
 
         /// Specifies which controls to show in the audio player.
         ///
         /// Only relevant when the controls attribute is present. Helps the browser select
         /// what controls to show for the audio element.
-        public var controlslist: Attribute.ControlsList?
+        public var controlslist: WHATWG_HTML.Attribute.ControlsList?
 
         /// Disables remote playback of the audio stream.
         ///
         /// When present, disables the capability of remote playback in devices that are
         /// attached using wired or wireless technologies.
-        public var disableremoteplayback: Attribute.DisableRemotePlayback?
+        public var disableremoteplayback: WHATWG_HTML.Attribute.DisableRemotePlayback?
 
         /// Creates a new Audio element with the specified attributes and content.
         ///
@@ -130,15 +130,15 @@ extension WHATWG_HTML.Element {
         ///   - controlslist: Which controls to show in the audio player
         ///   - disableremoteplayback: Whether to disable remote playback
         public init(
-            src: Attribute.Src? = nil,
-            controls: Attribute.Controls? = nil,
-            autoplay: Attribute.Autoplay? = nil,
-            loop: Attribute.Loop? = nil,
-            muted: Attribute.Muted? = nil,
-            preload: Attribute.Preload? = nil,
-            crossorigin: Attribute.Crossorigin? = nil,
-            controlslist: Attribute.ControlsList? = nil,
-            disableremoteplayback: Attribute.DisableRemotePlayback? = nil
+            src: WHATWG_HTML.Attribute.Src? = nil,
+            controls: WHATWG_HTML.Attribute.Controls? = nil,
+            autoplay: WHATWG_HTML.Attribute.Autoplay? = nil,
+            loop: WHATWG_HTML.Attribute.Loop? = nil,
+            muted: WHATWG_HTML.Attribute.Muted? = nil,
+            preload: WHATWG_HTML.Attribute.Preload? = nil,
+            crossorigin: WHATWG_HTML.Attribute.Crossorigin? = nil,
+            controlslist: WHATWG_HTML.Attribute.ControlsList? = nil,
+            disableremoteplayback: WHATWG_HTML.Attribute.DisableRemotePlayback? = nil
         ) {
             self.src = src
             self.controls = controls

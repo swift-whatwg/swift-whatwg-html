@@ -14,7 +14,9 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Kind Test` {
-    @Test func `Kind attribute should be kind`() { #expect(WHATWG_HTML.Attribute.Kind.attribute == "kind") }
+    @Test func `Kind attribute should be kind`() {
+        #expect(WHATWG_HTML.Attribute.Kind.attribute == "kind")
+    }
 
     @Test func `Kind convenience properties`() {
         #expect(WHATWG_HTML.Attribute.Kind.subtitles.rawValue == "subtitles")

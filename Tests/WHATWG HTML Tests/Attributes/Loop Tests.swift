@@ -14,5 +14,7 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Loop Test` {
-    @Test func `Loop attribute should be loop`() { #expect(WHATWG_HTML.Attribute.Loop.attribute == "loop") }
+    @Test func `Loop attribute should be loop`() {
+        #expect(WHATWG_HTML.Attribute.Loop.attribute == "loop")
+    }
 }

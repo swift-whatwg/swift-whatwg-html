@@ -75,16 +75,16 @@ extension WHATWG_HTML.Attribute.Size {
 
 extension WHATWG_HTML.Attribute.Size {
     /// Create a size attribute for a standard text field (width for about 30 characters)
-    public static let standardTextField = Size(30)
+    public static let standardTextField = WHATWG_HTML.Attribute.Size(30)
 
     /// Create a size attribute for a small text field (width for about 10 characters)
-    public static let smallTextField = Size(10)
+    public static let smallTextField = WHATWG_HTML.Attribute.Size(10)
 
     /// Create a size attribute for a large text field (width for about 50 characters)
-    public static let largeTextField = Size(50)
+    public static let largeTextField = WHATWG_HTML.Attribute.Size(50)
 
     /// Create a size attribute for a listbox showing multiple options (5 options visible)
-    public static let standardListbox = Size(5)
+    public static let standardListbox = WHATWG_HTML.Attribute.Size(5)
 }
 
 extension WHATWG_HTML.Attribute.Size: ExpressibleByIntegerLiteral {

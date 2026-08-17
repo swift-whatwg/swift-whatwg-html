@@ -60,8 +60,8 @@ extension WHATWG_HTML.Attribute.TextareaWrap {
     @inlinable public static var attribute: String { "wrap" }
 
     /// Line breaks are automatically inserted
-    public static let hard = TextareaWrap("hard")
+    public static let hard = WHATWG_HTML.Attribute.TextareaWrap("hard")
 
     /// Line breaks are not automatically inserted
-    public static let soft = TextareaWrap("soft")
+    public static let soft = WHATWG_HTML.Attribute.TextareaWrap("soft")
 }

@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_Forms
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 extension WHATWG_HTML.Element.Form.Data {
     /// Represents a file value in form data.

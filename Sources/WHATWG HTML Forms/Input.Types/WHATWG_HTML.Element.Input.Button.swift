@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_FormAttributes
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 extension WHATWG_HTML.Element.Input {
     /// `<input type="button">` elements are rendered as push buttons, which can be programmed to control
@@ -63,9 +63,9 @@ extension WHATWG_HTML.Element.Input {
     public struct Button: Sendable, Hashable {
         /// A string that is used as the button's label. The value provides the accessible description for the button.
         /// If not specified, you get an empty button.
-        public var value: Attribute.Value<String>?
+        public var value: WHATWG_HTML.Attribute.Value<String>?
 
-        public init(value: Attribute.Value<String>? = nil) { self.value = value }
+        public init(value: WHATWG_HTML.Attribute.Value<String>? = nil) { self.value = value }
     }
 }
 
@@ -74,9 +74,9 @@ extension WHATWG_HTML.Element.Input {
     public static let button: Self = .button()
 
     public static func button(
-        name: Attribute.Name? = nil,
-        value: Attribute.Value<String>? = nil,
-        disabled: Attribute.Disabled? = nil,
+        name: WHATWG_HTML.Attribute.Name? = nil,
+        value: WHATWG_HTML.Attribute.Value<String>? = nil,
+        disabled: WHATWG_HTML.Attribute.Disabled? = nil,
         form: WHATWG_HTML.Attribute.Form.ID? = nil
     ) -> Self {
         .init(name: name, disabled: disabled, form: form, type: .button(.init(value: value)))

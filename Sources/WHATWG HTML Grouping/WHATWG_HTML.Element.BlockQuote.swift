@@ -39,13 +39,13 @@ extension WHATWG_HTML.Element {
     ///
     public struct BlockQuote: WHATWG_HTML.Element.`Protocol` {
         /// A URL that designates a source document or message for the quoted information
-        public var cite: Attribute.Cite?
+        public var cite: WHATWG_HTML.Attribute.Cite?
 
         /// Creates a new BlockQuote element with the specified citation source and content.
         ///
         /// - Parameters:
         ///   - cite: A URL that designates the source document for the quotation
-        public init(cite: Attribute.Cite? = nil) { self.cite = cite }
+        public init(cite: WHATWG_HTML.Attribute.Cite? = nil) { self.cite = cite }
     }
 }
 

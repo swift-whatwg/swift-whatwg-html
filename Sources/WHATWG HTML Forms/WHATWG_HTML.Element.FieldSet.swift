@@ -47,13 +47,13 @@ extension WHATWG_HTML.Element {
     ///
     public struct FieldSet: WHATWG_HTML.Element.`Protocol` {
         /// Disables all form controls that are descendants of the fieldset
-        public var disabled: Attribute.Disabled?
+        public var disabled: WHATWG_HTML.Attribute.Disabled?
 
         /// Associates the fieldset with a form element using the form's ID
         public var form: WHATWG_HTML.Attribute.Form.ID?
 
         /// The name associated with the fieldset group
-        public var name: Attribute.Name?
+        public var name: WHATWG_HTML.Attribute.Name?
 
         /// Creates a new FieldSet element with the specified attributes.
         ///
@@ -62,9 +62,9 @@ extension WHATWG_HTML.Element {
         ///   - form: Associates the fieldset with a form element using the form's ID
         ///   - name: The name associated with the fieldset group
         public init(
-            disabled: Attribute.Disabled? = nil,
+            disabled: WHATWG_HTML.Attribute.Disabled? = nil,
             form: WHATWG_HTML.Attribute.Form.ID? = nil,
-            name: Attribute.Name? = nil
+            name: WHATWG_HTML.Attribute.Name? = nil
         ) {
             self.disabled = disabled
             self.form = form

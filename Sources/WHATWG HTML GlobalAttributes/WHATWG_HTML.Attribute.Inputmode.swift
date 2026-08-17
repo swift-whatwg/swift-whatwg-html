@@ -155,7 +155,7 @@ extension WHATWG_HTML.Attribute.Inputmode {
 }
 
 extension WHATWG_HTML.Attribute.Inputmode: CaseIterable {
-    public static let allCases: [Inputmode] = [
+    public static let allCases: [WHATWG_HTML.Attribute.Inputmode] = [
         .none, .text, .decimal, .numeric, .tel, .search, .email, .url,
     ]
 }

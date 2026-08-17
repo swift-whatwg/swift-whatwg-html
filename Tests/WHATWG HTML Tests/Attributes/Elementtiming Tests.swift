@@ -22,7 +22,11 @@ import WHATWG_HTML
         let timing = WHATWG_HTML.Attribute.Elementtiming(category: "hero", name: "image")
         #expect(timing.rawValue == "hero-image")
 
-        let customSeparator = WHATWG_HTML.Attribute.Elementtiming(category: "main", name: "content", separator: "_")
+        let customSeparator = WHATWG_HTML.Attribute.Elementtiming(
+            category: "main",
+            name: "content",
+            separator: "_"
+        )
         #expect(customSeparator.rawValue == "main_content")
     }
 

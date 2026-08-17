@@ -69,17 +69,17 @@ extension WHATWG_HTML.Attribute.Pattern {
 
 extension WHATWG_HTML.Attribute.Pattern {
     /// Common regex pattern for a username (alphanumeric, 3-16 characters)
-    public static let username = Pattern("[a-zA-Z0-9]{3,16}")
+    public static let username = WHATWG_HTML.Attribute.Pattern("[a-zA-Z0-9]{3,16}")
 
     /// Common regex pattern for a US phone number (###-###-####)
-    public static let usPhone = Pattern("[0-9]{3}-[0-9]{3}-[0-9]{4}")
+    public static let usPhone = WHATWG_HTML.Attribute.Pattern("[0-9]{3}-[0-9]{3}-[0-9]{4}")
 
     /// Common regex pattern for a US zip code (5 digits, optional 4-digit extension)
-    public static let usZipCode = Pattern("[0-9]{5}(-[0-9]{4})?")
+    public static let usZipCode = WHATWG_HTML.Attribute.Pattern("[0-9]{5}(-[0-9]{4})?")
 
     /// Common regex pattern for a positive integer
-    public static let integer = Pattern("[0-9]+")
+    public static let integer = WHATWG_HTML.Attribute.Pattern("[0-9]+")
 
     /// Common regex pattern for an alphanumeric string
-    public static let alphanumeric = Pattern("[a-zA-Z0-9]+")
+    public static let alphanumeric = WHATWG_HTML.Attribute.Pattern("[a-zA-Z0-9]+")
 }

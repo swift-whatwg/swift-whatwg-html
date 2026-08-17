@@ -21,7 +21,9 @@ extension WHATWG_HTML.Attribute.Content {
     @inlinable public static var attribute: String { "content" }
 }
 
-extension WHATWG_HTML.Attribute.Content: CustomStringConvertible { public var description: String { rawValue } }
+extension WHATWG_HTML.Attribute.Content: CustomStringConvertible {
+    public var description: String { rawValue }
+}
 
 extension WHATWG_HTML.Attribute.Content: ExpressibleByStringLiteral {
     public init(stringLiteral value: String) { self.init(value: value) }

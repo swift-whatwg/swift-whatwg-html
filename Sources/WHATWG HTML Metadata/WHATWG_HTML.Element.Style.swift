@@ -44,16 +44,16 @@ extension WHATWG_HTML.Element {
     public struct Style: WHATWG_HTML.Element.`Protocol` {
 
         /// Defines which media the style should be applied to. Its value is a media query, which defaults to "all" if the attribute is missing.
-        public var media: Attribute.Media?
+        public var media: WHATWG_HTML.Attribute.Media?
 
         /// Explicitly indicates that certain operations should be blocked on the fetching of critical subresources.
-        public var blocking: Attribute.Blocking?
+        public var blocking: WHATWG_HTML.Attribute.Blocking?
 
         /// A cryptographic nonce (number used once) used to allow inline styles in a style-src Content-Security-Policy.
-        public var nonce: Attribute.Nonce?
+        public var nonce: WHATWG_HTML.Attribute.Nonce?
 
         /// Specifies alternative style sheet sets.
-        public var title: Attribute.Title?
+        public var title: WHATWG_HTML.Attribute.Title?
 
         /// Creates a new Style element with the specified attributes.
         ///
@@ -63,10 +63,10 @@ extension WHATWG_HTML.Element {
         ///   - nonce: A cryptographic nonce for Content-Security-Policy
         ///   - title: Specifies alternative style sheet sets
         public init(
-            media: Attribute.Media? = nil,
-            blocking: Attribute.Blocking? = nil,
-            nonce: Attribute.Nonce? = nil,
-            title: Attribute.Title? = nil
+            media: WHATWG_HTML.Attribute.Media? = nil,
+            blocking: WHATWG_HTML.Attribute.Blocking? = nil,
+            nonce: WHATWG_HTML.Attribute.Nonce? = nil,
+            title: WHATWG_HTML.Attribute.Title? = nil
         ) {
             self.media = media
             self.blocking = blocking

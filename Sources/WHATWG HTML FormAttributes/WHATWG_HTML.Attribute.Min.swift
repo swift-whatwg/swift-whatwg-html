@@ -116,7 +116,7 @@ extension WHATWG_HTML.Attribute.Min {
     }
 
     /// Zero value for numeric inputs
-    public static let zero = Min(0)
+    public static let zero = WHATWG_HTML.Attribute.Min(0)
 }
 
 extension WHATWG_HTML.Attribute.Min: ExpressibleByIntegerLiteral {
@@ -129,23 +129,23 @@ extension WHATWG_HTML.Attribute.Min: ExpressibleByFloatLiteral {
 
 extension WHATWG_HTML.Attribute.Min {
     /// Create a min value for a date input
-    public static func date(_ year: Int, month: Int, day: Int) -> Min {
-        return Min(String.format(year: year, month: month, day: day))
+    public static func date(_ year: Int, month: Int, day: Int) -> WHATWG_HTML.Attribute.Min {
+        return WHATWG_HTML.Attribute.Min(String.format(year: year, month: month, day: day))
     }
 
     /// Create a min value for a month input
-    public static func month(_ year: Int, month: Int) -> Min {
-        return Min(String.format(year: year, month: month))
+    public static func month(_ year: Int, month: Int) -> WHATWG_HTML.Attribute.Min {
+        return WHATWG_HTML.Attribute.Min(String.format(year: year, month: month))
     }
 
     /// Create a min value for a week input
-    public static func week(_ year: Int, week: Int) -> Min {
-        return Min(String.format(year: year, week: week))
+    public static func week(_ year: Int, week: Int) -> WHATWG_HTML.Attribute.Min {
+        return WHATWG_HTML.Attribute.Min(String.format(year: year, week: week))
     }
 
     /// Create a min value for a time input
-    public static func time(_ hour: Int, minute: Int) -> Min {
-        return Min(String.format(hour: hour, minute: minute))
+    public static func time(_ hour: Int, minute: Int) -> WHATWG_HTML.Attribute.Min {
+        return WHATWG_HTML.Attribute.Min(String.format(hour: hour, minute: minute))
     }
 
     /// Create a min value for a datetime-local input
@@ -155,7 +155,9 @@ extension WHATWG_HTML.Attribute.Min {
         day: Int,
         hour: Int,
         minute: Int
-    ) -> Min {
-        return Min(String.format(year: year, month: month, day: day, hour: hour, minute: minute))
+    ) -> WHATWG_HTML.Attribute.Min {
+        return WHATWG_HTML.Attribute.Min(
+            String.format(year: year, month: month, day: day, hour: hour, minute: minute)
+        )
     }
 }

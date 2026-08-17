@@ -14,7 +14,9 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Usemap Test` {
-    @Test func `Usemap attribute should be usemap`() { #expect(WHATWG_HTML.Attribute.Usemap.attribute == "usemap") }
+    @Test func `Usemap attribute should be usemap`() {
+        #expect(WHATWG_HTML.Attribute.Usemap.attribute == "usemap")
+    }
 
     @Test func `Usemap should automatically add # prefix`() {
         let withoutHash = WHATWG_HTML.Attribute.Usemap("planetmap")

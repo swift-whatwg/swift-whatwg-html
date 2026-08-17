@@ -14,7 +14,9 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Preload Test` {
-    @Test func `Preload attribute should be preload`() { #expect(WHATWG_HTML.Attribute.Preload.attribute == "preload") }
+    @Test func `Preload attribute should be preload`() {
+        #expect(WHATWG_HTML.Attribute.Preload.attribute == "preload")
+    }
 
     @Test func `Preload convenience properties`() {
         #expect(WHATWG_HTML.Attribute.Preload.none.rawValue == "none")

@@ -45,17 +45,20 @@ extension WHATWG_HTML.Element {
     ///
     public struct Del: WHATWG_HTML.Element.`Protocol` {
         /// A URI for a resource that explains the change (for example, meeting minutes).
-        public var cite: Attribute.Cite?
+        public var cite: WHATWG_HTML.Attribute.Cite?
 
         /// The time and date of the change as a valid date string with an optional time.
-        public var datetime: Attribute.DateTime?
+        public var datetime: WHATWG_HTML.Attribute.DateTime?
 
         /// Creates a new Del element to mark deleted text.
         ///
         /// - Parameters:
         ///   - cite: A URI for a resource that explains the change
         ///   - datetime: The time and date of the change
-        public init(cite: Attribute.Cite? = nil, datetime: Attribute.DateTime? = nil) {
+        public init(
+            cite: WHATWG_HTML.Attribute.Cite? = nil,
+            datetime: WHATWG_HTML.Attribute.DateTime? = nil
+        ) {
             self.cite = cite
             self.datetime = datetime
         }

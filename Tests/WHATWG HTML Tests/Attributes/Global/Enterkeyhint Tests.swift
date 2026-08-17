@@ -23,7 +23,10 @@ import WHATWG_HTML
         #expect(WHATWG_HTML.Attribute.Enterkeyhint.attribute == "enterkeyhint")
     }
 
-    @Test("Enterkeyhint cases description should match the spec", arguments: WHATWG_HTML.Attribute.Enterkeyhint.allCases)
+    @Test(
+        "Enterkeyhint cases description should match the spec",
+        arguments: WHATWG_HTML.Attribute.Enterkeyhint.allCases
+    )
     func cases(enterkeyhint: WHATWG_HTML.Attribute.Enterkeyhint) {
         switch enterkeyhint {
         case .enter: #expect(enterkeyhint.description == "enter")
@@ -49,15 +52,21 @@ import WHATWG_HTML
     }
 
     @Test(arguments: WHATWG_HTML.Attribute.Enterkeyhint.allCases)
-    func `Enterkeyhint rawValue should match description`(enterkeyhint: WHATWG_HTML.Attribute.Enterkeyhint) {
+    func `Enterkeyhint rawValue should match description`(
+        enterkeyhint: WHATWG_HTML.Attribute.Enterkeyhint
+    ) {
         #expect(enterkeyhint.rawValue == enterkeyhint.description)
     }
 
     @Test(
         arguments: [
-            ("enter", WHATWG_HTML.Attribute.Enterkeyhint.enter), ("done", WHATWG_HTML.Attribute.Enterkeyhint.done), ("go", WHATWG_HTML.Attribute.Enterkeyhint.go),
-            ("next", WHATWG_HTML.Attribute.Enterkeyhint.next), ("previous", WHATWG_HTML.Attribute.Enterkeyhint.previous),
-            ("search", WHATWG_HTML.Attribute.Enterkeyhint.search), ("send", WHATWG_HTML.Attribute.Enterkeyhint.send),
+            ("enter", WHATWG_HTML.Attribute.Enterkeyhint.enter),
+            ("done", WHATWG_HTML.Attribute.Enterkeyhint.done),
+            ("go", WHATWG_HTML.Attribute.Enterkeyhint.go),
+            ("next", WHATWG_HTML.Attribute.Enterkeyhint.next),
+            ("previous", WHATWG_HTML.Attribute.Enterkeyhint.previous),
+            ("search", WHATWG_HTML.Attribute.Enterkeyhint.search),
+            ("send", WHATWG_HTML.Attribute.Enterkeyhint.send),
         ]
     ) func `Enterkeyhint should be initializable from rawValue`(
         input: String,

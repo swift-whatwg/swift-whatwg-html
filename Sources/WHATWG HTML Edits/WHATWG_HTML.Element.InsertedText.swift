@@ -40,17 +40,20 @@ extension WHATWG_HTML.Element {
     ///
     public struct InsertedText: WHATWG_HTML.Element.`Protocol` {
         /// The URI of a resource that explains the change, such as a link to meeting minutes or a ticket.
-        public var cite: Attribute.Cite?
+        public var cite: WHATWG_HTML.Attribute.Cite?
 
         /// Indicates the time and date of the change.
-        public var datetime: Attribute.DateTime?
+        public var datetime: WHATWG_HTML.Attribute.DateTime?
 
         /// Creates a new InsertedText element with the specified attributes.
         ///
         /// - Parameters:
         ///   - cite: The URI of a resource that explains the change.
         ///   - datetime: The time and date of the change..
-        public init(cite: Attribute.Cite? = nil, datetime: Attribute.DateTime? = nil) {
+        public init(
+            cite: WHATWG_HTML.Attribute.Cite? = nil,
+            datetime: WHATWG_HTML.Attribute.DateTime? = nil
+        ) {
             self.cite = cite
             self.datetime = datetime
 

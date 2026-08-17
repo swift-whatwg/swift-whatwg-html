@@ -19,9 +19,14 @@ import WHATWG_HTML
 #endif
 
 @Suite struct `Dir Test` {
-    @Test func `Dir attribute should be dir`() { #expect(WHATWG_HTML.Attribute.Dir.attribute == "dir") }
+    @Test func `Dir attribute should be dir`() {
+        #expect(WHATWG_HTML.Attribute.Dir.attribute == "dir")
+    }
 
-    @Test("Dir cases description should match the spec", arguments: WHATWG_HTML.Attribute.Dir.allCases) func cases(
+    @Test(
+        "Dir cases description should match the spec",
+        arguments: WHATWG_HTML.Attribute.Dir.allCases
+    ) func cases(
         dir: WHATWG_HTML.Attribute.Dir
     ) {
         switch dir {
@@ -45,8 +50,14 @@ import WHATWG_HTML
     }
 
     @Test(
-        arguments: [("ltr", WHATWG_HTML.Attribute.Dir.ltr), ("rtl", WHATWG_HTML.Attribute.Dir.rtl), ("auto", WHATWG_HTML.Attribute.Dir.auto)]
-    ) func `Dir should be initializable from rawValue`(input: String, expected: WHATWG_HTML.Attribute.Dir?) {
+        arguments: [
+            ("ltr", WHATWG_HTML.Attribute.Dir.ltr), ("rtl", WHATWG_HTML.Attribute.Dir.rtl),
+            ("auto", WHATWG_HTML.Attribute.Dir.auto),
+        ]
+    ) func `Dir should be initializable from rawValue`(
+        input: String,
+        expected: WHATWG_HTML.Attribute.Dir?
+    ) {
         #expect(WHATWG_HTML.Attribute.Dir(rawValue: input) == expected)
     }
 }

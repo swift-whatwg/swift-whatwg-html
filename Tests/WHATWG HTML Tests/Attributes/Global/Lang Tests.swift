@@ -19,7 +19,9 @@ import WHATWG_HTML
 #endif
 
 @Suite struct `Lang Test` {
-    @Test func `Lang attribute should be lang`() { #expect(WHATWG_HTML.Attribute.Lang.attribute == "lang") }
+    @Test func `Lang attribute should be lang`() {
+        #expect(WHATWG_HTML.Attribute.Lang.attribute == "lang")
+    }
 
     @Test func `Lang should store and return its value`() {
         let lang = WHATWG_HTML.Attribute.Lang("en-US")

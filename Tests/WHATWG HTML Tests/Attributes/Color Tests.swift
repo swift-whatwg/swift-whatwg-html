@@ -14,5 +14,7 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Color Test` {
-    @Test func `Color attribute should be color`() { #expect(WHATWG_HTML.Attribute.Color.attribute == "color") }
+    @Test func `Color attribute should be color`() {
+        #expect(WHATWG_HTML.Attribute.Color.attribute == "color")
+    }
 }

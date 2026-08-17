@@ -67,7 +67,7 @@ extension WHATWG_HTML.Element {
 
         /// The number of consecutive columns this column group spans
         /// Note: Cannot be used if the column group contains col elements
-        public var span: Attribute.Span?
+        public var span: WHATWG_HTML.Attribute.Span?
 
         /// Creates a new TableColumnGroup element with an optional span attribute and content.
         ///
@@ -77,7 +77,7 @@ extension WHATWG_HTML.Element {
         /// - Note: Either use the span attribute OR include col elements as content, not both.
         ///   According to the HTML specification, if the span attribute is present,
         ///   the colgroup element cannot contain any col elements.
-        public init(span: Attribute.Span? = nil) {
+        public init(span: WHATWG_HTML.Attribute.Span? = nil) {
             self.span = span
 
         }

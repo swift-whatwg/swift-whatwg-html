@@ -110,4 +110,6 @@ extension WHATWG_HTML.Attribute.Translate: ExpressibleByBooleanLiteral {
     }
 }
 
-extension WHATWG_HTML.Attribute.Translate: CaseIterable { public static let allCases: [Translate] = [.yes, .no] }
+extension WHATWG_HTML.Attribute.Translate: CaseIterable {
+    public static let allCases: [WHATWG_HTML.Attribute.Translate] = [.yes, .no]
+}

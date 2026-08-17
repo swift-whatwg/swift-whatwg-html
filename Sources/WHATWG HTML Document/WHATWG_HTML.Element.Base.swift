@@ -50,19 +50,19 @@ extension WHATWG_HTML.Element {
         /// Creates a new Base element with an href attribute.
         ///
         /// - Parameter href: The base URL to be used for all relative URLs in the document.
-        public init(href: Attribute.Href) { self.configuration = .href(href) }
+        public init(href: WHATWG_HTML.Attribute.Href) { self.configuration = .href(href) }
 
         /// Creates a new Base element with a target attribute.
         ///
         /// - Parameter target: The default browsing context for navigation.
-        public init(target: Attribute.Target) { self.configuration = .target(target) }
+        public init(target: WHATWG_HTML.Attribute.Target) { self.configuration = .target(target) }
 
         /// Creates a new Base element with both href and target attributes.
         ///
         /// - Parameters:
         ///   - href: The base URL to be used for all relative URLs in the document.
         ///   - target: The default browsing context for navigation.
-        public init(href: Attribute.Href, target: Attribute.Target) {
+        public init(href: WHATWG_HTML.Attribute.Href, target: WHATWG_HTML.Attribute.Target) {
             self.configuration = .both(href: href, target: target)
         }
     }
@@ -79,13 +79,13 @@ extension WHATWG_HTML.Element.Base {
     /// a target attribute, or both.
     public enum Configuration: Sendable, Hashable {
         /// A base element with only an href attribute.
-        case href(Attribute.Href)
+        case href(WHATWG_HTML.Attribute.Href)
 
         /// A base element with only a target attribute.
-        case target(Attribute.Target)
+        case target(WHATWG_HTML.Attribute.Target)
 
         /// A base element with both href and target attributes.
-        case both(href: Attribute.Href, target: Attribute.Target)
+        case both(href: WHATWG_HTML.Attribute.Href, target: WHATWG_HTML.Attribute.Target)
     }
 
     /// The base URL to be used throughout the document for relative URLs, if specified.
@@ -95,7 +95,7 @@ extension WHATWG_HTML.Element.Base {
     /// but `data:` and `javascript:` URLs are not permitted.
     ///
     /// - Note: If multiple base elements exist, only the first href is used.
-    public var href: Attribute.Href? {
+    public var href: WHATWG_HTML.Attribute.Href? {
         switch configuration {
         case .href(let href): return href
         case .both(let href, _): return href
@@ -116,7 +116,7 @@ extension WHATWG_HTML.Element.Base {
     /// - `_top`: Show in topmost browsing context
     ///
     /// - Note: If multiple base elements exist, only the first target is used.
-    public var target: Attribute.Target? {
+    public var target: WHATWG_HTML.Attribute.Target? {
         switch configuration {
         case .target(let target): return target
         case .both(_, let target): return target

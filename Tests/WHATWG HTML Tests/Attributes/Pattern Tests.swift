@@ -14,7 +14,9 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Pattern Test` {
-    @Test func `Pattern attribute should be pattern`() { #expect(WHATWG_HTML.Attribute.Pattern.attribute == "pattern") }
+    @Test func `Pattern attribute should be pattern`() {
+        #expect(WHATWG_HTML.Attribute.Pattern.attribute == "pattern")
+    }
 
     @Test func `Pattern convenience properties`() {
         #expect(WHATWG_HTML.Attribute.Pattern.username.rawValue == "[a-zA-Z0-9]{3,16}")

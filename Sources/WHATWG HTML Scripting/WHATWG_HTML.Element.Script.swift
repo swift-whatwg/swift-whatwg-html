@@ -68,40 +68,40 @@ extension WHATWG_HTML.Element {
     public struct Script: WHATWG_HTML.Element.`Protocol` {
 
         /// The URL of an external script file
-        public var src: Attribute.Src?
+        public var src: WHATWG_HTML.Attribute.Src?
 
         /// Indicates that the script should be executed asynchronously
-        public var async: Attribute.Async?
+        public var async: WHATWG_HTML.Attribute.Async?
 
         /// Indicates that the script should be executed after the document has been parsed
-        public var `defer`: Attribute.Defer?
+        public var `defer`: WHATWG_HTML.Attribute.Defer?
 
         /// Indicates the type of script represented
-        public var type: Attribute.ScriptType?
+        public var type: WHATWG_HTML.Attribute.ScriptType?
 
         /// Indicates integrity metadata for the script
-        public var integrity: Attribute.Integrity?
+        public var integrity: WHATWG_HTML.Attribute.Integrity?
 
         /// Indicates which referrer to send when fetching the script
-        public var referrerpolicy: Attribute.ReferrerPolicy?
+        public var referrerpolicy: WHATWG_HTML.Attribute.ReferrerPolicy?
 
         /// Indicates that the script should not be executed in browsers that support ES modules
-        public var nomodule: Attribute.Nomodule?
+        public var nomodule: WHATWG_HTML.Attribute.Nomodule?
 
         /// Provides a hint of the relative priority to use when fetching the script
-        public var fetchpriority: Attribute.FetchPriority?
+        public var fetchpriority: WHATWG_HTML.Attribute.FetchPriority?
 
         /// Explicitly indicates that certain operations should be blocked on the fetching of the script
-        public var blocking: Attribute.Blocking?
+        public var blocking: WHATWG_HTML.Attribute.Blocking?
 
         /// Indicates how the element handles crossorigin requests
-        public var crossorigin: Attribute.Crossorigin?
+        public var crossorigin: WHATWG_HTML.Attribute.Crossorigin?
 
         /// A cryptographic nonce for Content-Security-Policy
-        public var nonce: Attribute.Nonce?
+        public var nonce: WHATWG_HTML.Attribute.Nonce?
 
         /// For registration with the Attribution Reporting API
-        public var attributionsrc: Attribute.AttributionSrc?
+        public var attributionsrc: WHATWG_HTML.Attribute.AttributionSrc?
 
         /// Creates a new Script element with the specified attributes.
         ///
@@ -119,18 +119,18 @@ extension WHATWG_HTML.Element {
         ///   - nonce: A cryptographic nonce for Content-Security-Policy
         ///   - attributionsrc: For registration with the Attribution Reporting API
         public init(
-            src: Attribute.Src? = nil,
-            async: Attribute.Async? = nil,
-            defer: Attribute.Defer? = nil,
-            type: Attribute.ScriptType? = nil,
-            integrity: Attribute.Integrity? = nil,
-            referrerpolicy: Attribute.ReferrerPolicy? = nil,
-            nomodule: Attribute.Nomodule? = nil,
-            fetchpriority: Attribute.FetchPriority? = nil,
-            blocking: Attribute.Blocking? = nil,
-            crossorigin: Attribute.Crossorigin? = nil,
-            nonce: Attribute.Nonce? = nil,
-            attributionsrc: Attribute.AttributionSrc? = nil
+            src: WHATWG_HTML.Attribute.Src? = nil,
+            async: WHATWG_HTML.Attribute.Async? = nil,
+            defer: WHATWG_HTML.Attribute.Defer? = nil,
+            type: WHATWG_HTML.Attribute.ScriptType? = nil,
+            integrity: WHATWG_HTML.Attribute.Integrity? = nil,
+            referrerpolicy: WHATWG_HTML.Attribute.ReferrerPolicy? = nil,
+            nomodule: WHATWG_HTML.Attribute.Nomodule? = nil,
+            fetchpriority: WHATWG_HTML.Attribute.FetchPriority? = nil,
+            blocking: WHATWG_HTML.Attribute.Blocking? = nil,
+            crossorigin: WHATWG_HTML.Attribute.Crossorigin? = nil,
+            nonce: WHATWG_HTML.Attribute.Nonce? = nil,
+            attributionsrc: WHATWG_HTML.Attribute.AttributionSrc? = nil
         ) {
             self.src = src
             self.async = async

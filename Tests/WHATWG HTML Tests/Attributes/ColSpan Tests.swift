@@ -14,7 +14,9 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `ColSpan Test` {
-    @Test func `ColSpan attribute should be colspan`() { #expect(WHATWG_HTML.Attribute.ColSpan.attribute == "colspan") }
+    @Test func `ColSpan attribute should be colspan`() {
+        #expect(WHATWG_HTML.Attribute.ColSpan.attribute == "colspan")
+    }
 
     @Test func `ColSpan should support integer literal`() {
         let colSpan: WHATWG_HTML.Attribute.ColSpan = 3

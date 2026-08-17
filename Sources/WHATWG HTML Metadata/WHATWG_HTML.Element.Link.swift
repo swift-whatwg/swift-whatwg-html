@@ -52,46 +52,46 @@ extension WHATWG_HTML.Element {
     public struct Link: WHATWG_HTML.Element.`Protocol` {
 
         /// The type of resource being loaded (for preload/modulepreload).
-        public var `as`: Attribute.As?
+        public var `as`: WHATWG_HTML.Attribute.As?
 
         /// Indicates which operations should be blocked on fetching the resource.
         ///
         /// Can only be used with rel="stylesheet" or rel="expect".
-        public var blocking: Attribute.Blocking?
+        public var blocking: WHATWG_HTML.Attribute.Blocking?
 
         /// Indicates whether CORS must be used when fetching the resource.
-        public var crossorigin: Attribute.Crossorigin?
+        public var crossorigin: WHATWG_HTML.Attribute.Crossorigin?
 
         /// For stylesheets, indicates whether the stylesheet should be loaded and applied.
-        public var disabled: Attribute.Disabled?
+        public var disabled: WHATWG_HTML.Attribute.Disabled?
 
         /// Provides a hint of the relative priority for fetching this resource.
-        public var fetchpriority: Attribute.FetchPriority?
+        public var fetchpriority: WHATWG_HTML.Attribute.FetchPriority?
 
         /// Specifies the URL of the linked resource.
-        public var href: Attribute.Href?
+        public var href: WHATWG_HTML.Attribute.Href?
 
         /// Indicates the language of the linked resource.
-        public var hreflang: Attribute.Hreflang?
+        public var hreflang: WHATWG_HTML.Attribute.Hreflang?
 
         /// For preloaded images, has similar syntax and semantics as the sizes attribute.
-        public var imagesizes: Attribute.ImageSizes?
+        public var imagesizes: WHATWG_HTML.Attribute.ImageSizes?
 
         /// For preloaded images, has similar syntax and semantics as the srcset attribute.
-        public var imagesrcset: Attribute.ImageSrcSet?
+        public var imagesrcset: WHATWG_HTML.Attribute.ImageSrcSet?
 
         /// Contains inline metadata for verifying the integrity of the resource.
         ///
         /// A base64-encoded cryptographic hash of the resource for subresource integrity.
-        public var integrity: Attribute.Integrity?
+        public var integrity: WHATWG_HTML.Attribute.Integrity?
 
         /// Specifies the media that the linked resource applies to.
         ///
         /// Used primarily for stylesheets to target specific media types/queries.
-        public var media: Attribute.Media?
+        public var media: WHATWG_HTML.Attribute.Media?
 
         /// Controls which referrer is sent when fetching the resource.
-        public var referrerpolicy: Attribute.ReferrerPolicy?
+        public var referrerpolicy: WHATWG_HTML.Attribute.ReferrerPolicy?
 
         /// Defines the relationship of the linked document to the current document.
         ///
@@ -102,21 +102,21 @@ extension WHATWG_HTML.Element {
         /// - preload: Resource should be preloaded
         /// - alternate: Alternative version of the document
         /// - manifest: Web app manifest
-        public var rel: Attribute.Rel?
+        public var rel: WHATWG_HTML.Attribute.Rel?
 
         /// Defines the sizes of the icons for visual media contained in the resource.
         ///
         /// Must be present only if the rel contains "icon" or similar types.
         /// Format is either "any" for vector formats, or space-separated pairs like "16x16 32x32".
-        public var sizes: Attribute.Sizes?
+        public var sizes: WHATWG_HTML.Attribute.Sizes?
 
         /// Special semantics for stylesheet links to define default or alternate stylesheets.
-        public var title: Attribute.Title?
+        public var title: WHATWG_HTML.Attribute.Title?
 
         /// Defines the MIME type of the linked resource.
         ///
         /// Examples include "text/css" for stylesheets or "image/x-icon" for icons.
-        public var type: Attribute.LinkType?
+        public var type: WHATWG_HTML.Attribute.LinkType?
 
         /// Creates a new Link element with the specified attributes.
         ///
@@ -138,22 +138,22 @@ extension WHATWG_HTML.Element {
         ///   - title: For stylesheets, defines default or alternate stylesheets
         ///   - type: MIME type of the linked resource
         public init(
-            `as`: Attribute.As? = nil,
-            blocking: Attribute.Blocking? = nil,
-            crossorigin: Attribute.Crossorigin? = nil,
-            disabled: Attribute.Disabled? = nil,
-            fetchpriority: Attribute.FetchPriority? = nil,
-            href: Attribute.Href? = nil,
-            hreflang: Attribute.Hreflang? = nil,
-            imagesizes: Attribute.ImageSizes? = nil,
-            imagesrcset: Attribute.ImageSrcSet? = nil,
-            integrity: Attribute.Integrity? = nil,
-            media: Attribute.Media? = nil,
-            referrerpolicy: Attribute.ReferrerPolicy? = nil,
-            rel: Attribute.Rel? = nil,
-            sizes: Attribute.Sizes? = nil,
-            title: Attribute.Title? = nil,
-            type: Attribute.LinkType? = nil
+            `as`: WHATWG_HTML.Attribute.As? = nil,
+            blocking: WHATWG_HTML.Attribute.Blocking? = nil,
+            crossorigin: WHATWG_HTML.Attribute.Crossorigin? = nil,
+            disabled: WHATWG_HTML.Attribute.Disabled? = nil,
+            fetchpriority: WHATWG_HTML.Attribute.FetchPriority? = nil,
+            href: WHATWG_HTML.Attribute.Href? = nil,
+            hreflang: WHATWG_HTML.Attribute.Hreflang? = nil,
+            imagesizes: WHATWG_HTML.Attribute.ImageSizes? = nil,
+            imagesrcset: WHATWG_HTML.Attribute.ImageSrcSet? = nil,
+            integrity: WHATWG_HTML.Attribute.Integrity? = nil,
+            media: WHATWG_HTML.Attribute.Media? = nil,
+            referrerpolicy: WHATWG_HTML.Attribute.ReferrerPolicy? = nil,
+            rel: WHATWG_HTML.Attribute.Rel? = nil,
+            sizes: WHATWG_HTML.Attribute.Sizes? = nil,
+            title: WHATWG_HTML.Attribute.Title? = nil,
+            type: WHATWG_HTML.Attribute.LinkType? = nil
         ) {
             self.`as` = `as`
             self.blocking = blocking

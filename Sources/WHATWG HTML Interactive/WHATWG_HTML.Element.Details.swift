@@ -65,18 +65,21 @@ extension WHATWG_HTML.Element {
     public struct Details: WHATWG_HTML.Element.`Protocol` {
         /// Boolean attribute that indicates whether the details are currently visible.
         /// When present, the details are shown; when absent, the details are hidden.
-        public var open: Attribute.Open?
+        public var open: WHATWG_HTML.Attribute.Open?
 
         /// Specifies a group name for multiple connected details elements.
         /// When multiple details elements have the same name value, only one can be open at a time.
-        public var name: Attribute.Name?
+        public var name: WHATWG_HTML.Attribute.Name?
 
         /// Creates a new Details element with the specified attributes.
         ///
         /// - Parameters:
         ///   - open: When present, indicates that the details should be visible
         ///   - name: Group name for connected details elements (accordion behavior)
-        public init(open: Attribute.Open? = nil, name: Attribute.Name? = nil) {
+        public init(
+            open: WHATWG_HTML.Attribute.Open? = nil,
+            name: WHATWG_HTML.Attribute.Name? = nil
+        ) {
             self.open = open
             self.name = name
 

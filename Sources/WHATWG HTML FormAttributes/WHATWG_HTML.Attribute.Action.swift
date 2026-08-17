@@ -73,18 +73,20 @@ extension WHATWG_HTML.Attribute.Action {
 
 extension WHATWG_HTML.Attribute.Action {
     /// Creates a relative URL action within the same domain
-    public static func relative(_ path: String) -> Action {
+    public static func relative(_ path: String) -> WHATWG_HTML.Attribute.Action {
         // Make sure the path starts with a slash if it's not already
         let formattedPath = path.hasPrefix("/") ? path : "/\(path)"
-        return Action(formattedPath)
+        return WHATWG_HTML.Attribute.Action(formattedPath)
     }
 
     /// Creates an absolute URL action to an external service
-    public static func absolute(_ url: String) -> Action { return Action(url) }
+    public static func absolute(_ url: String) -> WHATWG_HTML.Attribute.Action {
+        return WHATWG_HTML.Attribute.Action(url)
+    }
 
     /// Creates an action pointing to the current page
-    public static let current: Action = Action(".")
+    public static let current: WHATWG_HTML.Attribute.Action = WHATWG_HTML.Attribute.Action(".")
 
     /// Creates an action for client-side handling (no server submission)
-    public static let clientSide: Action = Action("#")
+    public static let clientSide: WHATWG_HTML.Attribute.Action = WHATWG_HTML.Attribute.Action("#")
 }

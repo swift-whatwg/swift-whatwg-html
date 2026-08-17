@@ -14,7 +14,9 @@ import Testing
 import WHATWG_HTML
 
 @Suite struct `Rows Test` {
-    @Test func `Rows attribute should be rows`() { #expect(WHATWG_HTML.Attribute.Rows.attribute == "rows") }
+    @Test func `Rows attribute should be rows`() {
+        #expect(WHATWG_HTML.Attribute.Rows.attribute == "rows")
+    }
 
     @Test func `Rows should support integer literal`() {
         let rows: WHATWG_HTML.Attribute.Rows = 5

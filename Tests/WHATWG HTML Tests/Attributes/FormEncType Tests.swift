@@ -19,8 +19,13 @@ import WHATWG_HTML
     }
 
     @Test func `FormEncType should have predefined values`() {
-        #expect(WHATWG_HTML.Attribute.FormEncType.urlEncoded.rawValue == "application/x-www-form-urlencoded")
-        #expect(WHATWG_HTML.Attribute.FormEncType.multipartFormData.rawValue == "multipart/form-data")
+        #expect(
+            WHATWG_HTML.Attribute.FormEncType.urlEncoded.rawValue
+                == "application/x-www-form-urlencoded"
+        )
+        #expect(
+            WHATWG_HTML.Attribute.FormEncType.multipartFormData.rawValue == "multipart/form-data"
+        )
         #expect(WHATWG_HTML.Attribute.FormEncType.textPlain.rawValue == "text/plain")
     }
 }

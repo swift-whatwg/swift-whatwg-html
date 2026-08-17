@@ -39,13 +39,13 @@ extension WHATWG_HTML.Element {
     ///
     public struct OrderedList: WHATWG_HTML.Element.`Protocol` {
         /// Boolean attribute specifying that the list's items are in reverse order (high to low)
-        public var reversed: Attribute.Reversed?
+        public var reversed: WHATWG_HTML.Attribute.Reversed?
 
         /// Specifies the starting number for the list items
-        public var start: Attribute.Start?
+        public var start: WHATWG_HTML.Attribute.Start?
 
         /// Specifies the numbering type (1, a, A, i, I)
-        public var type: Attribute.ListType?
+        public var type: WHATWG_HTML.Attribute.ListType?
 
         /// Creates a new OrderedList element with the specified attributes.
         ///
@@ -53,7 +53,11 @@ extension WHATWG_HTML.Element {
         ///   - reversed: Boolean attribute that reverses the order of items
         ///   - start: The starting number for the list
         ///   - type: The numbering type to use (list items)
-        public init(reversed: Attribute.Reversed? = nil, start: Attribute.Start? = nil, type: Attribute.ListType? = nil) {
+        public init(
+            reversed: WHATWG_HTML.Attribute.Reversed? = nil,
+            start: WHATWG_HTML.Attribute.Start? = nil,
+            type: WHATWG_HTML.Attribute.ListType? = nil
+        ) {
             self.reversed = reversed
             self.start = start
             self.type = type

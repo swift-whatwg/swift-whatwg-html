@@ -64,7 +64,11 @@ import WHATWG_HTML_Forms
 
     @Test func `EntryList append file convenience`() {
         var list = WHATWG_HTML.Attribute.Form.Data.Entry.List()
-        let file = WHATWG_HTML.Attribute.Form.Data.File(name: "photo.jpg", type: "image/jpeg", body: [UInt8]([1, 2, 3]))
+        let file = WHATWG_HTML.Attribute.Form.Data.File(
+            name: "photo.jpg",
+            type: "image/jpeg",
+            body: [UInt8]([1, 2, 3])
+        )
         list.append(name: "photo", file: file)
 
         #expect(list.count == 1)
@@ -212,15 +216,23 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `EntryList different entries not equal`() {
-        let list1: WHATWG_HTML.Attribute.Form.Data.Entry.List = [WHATWG_HTML.Attribute.Form.Data.Entry(name: "a", stringValue: "1")]
-        let list2: WHATWG_HTML.Attribute.Form.Data.Entry.List = [WHATWG_HTML.Attribute.Form.Data.Entry(name: "b", stringValue: "2")]
+        let list1: WHATWG_HTML.Attribute.Form.Data.Entry.List = [
+            WHATWG_HTML.Attribute.Form.Data.Entry(name: "a", stringValue: "1")
+        ]
+        let list2: WHATWG_HTML.Attribute.Form.Data.Entry.List = [
+            WHATWG_HTML.Attribute.Form.Data.Entry(name: "b", stringValue: "2")
+        ]
 
         #expect(list1 != list2)
     }
 
     @Test func `EntryList conforms to Hashable`() {
-        let list1: WHATWG_HTML.Attribute.Form.Data.Entry.List = [WHATWG_HTML.Attribute.Form.Data.Entry(name: "a", stringValue: "1")]
-        let list2: WHATWG_HTML.Attribute.Form.Data.Entry.List = [WHATWG_HTML.Attribute.Form.Data.Entry(name: "a", stringValue: "1")]
+        let list1: WHATWG_HTML.Attribute.Form.Data.Entry.List = [
+            WHATWG_HTML.Attribute.Form.Data.Entry(name: "a", stringValue: "1")
+        ]
+        let list2: WHATWG_HTML.Attribute.Form.Data.Entry.List = [
+            WHATWG_HTML.Attribute.Form.Data.Entry(name: "a", stringValue: "1")
+        ]
 
         #expect(list1.hashValue == list2.hashValue)
     }

@@ -11,6 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_Forms
+public import WHATWG_HTML_Shared
 
 extension WHATWG_HTML.Element.Form {
     /// Form data representation namespace

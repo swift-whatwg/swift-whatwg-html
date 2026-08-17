@@ -63,8 +63,8 @@ extension WHATWG_HTML.Attribute.Capture {
 
 extension WHATWG_HTML.Attribute.Capture {
     /// Convenience initializer for "user" value (front-facing camera)
-    public static let user: Capture = "user"
+    public static let user: WHATWG_HTML.Attribute.Capture = "user"
 
     /// Convenience initializer for "environment" value (back-facing camera)
-    public static let environment: Capture = "environment"
+    public static let environment: WHATWG_HTML.Attribute.Capture = "environment"
 }

@@ -56,13 +56,13 @@ extension WHATWG_HTML.Element {
         /// When the `open` attribute is not set, the dialog box will not be visible.
         /// It is recommended to use JavaScript's `showModal()` or `show()` methods
         /// rather than this attribute to display dialogs.
-        public var open: Attribute.Open?
+        public var open: WHATWG_HTML.Attribute.Open?
 
         /// Creates a new Dialog element with the specified attributes.
         ///
         /// - Parameters:
         ///   - open: Indicates if the dialog is initially open
-        public init(open: Attribute.Open? = nil) {
+        public init(open: WHATWG_HTML.Attribute.Open? = nil) {
             self.open = open
 
         }

@@ -52,25 +52,25 @@ extension WHATWG_HTML.Element {
     ///
     public struct ExternalObject: WHATWG_HTML.Element.`Protocol` {
         /// The URL of the resource to embed
-        public var data: Attribute.ObjectData?
+        public var data: WHATWG_HTML.Attribute.ObjectData?
 
         /// The content type (MIME type) of the embedded resource
-        public var type: Attribute.ObjectType?
+        public var type: WHATWG_HTML.Attribute.ObjectType?
 
         /// The form element that the object is associated with
-        public var form: Attribute.Form.ID?
+        public var form: WHATWG_HTML.Attribute.Form.ID?
 
         /// The name of the browsing context or control
-        public var name: Attribute.Name?
+        public var name: WHATWG_HTML.Attribute.Name?
 
         /// The height of the object in pixels
-        public var height: Attribute.Height?
+        public var height: WHATWG_HTML.Attribute.Height?
 
         /// The width of the object in pixels
-        public var width: Attribute.Width?
+        public var width: WHATWG_HTML.Attribute.Width?
 
         /// Specifies an image map for the object
-        public var usemap: Attribute.Usemap?
+        public var usemap: WHATWG_HTML.Attribute.Usemap?
 
         /// Creates a new object element with the specified attributes.
         ///
@@ -83,13 +83,13 @@ extension WHATWG_HTML.Element {
         ///   - width: The width of the object in pixels
         ///   - usemap: Reference to an image map
         public init(
-            data: Attribute.ObjectData? = nil,
-            type: Attribute.ObjectType? = nil,
-            form: Attribute.Form.ID? = nil,
-            name: Attribute.Name? = nil,
-            height: Attribute.Height? = nil,
-            width: Attribute.Width? = nil,
-            usemap: Attribute.Usemap? = nil
+            data: WHATWG_HTML.Attribute.ObjectData? = nil,
+            type: WHATWG_HTML.Attribute.ObjectType? = nil,
+            form: WHATWG_HTML.Attribute.Form.ID? = nil,
+            name: WHATWG_HTML.Attribute.Name? = nil,
+            height: WHATWG_HTML.Attribute.Height? = nil,
+            width: WHATWG_HTML.Attribute.Width? = nil,
+            usemap: WHATWG_HTML.Attribute.Usemap? = nil
         ) {
             self.data = data
             self.type = type

@@ -40,13 +40,13 @@ extension WHATWG_HTML.Element {
     ///
     public struct HtmlRoot: WHATWG_HTML.Element.`Protocol` {
         /// The XML namespace of the document (required for XHTML)
-        public var xmlns: Attribute.Xmlns?
+        public var xmlns: WHATWG_HTML.Attribute.Xmlns?
 
         /// Creates a new HTML root element with the specified attributes.
         ///
         /// - Parameters:
         ///   - xmlns: The XML namespace (required for XHTML, optional for HTML), typically head and body elements
-        public init(xmlns: Attribute.Xmlns? = nil) {
+        public init(xmlns: WHATWG_HTML.Attribute.Xmlns? = nil) {
             self.xmlns = xmlns
 
         }
