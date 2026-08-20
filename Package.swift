@@ -1,4 +1,4 @@
-// swift-tools-version: 6.3.3
+// swift-tools-version: 6.4
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -80,15 +80,6 @@ extension Target.Dependency {
     static var whatwgHTMLElements: Self { .target(name: .whatwgHTMLElements) }
     static var whatwgHTMLAttributes: Self { .target(name: .whatwgHTMLAttributes) }
 
-    // External dependencies
-    static var whatwg: Self { .product(name: "WHATWG", package: "swift-whatwg") }
-    static var rfc2045: Self { .product(name: "RFC 2045", package: "swift-rfc-2045") }
-    static var iso8601: Self { .product(name: "ISO 8601", package: "swift-iso-8601") }
-    static var standards: Self { .product(name: "Standard Library Extensions", package: "swift-standard-library-extensions") }
-    static var geometry: Self { .product(name: "Geometry Primitives", package: "swift-geometry-primitives") }
-    static var incits41986: Self { .product(name: "ASCII Primitives", package: "swift-ascii-primitives") }
-
-    static var radixFormatter: Self { .product(name: "Radix Formatter Primitives", package: "swift-radix-formatter-primitives") }
 }
 
 // MARK: - Package Definition
@@ -96,11 +87,11 @@ extension Target.Dependency {
 let package = Package(
     name: "swift-whatwg-html",
     platforms: [
-        .macOS("27"),
-        .iOS("27"),
-        .tvOS("27"),
-        .watchOS("27"),
-        .visionOS("27")
+        .macOS(.v27),
+        .iOS(.v27),
+        .tvOS(.v27),
+        .watchOS(.v27),
+        .visionOS(.v27),
     ],
     products: [
         // ============================================================
@@ -225,7 +216,7 @@ let package = Package(
         .library(
             name: "WHATWG HTML",
             targets: ["WHATWG HTML"]
-        )
+        ),
     ],
     traits: [
         .trait(
@@ -237,10 +228,22 @@ let package = Package(
         .package(url: "https://github.com/swift-whatwg/swift-whatwg.git", branch: "main"),
         .package(url: "https://github.com/swift-ietf/swift-rfc-2045.git", branch: "main"),
         .package(url: "https://github.com/swift-iso/swift-iso-8601.git", branch: "main"),
-        .package(url: "https://github.com/swift-primitives/swift-standard-library-extensions.git", branch: "main"),
-        .package(url: "https://github.com/swift-primitives/swift-geometry-primitives.git", branch: "main"),
-        .package(url: "https://github.com/swift-primitives/swift-radix-formatter-primitives.git", branch: "main"),
-        .package(url: "https://github.com/swift-primitives/swift-ascii-primitives.git", branch: "main")
+        .package(
+            url: "https://github.com/swift-primitives/swift-standard-library-extensions.git",
+            branch: "main"
+        ),
+        .package(
+            url: "https://github.com/swift-primitives/swift-geometry-primitives.git",
+            branch: "main"
+        ),
+        .package(
+            url: "https://github.com/swift-primitives/swift-radix-formatter-primitives.git",
+            branch: "main"
+        ),
+        .package(
+            url: "https://github.com/swift-primitives/swift-ascii-primitives.git",
+            branch: "main"
+        ),
     ],
     targets: [
         // ============================================================
@@ -249,10 +252,13 @@ let package = Package(
         .target(
             name: "WHATWG HTML Shared",
             dependencies: [
-                .whatwg,
-                .standards,
-                .geometry,
-                .incits41986
+                .product(name: "WHATWG", package: "swift-whatwg"),
+                .product(
+                    name: "Standard Library Extensions",
+                    package: "swift-standard-library-extensions"
+                ),
+                .product(name: "Geometry Primitives", package: "swift-geometry-primitives"),
+                .product(name: "ASCII Primitives", package: "swift-ascii-primitives"),
             ]
         ),
 
@@ -273,8 +279,11 @@ let package = Package(
             name: "WHATWG HTML GlobalAttributes",
             dependencies: [
                 .whatwgHTMLShared,
-                .iso8601,
-                .radixFormatter
+                .product(name: "ISO 8601", package: "swift-iso-8601"),
+                .product(
+                    name: "Radix Formatter Primitives",
+                    package: "swift-radix-formatter-primitives"
+                ),
             ]
         ),
         .target(
@@ -282,23 +291,23 @@ let package = Package(
             dependencies: [
                 .whatwgHTMLShared,
                 .whatwgHTMLGlobalAttributes,
-                .rfc2045,
-                .iso8601
+                .product(name: "RFC 2045", package: "swift-rfc-2045"),
+                .product(name: "ISO 8601", package: "swift-iso-8601"),
             ]
         ),
         .target(
             name: "WHATWG HTML LinkAttributes",
             dependencies: [
                 .whatwgHTMLShared,
-                .rfc2045,
-                .whatwgHTMLMediaAttributes
+                .product(name: "RFC 2045", package: "swift-rfc-2045"),
+                .whatwgHTMLMediaAttributes,
             ]
         ),
         .target(
             name: "WHATWG HTML MediaAttributes",
             dependencies: [
                 .whatwgHTMLShared,
-                .rfc2045
+                .product(name: "RFC 2045", package: "swift-rfc-2045"),
             ]
         ),
         .target(
@@ -309,7 +318,7 @@ let package = Package(
             name: "WHATWG HTML ScriptAttributes",
             dependencies: [
                 .whatwgHTMLShared,
-                .rfc2045
+                .product(name: "RFC 2045", package: "swift-rfc-2045"),
             ]
         ),
 
@@ -323,7 +332,7 @@ let package = Package(
             dependencies: [
                 .whatwgHTMLShared,
                 .whatwgHTMLGlobalAttributes,
-                .whatwgHTMLAttributes
+                .whatwgHTMLAttributes,
             ]
         ),
 
@@ -335,7 +344,7 @@ let package = Package(
                 .whatwgHTMLGlobalAttributes,
                 .whatwgHTMLLinkAttributes,
                 .whatwgHTMLScriptAttributes,
-                .whatwgHTMLFormAttributes  // For link element
+                .whatwgHTMLFormAttributes,  // For link element
             ]
         ),
 
@@ -344,7 +353,7 @@ let package = Package(
             name: "WHATWG HTML Sections",
             dependencies: [
                 .whatwgHTMLShared,
-                .whatwgHTMLGlobalAttributes
+                .whatwgHTMLGlobalAttributes,
             ]
         ),
 
@@ -354,8 +363,8 @@ let package = Package(
             dependencies: [
                 .whatwgHTMLShared,
                 .whatwgHTMLGlobalAttributes,
-                .whatwgHTMLFormAttributes  // For li element (Value)
-    ]
+                .whatwgHTMLFormAttributes,  // For li element (Value)
+            ]
         ),
 
         // 4.5 Text-level semantics
@@ -366,8 +375,8 @@ let package = Package(
                 .whatwgHTMLGlobalAttributes,
                 .whatwgHTMLLinkAttributes,  // For <a> element
                 .whatwgHTMLFormAttributes,  // For <a> element (Target), <data> element (Value)
-                .whatwgHTMLMediaAttributes  // For <a> element (AttributionSrc)
-    ]
+                .whatwgHTMLMediaAttributes,  // For <a> element (AttributionSrc)
+            ]
         ),
 
         // 4.6 Links
@@ -375,7 +384,7 @@ let package = Package(
             name: "WHATWG HTML Links",
             dependencies: [
                 .whatwgHTMLShared,
-                .whatwgHTMLLinkAttributes
+                .whatwgHTMLLinkAttributes,
             ]
         ),
 
@@ -384,7 +393,7 @@ let package = Package(
             name: "WHATWG HTML Edits",
             dependencies: [
                 .whatwgHTMLShared,
-                .whatwgHTMLGlobalAttributes
+                .whatwgHTMLGlobalAttributes,
             ]
         ),
 
@@ -397,7 +406,7 @@ let package = Package(
                 .whatwgHTMLMediaAttributes,
                 .whatwgHTMLFormAttributes,
                 .whatwgHTMLLinkAttributes,
-                .whatwgHTMLScriptAttributes
+                .whatwgHTMLScriptAttributes,
             ]
         ),
 
@@ -408,7 +417,7 @@ let package = Package(
                 .whatwgHTMLShared,
                 .whatwgHTMLGlobalAttributes,
                 .whatwgHTMLTableAttributes,
-                .whatwgHTMLMediaAttributes
+                .whatwgHTMLMediaAttributes,
             ]
         ),
 
@@ -421,8 +430,8 @@ let package = Package(
                 .whatwgHTMLFormAttributes,
                 .whatwgHTMLTableAttributes,  // For textarea (Cols, Rows)
                 .whatwgHTMLMediaAttributes,  // For input[type=image] (Src, Alt, Width, Height)
-                .whatwgHTMLLinkAttributes  // For form element (Rel)
-    ]
+                .whatwgHTMLLinkAttributes,  // For form element (Rel)
+            ]
         ),
 
         // 4.11 Interactive elements
@@ -431,8 +440,8 @@ let package = Package(
             dependencies: [
                 .whatwgHTMLShared,
                 .whatwgHTMLGlobalAttributes,
-                .whatwgHTMLFormAttributes  // For details element (Name)
-    ]
+                .whatwgHTMLFormAttributes,  // For details element (Name)
+            ]
         ),
 
         // 4.12 Scripting
@@ -444,8 +453,9 @@ let package = Package(
                 .whatwgHTMLScriptAttributes,
                 .whatwgHTMLFormAttributes,  // For slot element (Name)
                 .whatwgHTMLMediaAttributes,  // For script element (AttributionSrc)
-                .whatwgHTMLLinkAttributes  // For script element (ReferrerPolicy, Integrity, Crossorigin)
-    ]
+                // For script element (ReferrerPolicy, Integrity, Crossorigin)
+                .whatwgHTMLLinkAttributes,
+            ]
         ),
 
         // 4.13 Custom elements
@@ -453,7 +463,7 @@ let package = Package(
             name: "WHATWG HTML CustomElements",
             dependencies: [
                 .whatwgHTMLShared,
-                .whatwgHTMLGlobalAttributes
+                .whatwgHTMLGlobalAttributes,
             ]
         ),
 
@@ -464,9 +474,9 @@ let package = Package(
                 .whatwgHTMLShared,
                 .whatwgHTMLGlobalAttributes,
                 .whatwgHTMLTableAttributes,  // For Frameset (Cols, Rows)
-                .whatwgHTMLFormAttributes,   // For Frame (Name)
-                .whatwgHTMLMediaAttributes   // For Frame (Src, MarginHeight, MarginWidth)
-    ]
+                .whatwgHTMLFormAttributes,  // For Frame (Name)
+                .whatwgHTMLMediaAttributes,  // For Frame (Src, MarginHeight, MarginWidth)
+            ]
         ),
 
         // ============================================================
@@ -490,7 +500,7 @@ let package = Package(
                 .whatwgHTMLInteractive,
                 .whatwgHTMLScripting,
                 .whatwgHTMLCustomElements,
-                .whatwgHTMLObsolete
+                .whatwgHTMLObsolete,
             ]
         ),
 
@@ -503,7 +513,7 @@ let package = Package(
                 .whatwgHTMLLinkAttributes,
                 .whatwgHTMLMediaAttributes,
                 .whatwgHTMLTableAttributes,
-                .whatwgHTMLScriptAttributes
+                .whatwgHTMLScriptAttributes,
             ]
         ),
 
@@ -516,7 +526,7 @@ let package = Package(
                 .whatwgHTMLShared,
                 .whatwgHTMLFormData,
                 .whatwgHTMLElements,
-                .whatwgHTMLAttributes
+                .whatwgHTMLAttributes,
             ]
         ),
 
@@ -545,7 +555,10 @@ let package = Package(
                 .whatwgHTMLMediaAttributes,
                 .whatwgHTMLTableAttributes,
                 .whatwgHTMLScriptAttributes,
-                .standards,
+                .product(
+                    name: "Standard Library Extensions",
+                    package: "swift-standard-library-extensions"
+                ),
             ]
         ),
     ],
