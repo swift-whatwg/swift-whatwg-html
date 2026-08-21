@@ -57,10 +57,12 @@ extension WHATWG.HTML.Form.Data.Entry {
         /// The ordered list of entries.
         ///
         /// Order is preserved as entries are added, which is important for form submission.
-        @usableFromInline internal private(set) var entries: [WHATWG.HTML.Form.Data.Entry]
+        @usableFromInline internal var entries: [WHATWG.HTML.Form.Data.Entry]
 
         /// Creates an empty entry list.
-        @inlinable public init() { self.entries = [] }
+        @inlinable public init() {
+            self.entries = []
+        }
 
         /// Creates an entry list with the specified entries.
         ///
