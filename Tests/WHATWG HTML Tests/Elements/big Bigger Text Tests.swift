@@ -1,15 +1,3 @@
-// ===----------------------------------------------------------------------===//
-//
-// Copyright (c) 2025 Coen ten Thije Boonkkamp
-// Licensed under Apache License v2.0
-//
-// See LICENSE.txt for license information
-// See CONTRIBUTORS.txt for the list of project contributors
-//
-// SPDX-License-Identifier: Apache-2.0
-//
-// ===----------------------------------------------------------------------===//
-
 import Testing
 import WHATWG_HTML
 
@@ -30,7 +18,7 @@ import WHATWG_HTML
 
         @Test func `Understanding deprecation status`() {
             let big = WHATWG.HTML.Big.Element()
-            // Big element is deprecated in HTML standards
+
             #expect(WHATWG.HTML.Big.Element.tag == "big")
         }
 
@@ -105,7 +93,7 @@ import WHATWG_HTML
 
         @Test func `CSS font-size property recommendation`() {
             let big = WHATWG.HTML.Big.Element()
-            // Modern approach would use CSS font-size: larger or specific size
+
             #expect(WHATWG.HTML.Big.Element.tag == "big")
         }
 
@@ -233,7 +221,7 @@ import WHATWG_HTML
 
         @Test func `Avoid Big in new development`() {
             let big = WHATWG.HTML.Big.Element()
-            // Should prefer CSS font-size in modern development
+
             #expect(WHATWG.HTML.Big.Element.tag == "big")
         }
 

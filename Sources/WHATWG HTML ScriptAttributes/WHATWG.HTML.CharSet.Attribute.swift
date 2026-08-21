@@ -1,15 +1,3 @@
-// ===----------------------------------------------------------------------===//
-//
-// Copyright (c) 2025 Coen ten Thije Boonkkamp
-// Licensed under Apache License v2.0
-//
-// See LICENSE.txt for license information
-// See CONTRIBUTORS.txt for the list of project contributors
-//
-// SPDX-License-Identifier: Apache-2.0
-//
-// ===----------------------------------------------------------------------===//
-
 public import WHATWG_HTML_Shared
 
 extension WHATWG.HTML.CharSet {
@@ -47,21 +35,15 @@ extension WHATWG.HTML.CharSet.Attribute {
         message: "UTF-16LE is not suitable for use in HTML. Use utf8 instead."
     ) @inlinable public static var utf16LE: Self { "utf-16le" }
 
-    // WHY: `iso885915` (elsewhere in this file, single-digit suffixes like `windows1250` need no
-    // separator) would run two numeric tokens together illegibly; the underscore separates the
-    // "8859" charset family from its "-1"/"-2"/"-15" variant number.
-    // swift-format-ignore: AlwaysUseLowerCamelCase
     @available(*, deprecated, message: "ISO-8859-1 is a legacy encoding. Use utf8 instead.")
     @inlinable public static var iso8859_1: Self { "iso-8859-1" }
 
-    // swift-format-ignore: AlwaysUseLowerCamelCase
     @available(
         *,
         deprecated,
         message: "ISO-8859-2 is a legacy encoding for Central European languages. Use utf8 instead."
     ) @inlinable public static var iso8859_2: Self { "iso-8859-2" }
 
-    // swift-format-ignore: AlwaysUseLowerCamelCase
     @available(
         *,
         deprecated,

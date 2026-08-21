@@ -1,14 +1,7 @@
-// rp Ruby Fallback Parenthesis.swift
-// WHATWG HTML TextSemantics
-//
-// Defines the ruby fallback parenthesis element (<rp>)
-
 public import WHATWG_HTML_Shared
 
 extension WHATWG.HTML.RubyParenthesis {
-    /// Represents the `<rp>` element that provides fallback parentheses for ruby annotations.
-    ///
-    /// The `<rp>` element is used to provide parentheses around ruby text for browsers that don't support ruby annotations.
+
     public struct Element: WHATWG.HTML.Element {
 
         public init() {}

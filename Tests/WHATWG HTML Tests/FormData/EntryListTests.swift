@@ -1,15 +1,3 @@
-// ===----------------------------------------------------------------------===//
-//
-// Copyright (c) 2025 Coen ten Thije Boonkkamp
-// Licensed under Apache License v2.0
-//
-// See LICENSE.txt for license information
-// See CONTRIBUTORS.txt for the list of project contributors
-//
-// SPDX-License-Identifier: Apache-2.0
-//
-// ===----------------------------------------------------------------------===//
-
 import Testing
 import WHATWG_HTML_Forms
 
@@ -287,7 +275,7 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `EntryList conforms to Sendable`() {
-        // Compile-time check that EntryList is Sendable
+
         func acceptSendable<T: Sendable>(_: T) {}
         let list = WHATWG.HTML.Form.Attribute.Data.Entry.List()
         acceptSendable(list)

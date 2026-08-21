@@ -1,14 +1,7 @@
-// nobr Non-Breaking Text.swift
-// WHATWG HTML Obsolete
-//
-// Defines the non-breaking text element (<nobr>)
-
 public import WHATWG_HTML_Shared
 
 extension WHATWG.HTML.NoBr {
-    /// Represents the obsolete `<nobr>` element that prevents text from wrapping.
-    ///
-    /// **Deprecated**: Use CSS property `white-space: nowrap` instead.
+
     @available(*, deprecated, message: "Use CSS property 'white-space: nowrap' instead.")
     public struct Element: WHATWG.HTML.Element {
 

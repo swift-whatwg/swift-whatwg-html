@@ -1,22 +1,8 @@
-// ===----------------------------------------------------------------------===//
-//
-// Copyright (c) 2025 Coen ten Thije Boonkkamp
-// Licensed under Apache License v2.0
-//
-// See LICENSE.txt for license information
-// See CONTRIBUTORS.txt for the list of project contributors
-//
-// SPDX-License-Identifier: Apache-2.0
-//
-// ===----------------------------------------------------------------------===//
-
 import Testing
 
 @testable import WHATWG_HTML_GlobalAttributes
 
 @Suite("Byte Serialization Tests") struct ByteSerializationTests {
-
-    // MARK: - Boolean Attributes
 
     @Test func `Autofocus byte serialization - true`() {
         let attr: WHATWG.HTML.Autofocus.Attribute = true
@@ -34,8 +20,6 @@ import Testing
         #expect(String(attr).isEmpty)
     }
 
-    // MARK: - String Attributes
-
     @Test func `Id byte serialization - ASCII`() {
         let attr = WHATWG.HTML.Id.Attribute(value: "main")
         let bytes = [UInt8](attr)
@@ -49,11 +33,9 @@ import Testing
         let attr = WHATWG.HTML.Id.Attribute(value: "日本")
         let bytes = [UInt8](attr)
 
-        // Should handle UTF-8 correctly
         let string = String(attr)
         #expect(string == "id=\"日本\"")
 
-        // Verify round-trip through bytes
         let decoded = String(decoding: bytes, as: UTF8.self)
         #expect(decoded == "id=\"日本\"")
     }
@@ -67,12 +49,9 @@ import Testing
         #expect(String(attr) == "id=\"my-complex-id_123\"")
     }
 
-    // MARK: - RFC Pattern Verification
-
     @Test func `String initializer composes through bytes`() {
         let attr: WHATWG.HTML.Autofocus.Attribute = true
 
-        // Verify category theory: Autofocus → [UInt8] → String
         let bytes = [UInt8](attr)
         let stringFromBytes = String(decoding: bytes, as: UTF8.self)
         let stringDirect = String(attr)
@@ -83,10 +62,8 @@ import Testing
     @Test func `Byte serialization is authoritative`() {
         let id = WHATWG.HTML.Id.Attribute(value: "test")
 
-        // The authoritative serialization
         let bytes = [UInt8](id)
 
-        // String should always derive from bytes
         let stringFromInit = String(id)
         let stringFromBytes = String(decoding: bytes, as: UTF8.self)
 

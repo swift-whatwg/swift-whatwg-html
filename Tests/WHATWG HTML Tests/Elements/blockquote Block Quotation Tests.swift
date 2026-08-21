@@ -1,15 +1,3 @@
-// ===----------------------------------------------------------------------===//
-//
-// Copyright (c) 2025 Coen ten Thije Boonkkamp
-// Licensed under Apache License v2.0
-//
-// See LICENSE.txt for license information
-// See CONTRIBUTORS.txt for the list of project contributors
-//
-// SPDX-License-Identifier: Apache-2.0
-//
-// ===----------------------------------------------------------------------===//
-
 import Testing
 import WHATWG_HTML
 
@@ -138,7 +126,7 @@ import WHATWG_HTML
         }
 
         @Test func `Author attribution separation`() {
-            // Attribution should be outside blockquote element
+
             let blockquote = WHATWG.HTML.BlockQuote.Element(
                 cite: WHATWG.HTML.Cite.Attribute(value: "https://example.com/source")
             )
@@ -171,7 +159,7 @@ import WHATWG_HTML
         }
 
         @Test func `Quotation vs inline quote distinction`() {
-            // Blockquote for extended quotes vs q for inline quotes
+
             let blockquote = WHATWG.HTML.BlockQuote.Element()
             #expect(WHATWG.HTML.BlockQuote.Element.tag == "blockquote")
         }
@@ -277,7 +265,7 @@ import WHATWG_HTML
     @Suite struct `Best Practices` {
 
         @Test func `External attribution placement`() {
-            // Attribution should be outside blockquote
+
             let blockquote = WHATWG.HTML.BlockQuote.Element(
                 cite: WHATWG.HTML.Cite.Attribute(value: "https://example.com/source")
             )
@@ -285,7 +273,7 @@ import WHATWG_HTML
         }
 
         @Test func `Appropriate use over q element`() {
-            // Use blockquote for extended quotes, q for inline
+
             let blockquote = WHATWG.HTML.BlockQuote.Element()
             #expect(WHATWG.HTML.BlockQuote.Element.tag == "blockquote")
         }

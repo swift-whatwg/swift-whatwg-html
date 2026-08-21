@@ -1,15 +1,3 @@
-// ===----------------------------------------------------------------------===//
-//
-// Copyright (c) 2025 Coen ten Thije Boonkkamp
-// Licensed under Apache License v2.0
-//
-// See LICENSE.txt for license information
-// See CONTRIBUTORS.txt for the list of project contributors
-//
-// SPDX-License-Identifier: Apache-2.0
-//
-// ===----------------------------------------------------------------------===//
-
 import Testing
 import WHATWG_HTML
 
@@ -48,7 +36,7 @@ import WHATWG_HTML
         }
 
         @Test func `Direction attribute is required`() {
-            // This test confirms that dir parameter is required in initializer
+
             let bdo = WHATWG.HTML.BidirectionalTextOverride.Element(dir: .ltr)
             #expect(bdo.dir.rawValue == "ltr")
         }
@@ -214,7 +202,7 @@ import WHATWG_HTML
     @Suite struct `Technical Specifications` {
 
         @Test func `Required dir attribute validation`() {
-            // Testing that dir is a required property
+
             let bdo = WHATWG.HTML.BidirectionalTextOverride.Element(dir: .ltr)
             #expect(bdo.dir.rawValue == "ltr")
         }

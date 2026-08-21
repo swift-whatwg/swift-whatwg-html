@@ -1,15 +1,3 @@
-// ===----------------------------------------------------------------------===//
-//
-// Copyright (c) 2025 Coen ten Thije Boonkkamp
-// Licensed under Apache License v2.0
-//
-// See LICENSE.txt for license information
-// See CONTRIBUTORS.txt for the list of project contributors
-//
-// SPDX-License-Identifier: Apache-2.0
-//
-// ===----------------------------------------------------------------------===//
-
 import Standard_Library_Extensions
 import Testing
 import WHATWG_HTML_Forms
@@ -121,7 +109,7 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `File conforms to Sendable`() {
-        // Compile-time check that File is Sendable
+
         func acceptSendable<T: Sendable>(_: T) {}
         let file = WHATWG.HTML.Form.Attribute.Data.File(
             name: "test.txt",

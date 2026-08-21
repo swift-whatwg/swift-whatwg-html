@@ -1,16 +1,9 @@
-// marquee Marquee.swift
-// WHATWG HTML Obsolete
-//
-// Defines the marquee element (<marquee>)
-
 public import WHATWG_HTML_GlobalAttributes
 public import WHATWG_HTML_MediaAttributes
 public import WHATWG_HTML_Shared
 
 extension WHATWG.HTML.Marquee {
-    /// Represents the obsolete `<marquee>` element that created scrolling text.
-    ///
-    /// **Deprecated**: Use CSS animations instead.
+
     @available(*, deprecated, message: "Use CSS animations instead.")
     public struct Element: WHATWG.HTML.Element {
 

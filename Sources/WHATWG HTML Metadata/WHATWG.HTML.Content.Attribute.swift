@@ -1,14 +1,7 @@
-// Content.swift
-// WHATWG HTML Metadata
-//
-// Defines the content attribute for meta elements
-
 public import WHATWG_HTML_Shared
 
 extension WHATWG.HTML.Content {
-    /// Represents the `content` attribute that specifies the value associated with http-equiv or name attributes.
-    ///
-    /// Used primarily with `<meta>` elements to provide metadata values.
+
     @dynamicMemberLookup public struct Attribute: WHATWG.HTML.StringAttribute {
 
         public let rawValue: String

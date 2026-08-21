@@ -1,5 +1,3 @@
-// WHATWG HTML Elements umbrella - Re-exports all element modules
-
 @_exported import WHATWG_HTML_CustomElements
 @_exported import WHATWG_HTML_Document
 @_exported import WHATWG_HTML_Edits

@@ -1,21 +1,9 @@
-// ===----------------------------------------------------------------------===//
-//
-// Copyright (c) 2025 Coen ten Thije Boonkkamp
-// Licensed under Apache License v2.0
-//
-// See LICENSE.txt for license information
-// See CONTRIBUTORS.txt for the list of project contributors
-//
-// SPDX-License-Identifier: Apache-2.0
-//
-// ===----------------------------------------------------------------------===//
-
 public import WHATWG_HTML_Shared
 
 extension WHATWG.HTML.Kind {
-    /// Represents the kind attribute values for the track element.
+
     @dynamicMemberLookup public struct Attribute: WHATWG.HTML.StringAttribute {
-        /// The attribute value
+
         public let rawValue: String
 
         public init(value: String = WHATWG.HTML.Kind.Attribute.subtitles.rawValue) {
@@ -25,20 +13,17 @@ extension WHATWG.HTML.Kind {
 }
 
 extension WHATWG.HTML.Kind.Attribute {
-    /// The name of the HTML attribute
+
     @inlinable public static var attribute: String { "kind" }
 }
 
 extension WHATWG.HTML.Kind.Attribute {
-    /// Subtitles provide translation of content that cannot be understood by the viewer
+
     @inlinable public static var subtitles: Self { "subtitles" }
 
-    /// Closed captions provide a transcription and possibly a translation of audio
     @inlinable public static var captions: Self { "captions" }
 
-    /// Chapter titles are intended to be used when the user is navigating the media resource
     @inlinable public static var chapters: Self { "chapters" }
 
-    /// Tracks used by scripts, not visible to the user
     @inlinable public static var metadata: Self { "metadata" }
 }

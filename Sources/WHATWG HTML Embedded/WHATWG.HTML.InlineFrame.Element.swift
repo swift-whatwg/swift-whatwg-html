@@ -1,89 +1,32 @@
-// ===----------------------------------------------------------------------===//
-//
-// Copyright (c) 2025 Coen ten Thije Boonkkamp
-// Licensed under Apache License v2.0
-//
-// See LICENSE.txt for license information
-// See CONTRIBUTORS.txt for the list of project contributors
-//
-// SPDX-License-Identifier: Apache-2.0
-//
-// ===----------------------------------------------------------------------===//
-
 public import WHATWG_HTML_FormAttributes
 public import WHATWG_HTML_LinkAttributes
 public import WHATWG_HTML_MediaAttributes
 public import WHATWG_HTML_Shared
 
 extension WHATWG.HTML.InlineFrame {
-    /// Represents an HTML inline frame element (`<iframe>`), which embeds another HTML page into the current one.
-    ///
-    /// The `InlineFrame` struct provides a type-safe way to create HTML iframe elements with various attributes.
-    ///
-    /// ## Example
-    ///
-    /// ```swift
-    /// iframe(src: "https://example.org", title: "Example Website") {
-    ///     // No content as iframes are typically empty
-    /// }
-    /// ```
-    ///
-    /// ## Accessibility
-    ///
-    /// - Always include a descriptive `title` attribute to label the iframe's content for screen reader users
-    /// - The `title` should concisely describe what is being embedded
-    /// - Without a title, assistive technology users must navigate into the iframe to determine its content
-    ///
-    /// ## Best Practices
-    ///
-    /// - Use the `sandbox` attribute to restrict the embedded content's capabilities when embedding untrusted content
-    /// - Avoid using too many iframes on a single page as they consume additional memory and computing resources
-    /// - Use the `loading="lazy"` attribute for iframes that are not immediately visible on page load
-    /// - Specify both `width` and `height` attributes to prevent layout shifts as the page loads
+
     public struct Element: WHATWG.HTML.Element {
-        /// The URL of the page to embed
+
         public var src: WHATWG.HTML.Src.Attribute?
 
-        /// Inline HTML to embed, overriding the src attribute
         public var srcdoc: String?
 
-        /// A targetable name for the embedded browsing context
         public var name: WHATWG.HTML.Name.Attribute?
 
-        /// Controls restrictions applied to the content embedded in the iframe
         public var sandbox: String?
 
-        /// Set to true if the iframe can activate fullscreen mode
         public var allowfullscreen: WHATWG.HTML.Allowfullscreen.Attribute?
 
-        /// Specifies a Permissions Policy for the iframe
         public var allow: WHATWG.HTML.Allow.Attribute?
 
-        /// The width of the frame in CSS pixels (default is 300)
         public var width: WHATWG.HTML.Width.Attribute?
 
-        /// The height of the frame in CSS pixels (default is 150)
         public var height: WHATWG.HTML.Height.Attribute?
 
-        /// Indicates how the browser should load the iframe (eager or lazy)
         public var loading: WHATWG.HTML.Loading.Attribute?
 
-        /// Controls referrer policy when fetching the frame's resource
         public var referrerpolicy: WHATWG.HTML.ReferrerPolicy.Attribute?
 
-        /// Creates a new InlineFrame element with the specified attributes.
-        ///
-        /// - Parameters:
-        ///   - src: The URL of the page to embed
-        ///   - srcdoc: Inline HTML to embed, overriding the src attribute
-        ///   - name: A targetable name for the embedded browsing context
-        ///   - sandbox: Controls restrictions applied to the content embedded in the iframe
-        ///   - allowfullscreen: Set to true if the iframe can activate fullscreen mode
-        ///   - allow: Specifies a Permissions Policy for the iframe
-        ///   - width: The width of the frame in CSS pixels
-        ///   - height: The height of the frame in CSS pixels
-        ///   - loading: Indicates how the browser should load the iframe
-        ///   - referrerpolicy: Controls referrer policy when fetching the frame's resource (typically empty for iframes)
         public init(
             src: WHATWG.HTML.Src.Attribute? = nil,
             srcdoc: String? = nil,
@@ -112,7 +55,7 @@ extension WHATWG.HTML.InlineFrame {
 }
 
 extension WHATWG.HTML.InlineFrame.Element {
-    /// The HTML tag name
+
     @inlinable public static var tag: String { "iframe" }
     public static let categories: Set<WHATWG.HTML.Content.Category> = [
         .flow, .phrasing, .embedded, .interactive, .palpable,

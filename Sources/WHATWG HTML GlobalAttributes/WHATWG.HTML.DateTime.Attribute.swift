@@ -1,76 +1,16 @@
-// ===----------------------------------------------------------------------===//
-//
-// Copyright (c) 2025 Coen ten Thije Boonkkamp
-// Licensed under Apache License v2.0
-//
-// See LICENSE.txt for license information
-// See CONTRIBUTORS.txt for the list of project contributors
-//
-// SPDX-License-Identifier: Apache-2.0
-//
-// ===----------------------------------------------------------------------===//
-
 import Format_Primitives
 public import ISO_8601
 import Radix_Formatter_Primitives
 public import WHATWG_HTML_Shared
 
 extension WHATWG.HTML.DateTime {
-    /// Represents the HTML `datetime` attribute used with the `<time>`, `<ins>`, and `<del>` elements.
-    ///
-    /// The `datetime` attribute provides a machine-readable format for dates and times per ISO 8601.
-    ///
-    /// ## Academic Correctness
-    ///
-    /// Per WHATWG HTML specification, the datetime attribute must be a valid datetime string
-    /// as defined by ISO 8601. This implementation uses `ISO_8601.DateTime` to ensure academic
-    /// correctness per ISO 8601:2019 specifications.
-    ///
-    /// ## Valid DateTime Formats (ISO 8601)
-    ///
-    /// - **Year**: YYYY (e.g., "2024")
-    /// - **Year-month**: YYYY-MM (e.g., "2024-01")
-    /// - **Date**: YYYY-MM-DD (e.g., "2024-01-15")
-    /// - **Time**: HH:MM or HH:MM:SS (e.g., "20:00", "20:00:30")
-    /// - **Local date and time**: YYYY-MM-DDTHH:MM (e.g., "2024-01-15T20:00")
-    /// - **Global date and time**: With timezone offset (e.g., "2024-01-15T20:00Z", "2024-01-15T20:00+05:30")
-    /// - **Week**: YYYY-Www (e.g., "2024-W03")
-    /// - **Durations**: PNNT... (e.g., "PT2H30M" for 2 hours 30 minutes)
-    ///
-    /// ## Usage Notes
-    ///
-    /// - For `<time>` element: Represents the element's datetime value
-    /// - For `<ins>` and `<del>`: Indicates when the change was made
-    /// - The attribute value must be a valid ISO 8601 datetime string
-    /// - Human-readable content goes inside the element, machine-readable datetime in attribute
-    ///
-    /// ## Examples
-    ///
-    /// ```swift
-    /// // Using ISO_8601.DateTime
-    /// let dt = try! ISO_8601.DateTime(year: 2024, month: 7, day: 15, hour: 14, minute: 30)
-    /// HTML.time.datetime(DateTime(dateTime: dt)).text("July 15, 2024 at 2:30 PM")
-    ///
-    /// // Using string literal (ISO 8601 format)
-    /// HTML.time.datetime("2024-07-15T14:30:00Z").text("July 15, 2024")
-    ///
-    /// // Date only
-    /// HTML.time.datetime("2024-07-15").text("July 15")
-    ///
-    /// // Time only
-    /// HTML.time.datetime("20:00").text("8:00 PM")
-    ///
-    /// // Duration
-    /// HTML.time.datetime("PT2H30M").text("2 hours 30 minutes")
-    /// ```
+
     @dynamicMemberLookup public struct Attribute: WHATWG.HTML.StringAttribute {
-        /// The attribute value (ISO 8601 string)
+
         public let rawValue: String
 
-        /// Initialize with a string value
         public init(value: String) { self.rawValue = value }
 
-        /// Initialize with an ISO 8601 DateTime
         public init(dateTime: ISO_8601.DateTime) {
             self.rawValue = ISO_8601.DateTime.Formatter.format(dateTime)
         }
@@ -78,14 +18,12 @@ extension WHATWG.HTML.DateTime {
 }
 
 extension WHATWG.HTML.DateTime.Attribute {
-    /// The name of the HTML attribute
+
     @inlinable public static var attribute: String { "datetime" }
 }
 
-// MARK: - Convenience Constructors
-
 extension WHATWG.HTML.DateTime.Attribute {
-    /// Create a datetime for a specific date
+
     public static func date(
         year: Int,
         month: Int,
@@ -95,7 +33,6 @@ extension WHATWG.HTML.DateTime.Attribute {
         return WHATWG.HTML.DateTime.Attribute(dateTime: dt)
     }
 
-    /// Create a datetime for a specific date and time (local)
     public static func dateTime(
         year: Int,
         month: Int,
@@ -115,7 +52,6 @@ extension WHATWG.HTML.DateTime.Attribute {
         return WHATWG.HTML.DateTime.Attribute(dateTime: dt)
     }
 
-    /// Create a datetime for a specific date and time with timezone offset
     public static func dateTimeWithOffset(
         year: Int,
         month: Int,
@@ -137,7 +73,6 @@ extension WHATWG.HTML.DateTime.Attribute {
         return WHATWG.HTML.DateTime.Attribute(dateTime: dt)
     }
 
-    /// Create a datetime for UTC (Z timezone)
     public static func utc(
         year: Int,
         month: Int,
@@ -157,19 +92,16 @@ extension WHATWG.HTML.DateTime.Attribute {
         return WHATWG.HTML.DateTime.Attribute(dateTime: dt)
     }
 
-    /// Create a year-month datetime
     public static func yearMonth(year: Int, month: Int) -> WHATWG.HTML.DateTime.Attribute {
         WHATWG.HTML.DateTime.Attribute(
             "\(year.formatted(.decimal.zeroPadded(width: 4)))-\(month.formatted(.decimal.zeroPadded(width: 2)))"
         )
     }
 
-    /// Create a year-only datetime
     public static func year(_ year: Int) -> WHATWG.HTML.DateTime.Attribute {
         WHATWG.HTML.DateTime.Attribute(year.formatted(.decimal.zeroPadded(width: 4)))
     }
 
-    /// Create a time-only datetime
     public static func time(
         hour: Int,
         minute: Int,
@@ -185,7 +117,6 @@ extension WHATWG.HTML.DateTime.Attribute {
         }
     }
 
-    /// Create a duration (e.g., "PT2H30M" for 2 hours 30 minutes)
     public static func duration(_ iso8601Duration: String) -> WHATWG.HTML.DateTime.Attribute {
         WHATWG.HTML.DateTime.Attribute(iso8601Duration)
     }

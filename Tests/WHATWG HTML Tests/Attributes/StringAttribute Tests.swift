@@ -1,15 +1,3 @@
-// ===----------------------------------------------------------------------===//
-//
-// Copyright (c) 2025 Coen ten Thije Boonkkamp
-// Licensed under Apache License v2.0
-//
-// See LICENSE.txt for license information
-// See CONTRIBUTORS.txt for the list of project contributors
-//
-// SPDX-License-Identifier: Apache-2.0
-//
-// ===----------------------------------------------------------------------===//
-
 import Testing
 import WHATWG_HTML
 
@@ -63,8 +51,7 @@ extension TestStringAttribute {
         let attr = TestStringAttribute(value: "hello world")
         #expect(attr.count == 11)
         #expect(attr.isEmpty == false)
-        //        #expect(attr.uppercased() == "HELLO WORLD")
-        //        #expect(attr.lowercased() == "hello world")
+
     }
 
     @Test func `Dynamic member lookup with empty string`() {

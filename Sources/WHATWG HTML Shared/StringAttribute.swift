@@ -1,31 +1,5 @@
-// ===----------------------------------------------------------------------===//
-//
-// Copyright (c) 2025 Coen ten Thije Boonkkamp
-// Licensed under Apache License v2.0
-//
-// See LICENSE.txt for license information
-// See CONTRIBUTORS.txt for the list of project contributors
-//
-// SPDX-License-Identifier: Apache-2.0
-//
-// ===----------------------------------------------------------------------===//
-
 extension WHATWG.HTML {
-    /// Protocol for HTML string attributes
-    ///
-    /// String attributes represent textual values in HTML.
-    ///
-    /// ## Example
-    ///
-    /// ```swift
-    /// extension WHATWG.HTML.Attribute {
-    ///     public struct Class: WHATWG.HTML.StringAttribute {
-    ///         public static var attribute: String { "class" }
-    ///         public var rawValue: String
-    ///         public init(value: String) { self.rawValue = value }
-    ///     }
-    /// }
-    /// ```
+
     public protocol StringAttribute: WHATWG.HTML.Attribute, CustomStringConvertible,
         ExpressibleByStringLiteral,
         ExpressibleByStringInterpolation, RawRepresentable
@@ -48,11 +22,7 @@ extension WHATWG.HTML.StringAttribute {
 }
 
 extension WHATWG.HTML.StringAttribute {
-    /// String representation of the string attribute
-    ///
-    /// For attributes implementing byte serialization (Id, etc.),
-    /// use the RFC pattern: String(attribute)
-    /// For others, returns the raw value
+
     public var description: String { rawValue }
 }
 
