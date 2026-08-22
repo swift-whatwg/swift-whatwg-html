@@ -150,8 +150,8 @@ import WHATWG_HTML
         }
 
         @Test func `Can be used in optional contexts`() {
-            let maybeAbbreviation: WHATWG.HTML.Abbreviation.Element? = WHATWG.HTML.Element
-                .Abbreviation()
+            let maybeAbbreviation: WHATWG.HTML.Abbreviation.Element? =
+                WHATWG.HTML.Abbreviation.Element()
             let noAbbreviation: WHATWG.HTML.Abbreviation.Element? = nil
 
             #expect(maybeAbbreviation != nil)

@@ -71,12 +71,11 @@ import WHATWG_HTML
         let autoplay = WHATWG.HTML.Autoplay.Attribute()
         let loop = WHATWG.HTML.Loop.Attribute()
         let muted = WHATWG.HTML.Muted.Attribute()
-        let preload = WHATWG.HTML.Audio.Element.Preload.metadata
+        let preload = WHATWG.HTML.Preload.Attribute.metadata
         let crossorigin = WHATWG.HTML.Crossorigin.Attribute.useCredentials
-        let controlslist: WHATWG.HTML.Audio.Element.ControlsList = .init(
-            nodownload: true,
-            noremoteplayback: true
-        )
+        let controlslist: WHATWG.HTML.ControlsList.Attribute = [
+            .nodownload, .noremoteplayback,
+        ]
         let disableremoteplayback = WHATWG.HTML.DisableRemotePlayback.Attribute()
 
         let audio = WHATWG.HTML.Audio.Element(
@@ -105,21 +104,21 @@ import WHATWG_HTML
     @Suite struct `Preload Options` {
 
         @Test func `Preload none`() {
-            let preload = WHATWG.HTML.Audio.Element.Preload.none
+            let preload = WHATWG.HTML.Preload.Attribute.none
             let audio = WHATWG.HTML.Audio.Element(preload: preload)
             #expect(audio.preload == preload)
             #expect(preload.rawValue == "none")
         }
 
         @Test func `Preload metadata`() {
-            let preload = WHATWG.HTML.Audio.Element.Preload.metadata
+            let preload = WHATWG.HTML.Preload.Attribute.metadata
             let audio = WHATWG.HTML.Audio.Element(preload: preload)
             #expect(audio.preload == preload)
             #expect(preload.rawValue == "metadata")
         }
 
         @Test func `Preload auto`() {
-            let preload = WHATWG.HTML.Audio.Element.Preload.auto
+            let preload = WHATWG.HTML.Preload.Attribute.auto
             let audio = WHATWG.HTML.Audio.Element(preload: preload)
             #expect(audio.preload == preload)
             #expect(preload.rawValue == "auto")
@@ -129,52 +128,41 @@ import WHATWG_HTML
     @Suite struct `Controls List` {
 
         @Test func `Default controls list`() {
-            let controlslist = WHATWG.HTML.Audio.Element.ControlsList()
-            #expect(controlslist.nodownload == false)
-            #expect(controlslist.nofullscreen == false)
-            #expect(controlslist.noremoteplayback == false)
+            let controlslist = WHATWG.HTML.ControlsList.Attribute(value: "")
             #expect(controlslist.description.isEmpty)
         }
 
         @Test func `Controls list with nodownload`() {
-            let controlslist = WHATWG.HTML.Audio.Element.ControlsList(nodownload: true)
-            #expect(controlslist.nodownload == true)
+            let controlslist = WHATWG.HTML.ControlsList.Attribute.nodownload
             #expect(controlslist.description == "nodownload")
         }
 
         @Test func `Controls list with nofullscreen`() {
-            let controlslist = WHATWG.HTML.Audio.Element.ControlsList(nofullscreen: true)
-            #expect(controlslist.nofullscreen == true)
+            let controlslist = WHATWG.HTML.ControlsList.Attribute.nofullscreen
             #expect(controlslist.description == "nofullscreen")
         }
 
         @Test func `Controls list with noremoteplayback`() {
-            let controlslist = WHATWG.HTML.Audio.Element.ControlsList(noremoteplayback: true)
-            #expect(controlslist.noremoteplayback == true)
+            let controlslist = WHATWG.HTML.ControlsList.Attribute.noremoteplayback
             #expect(controlslist.description == "noremoteplayback")
         }
 
         @Test func `Controls list with multiple options`() {
-            let controlslist = WHATWG.HTML.Audio.Element.ControlsList(
-                nodownload: true,
-                nofullscreen: true,
-                noremoteplayback: true
-            )
-            #expect(controlslist.nodownload == true)
-            #expect(controlslist.nofullscreen == true)
-            #expect(controlslist.noremoteplayback == true)
+            let controlslist: WHATWG.HTML.ControlsList.Attribute = [
+                .nodownload, .nofullscreen, .noremoteplayback,
+            ]
             #expect(controlslist.description == "nodownload nofullscreen noremoteplayback")
         }
 
         @Test func `Controls list is hashable`() {
-            let controlslist1 = WHATWG.HTML.Audio.Element.ControlsList(nodownload: true)
-            let controlslist2 = WHATWG.HTML.Audio.Element.ControlsList(nodownload: true)
-            let controlslist3 = WHATWG.HTML.Audio.Element.ControlsList(nofullscreen: true)
+            let controlslist1 = WHATWG.HTML.ControlsList.Attribute.nodownload
+            let controlslist2 = WHATWG.HTML.ControlsList.Attribute.nodownload
+            let controlslist3 = WHATWG.HTML.ControlsList.Attribute.nofullscreen
 
             #expect(controlslist1 == controlslist2)
             #expect(controlslist1 != controlslist3)
 
-            let set: Set<WHATWG.HTML.Audio.Element.ControlsList> = [
+            let set: Set<WHATWG.HTML.ControlsList.Attribute> = [
                 controlslist1, controlslist2, controlslist3,
             ]
             #expect(set.count == 2)
@@ -214,7 +202,7 @@ import WHATWG_HTML
         @Test func `Podcast player`() {
             let src = WHATWG.HTML.Src.Attribute("episode-001.mp3")
             let controls = WHATWG.HTML.Controls.Attribute()
-            let preload = WHATWG.HTML.Audio.Element.Preload.metadata
+            let preload = WHATWG.HTML.Preload.Attribute.metadata
 
             let audio = WHATWG.HTML.Audio.Element(src: src, controls: controls, preload: preload)
 
@@ -225,7 +213,7 @@ import WHATWG_HTML
 
         @Test func `Audio with multiple sources (no src attribute)`() {
             let controls = WHATWG.HTML.Controls.Attribute()
-            let preload = WHATWG.HTML.Audio.Element.Preload.none
+            let preload = WHATWG.HTML.Preload.Attribute.none
 
             let audio = WHATWG.HTML.Audio.Element(controls: controls, preload: preload)
 
@@ -253,10 +241,9 @@ import WHATWG_HTML
         @Test func `Audio with restricted controls`() {
             let src = WHATWG.HTML.Src.Attribute("restricted-audio.mp3")
             let controls = WHATWG.HTML.Controls.Attribute()
-            let controlslist = WHATWG.HTML.Audio.Element.ControlsList(
-                nodownload: true,
-                noremoteplayback: true
-            )
+            let controlslist: WHATWG.HTML.ControlsList.Attribute = [
+                .nodownload, .noremoteplayback,
+            ]
 
             let audio = WHATWG.HTML.Audio.Element(
                 src: src,
@@ -276,7 +263,7 @@ import WHATWG_HTML
             let src = WHATWG.HTML.Src.Attribute("notification.mp3")
             let autoplay = WHATWG.HTML.Autoplay.Attribute()
             let muted = WHATWG.HTML.Muted.Attribute()
-            let preload = WHATWG.HTML.Audio.Element.Preload.auto
+            let preload = WHATWG.HTML.Preload.Attribute.auto
 
             let audio = WHATWG.HTML.Audio.Element(
                 src: src,
@@ -292,7 +279,7 @@ import WHATWG_HTML
         @Test func `Audio with user-friendly preloading`() {
             let src = WHATWG.HTML.Src.Attribute("large-audio.mp3")
             let controls = WHATWG.HTML.Controls.Attribute()
-            let preload = WHATWG.HTML.Audio.Element.Preload.metadata
+            let preload = WHATWG.HTML.Preload.Attribute.metadata
 
             let audio = WHATWG.HTML.Audio.Element(src: src, controls: controls, preload: preload)
 
@@ -341,23 +328,23 @@ import WHATWG_HTML
                 WHATWG.HTML.Audio.Element(
                     src: WHATWG.HTML.Src.Attribute("song1.mp3"),
                     controls: WHATWG.HTML.Controls.Attribute(),
-                    preload: WHATWG.HTML.Audio.Element.Preload.metadata
+                    preload: WHATWG.HTML.Preload.Attribute.metadata
                 ),
                 WHATWG.HTML.Audio.Element(
                     src: WHATWG.HTML.Src.Attribute("song2.mp3"),
                     controls: WHATWG.HTML.Controls.Attribute(),
-                    preload: WHATWG.HTML.Audio.Element.Preload.metadata
+                    preload: WHATWG.HTML.Preload.Attribute.metadata
                 ),
                 WHATWG.HTML.Audio.Element(
                     src: WHATWG.HTML.Src.Attribute("song3.mp3"),
                     controls: WHATWG.HTML.Controls.Attribute(),
-                    preload: WHATWG.HTML.Audio.Element.Preload.metadata
+                    preload: WHATWG.HTML.Preload.Attribute.metadata
                 ),
             ]
 
             #expect(playlist.count == 3)
             playlist.forEach { audio in
-                #expect(audio.preload == WHATWG.HTML.Audio.Element.Preload.metadata)
+                #expect(audio.preload == WHATWG.HTML.Preload.Attribute.metadata)
                 #expect(audio.controls != nil)
             }
         }
@@ -375,7 +362,7 @@ import WHATWG_HTML
         @Test func `Audio with no preload for bandwidth conservation`() {
             let src = WHATWG.HTML.Src.Attribute("large-file.mp3")
             let controls = WHATWG.HTML.Controls.Attribute()
-            let preload = WHATWG.HTML.Audio.Element.Preload.none
+            let preload = WHATWG.HTML.Preload.Attribute.none
 
             let audio = WHATWG.HTML.Audio.Element(src: src, controls: controls, preload: preload)
 
@@ -385,7 +372,7 @@ import WHATWG_HTML
         @Test func `Audio with metadata preload for quick info`() {
             let src = WHATWG.HTML.Src.Attribute("podcast.mp3")
             let controls = WHATWG.HTML.Controls.Attribute()
-            let preload = WHATWG.HTML.Audio.Element.Preload.metadata
+            let preload = WHATWG.HTML.Preload.Attribute.metadata
 
             let audio = WHATWG.HTML.Audio.Element(src: src, controls: controls, preload: preload)
 
@@ -395,7 +382,7 @@ import WHATWG_HTML
         @Test func `Audio with auto preload for immediate playback`() {
             let src = WHATWG.HTML.Src.Attribute("short-clip.mp3")
             let controls = WHATWG.HTML.Controls.Attribute()
-            let preload = WHATWG.HTML.Audio.Element.Preload.auto
+            let preload = WHATWG.HTML.Preload.Attribute.auto
 
             let audio = WHATWG.HTML.Audio.Element(src: src, controls: controls, preload: preload)
 

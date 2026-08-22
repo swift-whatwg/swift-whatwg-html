@@ -1,20 +1,20 @@
 import Testing
-import WHATWG_HTML_Forms
+import WHATWG_HTML
 
 @testable import WHATWG_HTML_FormData
 
 @Suite struct `Entry Tests` {
 
     @Test func `Entry initialization with name and value`() {
-        let value = WHATWG.HTML.Form.Attribute.Data.Value.string("test value")
-        let entry = WHATWG.HTML.Form.Attribute.Data.Entry(name: "field_name", value: value)
+        let value = WHATWG.HTML.Form.Data.Value.string("test value")
+        let entry = WHATWG.HTML.Form.Data.Entry(name: "field_name", value: value)
 
         #expect(entry.name == "field_name")
         #expect(entry.value == value)
     }
 
     @Test func `Entry convenience init with string value`() {
-        let entry = WHATWG.HTML.Form.Attribute.Data.Entry(name: "username", stringValue: "alice")
+        let entry = WHATWG.HTML.Form.Data.Entry(name: "username", stringValue: "alice")
 
         #expect(entry.name == "username")
         #expect(entry.value.stringValue == "alice")
@@ -22,12 +22,12 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `Entry convenience init with file`() {
-        let file = WHATWG.HTML.Form.Attribute.Data.File(
+        let file = WHATWG.HTML.Form.Data.File(
             name: "avatar.png",
             type: "image/png",
             body: [UInt8]([1, 2, 3])
         )
-        let entry = WHATWG.HTML.Form.Attribute.Data.Entry(name: "avatar", file: file)
+        let entry = WHATWG.HTML.Form.Data.Entry(name: "avatar", file: file)
 
         #expect(entry.name == "avatar")
         #expect(entry.value.fileValue == file)
@@ -35,23 +35,23 @@ import WHATWG_HTML_Forms
     }
 
     @Test func `Entry conforms to Hashable`() {
-        let entry1 = WHATWG.HTML.Form.Attribute.Data.Entry(name: "test", stringValue: "value")
-        let entry2 = WHATWG.HTML.Form.Attribute.Data.Entry(name: "test", stringValue: "value")
+        let entry1 = WHATWG.HTML.Form.Data.Entry(name: "test", stringValue: "value")
+        let entry2 = WHATWG.HTML.Form.Data.Entry(name: "test", stringValue: "value")
 
         #expect(entry1 == entry2)
         #expect(entry1.hashValue == entry2.hashValue)
     }
 
     @Test func `Entries with different names are not equal`() {
-        let entry1 = WHATWG.HTML.Form.Attribute.Data.Entry(name: "field1", stringValue: "value")
-        let entry2 = WHATWG.HTML.Form.Attribute.Data.Entry(name: "field2", stringValue: "value")
+        let entry1 = WHATWG.HTML.Form.Data.Entry(name: "field1", stringValue: "value")
+        let entry2 = WHATWG.HTML.Form.Data.Entry(name: "field2", stringValue: "value")
 
         #expect(entry1 != entry2)
     }
 
     @Test func `Entries with different values are not equal`() {
-        let entry1 = WHATWG.HTML.Form.Attribute.Data.Entry(name: "field", stringValue: "value1")
-        let entry2 = WHATWG.HTML.Form.Attribute.Data.Entry(name: "field", stringValue: "value2")
+        let entry1 = WHATWG.HTML.Form.Data.Entry(name: "field", stringValue: "value1")
+        let entry2 = WHATWG.HTML.Form.Data.Entry(name: "field", stringValue: "value2")
 
         #expect(entry1 != entry2)
     }
@@ -59,7 +59,7 @@ import WHATWG_HTML_Forms
     @Test func `Entry conforms to Sendable`() {
 
         func acceptSendable<T: Sendable>(_: T) {}
-        let entry = WHATWG.HTML.Form.Attribute.Data.Entry(name: "test", stringValue: "value")
+        let entry = WHATWG.HTML.Form.Data.Entry(name: "test", stringValue: "value")
         acceptSendable(entry)
     }
 }

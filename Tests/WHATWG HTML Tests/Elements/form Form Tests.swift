@@ -1,16 +1,13 @@
 import Testing
 import WHATWG_HTML
-import WHATWG_HTML_Forms
-
-#if canImport(FoundationEssentials)
-    import FoundationEssentials
-#elseif canImport(Foundation)
-#endif
 
 @Suite("Form")
 struct FormTests {
-    @Test("WHATWG.HTML.Form nest alias resolves to the Forms module's Form")
-    func nestAliasResolves() {
-        #expect(WHATWG.HTML.Form.self == WHATWG_HTML_Forms.Form.self)
+    @Test("Canonical form element")
+    func canonicalElement() {
+        let form = WHATWG.HTML.Form.Element()
+        let element: any WHATWG.HTML.Element = form
+
+        #expect(type(of: element).tag == "form")
     }
 }

@@ -1,6 +1,6 @@
 import Testing
 
-@testable import WHATWG_HTML_GlobalAttributes
+import WHATWG_HTML
 
 @Suite("Byte Serialization Tests") struct ByteSerializationTests {
 
