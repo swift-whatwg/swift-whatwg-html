@@ -251,9 +251,6 @@ swift-whatwg-html/
 ### Umbrella Package
 - [swift-html-standard](https://github.com/swift-standards/swift-html-standard): Compatibility wrapper providing the old swift-html-standard API structure
 
-### Used By
-- [swift-html-css-pointfree](https://github.com/swift-foundations/swift-html-css-pointfree): Integration with pointfree-html for HTML generation
-
 ### Dependencies
 - [swift-rfc-2045](https://github.com/swift-ietf/swift-rfc-2045): RFC 2045 MIME types
 - [swift-iso-8601](https://github.com/swift-iso/swift-iso-8601): ISO 8601 date/time

@@ -197,19 +197,19 @@ let package = Package(
         .package(url: "https://github.com/swift-ietf/swift-rfc-2045.git", branch: "main"),
         .package(url: "https://github.com/swift-iso/swift-iso-8601.git", branch: "main"),
         .package(
-            url: "https://github.com/swift-primitives/swift-standard-library-extensions.git",
+            url: "https://github.com/swift-molecules/swift-standard-library-extensions.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-primitives/swift-geometry-primitives.git",
+            url: "https://github.com/swift-molecules/swift-geometry.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-primitives/swift-radix-formatter-primitives.git",
+            url: "https://github.com/swift-molecules/swift-radix-formatter.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-primitives/swift-ascii-primitives.git",
+            url: "https://github.com/swift-molecules/swift-ascii.git",
             branch: "main"
         ),
     ],
@@ -223,8 +223,8 @@ let package = Package(
                     name: "Standard Library Extensions",
                     package: "swift-standard-library-extensions"
                 ),
-                .product(name: "Geometry Primitives", package: "swift-geometry-primitives"),
-                .product(name: "ASCII Primitives", package: "swift-ascii-primitives"),
+                .product(name: "Geometry", package: "swift-geometry"),
+                .product(name: "ASCII", package: "swift-ascii"),
             ]
         ),
 
@@ -241,8 +241,8 @@ let package = Package(
                 .whatwgHTMLShared,
                 .product(name: "ISO 8601", package: "swift-iso-8601"),
                 .product(
-                    name: "Radix Formatter Primitives",
-                    package: "swift-radix-formatter-primitives"
+                    name: "Radix Formatter",
+                    package: "swift-radix-formatter"
                 ),
             ]
         ),

@@ -1,4 +1,4 @@
-import Geometry_Primitives
+import Geometry
 public import WHATWG_HTML_Shared
 
 extension WHATWG.HTML.RowSpan {

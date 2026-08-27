@@ -1,6 +1,6 @@
-import Format_Primitives
+import Format
 public import ISO_8601
-import Radix_Formatter_Primitives
+import Radix_Formatter
 public import WHATWG_HTML_Shared
 
 extension WHATWG.HTML.DateTime {

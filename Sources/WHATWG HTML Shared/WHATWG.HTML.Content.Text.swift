@@ -1,4 +1,4 @@
-import ASCII_Primitives
+import ASCII
 
 extension WHATWG.HTML.Content {
 
