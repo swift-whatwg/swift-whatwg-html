@@ -128,23 +128,21 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/swift-whatwg/swift-whatwg.git", branch: "main"),
         .package(url: "https://github.com/swift-ietf/swift-rfc-2045.git", branch: "main"),
+        .package(url: "https://github.com/swift-ietf/swift-rfc-2045-coder.git", branch: "main"),
         .package(url: "https://github.com/swift-iso/swift-iso-8601.git", branch: "main"),
         .package(
             url: "https://github.com/swift-atoms/swift-standard-library-extensions.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-molecules/swift-geometry.git",
+            url: "https://github.com/swift-atoms/swift-geometry.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-molecules/swift-radix-formatter.git",
+            url: "https://github.com/swift-atoms/swift-ascii.git",
             branch: "main"
         ),
-        .package(
-            url: "https://github.com/swift-molecules/swift-ascii.git",
-            branch: "main"
-        ),
+        .package(url: "https://github.com/swift-atoms/swift-formatter.git", branch: "main", traits: ["Radix"]),
     ],
     targets: [
 
@@ -173,10 +171,7 @@ let package = Package(
             dependencies: [
                 .target(name: "WHATWG HTML Shared"),
                 .product(name: "ISO 8601", package: "swift-iso-8601"),
-                .product(
-                    name: "Radix Formatter",
-                    package: "swift-radix-formatter"
-                ),
+                .product(name: "Formatter", package: "swift-formatter"),
             ]
         ),
         .target(
@@ -185,6 +180,7 @@ let package = Package(
                 .target(name: "WHATWG HTML Shared"),
                 .target(name: "WHATWG HTML GlobalAttributes"),
                 .product(name: "RFC 2045", package: "swift-rfc-2045"),
+                .product(name: "RFC 2045 Coder", package: "swift-rfc-2045-coder"),
                 .product(name: "ISO 8601", package: "swift-iso-8601"),
             ]
         ),
@@ -193,6 +189,7 @@ let package = Package(
             dependencies: [
                 .target(name: "WHATWG HTML Shared"),
                 .product(name: "RFC 2045", package: "swift-rfc-2045"),
+                .product(name: "RFC 2045 Coder", package: "swift-rfc-2045-coder"),
                 .target(name: "WHATWG HTML MediaAttributes"),
             ]
         ),
@@ -201,6 +198,7 @@ let package = Package(
             dependencies: [
                 .target(name: "WHATWG HTML Shared"),
                 .product(name: "RFC 2045", package: "swift-rfc-2045"),
+                .product(name: "RFC 2045 Coder", package: "swift-rfc-2045-coder"),
             ]
         ),
         .target(
@@ -212,6 +210,7 @@ let package = Package(
             dependencies: [
                 .target(name: "WHATWG HTML Shared"),
                 .product(name: "RFC 2045", package: "swift-rfc-2045"),
+                .product(name: "RFC 2045 Coder", package: "swift-rfc-2045-coder"),
             ]
         ),
 

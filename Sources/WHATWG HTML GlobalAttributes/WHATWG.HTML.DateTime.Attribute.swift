@@ -1,6 +1,5 @@
-import Format
+import Formatter
 public import ISO_8601
-import Radix_Formatter
 public import WHATWG_HTML_Shared
 
 extension WHATWG.HTML.DateTime {
@@ -28,7 +27,7 @@ extension WHATWG.HTML.DateTime.Attribute {
         year: Int,
         month: Int,
         day: Int
-    ) throws(ISO_8601.Date.Error) -> WHATWG.HTML.DateTime.Attribute {
+    ) throws(ISO_8601.DateTime.Error) -> WHATWG.HTML.DateTime.Attribute {
         let dt = try ISO_8601.DateTime(year: year, month: month, day: day)
         return WHATWG.HTML.DateTime.Attribute(dateTime: dt)
     }
@@ -40,7 +39,7 @@ extension WHATWG.HTML.DateTime.Attribute {
         hour: Int,
         minute: Int,
         second: Int = 0
-    ) throws(ISO_8601.Date.Error) -> WHATWG.HTML.DateTime.Attribute {
+    ) throws(ISO_8601.DateTime.Error) -> WHATWG.HTML.DateTime.Attribute {
         let dt = try ISO_8601.DateTime(
             year: year,
             month: month,
@@ -59,8 +58,8 @@ extension WHATWG.HTML.DateTime.Attribute {
         hour: Int,
         minute: Int,
         second: Int = 0,
-        timezoneOffsetSeconds: Int
-    ) throws(ISO_8601.Date.Error) -> WHATWG.HTML.DateTime.Attribute {
+        offset: ISO_8601.Timezone.Offset
+    ) throws(ISO_8601.DateTime.Error) -> WHATWG.HTML.DateTime.Attribute {
         let dt = try ISO_8601.DateTime(
             year: year,
             month: month,
@@ -68,7 +67,7 @@ extension WHATWG.HTML.DateTime.Attribute {
             hour: hour,
             minute: minute,
             second: second,
-            timezoneOffsetSeconds: timezoneOffsetSeconds
+            offset: offset
         )
         return WHATWG.HTML.DateTime.Attribute(dateTime: dt)
     }
@@ -80,7 +79,7 @@ extension WHATWG.HTML.DateTime.Attribute {
         hour: Int,
         minute: Int,
         second: Int = 0
-    ) throws(ISO_8601.Date.Error) -> WHATWG.HTML.DateTime.Attribute {
+    ) throws(ISO_8601.DateTime.Error) -> WHATWG.HTML.DateTime.Attribute {
         let dt = try ISO_8601.DateTime(
             year: year,
             month: month,
