@@ -136,7 +136,8 @@ let package = Package(
         ),
         .package(
             url: "https://github.com/swift-atoms/swift-geometry.git",
-            branch: "main"
+            branch: "main",
+            traits: ["Affine"]
         ),
         .package(
             url: "https://github.com/swift-atoms/swift-ascii.git",
