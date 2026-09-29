@@ -140,7 +140,7 @@ let package = Package(
         ),
         .package(
             url: "https://github.com/swift-atoms/swift-ascii.git",
-            branch: "main"
+            branch: "main", traits: ["Parser", "Serializer"]
         ),
         .package(url: "https://github.com/swift-atoms/swift-formatter.git", branch: "main", traits: ["Radix"]),
     ],
