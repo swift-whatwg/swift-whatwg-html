@@ -29,4 +29,19 @@ import WHATWG_HTML
         #expect(WHATWG.HTML.Step.Attribute.money.rawValue == "0.01")
         #expect(WHATWG.HTML.Step.Attribute.weekly.rawValue == "7.0")
     }
+
+    @Test(arguments: ["any", "ANY", "Any"])
+    func `Step any is matched ASCII case-insensitively`(_ value: String) {
+        #expect(WHATWG.HTML.Step.Attribute(value: value).rawValue == "any")
+    }
+
+    @Test(arguments: ["0.5", "2", "1e2"])
+    func `Step positive finite value is kept`(_ value: String) {
+        #expect(WHATWG.HTML.Step.Attribute(value: value).rawValue == Double(value)!.description)
+    }
+
+    @Test(arguments: ["0", "-1", "inf", "nan", "infinity", "1e400", "0x10", ""])
+    func `Step value that is not a positive finite decimal falls back to any`(_ value: String) {
+        #expect(WHATWG.HTML.Step.Attribute(value: value).rawValue == "any")
+    }
 }

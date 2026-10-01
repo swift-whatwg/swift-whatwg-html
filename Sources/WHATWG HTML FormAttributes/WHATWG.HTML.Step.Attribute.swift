@@ -12,9 +12,13 @@ extension WHATWG.HTML.Step {
         case any
 
         public init(value: String) {
-            if value == "any" {
+            if value.utf8.map({ $0 | 0x20 }) == Array("any".utf8) {
                 self = .any
-            } else if let doubleValue = Double(value) {
+            } else if value.utf8.allSatisfy({ (0x30...0x39).contains($0) || ".eE+-".utf8.contains($0) }),
+                let doubleValue = Double(value),
+                doubleValue.isFinite,
+                doubleValue > 0
+            {
                 self = .value(doubleValue)
             } else {
 
