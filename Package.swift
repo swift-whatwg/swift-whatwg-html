@@ -119,12 +119,6 @@ let package = Package(
             targets: ["WHATWG HTML"]
         ),
     ],
-    traits: [
-        .trait(
-            name: "Foundation",
-            description: "Foundation integration for WHATWG HTML"
-        )
-    ],
     dependencies: [
         .package(url: "https://github.com/swift-whatwg/swift-whatwg.git", branch: "main"),
         .package(url: "https://github.com/swift-ietf/swift-rfc-2045.git", branch: "main"),
