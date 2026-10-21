@@ -1,5 +1,4 @@
 import Testing
-
 import WHATWG_HTML
 
 @Suite("Byte Serialization Tests") struct ByteSerializationTests {

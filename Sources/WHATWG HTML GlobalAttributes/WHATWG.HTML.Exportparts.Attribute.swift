@@ -38,11 +38,10 @@ extension WHATWG.HTML.Exportparts.Attribute {
 extension WHATWG.HTML.Exportparts.Attribute.PartMapping {
 
     public var description: String {
-        if originalName == exposedName {
-            return originalName
-        } else {
+        guard originalName == exposedName else {
             return "\(originalName):\(exposedName)"
         }
+        return originalName
     }
 }
 

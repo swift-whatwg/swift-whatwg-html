@@ -44,8 +44,7 @@ extension WHATWG.HTML.Autocomplete.Attribute {
 
 extension WHATWG.HTML.Autocomplete.Attribute {
 
-    public static func shipping(_ detailToken: Token.Address) -> WHATWG.HTML.Autocomplete.Attribute
-    {
+    public static func shipping(_ detailToken: Token.Address) -> WHATWG.HTML.Autocomplete.Attribute {
         return WHATWG.HTML.Autocomplete.Attribute([
             Token.grouping(.shipping), Token.address(detailToken),
         ])

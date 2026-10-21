@@ -45,8 +45,7 @@ extension WHATWG.HTML.Accept.Attribute {
 
 extension WHATWG.HTML.Accept.Attribute {
 
-    public struct FileType: Sendable, Hashable, CustomStringConvertible, ExpressibleByStringLiteral
-    {
+    public struct FileType: Sendable, Hashable, CustomStringConvertible, ExpressibleByStringLiteral {
 
         public var value: String
 

@@ -108,12 +108,11 @@ extension WHATWG.HTML.DateTime.Attribute {
     ) -> WHATWG.HTML.DateTime.Attribute {
         let h = hour.formatted(.decimal.zeroPadded(width: 2))
         let m = minute.formatted(.decimal.zeroPadded(width: 2))
-        if second > 0 {
-            let s = second.formatted(.decimal.zeroPadded(width: 2))
-            return WHATWG.HTML.DateTime.Attribute("\(h):\(m):\(s)")
-        } else {
+        guard second > 0 else {
             return WHATWG.HTML.DateTime.Attribute("\(h):\(m)")
         }
+        let s = second.formatted(.decimal.zeroPadded(width: 2))
+        return WHATWG.HTML.DateTime.Attribute("\(h):\(m):\(s)")
     }
 
     public static func duration(_ iso8601Duration: String) -> WHATWG.HTML.DateTime.Attribute {

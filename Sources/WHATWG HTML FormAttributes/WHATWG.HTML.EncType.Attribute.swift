@@ -41,17 +41,20 @@ extension RFC_2045.ContentType {
     )
 
     public static func multipartFormData(boundary: String? = nil) -> RFC_2045.ContentType {
-        if let boundary {
+        guard let boundary else {
+
+            return RFC_2045.ContentType(__unchecked: (), type: "multipart", subtype: "form-data")
+        }
+        do {
             return RFC_2045.ContentType(
                 __unchecked: (),
                 type: "multipart",
                 subtype: "form-data",
 
-                parameters: [try! .init("boundary"): boundary]
+                parameters: [try .init("boundary"): boundary]
             )
-        } else {
-
-            return RFC_2045.ContentType(__unchecked: (), type: "multipart", subtype: "form-data")
+        } catch {
+            preconditionFailure("\"boundary\" is a valid parameter name: \(error)")
         }
     }
 }

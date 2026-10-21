@@ -19,8 +19,7 @@ extension WHATWG.HTML.CharSet.Attribute {
     @available(
         *,
         deprecated,
-        message:
-            "UTF-16 is rarely used in HTML and may cause compatibility issues. Use utf8 instead."
+        message: "UTF-16 is rarely used in HTML and may cause compatibility issues. Use utf8 instead."
     ) @inlinable public static var utf16: Self { "utf-16" }
 
     @available(
@@ -53,8 +52,7 @@ extension WHATWG.HTML.CharSet.Attribute {
     @available(
         *,
         deprecated,
-        message:
-            "Windows-1250 is a legacy encoding for Central European languages. Use utf8 instead."
+        message: "Windows-1250 is a legacy encoding for Central European languages. Use utf8 instead."
     ) @inlinable public static var windows1250: Self { "windows-1250" }
 
     @available(
@@ -84,8 +82,7 @@ extension WHATWG.HTML.CharSet.Attribute {
     @available(
         *,
         deprecated,
-        message:
-            "MacRoman (macintosh) is deprecated and not suitable for modern web content. Use utf8 instead."
+        message: "MacRoman (macintosh) is deprecated and not suitable for modern web content. Use utf8 instead."
     ) @inlinable public static var macRoman: Self { "macintosh" }
 
     @available(*, deprecated, message: "IBM866 is a legacy DOS encoding. Use utf8 instead.")
@@ -97,8 +94,7 @@ extension WHATWG.HTML.CharSet.Attribute {
     @available(
         *,
         deprecated,
-        message:
-            "GB18030 is mandatory in China but considered legacy for web content. Use utf8 instead."
+        message: "GB18030 is mandatory in China but considered legacy for web content. Use utf8 instead."
     ) @inlinable public static var gb18030: Self { "gb18030" }
 
     @available(
