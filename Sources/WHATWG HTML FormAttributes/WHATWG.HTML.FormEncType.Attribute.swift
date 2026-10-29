@@ -1,5 +1,4 @@
 public import RFC_2045
-import RFC_2045_Coder
 public import WHATWG_HTML_Shared
 
 extension WHATWG.HTML.FormEncType {

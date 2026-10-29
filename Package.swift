@@ -121,8 +121,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/swift-whatwg/swift-whatwg.git", branch: "main"),
-        .package(url: "https://github.com/swift-ietf/swift-rfc-2045.git", branch: "main"),
-        .package(url: "https://github.com/swift-ietf/swift-rfc-2045-coder.git", branch: "main"),
+        .package(url: "https://github.com/swift-ietf/swift-rfc-2045.git", branch: "main", traits: ["Coder"]),
         .package(url: "https://github.com/swift-iso/swift-iso-8601.git", branch: "main"),
         .package(
             url: "https://github.com/swift-atoms/swift-standard-library-extensions.git",
@@ -176,7 +175,6 @@ let package = Package(
                 .target(name: "WHATWG HTML Shared"),
                 .target(name: "WHATWG HTML GlobalAttributes"),
                 .product(name: "RFC 2045", package: "swift-rfc-2045"),
-                .product(name: "RFC 2045 Coder", package: "swift-rfc-2045-coder"),
                 .product(name: "ISO 8601", package: "swift-iso-8601"),
             ]
         ),
@@ -185,7 +183,6 @@ let package = Package(
             dependencies: [
                 .target(name: "WHATWG HTML Shared"),
                 .product(name: "RFC 2045", package: "swift-rfc-2045"),
-                .product(name: "RFC 2045 Coder", package: "swift-rfc-2045-coder"),
                 .target(name: "WHATWG HTML MediaAttributes"),
             ]
         ),
@@ -194,7 +191,6 @@ let package = Package(
             dependencies: [
                 .target(name: "WHATWG HTML Shared"),
                 .product(name: "RFC 2045", package: "swift-rfc-2045"),
-                .product(name: "RFC 2045 Coder", package: "swift-rfc-2045-coder"),
             ]
         ),
         .target(
@@ -206,7 +202,6 @@ let package = Package(
             dependencies: [
                 .target(name: "WHATWG HTML Shared"),
                 .product(name: "RFC 2045", package: "swift-rfc-2045"),
-                .product(name: "RFC 2045 Coder", package: "swift-rfc-2045-coder"),
             ]
         ),
 
