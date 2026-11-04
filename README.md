@@ -6,7 +6,12 @@ Use this package when you need the HTML elements and attributes of the WHATWG Li
 
 - A string attribute serializes to bytes as its name, an equals sign and its value in double quotes, in UTF-8. A boolean attribute serializes as its bare name when true and as nothing when false.
 - `description` is not the serialized form. For a string attribute it is the value alone, and for a boolean attribute it is `true` or `false`.
-- Attributes with a fixed set of values are strings with named constants, so any other string is accepted and kept as given. `WHATWG.HTML.Hidden.Attribute.empty` is the empty string, and `WHATWG.HTML.Hidden.Attribute.init()` is the `hidden` value.
+- Attributes with a fixed set of values are strings with named constants, so any other string is accepted and kept as given. The exceptions are `WHATWG.HTML.Method.Attribute` and `WHATWG.HTML.FormMethod.Attribute`, which lowercase the value, and `WHATWG.HTML.Step.Attribute`. `WHATWG.HTML.Hidden.Attribute.empty` is the empty string, and `WHATWG.HTML.Hidden.Attribute.init()` is the `hidden` value.
+- `WHATWG.HTML.Step.Attribute` built from a string is `any` for `any` in any ASCII case and keeps a positive finite decimal number. Anything else, such as zero, a negative number, `inf` or hex, becomes `any`.
+- Numbers held as `Double` are written the way Swift prints them, so a step or a `WHATWG.HTML.High.Attribute` of 5 is written `5.0`.
+- `WHATWG.HTML.Span.Attribute` built from a string reads it with the HTML rules for non-negative integers: leading whitespace and a plus sign are skipped and anything after the digits is ignored. A result outside 1 to 1000, or no digits at all, gives 1.
+- `WHATWG.HTML.Maxlength.Attribute` and `WHATWG.HTML.Minlength.Attribute` turn a negative length into 0. An integer literal for `WHATWG.HTML.Size.Attribute` below 1 becomes 1.
+- `WHATWG.HTML.Usemap.Attribute` puts `#` in front of a name that lacks it.
 - An array literal for a token-list attribute, such as `WHATWG.HTML.Class.Attribute` or `WHATWG.HTML.Rel.Attribute`, joins the tokens with single spaces. An array literal for `WHATWG.HTML.Title.Attribute` joins its lines with newlines.
 - `WHATWG.HTML.Data.Attribute.attributeName` is the name with `data-` in front. Its `description` is the value.
 - `WHATWG.HTML.DateTime.Attribute` built from an ISO 8601 date-time always holds a full date-time in UTC with Z. A date alone gets midnight, and a value given with an offset is converted to UTC.
