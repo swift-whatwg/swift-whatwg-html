@@ -10,6 +10,8 @@ extension WHATWG.HTML.Download {
 
         public init(_ include: Bool) { self.value = .boolean(include) }
 
+        // swift-linter:disable:next raw concept
+        // REASON: The download attribute's value, any text the page suggests, which the browser sanitizes itself and which may hold path separators; looked at Path and Path.Component, which hold this platform's names.
         public init(_ filename: String) { self.value = .withFilename(filename) }
     }
 }
