@@ -1,3 +1,4 @@
+public import RFC_3986
 public import WHATWG_HTML_Shared
 
 extension WHATWG.HTML.Action {
@@ -17,14 +18,15 @@ extension WHATWG.HTML.Action.Attribute {
 
 extension WHATWG.HTML.Action.Attribute {
 
-    public static func relative(_ path: String) -> WHATWG.HTML.Action.Attribute {
+    public static func relative(_ path: RFC_3986.URI.Path) -> WHATWG.HTML.Action.Attribute {
 
-        let formattedPath = path.hasPrefix("/") ? path : "/\(path)"
+        let text = path.description
+        let formattedPath = text.hasPrefix("/") ? text : "/\(text)"
         return WHATWG.HTML.Action.Attribute(formattedPath)
     }
 
-    public static func absolute(_ url: String) -> WHATWG.HTML.Action.Attribute {
-        return WHATWG.HTML.Action.Attribute(url)
+    public static func absolute(_ url: RFC_3986.URI) -> WHATWG.HTML.Action.Attribute {
+        return WHATWG.HTML.Action.Attribute(url.value)
     }
 
     public static let current: WHATWG.HTML.Action.Attribute = WHATWG.HTML.Action.Attribute(".")

@@ -1,3 +1,5 @@
+public import EmailAddress_Standard
+public import RFC_3986
 public import WHATWG_HTML_Shared
 
 extension WHATWG.HTML.Href {
@@ -21,15 +23,15 @@ extension WHATWG.HTML.Href.Attribute {
         return WHATWG.HTML.Href.Attribute(value: "tel:\(phoneNumber)")
     }
 
-    public static func mailto(_ email: String) -> WHATWG.HTML.Href.Attribute {
-        return WHATWG.HTML.Href.Attribute(value: "mailto:\(email)")
+    public static func mailto(_ email: EmailAddress) -> WHATWG.HTML.Href.Attribute {
+        return WHATWG.HTML.Href.Attribute(value: "mailto:\(email.address)")
     }
 
     public static func sms(_ phoneNumber: String) -> WHATWG.HTML.Href.Attribute {
         return WHATWG.HTML.Href.Attribute(value: "sms:\(phoneNumber)")
     }
 
-    public static func file(_ path: String) -> WHATWG.HTML.Href.Attribute {
+    public static func file(_ path: RFC_3986.URI.Path) -> WHATWG.HTML.Href.Attribute {
         return WHATWG.HTML.Href.Attribute(value: "file://\(path)")
     }
 
@@ -64,11 +66,11 @@ extension WHATWG.HTML.Href.Attribute {
     }
 
     public static func email(
-        _ address: String,
+        _ address: EmailAddress,
         subject: String? = nil,
         body: String? = nil
     ) -> WHATWG.HTML.Href.Attribute {
-        var url = "mailto:\(address)"
+        var url = "mailto:\(address.address)"
 
         if subject != nil || body != nil {
             url += "?"

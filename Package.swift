@@ -123,6 +123,9 @@ let package = Package(
         .package(url: "https://github.com/swift-whatwg/swift-whatwg.git", branch: "main"),
         .package(url: "https://github.com/swift-ietf/swift-rfc-2045.git", branch: "main", traits: ["Coder"]),
         .package(url: "https://github.com/swift-iso/swift-iso-8601.git", branch: "main"),
+        .package(url: "https://github.com/swift-ietf/swift-rfc-3986.git", branch: "main"),
+        .package(url: "https://github.com/swift-ietf/swift-rfc-5646.git", branch: "main"),
+        .package(url: "https://github.com/swift-standards/swift-emailaddress-standard.git", branch: "main"),
         .package(
             url: "https://github.com/swift-atoms/swift-standard-library-extensions.git",
             branch: "main"
@@ -165,6 +168,7 @@ let package = Package(
             name: "WHATWG HTML GlobalAttributes",
             dependencies: [
                 .target(name: "WHATWG HTML Shared"),
+                .product(name: "RFC 5646", package: "swift-rfc-5646"),
                 .product(name: "ISO 8601", package: "swift-iso-8601"),
                 .product(name: "Formatter", package: "swift-formatter"),
             ]
@@ -173,6 +177,7 @@ let package = Package(
             name: "WHATWG HTML FormAttributes",
             dependencies: [
                 .target(name: "WHATWG HTML Shared"),
+                .product(name: "RFC 3986", package: "swift-rfc-3986"),
                 .target(name: "WHATWG HTML GlobalAttributes"),
                 .product(name: "RFC 2045", package: "swift-rfc-2045"),
                 .product(name: "ISO 8601", package: "swift-iso-8601"),
@@ -182,6 +187,8 @@ let package = Package(
             name: "WHATWG HTML LinkAttributes",
             dependencies: [
                 .target(name: "WHATWG HTML Shared"),
+                .product(name: "RFC 3986", package: "swift-rfc-3986"),
+                .product(name: "EmailAddress Standard", package: "swift-emailaddress-standard"),
                 .product(name: "RFC 2045", package: "swift-rfc-2045"),
                 .target(name: "WHATWG HTML MediaAttributes"),
             ]
@@ -389,6 +396,8 @@ let package = Package(
         .testTarget(
             name: "WHATWG HTML Tests",
             dependencies: [
+                .product(name: "RFC 3986", package: "swift-rfc-3986"),
+                .product(name: "EmailAddress Standard", package: "swift-emailaddress-standard"),
                 .target(name: "WHATWG HTML"),
                 .target(name: "WHATWG HTML Shared"),
                 .target(name: "WHATWG HTML FormData"),

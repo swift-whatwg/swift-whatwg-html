@@ -1,3 +1,4 @@
+public import RFC_5646
 public import WHATWG_HTML_Shared
 
 extension WHATWG.HTML.Lang {
@@ -17,14 +18,8 @@ extension WHATWG.HTML.Lang.Attribute {
 
 extension WHATWG.HTML.Lang.Attribute {
 
-    public init(language: String, script: String? = nil, region: String? = nil) {
-        var value = language
-
-        if let script { value += "-\(script)" }
-
-        if let region { value += "-\(region)" }
-
-        self = .init(value: value)
+    public init(language: RFC_5646.LanguageTag) {
+        self = .init(value: language.value)
     }
 }
 
