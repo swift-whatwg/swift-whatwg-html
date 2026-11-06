@@ -2,7 +2,9 @@ import Testing
 
 @testable import WHATWG_HTML_GlobalAttributes
 
-extension `Performance Tests` {
+enum `Performance Tests Tests` {}
+
+extension `Performance Tests Tests` {
 
     @Suite(.serialized) struct `Byte Serialization` {
 
