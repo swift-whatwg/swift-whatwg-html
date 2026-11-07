@@ -58,34 +58,6 @@ extension WHATWG.HTML.Audio.Element {
 }
 
 extension WHATWG.HTML.Audio.Element {
-
-    public enum Preload: String, Sendable {
-
-        case none
-
-        case metadata
-
-        case auto
-    }
-
-    public struct ControlsList: Sendable, Hashable {
-
-        public var nodownload: Bool
-
-        public var nofullscreen: Bool
-
-        public var noremoteplayback: Bool
-
-        public init(
-            nodownload: Bool = false,
-            nofullscreen: Bool = false,
-            noremoteplayback: Bool = false
-        ) {
-            self.nodownload = nodownload
-            self.nofullscreen = nofullscreen
-            self.noremoteplayback = noremoteplayback
-        }
-    }
 }
 
 extension WHATWG.HTML.Audio.Element.ControlsList {
