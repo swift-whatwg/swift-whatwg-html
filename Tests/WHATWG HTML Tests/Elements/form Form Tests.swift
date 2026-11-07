@@ -1,8 +1,8 @@
 import Testing
 import WHATWG_HTML
 
-@Suite("Form")
-struct FormTests {
+@Suite
+struct `Form` {
     @Test
     func `Canonical form element`() {
         let form = WHATWG.HTML.Form.Element()

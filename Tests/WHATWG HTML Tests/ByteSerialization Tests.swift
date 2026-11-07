@@ -1,7 +1,7 @@
 import Testing
 import WHATWG_HTML
 
-@Suite("Byte Serialization Tests") struct ByteSerializationTests {
+@Suite struct `Byte Serialization Tests` {
 
     @Test func `Autofocus byte serialization - true`() {
         let attr: WHATWG.HTML.Autofocus.Attribute = true
