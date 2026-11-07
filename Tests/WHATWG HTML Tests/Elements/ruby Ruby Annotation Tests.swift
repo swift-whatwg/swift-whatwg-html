@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Ruby Annotation Test` {
+enum `ruby Ruby Annotation Tests` {}
 
+extension `ruby Ruby Annotation Tests` {
+    @Suite struct `Ruby Annotation Test` {
+
+    }
 }

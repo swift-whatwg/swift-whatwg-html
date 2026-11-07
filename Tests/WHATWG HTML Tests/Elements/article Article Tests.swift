@@ -13,7 +13,9 @@ import WHATWG_HTML
         let element: any WHATWG.HTML.Element = article
         #expect(type(of: element).tag == "article")
     }
+}
 
+extension `Article Tests` {
     @Suite struct `Common Use Cases` {
 
         @Test func `Blog post article`() {

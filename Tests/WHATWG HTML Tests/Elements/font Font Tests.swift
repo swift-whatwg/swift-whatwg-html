@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Font Test` {
+enum `font Font Tests` {}
 
+extension `font Font Tests` {
+    @Suite struct `Font Test` {
+
+    }
 }

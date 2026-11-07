@@ -1,101 +1,107 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Image Map Area Tests` {
+enum `area Image Map Area Tests` {}
 
-    @Test func `Basic area creation`() {
-        let area = WHATWG.HTML.Area.Element()
-        #expect(WHATWG.HTML.Area.Element.tag == "area")
-        #expect(area.shape == nil)
-        #expect(area.href == nil)
-        #expect(area.alt == nil)
+extension `area Image Map Area Tests` {
+    @Suite struct `Image Map Area Tests` {
+
+        @Test func `Basic area creation`() {
+            let area = WHATWG.HTML.Area.Element()
+            #expect(WHATWG.HTML.Area.Element.tag == "area")
+            #expect(area.shape == nil)
+            #expect(area.href == nil)
+            #expect(area.alt == nil)
+        }
+
+        @Test func `Area conforms to HTMLElement`() {
+            let area = WHATWG.HTML.Area.Element()
+            let element: any WHATWG.HTML.Element = area
+            #expect(type(of: element).tag == "area")
+        }
+
+        @Test func `Area with rectangular shape`() {
+            let shape = WHATWG.HTML.Area.Element.Shape.rect(coords: "0,0,100,100")
+            let href = WHATWG.HTML.Href.Attribute("page1.html")
+            let alt = WHATWG.HTML.Alt.Attribute("Rectangle area")
+            let area = WHATWG.HTML.Area.Element(shape: shape, href: href, alt: alt)
+
+            #expect(area.shape == shape)
+            #expect(area.href == href)
+            #expect(area.alt == alt)
+            #expect(area.coords == "0,0,100,100")
+        }
+
+        @Test func `Area with circular shape`() {
+            let shape = WHATWG.HTML.Area.Element.Shape.circle(coords: "50,50,30")
+            let href = WHATWG.HTML.Href.Attribute("page2.html")
+            let alt = WHATWG.HTML.Alt.Attribute("Circle area")
+            let area = WHATWG.HTML.Area.Element(shape: shape, href: href, alt: alt)
+
+            #expect(area.shape == shape)
+            #expect(area.href == href)
+            #expect(area.alt == alt)
+            #expect(area.coords == "50,50,30")
+        }
+
+        @Test func `Area with polygon shape`() {
+            let shape = WHATWG.HTML.Area.Element.Shape.poly(coords: "0,0,50,0,25,43")
+            let href = WHATWG.HTML.Href.Attribute("page3.html")
+            let alt = WHATWG.HTML.Alt.Attribute("Triangle area")
+            let area = WHATWG.HTML.Area.Element(shape: shape, href: href, alt: alt)
+
+            #expect(area.shape == shape)
+            #expect(area.href == href)
+            #expect(area.alt == alt)
+            #expect(area.coords == "0,0,50,0,25,43")
+        }
+
+        @Test func `Area with default shape`() {
+            let shape = WHATWG.HTML.Area.Element.Shape.default
+            let href = WHATWG.HTML.Href.Attribute("default.html")
+            let alt = WHATWG.HTML.Alt.Attribute("Default area")
+            let area = WHATWG.HTML.Area.Element(shape: shape, href: href, alt: alt)
+
+            #expect(area.shape == shape)
+            #expect(area.href == href)
+            #expect(area.alt == alt)
+            #expect(area.coords == nil)
+        }
+
+        @Test func `Area with all attributes`() {
+            let shape = WHATWG.HTML.Area.Element.Shape.rect(coords: "10,10,90,90")
+            let alt = WHATWG.HTML.Alt.Attribute("Complete area")
+            let href = WHATWG.HTML.Href.Attribute("complete.html")
+            let download = WHATWG.HTML.Download.Attribute("file.pdf")
+            let ping = WHATWG.HTML.Ping.Attribute("https://analytics.example.com/ping")
+            let referrerpolicy = WHATWG.HTML.ReferrerPolicy.Attribute.noReferrer
+            let rel = WHATWG.HTML.Rel.Attribute("noopener")
+            let target = WHATWG.HTML.Target.Attribute.blank
+
+            let area = WHATWG.HTML.Area.Element(
+                shape: shape,
+                alt: alt,
+                href: href,
+                download: download,
+                ping: ping,
+                referrerpolicy: referrerpolicy,
+                rel: rel,
+                target: target
+            )
+
+            #expect(area.shape == shape)
+            #expect(area.alt == alt)
+            #expect(area.href == href)
+            #expect(area.download == download)
+            #expect(area.ping == ping)
+            #expect(area.referrerpolicy == referrerpolicy)
+            #expect(area.rel == rel)
+            #expect(area.target == target)
+        }
     }
+}
 
-    @Test func `Area conforms to HTMLElement`() {
-        let area = WHATWG.HTML.Area.Element()
-        let element: any WHATWG.HTML.Element = area
-        #expect(type(of: element).tag == "area")
-    }
-
-    @Test func `Area with rectangular shape`() {
-        let shape = WHATWG.HTML.Area.Element.Shape.rect(coords: "0,0,100,100")
-        let href = WHATWG.HTML.Href.Attribute("page1.html")
-        let alt = WHATWG.HTML.Alt.Attribute("Rectangle area")
-        let area = WHATWG.HTML.Area.Element(shape: shape, href: href, alt: alt)
-
-        #expect(area.shape == shape)
-        #expect(area.href == href)
-        #expect(area.alt == alt)
-        #expect(area.coords == "0,0,100,100")
-    }
-
-    @Test func `Area with circular shape`() {
-        let shape = WHATWG.HTML.Area.Element.Shape.circle(coords: "50,50,30")
-        let href = WHATWG.HTML.Href.Attribute("page2.html")
-        let alt = WHATWG.HTML.Alt.Attribute("Circle area")
-        let area = WHATWG.HTML.Area.Element(shape: shape, href: href, alt: alt)
-
-        #expect(area.shape == shape)
-        #expect(area.href == href)
-        #expect(area.alt == alt)
-        #expect(area.coords == "50,50,30")
-    }
-
-    @Test func `Area with polygon shape`() {
-        let shape = WHATWG.HTML.Area.Element.Shape.poly(coords: "0,0,50,0,25,43")
-        let href = WHATWG.HTML.Href.Attribute("page3.html")
-        let alt = WHATWG.HTML.Alt.Attribute("Triangle area")
-        let area = WHATWG.HTML.Area.Element(shape: shape, href: href, alt: alt)
-
-        #expect(area.shape == shape)
-        #expect(area.href == href)
-        #expect(area.alt == alt)
-        #expect(area.coords == "0,0,50,0,25,43")
-    }
-
-    @Test func `Area with default shape`() {
-        let shape = WHATWG.HTML.Area.Element.Shape.default
-        let href = WHATWG.HTML.Href.Attribute("default.html")
-        let alt = WHATWG.HTML.Alt.Attribute("Default area")
-        let area = WHATWG.HTML.Area.Element(shape: shape, href: href, alt: alt)
-
-        #expect(area.shape == shape)
-        #expect(area.href == href)
-        #expect(area.alt == alt)
-        #expect(area.coords == nil)
-    }
-
-    @Test func `Area with all attributes`() {
-        let shape = WHATWG.HTML.Area.Element.Shape.rect(coords: "10,10,90,90")
-        let alt = WHATWG.HTML.Alt.Attribute("Complete area")
-        let href = WHATWG.HTML.Href.Attribute("complete.html")
-        let download = WHATWG.HTML.Download.Attribute("file.pdf")
-        let ping = WHATWG.HTML.Ping.Attribute("https://analytics.example.com/ping")
-        let referrerpolicy = WHATWG.HTML.ReferrerPolicy.Attribute.noReferrer
-        let rel = WHATWG.HTML.Rel.Attribute("noopener")
-        let target = WHATWG.HTML.Target.Attribute.blank
-
-        let area = WHATWG.HTML.Area.Element(
-            shape: shape,
-            alt: alt,
-            href: href,
-            download: download,
-            ping: ping,
-            referrerpolicy: referrerpolicy,
-            rel: rel,
-            target: target
-        )
-
-        #expect(area.shape == shape)
-        #expect(area.alt == alt)
-        #expect(area.href == href)
-        #expect(area.download == download)
-        #expect(area.ping == ping)
-        #expect(area.referrerpolicy == referrerpolicy)
-        #expect(area.rel == rel)
-        #expect(area.target == target)
-    }
-
+extension `area Image Map Area Tests`.`Image Map Area Tests` {
     @Suite struct `Shape Tests` {
 
         @Test func `Rectangle shape label`() {

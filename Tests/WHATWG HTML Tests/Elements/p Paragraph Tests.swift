@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Paragraph Test` {
+enum `p Paragraph Tests` {}
 
+extension `p Paragraph Tests` {
+    @Suite struct `Paragraph Test` {
+
+    }
 }

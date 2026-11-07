@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Document Body Test` {
+enum `body Document Body Tests` {}
 
+extension `body Document Body Tests` {
+    @Suite struct `Document Body Test` {
+
+    }
 }

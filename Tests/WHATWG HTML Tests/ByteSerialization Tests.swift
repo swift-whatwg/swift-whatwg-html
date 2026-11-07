@@ -1,71 +1,75 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Byte Serialization Tests` {
+enum `ByteSerialization Tests` {}
 
-    @Test func `Autofocus byte serialization - true`() {
-        let attr: WHATWG.HTML.Autofocus.Attribute = true
-        let bytes = [UInt8](attr)
+extension `ByteSerialization Tests` {
+    @Suite struct `Byte Serialization Tests` {
 
-        #expect(bytes == Array("autofocus".utf8))
-        #expect(String(attr) == "autofocus")
-    }
+        @Test func `Autofocus byte serialization - true`() {
+            let attr: WHATWG.HTML.Autofocus.Attribute = true
+            let bytes = [UInt8](attr)
 
-    @Test func `Autofocus byte serialization - false`() {
-        let attr: WHATWG.HTML.Autofocus.Attribute = false
-        let bytes = [UInt8](attr)
+            #expect(bytes == Array("autofocus".utf8))
+            #expect(String(attr) == "autofocus")
+        }
 
-        #expect(bytes.isEmpty)
-        #expect(String(attr).isEmpty)
-    }
+        @Test func `Autofocus byte serialization - false`() {
+            let attr: WHATWG.HTML.Autofocus.Attribute = false
+            let bytes = [UInt8](attr)
 
-    @Test func `Id byte serialization - ASCII`() {
-        let attr = WHATWG.HTML.Id.Attribute(value: "main")
-        let bytes = [UInt8](attr)
-        let expected = Array("id=\"main\"".utf8)
+            #expect(bytes.isEmpty)
+            #expect(String(attr).isEmpty)
+        }
 
-        #expect(bytes == expected)
-        #expect(String(attr) == "id=\"main\"")
-    }
+        @Test func `Id byte serialization - ASCII`() {
+            let attr = WHATWG.HTML.Id.Attribute(value: "main")
+            let bytes = [UInt8](attr)
+            let expected = Array("id=\"main\"".utf8)
 
-    @Test func `Id byte serialization - UTF-8`() {
-        let attr = WHATWG.HTML.Id.Attribute(value: "日本")
-        let bytes = [UInt8](attr)
+            #expect(bytes == expected)
+            #expect(String(attr) == "id=\"main\"")
+        }
 
-        let string = String(attr)
-        #expect(string == "id=\"日本\"")
+        @Test func `Id byte serialization - UTF-8`() {
+            let attr = WHATWG.HTML.Id.Attribute(value: "日本")
+            let bytes = [UInt8](attr)
 
-        let decoded = String(decoding: bytes, as: UTF8.self)
-        #expect(decoded == "id=\"日本\"")
-    }
+            let string = String(attr)
+            #expect(string == "id=\"日本\"")
 
-    @Test func `Id byte serialization - complex value`() {
-        let attr = WHATWG.HTML.Id.Attribute(value: "my-complex-id_123")
-        let bytes = [UInt8](attr)
-        let expected = Array("id=\"my-complex-id_123\"".utf8)
+            let decoded = String(decoding: bytes, as: UTF8.self)
+            #expect(decoded == "id=\"日本\"")
+        }
 
-        #expect(bytes == expected)
-        #expect(String(attr) == "id=\"my-complex-id_123\"")
-    }
+        @Test func `Id byte serialization - complex value`() {
+            let attr = WHATWG.HTML.Id.Attribute(value: "my-complex-id_123")
+            let bytes = [UInt8](attr)
+            let expected = Array("id=\"my-complex-id_123\"".utf8)
 
-    @Test func `String initializer composes through bytes`() {
-        let attr: WHATWG.HTML.Autofocus.Attribute = true
+            #expect(bytes == expected)
+            #expect(String(attr) == "id=\"my-complex-id_123\"")
+        }
 
-        let bytes = [UInt8](attr)
-        let stringFromBytes = String(decoding: bytes, as: UTF8.self)
-        let stringDirect = String(attr)
+        @Test func `String initializer composes through bytes`() {
+            let attr: WHATWG.HTML.Autofocus.Attribute = true
 
-        #expect(stringFromBytes == stringDirect)
-    }
+            let bytes = [UInt8](attr)
+            let stringFromBytes = String(decoding: bytes, as: UTF8.self)
+            let stringDirect = String(attr)
 
-    @Test func `Byte serialization is authoritative`() {
-        let id = WHATWG.HTML.Id.Attribute(value: "test")
+            #expect(stringFromBytes == stringDirect)
+        }
 
-        let bytes = [UInt8](id)
+        @Test func `Byte serialization is authoritative`() {
+            let id = WHATWG.HTML.Id.Attribute(value: "test")
 
-        let stringFromInit = String(id)
-        let stringFromBytes = String(decoding: bytes, as: UTF8.self)
+            let bytes = [UInt8](id)
 
-        #expect(stringFromInit == stringFromBytes)
+            let stringFromInit = String(id)
+            let stringFromBytes = String(decoding: bytes, as: UTF8.self)
+
+            #expect(stringFromInit == stringFromBytes)
+        }
     }
 }

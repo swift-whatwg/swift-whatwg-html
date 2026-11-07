@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Variable Test` {
+enum `var Variable Tests` {}
 
+extension `var Variable Tests` {
+    @Suite struct `Variable Test` {
+
+    }
 }

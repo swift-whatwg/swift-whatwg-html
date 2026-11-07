@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Navigation Section Test` {
+enum `nav Navigation Section Tests` {}
 
+extension `nav Navigation Section Tests` {
+    @Suite struct `Navigation Section Test` {
+
+    }
 }

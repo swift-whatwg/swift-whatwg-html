@@ -26,32 +26,36 @@ extension NumericTestAttribute {
     static var attribute: String { "numeric-test" }
 }
 
-@Suite struct `Attribute Protocol Tests` {
+enum `Attribute Tests` {}
 
-    @Test func `Attribute has correct static attribute name`() {
-        #expect(TestAttribute.attribute == "test-attribute")
-        #expect(NumericTestAttribute.attribute == "numeric-test")
-    }
+extension `Attribute Tests` {
+    @Suite struct `Attribute Protocol Tests` {
 
-    @Test func `Attribute is Sendable`() {
-        let attr = TestAttribute("test")
+        @Test func `Attribute has correct static attribute name`() {
+            #expect(TestAttribute.attribute == "test-attribute")
+            #expect(NumericTestAttribute.attribute == "numeric-test")
+        }
 
-        Task { _ = attr }
-    }
+        @Test func `Attribute is Sendable`() {
+            let attr = TestAttribute("test")
 
-    @Test func `Attribute supports equality comparison`() {
-        let attr1 = TestAttribute("same")
-        let attr2 = TestAttribute("same")
-        let attr3 = TestAttribute("different")
+            Task { _ = attr }
+        }
 
-        #expect(attr1 == attr2)
-        #expect(attr1 != attr3)
+        @Test func `Attribute supports equality comparison`() {
+            let attr1 = TestAttribute("same")
+            let attr2 = TestAttribute("same")
+            let attr3 = TestAttribute("different")
 
-        let numAttr1 = NumericTestAttribute(42)
-        let numAttr2 = NumericTestAttribute(42)
-        let numAttr3 = NumericTestAttribute(24)
+            #expect(attr1 == attr2)
+            #expect(attr1 != attr3)
 
-        #expect(numAttr1 == numAttr2)
-        #expect(numAttr1 != numAttr3)
+            let numAttr1 = NumericTestAttribute(42)
+            let numAttr2 = NumericTestAttribute(42)
+            let numAttr3 = NumericTestAttribute(24)
+
+            #expect(numAttr1 == numAttr2)
+            #expect(numAttr1 != numAttr3)
+        }
     }
 }

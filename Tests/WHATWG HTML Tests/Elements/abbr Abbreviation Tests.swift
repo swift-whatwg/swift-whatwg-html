@@ -32,7 +32,9 @@ import WHATWG_HTML
 
         #expect(abbreviation == WHATWG.HTML.Abbreviation.Element())
     }
+}
 
+extension `Abbreviation Tests` {
     @Suite struct `Common Use Cases` {
 
         @Test func `Technical abbreviation`() {

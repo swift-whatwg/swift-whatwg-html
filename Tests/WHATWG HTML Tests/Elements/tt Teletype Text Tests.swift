@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Teletype Text Test` {
+enum `tt Teletype Text Tests` {}
 
+extension `tt Teletype Text Tests` {
+    @Suite struct `Teletype Text Test` {
+
+    }
 }

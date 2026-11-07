@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Main Test` {
+enum `main Main Tests` {}
 
+extension `main Main Tests` {
+    @Suite struct `Main Test` {
+
+    }
 }

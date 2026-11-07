@@ -1,19 +1,25 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Bring Attention To Tests` {
+enum `b Bring Attention To Tests` {}
 
-    @Test func `Basic B element creation`() {
-        _ = WHATWG.HTML.B.Element()
-        #expect(WHATWG.HTML.B.Element.tag == "b")
+extension `b Bring Attention To Tests` {
+    @Suite struct `Bring Attention To Tests` {
+
+        @Test func `Basic B element creation`() {
+            _ = WHATWG.HTML.B.Element()
+            #expect(WHATWG.HTML.B.Element.tag == "b")
+        }
+
+        @Test func `B element conforms to HTMLElement`() {
+            let b = WHATWG.HTML.B.Element()
+            let element: any WHATWG.HTML.Element = b
+            #expect(type(of: element).tag == "b")
+        }
     }
+}
 
-    @Test func `B element conforms to HTMLElement`() {
-        let b = WHATWG.HTML.B.Element()
-        let element: any WHATWG.HTML.Element = b
-        #expect(type(of: element).tag == "b")
-    }
-
+extension `b Bring Attention To Tests`.`Bring Attention To Tests` {
     @Suite struct `Common Use Cases` {
 
         @Test func `Keywords in document`() {

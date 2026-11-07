@@ -3,89 +3,93 @@ import WHATWG_HTML
 
 @testable import WHATWG_HTML_FormData
 
-@Suite struct `FormData Value Tests` {
+enum `FormDataValue Tests` {}
 
-    @Test func `Value string case stores value`() {
-        let value = WHATWG.HTML.Form.Data.Value.string("hello")
+extension `FormDataValue Tests` {
+    @Suite struct `FormData Value Tests` {
 
-        #expect(value.stringValue == "hello")
-        #expect(value.fileValue == nil)
-        #expect(value.isString == true)
-        #expect(value.isFile == false)
-    }
+        @Test func `Value string case stores value`() {
+            let value = WHATWG.HTML.Form.Data.Value.string("hello")
 
-    @Test func `Value file case stores file`() {
-        let file = WHATWG.HTML.Form.Data.File(
-            name: "test.txt",
-            type: "text/plain",
-            body: [UInt8]([1, 2, 3])
-        )
-        let value = WHATWG.HTML.Form.Data.Value.file(file)
+            #expect(value.stringValue == "hello")
+            #expect(value.fileValue == nil)
+            #expect(value.isString == true)
+            #expect(value.isFile == false)
+        }
 
-        #expect(value.stringValue == nil)
-        #expect(value.fileValue == file)
-        #expect(value.isString == false)
-        #expect(value.isFile == true)
-    }
-
-    @Test func `Value ExpressibleByStringLiteral creates string value`() {
-        let value: WHATWG.HTML.Form.Data.Value = "test string"
-
-        #expect(value.stringValue == "test string")
-        #expect(value.isString == true)
-    }
-
-    @Test func `Value description for string returns the string`() {
-        let value = WHATWG.HTML.Form.Data.Value.string("hello world")
-        #expect(value.description == "hello world")
-    }
-
-    @Test func `Value description for file includes file info`() {
-        let file = WHATWG.HTML.Form.Data.File(
-            name: "image.png",
-            type: "image/png",
-            body: [UInt8]([1, 2, 3])
-        )
-        let value = WHATWG.HTML.Form.Data.Value.file(file)
-
-        let description = value.description
-        #expect(description.contains("image.png"))
-        #expect(description.contains("image/png"))
-        #expect(description.contains("3"))
-    }
-
-    @Test func `Value conforms to Hashable`() {
-        let value1 = WHATWG.HTML.Form.Data.Value.string("test")
-        let value2 = WHATWG.HTML.Form.Data.Value.string("test")
-
-        #expect(value1 == value2)
-        #expect(value1.hashValue == value2.hashValue)
-    }
-
-    @Test func `Different string values are not equal`() {
-        let value1 = WHATWG.HTML.Form.Data.Value.string("hello")
-        let value2 = WHATWG.HTML.Form.Data.Value.string("world")
-
-        #expect(value1 != value2)
-    }
-
-    @Test func `String and file values are not equal`() {
-        let stringValue = WHATWG.HTML.Form.Data.Value.string("test")
-        let fileValue = WHATWG.HTML.Form.Data.Value.file(
-            WHATWG.HTML.Form.Data.File(
+        @Test func `Value file case stores file`() {
+            let file = WHATWG.HTML.Form.Data.File(
                 name: "test.txt",
                 type: "text/plain",
-                body: [UInt8]()
+                body: [UInt8]([1, 2, 3])
             )
-        )
+            let value = WHATWG.HTML.Form.Data.Value.file(file)
 
-        #expect(stringValue != fileValue)
-    }
+            #expect(value.stringValue == nil)
+            #expect(value.fileValue == file)
+            #expect(value.isString == false)
+            #expect(value.isFile == true)
+        }
 
-    @Test func `Value conforms to Sendable`() {
+        @Test func `Value ExpressibleByStringLiteral creates string value`() {
+            let value: WHATWG.HTML.Form.Data.Value = "test string"
 
-        func acceptSendable<T: Sendable>(_: T) {}
-        let value = WHATWG.HTML.Form.Data.Value.string("test")
-        acceptSendable(value)
+            #expect(value.stringValue == "test string")
+            #expect(value.isString == true)
+        }
+
+        @Test func `Value description for string returns the string`() {
+            let value = WHATWG.HTML.Form.Data.Value.string("hello world")
+            #expect(value.description == "hello world")
+        }
+
+        @Test func `Value description for file includes file info`() {
+            let file = WHATWG.HTML.Form.Data.File(
+                name: "image.png",
+                type: "image/png",
+                body: [UInt8]([1, 2, 3])
+            )
+            let value = WHATWG.HTML.Form.Data.Value.file(file)
+
+            let description = value.description
+            #expect(description.contains("image.png"))
+            #expect(description.contains("image/png"))
+            #expect(description.contains("3"))
+        }
+
+        @Test func `Value conforms to Hashable`() {
+            let value1 = WHATWG.HTML.Form.Data.Value.string("test")
+            let value2 = WHATWG.HTML.Form.Data.Value.string("test")
+
+            #expect(value1 == value2)
+            #expect(value1.hashValue == value2.hashValue)
+        }
+
+        @Test func `Different string values are not equal`() {
+            let value1 = WHATWG.HTML.Form.Data.Value.string("hello")
+            let value2 = WHATWG.HTML.Form.Data.Value.string("world")
+
+            #expect(value1 != value2)
+        }
+
+        @Test func `String and file values are not equal`() {
+            let stringValue = WHATWG.HTML.Form.Data.Value.string("test")
+            let fileValue = WHATWG.HTML.Form.Data.Value.file(
+                WHATWG.HTML.Form.Data.File(
+                    name: "test.txt",
+                    type: "text/plain",
+                    body: [UInt8]()
+                )
+            )
+
+            #expect(stringValue != fileValue)
+        }
+
+        @Test func `Value conforms to Sendable`() {
+
+            func acceptSendable<T: Sendable>(_: T) {}
+            let value = WHATWG.HTML.Form.Data.Value.string("test")
+            acceptSendable(value)
+        }
     }
 }

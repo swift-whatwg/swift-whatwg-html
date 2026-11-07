@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Input.Range Test` {
+enum `Input.Range Tests` {}
 
+extension `Input.Range Tests` {
+    @Suite struct `Input.Range Test` {
+
+    }
 }

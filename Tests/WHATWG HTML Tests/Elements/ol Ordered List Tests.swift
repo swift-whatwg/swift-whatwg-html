@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Ordered List Test` {
+enum `ol Ordered List Tests` {}
 
+extension `ol Ordered List Tests` {
+    @Suite struct `Ordered List Test` {
+
+    }
 }

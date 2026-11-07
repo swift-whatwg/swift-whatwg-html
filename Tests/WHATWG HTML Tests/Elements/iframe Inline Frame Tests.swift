@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Inline Frame Test` {
+enum `iframe Inline Frame Tests` {}
 
+extension `iframe Inline Frame Tests` {
+    @Suite struct `Inline Frame Test` {
+
+    }
 }

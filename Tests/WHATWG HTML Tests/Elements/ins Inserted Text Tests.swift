@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Inserted Text Test` {
+enum `ins Inserted Text Tests` {}
 
+extension `ins Inserted Text Tests` {
+    @Suite struct `Inserted Text Test` {
+
+    }
 }

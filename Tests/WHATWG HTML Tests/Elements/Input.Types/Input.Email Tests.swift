@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Input.Email Test` {
+enum `Input.Email Tests` {}
 
+extension `Input.Email Tests` {
+    @Suite struct `Input.Email Test` {
+
+    }
 }

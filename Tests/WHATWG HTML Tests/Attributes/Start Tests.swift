@@ -1,18 +1,22 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Start Test` {
-    @Test func `Start attribute should be start`() {
-        #expect(WHATWG.HTML.Start.Attribute.attribute == "start")
-    }
+enum `Start Tests` {}
 
-    @Test func `Start should support integer initialization`() {
-        let start = WHATWG.HTML.Start.Attribute(4)
-        #expect(start.rawValue == "4")
-    }
+extension `Start Tests` {
+    @Suite struct `Start Test` {
+        @Test func `Start attribute should be start`() {
+            #expect(WHATWG.HTML.Start.Attribute.attribute == "start")
+        }
 
-    @Test func `Start should support integer literal`() {
-        let start: WHATWG.HTML.Start.Attribute = 10
-        #expect(start.rawValue == "10")
+        @Test func `Start should support integer initialization`() {
+            let start = WHATWG.HTML.Start.Attribute(4)
+            #expect(start.rawValue == "4")
+        }
+
+        @Test func `Start should support integer literal`() {
+            let start: WHATWG.HTML.Start.Attribute = 10
+            #expect(start.rawValue == "10")
+        }
     }
 }

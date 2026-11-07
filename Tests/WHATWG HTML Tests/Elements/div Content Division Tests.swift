@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Content Division Test` {
+enum `div Content Division Tests` {}
 
+extension `div Content Division Tests` {
+    @Suite struct `Content Division Test` {
+
+    }
 }

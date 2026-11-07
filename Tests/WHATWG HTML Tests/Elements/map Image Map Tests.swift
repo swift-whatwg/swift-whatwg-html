@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Image Map Test` {
+enum `map Image Map Tests` {}
 
+extension `map Image Map Tests` {
+    @Suite struct `Image Map Test` {
+
+    }
 }

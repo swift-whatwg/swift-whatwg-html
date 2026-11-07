@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `List Item Test` {
+enum `li List Item Tests` {}
 
+extension `li List Item Tests` {
+    @Suite struct `List Item Test` {
+
+    }
 }

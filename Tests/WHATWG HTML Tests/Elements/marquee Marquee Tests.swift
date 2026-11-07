@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Marquee Test` {
+enum `marquee Marquee Tests` {}
 
+extension `marquee Marquee Tests` {
+    @Suite struct `Marquee Test` {
+
+    }
 }

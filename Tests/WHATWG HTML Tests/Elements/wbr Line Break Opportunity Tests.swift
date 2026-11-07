@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Line Break Opportunity Test` {
+enum `wbr Line Break Opportunity Tests` {}
 
+extension `wbr Line Break Opportunity Tests` {
+    @Suite struct `Line Break Opportunity Test` {
+
+    }
 }

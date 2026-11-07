@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Description Details Test` {
+enum `dd Description Details Tests` {}
 
+extension `dd Description Details Tests` {
+    @Suite struct `Description Details Test` {
+
+    }
 }

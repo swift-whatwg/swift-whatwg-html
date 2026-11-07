@@ -1,19 +1,25 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Bidirectional Isolate Tests` {
+enum `bdi Bidirectional Isolate Tests` {}
 
-    @Test func `Basic BDI element creation`() {
-        _ = WHATWG.HTML.BidirectionalIsolate.Element()
-        #expect(WHATWG.HTML.BidirectionalIsolate.Element.tag == "bdi")
+extension `bdi Bidirectional Isolate Tests` {
+    @Suite struct `Bidirectional Isolate Tests` {
+
+        @Test func `Basic BDI element creation`() {
+            _ = WHATWG.HTML.BidirectionalIsolate.Element()
+            #expect(WHATWG.HTML.BidirectionalIsolate.Element.tag == "bdi")
+        }
+
+        @Test func `BDI element conforms to HTMLElement`() {
+            let bdi = WHATWG.HTML.BidirectionalIsolate.Element()
+            let element: any WHATWG.HTML.Element = bdi
+            #expect(type(of: element).tag == "bdi")
+        }
     }
+}
 
-    @Test func `BDI element conforms to HTMLElement`() {
-        let bdi = WHATWG.HTML.BidirectionalIsolate.Element()
-        let element: any WHATWG.HTML.Element = bdi
-        #expect(type(of: element).tag == "bdi")
-    }
-
+extension `bdi Bidirectional Isolate Tests`.`Bidirectional Isolate Tests` {
     @Suite struct `Bidirectional Text Isolation` {
 
         @Test func `Isolating user-generated content`() {

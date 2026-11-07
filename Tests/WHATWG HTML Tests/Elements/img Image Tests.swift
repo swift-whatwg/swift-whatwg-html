@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Image Test` {
+enum `img Image Tests` {}
 
+extension `img Image Tests` {
+    @Suite struct `Image Test` {
+
+    }
 }

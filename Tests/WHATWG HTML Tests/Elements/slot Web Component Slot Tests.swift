@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Web Component Slot Test` {
+enum `slot Web Component Slot Tests` {}
 
+extension `slot Web Component Slot Tests` {
+    @Suite struct `Web Component Slot Test` {
+
+    }
 }

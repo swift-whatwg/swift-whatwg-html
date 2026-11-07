@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Data Test` {
+enum `data Data Tests` {}
 
+extension `data Data Tests` {
+    @Suite struct `Data Test` {
+
+    }
 }

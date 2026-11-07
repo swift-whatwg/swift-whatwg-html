@@ -1,21 +1,25 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Usemap Test` {
-    @Test func `Usemap attribute should be usemap`() {
-        #expect(WHATWG.HTML.Usemap.Attribute.attribute == "usemap")
-    }
+enum `Usemap Tests` {}
 
-    @Test func `Usemap should automatically add # prefix`() {
-        let withoutHash = WHATWG.HTML.Usemap.Attribute("planetmap")
-        #expect(withoutHash.rawValue == "#planetmap")
+extension `Usemap Tests` {
+    @Suite struct `Usemap Test` {
+        @Test func `Usemap attribute should be usemap`() {
+            #expect(WHATWG.HTML.Usemap.Attribute.attribute == "usemap")
+        }
 
-        let withHash = WHATWG.HTML.Usemap.Attribute("#planetmap")
-        #expect(withHash.rawValue == "#planetmap")
-    }
+        @Test func `Usemap should automatically add # prefix`() {
+            let withoutHash = WHATWG.HTML.Usemap.Attribute("planetmap")
+            #expect(withoutHash.rawValue == "#planetmap")
 
-    @Test func `Usemap should support string literal`() {
-        let usemap: WHATWG.HTML.Usemap.Attribute = "mymap"
-        #expect(usemap.rawValue == "#mymap")
+            let withHash = WHATWG.HTML.Usemap.Attribute("#planetmap")
+            #expect(withHash.rawValue == "#planetmap")
+        }
+
+        @Test func `Usemap should support string literal`() {
+            let usemap: WHATWG.HTML.Usemap.Attribute = "mymap"
+            #expect(usemap.rawValue == "#mymap")
+        }
     }
 }

@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Header Test` {
+enum `header Header Tests` {}
 
+extension `header Header Tests` {
+    @Suite struct `Header Test` {
+
+    }
 }

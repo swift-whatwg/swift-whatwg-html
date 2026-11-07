@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Field Set Legend Test` {
+enum `legend Field Set Legend Tests` {}
 
+extension `legend Field Set Legend Tests` {
+    @Suite struct `Field Set Legend Test` {
+
+    }
 }

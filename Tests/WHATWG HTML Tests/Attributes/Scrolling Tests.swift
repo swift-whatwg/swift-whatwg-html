@@ -1,14 +1,18 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Scrolling Test` {
-    @Test func `Scrolling attribute should be scrolling`() {
-        #expect(WHATWG.HTML.Scrolling.Attribute.attribute == "scrolling")
-    }
+enum `Scrolling Tests` {}
 
-    @Test func `Scrolling should have predefined values`() {
-        #expect(WHATWG.HTML.Scrolling.Attribute.yes.rawValue == "yes")
-        #expect(WHATWG.HTML.Scrolling.Attribute.no.rawValue == "no")
-        #expect(WHATWG.HTML.Scrolling.Attribute.auto.rawValue == "auto")
+extension `Scrolling Tests` {
+    @Suite struct `Scrolling Test` {
+        @Test func `Scrolling attribute should be scrolling`() {
+            #expect(WHATWG.HTML.Scrolling.Attribute.attribute == "scrolling")
+        }
+
+        @Test func `Scrolling should have predefined values`() {
+            #expect(WHATWG.HTML.Scrolling.Attribute.yes.rawValue == "yes")
+            #expect(WHATWG.HTML.Scrolling.Attribute.no.rawValue == "no")
+            #expect(WHATWG.HTML.Scrolling.Attribute.auto.rawValue == "auto")
+        }
     }
 }

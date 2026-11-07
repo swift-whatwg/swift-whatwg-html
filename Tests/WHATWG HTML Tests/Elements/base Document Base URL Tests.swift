@@ -1,40 +1,46 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Document Base URL Tests` {
+enum `base Document Base URL Tests` {}
 
-    @Test func `Basic base element creation with href`() {
-        let href = WHATWG.HTML.Href.Attribute("https://example.com/")
-        let base = WHATWG.HTML.Base.Element(href: href)
-        #expect(WHATWG.HTML.Base.Element.tag == "base")
-        #expect(base.href == href)
-        #expect(base.target == nil)
+extension `base Document Base URL Tests` {
+    @Suite struct `Document Base URL Tests` {
+
+        @Test func `Basic base element creation with href`() {
+            let href = WHATWG.HTML.Href.Attribute("https://example.com/")
+            let base = WHATWG.HTML.Base.Element(href: href)
+            #expect(WHATWG.HTML.Base.Element.tag == "base")
+            #expect(base.href == href)
+            #expect(base.target == nil)
+        }
+
+        @Test func `Basic base element creation with target`() {
+            let target = WHATWG.HTML.Target.Attribute.blank
+            let base = WHATWG.HTML.Base.Element(target: target)
+            #expect(WHATWG.HTML.Base.Element.tag == "base")
+            #expect(base.href == nil)
+            #expect(base.target == target)
+        }
+
+        @Test func `Basic base element creation with both href and target`() {
+            let href = WHATWG.HTML.Href.Attribute("https://example.com/")
+            let target = WHATWG.HTML.Target.Attribute.blank
+            let base = WHATWG.HTML.Base.Element(href: href, target: target)
+            #expect(WHATWG.HTML.Base.Element.tag == "base")
+            #expect(base.href == href)
+            #expect(base.target == target)
+        }
+
+        @Test func `Base element conforms to HTMLElement`() {
+            let href = WHATWG.HTML.Href.Attribute("https://example.com/")
+            let base = WHATWG.HTML.Base.Element(href: href)
+            let element: any WHATWG.HTML.Element = base
+            #expect(type(of: element).tag == "base")
+        }
     }
+}
 
-    @Test func `Basic base element creation with target`() {
-        let target = WHATWG.HTML.Target.Attribute.blank
-        let base = WHATWG.HTML.Base.Element(target: target)
-        #expect(WHATWG.HTML.Base.Element.tag == "base")
-        #expect(base.href == nil)
-        #expect(base.target == target)
-    }
-
-    @Test func `Basic base element creation with both href and target`() {
-        let href = WHATWG.HTML.Href.Attribute("https://example.com/")
-        let target = WHATWG.HTML.Target.Attribute.blank
-        let base = WHATWG.HTML.Base.Element(href: href, target: target)
-        #expect(WHATWG.HTML.Base.Element.tag == "base")
-        #expect(base.href == href)
-        #expect(base.target == target)
-    }
-
-    @Test func `Base element conforms to HTMLElement`() {
-        let href = WHATWG.HTML.Href.Attribute("https://example.com/")
-        let base = WHATWG.HTML.Base.Element(href: href)
-        let element: any WHATWG.HTML.Element = base
-        #expect(type(of: element).tag == "base")
-    }
-
+extension `base Document Base URL Tests`.`Document Base URL Tests` {
     @Suite struct `Configuration Tests` {
 
         @Test func `Configuration with href only`() {

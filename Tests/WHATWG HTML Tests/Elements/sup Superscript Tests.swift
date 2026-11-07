@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Superscript Test` {
+enum `sup Superscript Tests` {}
 
+extension `sup Superscript Tests` {
+    @Suite struct `Superscript Test` {
+
+    }
 }

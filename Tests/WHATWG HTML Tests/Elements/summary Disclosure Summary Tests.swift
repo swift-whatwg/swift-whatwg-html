@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Disclosure Summary Test` {
+enum `summary Disclosure Summary Tests` {}
 
+extension `summary Disclosure Summary Tests` {
+    @Suite struct `Disclosure Summary Test` {
+
+    }
 }

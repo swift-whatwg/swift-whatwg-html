@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Style Information Test` {
+enum `style Style Information Tests` {}
 
+extension `style Style Information Tests` {
+    @Suite struct `Style Information Test` {
+
+    }
 }

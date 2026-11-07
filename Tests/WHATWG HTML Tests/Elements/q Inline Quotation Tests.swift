@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Inline Quotation Test` {
+enum `q Inline Quotation Tests` {}
 
+extension `q Inline Quotation Tests` {
+    @Suite struct `Inline Quotation Test` {
+
+    }
 }

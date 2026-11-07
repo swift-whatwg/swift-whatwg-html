@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Option Test` {
+enum `option Option Tests` {}
 
+extension `option Option Tests` {
+    @Suite struct `Option Test` {
+
+    }
 }

@@ -89,7 +89,9 @@ import WHATWG_HTML
         #expect(anchor.rel == rel)
         #expect(anchor.target == target)
     }
+}
 
+extension `Anchor Tests` {
     @Suite struct `Common Use Cases` {
 
         @Test func `Email link`() {

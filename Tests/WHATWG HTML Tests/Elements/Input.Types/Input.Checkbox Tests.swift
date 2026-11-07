@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Input.Checkbox Test` {
+enum `Input.Checkbox Tests` {}
 
+extension `Input.Checkbox Tests` {
+    @Suite struct `Input.Checkbox Test` {
+
+    }
 }

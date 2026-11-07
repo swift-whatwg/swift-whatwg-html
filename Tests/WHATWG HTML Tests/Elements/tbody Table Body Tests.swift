@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Table Body Test` {
+enum `tbody Table Body Tests` {}
 
+extension `tbody Table Body Tests` {
+    @Suite struct `Table Body Test` {
+
+    }
 }

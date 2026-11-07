@@ -1,19 +1,25 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Bigger Text Tests` {
+enum `big Bigger Text Tests` {}
 
-    @Test func `Basic Big element creation`() {
-        _ = WHATWG.HTML.Big.Element()
-        #expect(WHATWG.HTML.Big.Element.tag == "big")
+extension `big Bigger Text Tests` {
+    @Suite struct `Bigger Text Tests` {
+
+        @Test func `Basic Big element creation`() {
+            _ = WHATWG.HTML.Big.Element()
+            #expect(WHATWG.HTML.Big.Element.tag == "big")
+        }
+
+        @Test func `Big element conforms to HTMLElement`() {
+            let big = WHATWG.HTML.Big.Element()
+            let element: any WHATWG.HTML.Element = big
+            #expect(type(of: element).tag == "big")
+        }
     }
+}
 
-    @Test func `Big element conforms to HTMLElement`() {
-        let big = WHATWG.HTML.Big.Element()
-        let element: any WHATWG.HTML.Element = big
-        #expect(type(of: element).tag == "big")
-    }
-
+extension `big Bigger Text Tests`.`Bigger Text Tests` {
     @Suite struct `Deprecated Element Usage` {
 
         @Test func `Understanding deprecation status`() {

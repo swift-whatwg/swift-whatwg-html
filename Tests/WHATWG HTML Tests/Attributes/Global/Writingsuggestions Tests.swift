@@ -6,13 +6,17 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@Suite struct `Writingsuggestions Test` {
-    @Test func `Writingsuggestions attribute should be writingsuggestions`() {
-        #expect(WHATWG.HTML.Writingsuggestions.Attribute.attribute == "writingsuggestions")
-    }
+enum `Writingsuggestions Tests` {}
 
-    @Test func `Writingsuggestions description should match the spec`() {
-        #expect(WHATWG.HTML.Writingsuggestions.Attribute.true.description == "true")
-        #expect(WHATWG.HTML.Writingsuggestions.Attribute.false.description == "false")
+extension `Writingsuggestions Tests` {
+    @Suite struct `Writingsuggestions Test` {
+        @Test func `Writingsuggestions attribute should be writingsuggestions`() {
+            #expect(WHATWG.HTML.Writingsuggestions.Attribute.attribute == "writingsuggestions")
+        }
+
+        @Test func `Writingsuggestions description should match the spec`() {
+            #expect(WHATWG.HTML.Writingsuggestions.Attribute.true.description == "true")
+            #expect(WHATWG.HTML.Writingsuggestions.Attribute.false.description == "false")
+        }
     }
 }

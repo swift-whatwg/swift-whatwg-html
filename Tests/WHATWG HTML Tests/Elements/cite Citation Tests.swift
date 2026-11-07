@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Citation Test` {
+enum `cite Citation Tests` {}
 
+extension `cite Citation Tests` {
+    @Suite struct `Citation Test` {
+
+    }
 }

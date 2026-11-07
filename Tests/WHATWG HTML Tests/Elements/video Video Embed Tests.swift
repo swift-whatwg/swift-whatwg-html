@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Video Embed Test` {
+enum `video Video Embed Tests` {}
 
+extension `video Video Embed Tests` {
+    @Suite struct `Video Embed Test` {
+
+    }
 }

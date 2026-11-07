@@ -1,20 +1,26 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Block Quotation Tests` {
+enum `blockquote Block Quotation Tests` {}
 
-    @Test func `Basic BlockQuote element creation`() {
-        let blockquote = WHATWG.HTML.BlockQuote.Element()
-        #expect(WHATWG.HTML.BlockQuote.Element.tag == "blockquote")
-        #expect(blockquote.cite == nil)
+extension `blockquote Block Quotation Tests` {
+    @Suite struct `Block Quotation Tests` {
+
+        @Test func `Basic BlockQuote element creation`() {
+            let blockquote = WHATWG.HTML.BlockQuote.Element()
+            #expect(WHATWG.HTML.BlockQuote.Element.tag == "blockquote")
+            #expect(blockquote.cite == nil)
+        }
+
+        @Test func `BlockQuote element conforms to HTMLElement`() {
+            let blockquote = WHATWG.HTML.BlockQuote.Element()
+            let element: any WHATWG.HTML.Element = blockquote
+            #expect(type(of: element).tag == "blockquote")
+        }
     }
+}
 
-    @Test func `BlockQuote element conforms to HTMLElement`() {
-        let blockquote = WHATWG.HTML.BlockQuote.Element()
-        let element: any WHATWG.HTML.Element = blockquote
-        #expect(type(of: element).tag == "blockquote")
-    }
-
+extension `blockquote Block Quotation Tests`.`Block Quotation Tests` {
     @Suite struct `Cite Attribute Tests` {
 
         @Test func `BlockQuote with cite URL`() {

@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Deleted Text Test` {
+enum `del Deleted Text Tests` {}
 
+extension `del Deleted Text Tests` {
+    @Suite struct `Deleted Text Test` {
+
+    }
 }

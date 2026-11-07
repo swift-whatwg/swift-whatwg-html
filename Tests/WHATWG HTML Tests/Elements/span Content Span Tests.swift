@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Content Span Test` {
+enum `span Content Span Tests` {}
 
+extension `span Content Span Tests` {
+    @Suite struct `Content Span Test` {
+
+    }
 }

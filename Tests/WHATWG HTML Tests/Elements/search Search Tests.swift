@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Search Test` {
+enum `search Search Tests` {}
 
+extension `search Search Tests` {
+    @Suite struct `Search Test` {
+
+    }
 }

@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Strong Importance Test` {
+enum `strong Strong Importance Tests` {}
 
+extension `strong Strong Importance Tests` {
+    @Suite struct `Strong Importance Test` {
+
+    }
 }

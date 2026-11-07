@@ -6,25 +6,29 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@Suite struct `Spellcheck Test` {
-    @Test func `Spellcheck attribute should be spellcheck`() {
-        #expect(WHATWG.HTML.Spellcheck.Attribute.attribute == "spellcheck")
-    }
+enum `Spellcheck Tests` {}
 
-    @Test(
-        "Spellcheck cases description should match the spec",
-        arguments: WHATWG.HTML.Spellcheck.Attribute.allCases
-    )
-    func cases(spellcheck: WHATWG.HTML.Spellcheck.Attribute) {
-        switch spellcheck.rawValue {
-        case true: #expect(spellcheck.description == "true")
-        case false: #expect(spellcheck.description == "false")
+extension `Spellcheck Tests` {
+    @Suite struct `Spellcheck Test` {
+        @Test func `Spellcheck attribute should be spellcheck`() {
+            #expect(WHATWG.HTML.Spellcheck.Attribute.attribute == "spellcheck")
         }
-    }
 
-    @Test func `Spellcheck should conform to CaseIterable`() {
-        #expect(WHATWG.HTML.Spellcheck.Attribute.allCases.count == 2)
-        #expect(WHATWG.HTML.Spellcheck.Attribute.allCases.contains(true))
-        #expect(WHATWG.HTML.Spellcheck.Attribute.allCases.contains(false))
+        @Test(
+            "Spellcheck cases description should match the spec",
+            arguments: WHATWG.HTML.Spellcheck.Attribute.allCases
+        )
+        func cases(spellcheck: WHATWG.HTML.Spellcheck.Attribute) {
+            switch spellcheck.rawValue {
+            case true: #expect(spellcheck.description == "true")
+            case false: #expect(spellcheck.description == "false")
+            }
+        }
+
+        @Test func `Spellcheck should conform to CaseIterable`() {
+            #expect(WHATWG.HTML.Spellcheck.Attribute.allCases.count == 2)
+            #expect(WHATWG.HTML.Spellcheck.Attribute.allCases.contains(true))
+            #expect(WHATWG.HTML.Spellcheck.Attribute.allCases.contains(false))
+        }
     }
 }

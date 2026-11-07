@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Textarea Test` {
+enum `textarea Textarea Tests` {}
 
+extension `textarea Textarea Tests` {
+    @Suite struct `Textarea Test` {
+
+    }
 }

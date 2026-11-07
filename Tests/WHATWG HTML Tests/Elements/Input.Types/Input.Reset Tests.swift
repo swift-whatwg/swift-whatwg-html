@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Input.Reset Test` {
+enum `Input.Reset Tests` {}
 
+extension `Input.Reset Tests` {
+    @Suite struct `Input.Reset Test` {
+
+    }
 }

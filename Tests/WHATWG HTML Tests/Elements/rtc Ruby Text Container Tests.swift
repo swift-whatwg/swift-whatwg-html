@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Ruby Text Container Test` {
+enum `rtc Ruby Text Container Tests` {}
 
+extension `rtc Ruby Text Container Tests` {
+    @Suite struct `Ruby Text Container Test` {
+
+    }
 }

@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Table Column Group Test` {
+enum `colgroup Table Column Group Tests` {}
 
+extension `colgroup Table Column Group Tests` {
+    @Suite struct `Table Column Group Test` {
+
+    }
 }

@@ -1,20 +1,26 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Bidirectional Text Override Tests` {
+enum `bdo Bidirectional Text Override Tests` {}
 
-    @Test func `Basic BDO element creation with required dir attribute`() {
-        let bdo = WHATWG.HTML.BidirectionalTextOverride.Element(dir: .ltr)
-        #expect(WHATWG.HTML.BidirectionalTextOverride.Element.tag == "bdo")
-        #expect(bdo.dir.rawValue == "ltr")
+extension `bdo Bidirectional Text Override Tests` {
+    @Suite struct `Bidirectional Text Override Tests` {
+
+        @Test func `Basic BDO element creation with required dir attribute`() {
+            let bdo = WHATWG.HTML.BidirectionalTextOverride.Element(dir: .ltr)
+            #expect(WHATWG.HTML.BidirectionalTextOverride.Element.tag == "bdo")
+            #expect(bdo.dir.rawValue == "ltr")
+        }
+
+        @Test func `BDO element conforms to HTMLElement`() {
+            let bdo = WHATWG.HTML.BidirectionalTextOverride.Element(dir: .rtl)
+            let element: any WHATWG.HTML.Element = bdo
+            #expect(type(of: element).tag == "bdo")
+        }
     }
+}
 
-    @Test func `BDO element conforms to HTMLElement`() {
-        let bdo = WHATWG.HTML.BidirectionalTextOverride.Element(dir: .rtl)
-        let element: any WHATWG.HTML.Element = bdo
-        #expect(type(of: element).tag == "bdo")
-    }
-
+extension `bdo Bidirectional Text Override Tests`.`Bidirectional Text Override Tests` {
     @Suite struct `Direction Attribute Tests` {
 
         @Test func `BDO with left-to-right direction`() {

@@ -6,8 +6,12 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@Suite struct `Itemscope Test` {
-    @Test func `Itemscope attribute should be itemscope`() {
-        #expect(WHATWG.HTML.Itemscope.Attribute.attribute == "itemscope")
+enum `Itemscope Tests` {}
+
+extension `Itemscope Tests` {
+    @Suite struct `Itemscope Test` {
+        @Test func `Itemscope attribute should be itemscope`() {
+            #expect(WHATWG.HTML.Itemscope.Attribute.attribute == "itemscope")
+        }
     }
 }

@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Generic Section Test` {
+enum `section Generic Section Tests` {}
 
+extension `section Generic Section Tests` {
+    @Suite struct `Generic Section Test` {
+
+    }
 }

@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `xmp Test` {
+enum `xmp xmp Tests` {}
 
+extension `xmp xmp Tests` {
+    @Suite struct `xmp Test` {
+
+    }
 }

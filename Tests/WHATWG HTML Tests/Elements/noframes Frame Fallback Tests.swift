@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Frame Fallback Test` {
+enum `noframes Frame Fallback Tests` {}
 
+extension `noframes Frame Fallback Tests` {
+    @Suite struct `Frame Fallback Test` {
+
+    }
 }

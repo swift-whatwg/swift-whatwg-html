@@ -6,23 +6,27 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@Suite struct `Slot Test` {
-    @Test func `Slot attribute should be slot`() {
-        #expect(WHATWG.HTML.Slot.Attribute.attribute == "slot")
-    }
+enum `Slot Tests` {}
 
-    @Test func `Slot should store and return its value`() {
-        let slot = WHATWG.HTML.Slot.Attribute("header")
-        #expect(slot.rawValue == "header")
-    }
+extension `Slot Tests` {
+    @Suite struct `Slot Test` {
+        @Test func `Slot attribute should be slot`() {
+            #expect(WHATWG.HTML.Slot.Attribute.attribute == "slot")
+        }
 
-    @Test func `Slot description should return its value`() {
-        let slot = WHATWG.HTML.Slot.Attribute("footer")
-        #expect(slot.description == "footer")
-    }
+        @Test func `Slot should store and return its value`() {
+            let slot = WHATWG.HTML.Slot.Attribute("header")
+            #expect(slot.rawValue == "header")
+        }
 
-    @Test func `Slot should be initializable with string literal`() {
-        let slot: WHATWG.HTML.Slot.Attribute = "sidebar"
-        #expect(slot.rawValue == "sidebar")
+        @Test func `Slot description should return its value`() {
+            let slot = WHATWG.HTML.Slot.Attribute("footer")
+            #expect(slot.description == "footer")
+        }
+
+        @Test func `Slot should be initializable with string literal`() {
+            let slot: WHATWG.HTML.Slot.Attribute = "sidebar"
+            #expect(slot.rawValue == "sidebar")
+        }
     }
 }

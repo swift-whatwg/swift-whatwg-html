@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Thematic Break Horizontal Rule Test` {
+enum `hr Thematic Break (Horizontal Rule) Tests` {}
 
+extension `hr Thematic Break (Horizontal Rule) Tests` {
+    @Suite struct `Thematic Break Horizontal Rule Test` {
+
+    }
 }

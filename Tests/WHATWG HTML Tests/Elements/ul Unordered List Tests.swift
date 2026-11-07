@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Unordered List Test` {
+enum `ul Unordered List Tests` {}
 
+extension `ul Unordered List Tests` {
+    @Suite struct `Unordered List Test` {
+
+    }
 }

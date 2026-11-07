@@ -1,5 +1,9 @@
 import Testing
 
-@Suite struct `Input.Button Test` {
+enum `Input.Button Tests` {}
 
+extension `Input.Button Tests` {
+    @Suite struct `Input.Button Test` {
+
+    }
 }

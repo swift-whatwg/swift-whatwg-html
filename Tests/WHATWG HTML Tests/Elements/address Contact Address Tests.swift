@@ -1,33 +1,39 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Contact Address Tests` {
+enum `address Contact Address Tests` {}
 
-    @Test func `Basic address creation`() {
-        let address = WHATWG.HTML.Address.Element()
-        #expect(type(of: address).tag == "address")
+extension `address Contact Address Tests` {
+    @Suite struct `Contact Address Tests` {
+
+        @Test func `Basic address creation`() {
+            let address = WHATWG.HTML.Address.Element()
+            #expect(type(of: address).tag == "address")
+        }
+
+        @Test func `Address conforms to HTMLElement`() {
+            let address = WHATWG.HTML.Address.Element()
+            let element: any WHATWG.HTML.Element = address
+            #expect(type(of: element).tag == "address")
+        }
+
+        @Test func `Address is equatable`() {
+            let address1 = WHATWG.HTML.Address.Element()
+            let address2 = WHATWG.HTML.Address.Element()
+            #expect(address1 == address2)
+        }
+
+        @Test func `Address is sendable`() {
+            let address = WHATWG.HTML.Address.Element()
+
+            Task { _ = address }
+
+            #expect(address == WHATWG.HTML.Address.Element())
+        }
     }
+}
 
-    @Test func `Address conforms to HTMLElement`() {
-        let address = WHATWG.HTML.Address.Element()
-        let element: any WHATWG.HTML.Element = address
-        #expect(type(of: element).tag == "address")
-    }
-
-    @Test func `Address is equatable`() {
-        let address1 = WHATWG.HTML.Address.Element()
-        let address2 = WHATWG.HTML.Address.Element()
-        #expect(address1 == address2)
-    }
-
-    @Test func `Address is sendable`() {
-        let address = WHATWG.HTML.Address.Element()
-
-        Task { _ = address }
-
-        #expect(address == WHATWG.HTML.Address.Element())
-    }
-
+extension `address Contact Address Tests`.`Contact Address Tests` {
     @Suite struct `Common Use Cases` {
 
         @Test func `Author contact information`() {

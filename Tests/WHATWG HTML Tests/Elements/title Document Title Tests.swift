@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Document Title Test` {
+enum `title Document Title Tests` {}
 
+extension `title Document Title Tests` {
+    @Suite struct `Document Title Test` {
+
+    }
 }

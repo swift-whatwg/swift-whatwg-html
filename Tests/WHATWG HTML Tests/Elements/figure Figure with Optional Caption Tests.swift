@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Figure with Optional Caption Test` {
+enum `figure Figure with Optional Caption Tests` {}
 
+extension `figure Figure with Optional Caption Tests` {
+    @Suite struct `Figure with Optional Caption Test` {
+
+    }
 }

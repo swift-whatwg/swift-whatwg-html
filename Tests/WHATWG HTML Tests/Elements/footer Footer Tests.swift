@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Footer Test` {
+enum `footer Footer Tests` {}
 
+extension `footer Footer Tests` {
+    @Suite struct `Footer Test` {
+
+    }
 }

@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Mark Text Test` {
+enum `mark Mark Text Tests` {}
 
+extension `mark Mark Text Tests` {
+    @Suite struct `Mark Text Test` {
+
+    }
 }

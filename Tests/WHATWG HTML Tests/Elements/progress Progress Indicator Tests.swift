@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Progress Indicator Test` {
+enum `progress Progress Indicator Tests` {}
 
+extension `progress Progress Indicator Tests` {
+    @Suite struct `Progress Indicator Test` {
+
+    }
 }

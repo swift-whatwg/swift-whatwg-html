@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Strikethrough Test` {
+enum `s Strikethrough Tests` {}
 
+extension `s Strikethrough Tests` {
+    @Suite struct `Strikethrough Test` {
+
+    }
 }

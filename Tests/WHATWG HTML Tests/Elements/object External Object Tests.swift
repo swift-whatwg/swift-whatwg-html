@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `External Object Test` {
+enum `object External Object Tests` {}
 
+extension `object External Object Tests` {
+    @Suite struct `External Object Test` {
+
+    }
 }

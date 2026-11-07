@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Document Metadata Header Test` {
+enum `head Document Metadata (Header) Tests` {}
 
+extension `head Document Metadata (Header) Tests` {
+    @Suite struct `Document Metadata Header Test` {
+
+    }
 }

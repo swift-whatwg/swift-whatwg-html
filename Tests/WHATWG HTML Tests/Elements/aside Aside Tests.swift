@@ -13,7 +13,9 @@ import WHATWG_HTML
         let element: any WHATWG.HTML.Element = aside
         #expect(type(of: element).tag == "aside")
     }
+}
 
+extension `Aside Tests` {
     @Suite struct `Common Use Cases` {
 
         @Test func `Sidebar aside`() {

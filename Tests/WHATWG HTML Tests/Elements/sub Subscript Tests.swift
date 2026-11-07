@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Subscript Test` {
+enum `sub Subscript Tests` {}
 
+extension `sub Subscript Tests` {
+    @Suite struct `Subscript Test` {
+
+    }
 }

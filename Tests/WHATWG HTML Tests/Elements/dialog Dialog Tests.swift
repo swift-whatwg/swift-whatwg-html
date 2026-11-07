@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Dialog Test` {
+enum `dialog Dialog Tests` {}
 
+extension `dialog Dialog Tests` {
+    @Suite struct `Dialog Test` {
+
+    }
 }

@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Input.Time Test` {
+enum `Input.Time Tests` {}
 
+extension `Input.Time Tests` {
+    @Suite struct `Input.Time Test` {
+
+    }
 }

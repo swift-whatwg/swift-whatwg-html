@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Input.Color Test` {
+enum `Input.Color Tests` {}
 
+extension `Input.Color Tests` {
+    @Suite struct `Input.Color Test` {
+
+    }
 }

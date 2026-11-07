@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Input.Password Test` {
+enum `Input.Password Tests` {}
 
+extension `Input.Password Tests` {
+    @Suite struct `Input.Password Test` {
+
+    }
 }

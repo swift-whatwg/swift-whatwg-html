@@ -100,7 +100,9 @@ import WHATWG_HTML
         #expect(audio.controlslist == controlslist)
         #expect(audio.disableremoteplayback == disableremoteplayback)
     }
+}
 
+extension `Audio Tests` {
     @Suite struct `Preload Options` {
 
         @Test func `Preload none`() {

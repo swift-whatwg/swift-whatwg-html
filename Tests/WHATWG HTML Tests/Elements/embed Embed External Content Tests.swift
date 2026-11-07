@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Embed External Content Test` {
+enum `embed Embed External Content Tests` {}
 
+extension `embed Embed External Content Tests` {
+    @Suite struct `Embed External Content Test` {
+
+    }
 }

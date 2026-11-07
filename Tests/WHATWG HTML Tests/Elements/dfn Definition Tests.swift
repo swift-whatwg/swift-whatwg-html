@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Definition Test` {
+enum `dfn Definition Tests` {}
 
+extension `dfn Definition Tests` {
+    @Suite struct `Definition Test` {
+
+    }
 }

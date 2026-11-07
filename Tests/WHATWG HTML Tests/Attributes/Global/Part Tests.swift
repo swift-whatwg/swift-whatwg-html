@@ -6,28 +6,32 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@Suite struct `Part Test` {
-    @Test func `Part attribute should be part`() {
-        #expect(WHATWG.HTML.Part.Attribute.attribute == "part")
-    }
+enum `Part Tests` {}
 
-    @Test func `Part description should reflect the initialized values`() {
-        let singlePart = WHATWG.HTML.Part.Attribute("header")
-        #expect(singlePart.description == "header")
+extension `Part Tests` {
+    @Suite struct `Part Test` {
+        @Test func `Part attribute should be part`() {
+            #expect(WHATWG.HTML.Part.Attribute.attribute == "part")
+        }
 
-        let multipleParts: WHATWG.HTML.Part.Attribute = ["header", "title"]
-        #expect(multipleParts.description == "header title")
+        @Test func `Part description should reflect the initialized values`() {
+            let singlePart = WHATWG.HTML.Part.Attribute("header")
+            #expect(singlePart.description == "header")
 
-        let emptyPart = WHATWG.HTML.Part.Attribute("")
-        #expect(emptyPart.description.isEmpty)
-    }
+            let multipleParts: WHATWG.HTML.Part.Attribute = ["header", "title"]
+            #expect(multipleParts.description == "header title")
 
-    @Test func `Part can be initialized with single string or array of strings`() {
-        let singlePart: WHATWG.HTML.Part.Attribute = "header"
-        let arrayPart: WHATWG.HTML.Part.Attribute = "header"
-        #expect(singlePart.description == arrayPart.description)
+            let emptyPart = WHATWG.HTML.Part.Attribute("")
+            #expect(emptyPart.description.isEmpty)
+        }
 
-        let multipleParts: WHATWG.HTML.Part.Attribute = ["header", "title"]
-        #expect(multipleParts.description == "header title")
+        @Test func `Part can be initialized with single string or array of strings`() {
+            let singlePart: WHATWG.HTML.Part.Attribute = "header"
+            let arrayPart: WHATWG.HTML.Part.Attribute = "header"
+            #expect(singlePart.description == arrayPart.description)
+
+            let multipleParts: WHATWG.HTML.Part.Attribute = ["header", "title"]
+            #expect(multipleParts.description == "header title")
+        }
     }
 }

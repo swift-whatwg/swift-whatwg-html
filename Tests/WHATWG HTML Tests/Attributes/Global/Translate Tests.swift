@@ -6,21 +6,25 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@Suite struct `Translate Test` {
-    @Test func `Translate attribute should be translate`() {
-        #expect(WHATWG.HTML.Translate.Attribute.attribute == "translate")
-    }
+enum `Translate Tests` {}
 
-    @Test func `Translate description should match the spec`() {
-        #expect(WHATWG.HTML.Translate.Attribute.yes.description == "yes")
-        #expect(WHATWG.HTML.Translate.Attribute.no.description == "no")
-    }
+extension `Translate Tests` {
+    @Suite struct `Translate Test` {
+        @Test func `Translate attribute should be translate`() {
+            #expect(WHATWG.HTML.Translate.Attribute.attribute == "translate")
+        }
 
-    @Test func `Translate should be initializable with boolean literals`() {
-        let yesTranslate: WHATWG.HTML.Translate.Attribute = true
-        let noTranslate: WHATWG.HTML.Translate.Attribute = false
+        @Test func `Translate description should match the spec`() {
+            #expect(WHATWG.HTML.Translate.Attribute.yes.description == "yes")
+            #expect(WHATWG.HTML.Translate.Attribute.no.description == "no")
+        }
 
-        #expect(yesTranslate == .yes)
-        #expect(noTranslate == .no)
+        @Test func `Translate should be initializable with boolean literals`() {
+            let yesTranslate: WHATWG.HTML.Translate.Attribute = true
+            let noTranslate: WHATWG.HTML.Translate.Attribute = false
+
+            #expect(yesTranslate == .yes)
+            #expect(noTranslate == .no)
+        }
     }
 }

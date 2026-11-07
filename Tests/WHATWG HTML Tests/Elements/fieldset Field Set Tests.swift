@@ -1,6 +1,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite struct `Field Set Test` {
+enum `fieldset Field Set Tests` {}
 
+extension `fieldset Field Set Tests` {
+    @Suite struct `Field Set Test` {
+
+    }
 }
