@@ -76,6 +76,27 @@ extension WHATWG.HTML.Autocomplete.Attribute {
 }
 
 extension WHATWG.HTML.Autocomplete.Attribute {
+
+    public enum Token {
+
+        case section(String)
+
+        case grouping(GroupingIdentifier)
+
+        case recipientType(RecipientType)
+
+        case name(WHATWG.HTML.Autocomplete.Attribute.Token.Name)
+
+        case address(Address)
+
+        case payment(Payment)
+
+        case contact(DigitalContact)
+
+        case other(Other)
+
+        case webauthn
+    }
 }
 
 extension WHATWG.HTML.Autocomplete.Attribute.Token {
@@ -96,22 +117,165 @@ extension WHATWG.HTML.Autocomplete.Attribute.Token {
 }
 
 extension WHATWG.HTML.Autocomplete.Attribute {
+
+    public enum GroupingIdentifier: String {
+
+        case shipping
+
+        case billing
+    }
 }
 
 extension WHATWG.HTML.Autocomplete.Attribute {
+
+    public enum RecipientType: String {
+
+        case home
+
+        case work
+
+        case mobile
+
+        case fax
+
+        case page
+    }
 }
 
 extension WHATWG.HTML.Autocomplete.Attribute.Token {
+
+    public enum Name: String {
+
+        case name
+
+        case honorificPrefix = "honorific-prefix"
+
+        case givenName = "given-name"
+
+        case additionalName = "additional-name"
+
+        case familyName = "family-name"
+
+        case honorificSuffix = "honorific-suffix"
+
+        case nickname
+
+        case username
+
+        case organizationTitle = "organization-title"
+
+        case organization
+    }
 }
 
 extension WHATWG.HTML.Autocomplete.Attribute.Token {
+
+    public enum Address: String {
+
+        case streetAddress = "street-address"
+
+        case addressLine1 = "address-line1"
+
+        case addressLine2 = "address-line2"
+
+        case addressLine3 = "address-line3"
+
+        case addressLevel4 = "address-level4"
+
+        case addressLevel3 = "address-level3"
+
+        case addressLevel2 = "address-level2"
+
+        case addressLevel1 = "address-level1"
+
+        case country
+
+        case countryName = "country-name"
+
+        case postalCode = "postal-code"
+    }
 }
 
 extension WHATWG.HTML.Autocomplete.Attribute.Token {
+
+    public enum Payment: String {
+
+        case ccName = "cc-name"
+
+        case ccGivenName = "cc-given-name"
+
+        case ccAdditionalName = "cc-additional-name"
+
+        case ccFamilyName = "cc-family-name"
+
+        case ccNumber = "cc-number"
+
+        case ccExp = "cc-exp"
+
+        case ccExpMonth = "cc-exp-month"
+
+        case ccExpYear = "cc-exp-year"
+
+        case ccCsc = "cc-csc"
+
+        case ccType = "cc-type"
+
+        case transactionCurrency = "transaction-currency"
+
+        case transactionAmount = "transaction-amount"
+    }
 }
 
 extension WHATWG.HTML.Autocomplete.Attribute.Token {
+
+    public enum DigitalContact: String {
+
+        case tel
+
+        case telCountryCode = "tel-country-code"
+
+        case telNational = "tel-national"
+
+        case telAreaCode = "tel-area-code"
+
+        case telLocal = "tel-local"
+
+        case telLocalPrefix = "tel-local-prefix"
+
+        case telLocalSuffix = "tel-local-suffix"
+
+        case telExtension = "tel-extension"
+
+        case email
+
+        case impp
+    }
 }
 
 extension WHATWG.HTML.Autocomplete.Attribute.Token {
+
+    public enum Other: String {
+
+        case newPassword = "new-password"
+
+        case currentPassword = "current-password"
+
+        case oneTimeCode = "one-time-code"
+
+        case language
+
+        case bday
+
+        case bdayDay = "bday-day"
+
+        case bdayMonth = "bday-month"
+
+        case bdayYear = "bday-year"
+
+        case sex
+
+        case url
+
+        case photo
+    }
 }

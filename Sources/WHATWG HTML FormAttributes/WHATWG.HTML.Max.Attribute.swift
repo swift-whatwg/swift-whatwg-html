@@ -21,6 +21,19 @@ extension WHATWG.HTML.Max.Attribute {
 }
 
 extension WHATWG.HTML.Max.Attribute {
+
+    public enum DateFormat {
+
+        case fullDate
+
+        case month
+
+        case week
+
+        case time
+
+        case dateTimeLocal
+    }
 }
 
 extension WHATWG.HTML.Max.Attribute: ExpressibleByIntegerLiteral {

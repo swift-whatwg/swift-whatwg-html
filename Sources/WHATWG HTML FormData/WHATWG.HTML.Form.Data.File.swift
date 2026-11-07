@@ -30,6 +30,9 @@ extension WHATWG.HTML.Form.Data.File: CustomStringConvertible {
 }
 
 extension WHATWG.HTML.Form.Data.File {
+
+    public enum MIMEType {
+    }
 }
 
 extension WHATWG.HTML.Form.Data.File.MIMEType {

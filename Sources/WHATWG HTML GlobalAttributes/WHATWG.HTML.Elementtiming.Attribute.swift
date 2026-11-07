@@ -18,6 +18,13 @@ extension WHATWG.HTML.Elementtiming.Attribute {
         self.rawValue = "\(category)\(separator)\(name)"
     }
 
+    public struct Category: Sendable, Hashable, ExpressibleByStringLiteral, CustomStringConvertible {
+        public var value: String
+
+        public init(_ value: String) { self.value = value }
+
+        public init(stringLiteral value: String) { self.value = value }
+    }
 
     public init(category: Category, name: String, separator: String = "-") {
         if category == .custom {

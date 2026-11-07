@@ -74,6 +74,17 @@ extension WHATWG.HTML.Area.Element {
 }
 
 extension WHATWG.HTML.Area.Element {
+
+    public enum Shape: Sendable, Hashable {
+
+        case rect(coords: String)
+
+        case circle(coords: String)
+
+        case poly(coords: String)
+
+        case `default`
+    }
 }
 
 extension WHATWG.HTML.Area.Element.Shape {

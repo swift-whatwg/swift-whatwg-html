@@ -18,6 +18,12 @@ extension WHATWG.HTML.AttributionSrc.Attribute {
 
     @inlinable public static var attribute: String { "attributionsrc" }
 
+    public enum Value: Sendable, Hashable {
+
+        case boolean(Bool)
+
+        case urls(String)
+    }
 
     public var description: String {
         switch value {

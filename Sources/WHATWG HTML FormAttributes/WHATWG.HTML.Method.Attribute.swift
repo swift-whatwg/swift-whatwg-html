@@ -19,6 +19,14 @@ extension WHATWG.HTML.Method.Attribute {
 
     public init(_ method: HTTPMethod) { self.rawValue = method.rawValue }
 
+    public enum HTTPMethod: String {
+
+        case get
+
+        case post
+
+        case dialog
+    }
 }
 
 extension WHATWG.HTML.Method.Attribute {

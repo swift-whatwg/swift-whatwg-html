@@ -20,6 +20,12 @@ extension WHATWG.HTML.Download.Attribute {
 
     @inlinable public static var attribute: String { "download" }
 
+    public enum Value: Sendable, Hashable {
+
+        case boolean(Bool)
+
+        case withFilename(String)
+    }
 
     public var description: String {
         switch value {
