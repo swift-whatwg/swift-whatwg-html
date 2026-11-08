@@ -22,18 +22,6 @@ extension WHATWG.HTML.Min.Attribute {
 
 extension WHATWG.HTML.Min.Attribute {
 
-    public enum DateFormat {
-
-        case fullDate
-
-        case month
-
-        case week
-
-        case time
-
-        case dateTimeLocal
-    }
 
     public static let zero = WHATWG.HTML.Min.Attribute(0)
 }
