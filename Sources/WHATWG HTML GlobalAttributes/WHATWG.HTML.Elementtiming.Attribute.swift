@@ -18,7 +18,6 @@ extension WHATWG.HTML.Elementtiming.Attribute {
         self.rawValue = "\(category)\(separator)\(name)"
     }
 
-
     public init(category: Category, name: String, separator: String = "-") {
         if category == .custom {
             self.rawValue = name

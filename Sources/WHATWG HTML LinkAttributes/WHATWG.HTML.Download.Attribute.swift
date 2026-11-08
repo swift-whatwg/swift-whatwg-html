@@ -20,7 +20,6 @@ extension WHATWG.HTML.Download.Attribute {
 
     @inlinable public static var attribute: String { "download" }
 
-
     public var description: String {
         switch value {
         case .boolean: return ""

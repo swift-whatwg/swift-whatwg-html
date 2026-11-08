@@ -22,7 +22,6 @@ extension WHATWG.HTML.Min.Attribute {
 
 extension WHATWG.HTML.Min.Attribute {
 
-
     public static let zero = WHATWG.HTML.Min.Attribute(0)
 }
 

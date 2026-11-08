@@ -3,13 +3,14 @@ import ASCII
 extension [UInt8] {
 
     public init<T: WHATWG.HTML.BooleanAttribute>(_ attribute: T) {
-        self = if attribute.rawValue {
+        self =
+            if attribute.rawValue {
 
-            Array(T.attribute.utf8)
-        } else {
+                Array(T.attribute.utf8)
+            } else {
 
-            []
-        }
+                []
+            }
     }
 }
 

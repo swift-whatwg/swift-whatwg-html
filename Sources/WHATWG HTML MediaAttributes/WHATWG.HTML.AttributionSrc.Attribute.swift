@@ -18,7 +18,6 @@ extension WHATWG.HTML.AttributionSrc.Attribute {
 
     @inlinable public static var attribute: String { "attributionsrc" }
 
-
     public var description: String {
         switch value {
         case .boolean: return ""

@@ -25,7 +25,6 @@ extension WHATWG.HTML.Base.Element {
     public static let categories: Set<WHATWG.HTML.Content.Category> = [.metadata]
     public static let content: WHATWG.HTML.Content = .init(model: .nothing)
 
-
     public var href: WHATWG.HTML.Href.Attribute? {
         switch configuration {
         case .href(let href): return href

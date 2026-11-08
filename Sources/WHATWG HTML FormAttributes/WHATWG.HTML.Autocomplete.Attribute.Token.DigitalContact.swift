@@ -1,6 +1,5 @@
 public import WHATWG_HTML_Shared
 
-
 extension WHATWG.HTML.Autocomplete.Attribute.Token {
     public enum DigitalContact: String {
 
