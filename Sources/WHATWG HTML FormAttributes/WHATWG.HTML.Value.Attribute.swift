@@ -1,15 +1,15 @@
 public import WHATWG_HTML_Shared
 
 extension WHATWG.HTML.Value {
-
     public struct Attribute<Element: Sendable & Hashable>: WHATWG.HTML.Attribute {
-
-        public static var attribute: String { "value" }
-
         public var value: Element
 
         public init(_ value: Element) { self.value = value }
     }
+}
+
+extension WHATWG.HTML.Value.Attribute {
+    public static var attribute: String { "value" }
 }
 
 extension WHATWG.HTML.Value.Attribute: LosslessStringConvertible where Element == String {
