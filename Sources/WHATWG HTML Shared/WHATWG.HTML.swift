@@ -1,4 +1,4 @@
-@_exported public import WHATWG
+public import WHATWG
 
 extension WHATWG {
 

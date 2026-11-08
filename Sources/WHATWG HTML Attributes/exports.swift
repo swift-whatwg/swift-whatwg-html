@@ -1,0 +1,6 @@
+@_exported public import WHATWG_HTML_FormAttributes
+@_exported public import WHATWG_HTML_GlobalAttributes
+@_exported public import WHATWG_HTML_LinkAttributes
+@_exported public import WHATWG_HTML_MediaAttributes
+@_exported public import WHATWG_HTML_ScriptAttributes
+@_exported public import WHATWG_HTML_TableAttributes
