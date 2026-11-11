@@ -1,6 +1,6 @@
 extension WHATWG.HTML.Content {
 
-    public enum Model: Sendable, Equatable, Hashable, Codable {
+    public enum Model: Sendable, Equatable, Hashable {
 
         case nothing
 
@@ -24,3 +24,7 @@ extension WHATWG.HTML.Content.Model {
 
     @inlinable public static var metadata: Self { .category(.metadata) }
 }
+
+#if !hasFeature(Embedded)
+    extension WHATWG.HTML.Content.Model: Codable {}
+#endif

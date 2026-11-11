@@ -1,6 +1,6 @@
 extension WHATWG.HTML.Content {
 
-    public enum Category: String, Sendable, Hashable, Codable, CaseIterable {
+    public enum Category: String, Sendable, Hashable, CaseIterable {
 
         case metadata
 
@@ -27,3 +27,7 @@ extension WHATWG.HTML.Content {
         case `option element inner content`
     }
 }
+
+#if !hasFeature(Embedded)
+    extension WHATWG.HTML.Content.Category: Codable {}
+#endif

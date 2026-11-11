@@ -1,6 +1,6 @@
 extension WHATWG.HTML {
 
-    public struct Content: Sendable, Equatable, Hashable, Codable {
+    public struct Content: Sendable, Equatable, Hashable {
 
         public var model: Model
 
@@ -56,3 +56,7 @@ extension WHATWG.HTML.Content.Model: ExpressibleByArrayLiteral {
         self = .categories(Set(elements))
     }
 }
+
+#if !hasFeature(Embedded)
+    extension WHATWG.HTML.Content: Codable {}
+#endif
