@@ -29,7 +29,7 @@ extension WHATWG.HTML.Accept.Attribute: ExpressibleByStringLiteral {
 extension WHATWG.HTML.Accept.Attribute: CustomStringConvertible {
 
     public var description: String {
-        return self.fileTypes.map(\.description).joined(separator: ", ")
+        return self.fileTypes.map({ $0.description }).joined(separator: ", ")
     }
 }
 

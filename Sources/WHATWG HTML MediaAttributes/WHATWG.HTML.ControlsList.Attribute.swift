@@ -24,7 +24,7 @@ extension WHATWG.HTML.ControlsList.Attribute {
     @inlinable public static var noremoteplayback: Self { "noremoteplayback" }
 
     public static func combine(_ values: [WHATWG.HTML.ControlsList.Attribute]) -> Self {
-        return Self(values.map(\.rawValue).joined(separator: " "))
+        return Self(values.map({ $0.rawValue }).joined(separator: " "))
     }
 }
 

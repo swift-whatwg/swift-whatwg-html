@@ -32,7 +32,7 @@ extension WHATWG.HTML.Rel.Attribute {
 
 extension WHATWG.HTML.Rel.Attribute {
     public init(_ rels: [WHATWG.HTML.Rel.Attribute]) {
-        self = .init(rels.map(\.description).joined(separator: " "))
+        self = .init(rels.map({ $0.description }).joined(separator: " "))
     }
 }
 

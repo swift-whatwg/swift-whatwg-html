@@ -37,7 +37,7 @@ extension WHATWG.HTML.Autocomplete.Attribute: ExpressibleByArrayLiteral {
 
 extension WHATWG.HTML.Autocomplete.Attribute {
 
-    public init(_ tokens: [Token]) { self.init(value: tokens.map(\.value).joined(separator: " ")) }
+    public init(_ tokens: [Token]) { self.init(value: tokens.map({ $0.value }).joined(separator: " ")) }
 
     public init(_ tokens: Token...) { self.init(tokens) }
 }

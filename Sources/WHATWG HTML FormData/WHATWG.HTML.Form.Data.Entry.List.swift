@@ -35,7 +35,7 @@ extension WHATWG.HTML.Form.Data.Entry.List {
     }
 
     @inlinable public subscript(name: String) -> [WHATWG.HTML.Form.Data.Value]? {
-        let values = entries.filter { $0.name == name }.map(\.value)
+        let values = entries.filter { $0.name == name }.map({ $0.value })
         return values.isEmpty ? nil : values
     }
 
@@ -44,7 +44,7 @@ extension WHATWG.HTML.Form.Data.Entry.List {
     }
 
     @inlinable public func all(named name: String) -> [WHATWG.HTML.Form.Data.Value] {
-        entries.filter { $0.name == name }.map(\.value)
+        entries.filter { $0.name == name }.map({ $0.value })
     }
 
     @inlinable public func contains(name: String) -> Bool {
